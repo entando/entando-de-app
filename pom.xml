@@ -45,7 +45,7 @@
                 <!--Image configuration -->
                 <skipDocker>false</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
-
+                <jee.server>jetty</jee.server>
                 <entando.engine.address>localhost</entando.engine.address>
                 <app.builder.depends.on></app.builder.depends.on>
 
@@ -76,6 +76,7 @@
                 <skipDocker>false</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
 
+                <jee.server>eap</jee.server>
                 <entando.engine.address>${docker.host.address}</entando.engine.address>
                 <app.builder.depends.on>${project.artifactId}-engine</app.builder.depends.on>
 
@@ -92,6 +93,7 @@
                 <!--Image configuration -->
                 <skipDocker>false</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
+                <jee.server>wildfly</jee.server>
 
                 <entando.engine.address>${docker.host.address}</entando.engine.address>
                 <app.builder.depends.on>${project.artifactId}-engine</app.builder.depends.on>
@@ -104,10 +106,29 @@
             </properties>
         </profile>
         <profile>
+            <id>tomcat</id>
+            <properties>
+                <!--Image configuration -->
+                <skipDocker>false</skipDocker>
+                <skipAppBuilderImage>false</skipAppBuilderImage>
+                <jee.server>tomcat</jee.server>
+
+                <entando.engine.address>${docker.host.address}</entando.engine.address>
+                <app.builder.depends.on>${project.artifactId}-engine</app.builder.depends.on>
+
+                <skipServerImage>false</skipServerImage>
+                <jboss.home.in.image>none</jboss.home.in.image>
+                <server.base.image>entando-tomcat85-base</server.base.image>
+
+                <derby.base.folder>/entando-data/databases</derby.base.folder>
+            </properties>
+        </profile>       <profile>
             <id>jetty-container</id>
             <properties>
                 <!--Image configuration -->
                 <skipDocker>false</skipDocker>
+                <jee.server>jetty</jee.server>
+
                 <skipAppBuilderImage>false</skipAppBuilderImage>
 
                 <entando.engine.address>${docker.host.address}</entando.engine.address>
@@ -123,6 +144,7 @@
         <profile>
             <id>derby</id>
             <properties>
+                <db.vendor>derby</db.vendor>
                 <skipDatabaseImage>true</skipDatabaseImage>
                 <entando.engine.depends.on></entando.engine.depends.on>
                 <!--DB connection properties-->
@@ -147,6 +169,7 @@
         <profile>
             <id>postgresql</id>
             <properties>
+                <db.vendor>postgresql</db.vendor>
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-postgresql95-base</db.base.image>
@@ -175,6 +198,7 @@
         <profile>
             <id>mysql</id>
             <properties>
+                <db.vendor>mysql</db.vendor>
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-mysql57-base</db.base.image>
@@ -311,7 +335,7 @@
                     </volumes>
                     <images>
                         <image>
-                            <name>entandosamples/${project.artifactId}-db</name>
+                            <name>entando/${project.artifactId}-${db.vendor}:${project.version}</name>
                             <alias>${project.artifactId}-dbms</alias>
                             <build>
                                 <skip>${skipDatabaseImage}</skip>
@@ -368,7 +392,7 @@
                             </run>
                         </image>
                         <image>
-                            <name>entandosamples/${project.artifactId}:${project.version}</name>
+                            <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
                                 <from>entando/${server.base.image}:${entando.version}</from>
