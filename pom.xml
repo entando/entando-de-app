@@ -958,8 +958,7 @@
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webApp>
                         <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                            <resourcesAsCSV>src/main/webapp,${project.build.directory}/${project.build.finalName}
-                            </resourcesAsCSV>
+                            <resourcesAsCSV>src/main/webapp,${project.build.directory}/${project.build.finalName}</resourcesAsCSV>
                         </baseResource>
                         <defaultsDescriptor>${basedir}/src/main/jetty/webdefault.xml</defaultsDescriptor>
                         <contextPath>/${project.artifactId}</contextPath>
