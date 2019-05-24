@@ -67,12 +67,11 @@
         <test.database.port.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</test.database.port.url>
         <test.database.serv.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
         -->
-        <project.testresult.directory>${project.build.directory}/test-results</project.testresult.directory>
-        <sonar.jacoco.reportPaths>${project.testresult.directory}/coverage/jacoco/jacoco.exec</sonar.jacoco.reportPaths>
+        <sonar.jacoco.reportPaths>${project.build.directory}/coverage/jacoco/jacoco.exec</sonar.jacoco.reportPaths>
         <sonar.java.codeCoveragePlugin>jacoco</sonar.java.codeCoveragePlugin>
         <sonar.sources>${project.basedir}/src/main/</sonar.sources>
         <sonar.exclusions>src/main/java/org/entando/entando/attic/*.*</sonar.exclusions>
-        <sonar.junit.reportsPath>${project.testresult.directory}</sonar.junit.reportsPath>
+        <sonar.junit.reportsPath>${project.build.directory}/surefire-reports</sonar.junit.reportsPath>
         <sonar.tests>${project.basedir}/src/test/</sonar.tests>
         <test.database.driver>org.apache.derby.jdbc.EmbeddedDriver</test.database.driver>
         <test.database.hostname>localhost</test.database.hostname>
@@ -747,7 +746,7 @@
                         </goals>
                         <configuration>
                             <!-- Sets the path to the file which contains the execution data. -->
-                            <destFile>${project.testresult.directory}/coverage/jacoco/jacoco.exec</destFile>
+                            <destFile>${project.build.directory}/coverage/jacoco/jacoco.exec</destFile>
                         </configuration>
                     </execution>
                     <!-- Ensures that the code coverage report for unit tests is created after unit tests have been run -->
@@ -759,8 +758,8 @@
                         </goals>
                         <configuration>
                             <excludes><exclude>src/main/java/org/entando/entando/attic/*.*</exclude></excludes>
-                            <dataFile>${project.testresult.directory}/coverage/jacoco/jacoco.exec</dataFile>
-                            <outputDirectory>${project.testresult.directory}/coverage/jacoco</outputDirectory>
+                            <dataFile>${project.build.directory}/coverage/jacoco/jacoco.exec</dataFile>
+                            <outputDirectory>${project.build.directory}/coverage/jacoco</outputDirectory>
                         </configuration>
                     </execution>
                 </executions>
@@ -942,9 +941,6 @@
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-surefire-plugin</artifactId>
                 <version>2.12</version>
-                <configuration>
-                    <reportsDirectory>${project.testresult.directory}</reportsDirectory>
-                </configuration>
             </plugin>
             <!-- mvn jetty:run (with hot-redeploy) -->
             <plugin>
