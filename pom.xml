@@ -621,6 +621,8 @@
                                     <SERVDB_JNDI>${servdb.jndi}</SERVDB_JNDI>
                                     <DB_ENVIRONMENT>${env.db.environment}</DB_ENVIRONMENT>
                                     <DB_STARTUP_CHECK>true</DB_STARTUP_CHECK>
+                                    <LOGNAME>/var/log/entando/engine.log</LOGNAME><!--workaround until upstream images are fixed-->
+
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
