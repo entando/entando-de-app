@@ -128,6 +128,12 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
+            <artifactId>entando-keycloak-auth</artifactId>
+            <version>1.0.0-SNAPSHOT</version>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando</groupId>
             <artifactId>entando-admin-console</artifactId>
             <version>${entando.version}</version>
             <type>test-jar</type>
@@ -463,7 +469,16 @@
                 <!-- No DB work required from the server image. Just set the build_id -->
                 <server.init.command>echo $(date +%s) > /entando-data-templates/build_id</server.init.command>
             </properties>
-
+        </profile>
+        <profile>
+            <id>keycloak</id>
+            <properties>
+                <keycloak.authUrl>localhost:8081</keycloak.authUrl>
+                <keycloak.realm>entando-development</keycloak.realm>
+                <keycloak.clientId>entando-core</keycloak.clientId>
+                <keycloak.clientSecret>930837f0-95b2-4eeb-b303-82a56cac76e6</keycloak.clientSecret>
+                <keycloak.publicClientId>entando-core</keycloak.publicClientId>
+            </properties>
         </profile>
     </profiles>
     <build>
@@ -561,6 +576,10 @@
                                     <SERVDB_DATABASE>${servdb.database}</SERVDB_DATABASE>
                                     <SERVDB_JNDI>${servdb.jndi}</SERVDB_JNDI>
                                     <DB_ENVIRONMENT>${env.db.environment}</DB_ENVIRONMENT>
+                                    <KEYCLOAK_AUTHURL>${keycloak.authUrl}</KEYCLOAK_AUTHURL>
+                                    <KEYCLOAK_REALM>${keycloak.realm}</KEYCLOAK_REALM>
+                                    <KEYCLOAK_CLIENTID>${keycloak.clientId}</KEYCLOAK_CLIENTID>
+                                    <KEYCLOAK_CLIENTSECRET>${keycloak.clientSecret}</KEYCLOAK_CLIENTSECRET>
                                 </env>
                                 <runCmds>
                                     <run>${db.init.command}</run>
