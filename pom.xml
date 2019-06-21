@@ -92,6 +92,12 @@
         <struts2.version>2.5.17</struts2.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
         <jetty.version>9.4.8.v20180619</jetty.version>
+        <keycloak.enabled>false</keycloak.enabled>
+        <keycloak.authUrl>http://${docker.host.address}:8081/auth</keycloak.authUrl>
+        <keycloak.realm>entando-development</keycloak.realm>
+        <keycloak.clientId>entando-core</keycloak.clientId>
+        <keycloak.clientSecret>930837f0-95b2-4eeb-b303-82a56cac76e6</keycloak.clientSecret>
+        <keycloak.publicClientId>entando-web</keycloak.publicClientId>
     </properties>
     <dependencies>
         <dependency>
@@ -475,11 +481,6 @@
             <id>keycloak</id>
             <properties>
                 <keycloak.enabled>true</keycloak.enabled>
-                <keycloak.authUrl>http://${docker.host.address}:8081/auth</keycloak.authUrl>
-                <keycloak.realm>entando-development</keycloak.realm>
-                <keycloak.clientId>entando-core</keycloak.clientId>
-                <keycloak.clientSecret>930837f0-95b2-4eeb-b303-82a56cac76e6</keycloak.clientSecret>
-                <keycloak.publicClientId>entando-web</keycloak.publicClientId>
             </properties>
         </profile>
     </profiles>
@@ -644,7 +645,7 @@
                                     <KEYCLOAK_REALM>${keycloak.realm}</KEYCLOAK_REALM>
                                     <KEYCLOAK_CLIENTID>${keycloak.clientId}</KEYCLOAK_CLIENTID>
                                     <KEYCLOAK_CLIENTSECRET>${keycloak.clientSecret}</KEYCLOAK_CLIENTSECRET>
-                                    <KEYCLOAK_PUBLICCLIENTID>entando-public</KEYCLOAK_PUBLICCLIENTID>
+                                    <KEYCLOAK_PUBLICCLIENTID>${keycloak.publicClientId}</KEYCLOAK_PUBLICCLIENTID>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -679,7 +680,7 @@
                                     <KEYCLOAK_REALM>${keycloak.realm}</KEYCLOAK_REALM>
                                     <KEYCLOAK_CLIENTID>${keycloak.clientId}</KEYCLOAK_CLIENTID>
                                     <KEYCLOAK_CLIENTSECRET>${keycloak.clientSecret}</KEYCLOAK_CLIENTSECRET>
-                                    <KEYCLOAK_PUBLICCLIENTID>entando-public</KEYCLOAK_PUBLICCLIENTID>
+                                    <KEYCLOAK_PUBLICCLIENTID>${keycloak.publicClientId}</KEYCLOAK_PUBLICCLIENTID>
                                 </env>
                                 <dependsOn>
                                     <container>${entando.engine.depends.on}</container>
