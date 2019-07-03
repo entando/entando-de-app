@@ -55,9 +55,7 @@
     </filter>
     <filter-mapping>
         <filter-name>keycloakFilter</filter-name>
-        <url-pattern>/do/login</url-pattern>
-        <url-pattern>/do/login.action</url-pattern>
-        <url-pattern>/do/logout.action</url-pattern>
+        <url-pattern>/*</url-pattern>
     </filter-mapping>
     <filter-mapping>
         <filter-name>struts2</filter-name>
