@@ -92,6 +92,12 @@
         <struts2.version>2.5.17</struts2.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
         <jetty.version>9.4.8.v20180619</jetty.version>
+        <keycloak.enabled>false</keycloak.enabled>
+        <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
+        <keycloak.realm>entando</keycloak.realm>
+        <keycloak.client.id>entando-app</keycloak.client.id>
+        <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
+        <keycloak.public.client.id>entando-web</keycloak.public.client.id>
     </properties>
     <dependencies>
         <dependency>
@@ -568,6 +574,7 @@
                                     <SERVDB_JNDI>${servdb.jndi}</SERVDB_JNDI>
                                     <DB_ENVIRONMENT>${env.db.environment}</DB_ENVIRONMENT>
                                     <ALGO_DEFAULT_KEY>changeit</ALGO_DEFAULT_KEY>
+
                                 </env>
                                 <runCmds>
                                     <run>${db.init.command}</run>
@@ -630,6 +637,12 @@
                                     <DB_STARTUP_CHECK>true</DB_STARTUP_CHECK>
                                     <LOGNAME>/var/log/entando/engine.log</LOGNAME><!--workaround until upstream images are fixed-->
                                     <ALGO_DEFAULT_KEY>changeit</ALGO_DEFAULT_KEY>
+                                    <KEYCLOAK_ENABLED>${keycloak.enabled}</KEYCLOAK_ENABLED>
+                                    <KEYCLOAK_REALM>${keycloak.realm}</KEYCLOAK_REALM>
+                                    <KEYCLOAK_AUTH_URL>${keycloak.auth.url}</KEYCLOAK_AUTH_URL>
+                                    <KEYCLOAK_CLIENT_ID>${keycloak.client.id}</KEYCLOAK_CLIENT_ID>
+                                    <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
+                                    <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -659,6 +672,12 @@
                                     <SERVDB_JNDI>${servdb.jndi}</SERVDB_JNDI>
                                     <DB_ENVIRONMENT>${env.db.environment}</DB_ENVIRONMENT>
                                     <DB_STARTUP_CHECK>false</DB_STARTUP_CHECK>
+                                    <KEYCLOAK_ENABLED>${keycloak.enabled}</KEYCLOAK_ENABLED>
+                                    <KEYCLOAK_REALM>${keycloak.realm}</KEYCLOAK_REALM>
+                                    <KEYCLOAK_AUTH_URL>${keycloak.auth.url}</KEYCLOAK_AUTH_URL>
+                                    <KEYCLOAK_CLIENT_ID>${keycloak.client.id}</KEYCLOAK_CLIENT_ID>
+                                    <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
+                                    <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
                                 </env>
                                 <dependsOn>
                                     <container>${entando.engine.depends.on}</container>
