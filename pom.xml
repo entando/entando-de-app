@@ -1010,6 +1010,10 @@
                             <value>${project.build.directory}/logs/</value>
                         </systemProperty>
                         <systemProperty>
+                            <name>logFileRotatePattern</name>
+                            <value>${project.build.directory}/logs/${project.artifactId}_logs/${project.name}-%i.log.gz</value>
+                        </systemProperty>
+                        <systemProperty>
                             <name>resourceDiskRootFolder</name>
                             <value>${project.basedir}/src/main/webapp/resources/</value>
                         </systemProperty>
@@ -1060,6 +1064,30 @@
                         <systemProperty>
                             <name>servdb.password</name>
                             <value>${servdb.password}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>keycloak.enabled</name>
+                            <value>${keycloak.enabled}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>keycloak.realm</name>
+                            <value>${keycloak.realm}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>keycloak.auth.url</name>
+                            <value>${keycloak.auth.url}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>keycloak.client.id</name>
+                            <value>${keycloak.client.id}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>keycloak.client.secret</name>
+                            <value>${keycloak.client.secret}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>keycloak.public.client.id</name>
+                            <value>${keycloak.public.client.id}</value>
                         </systemProperty>
                     </systemProperties>
                 </configuration>
