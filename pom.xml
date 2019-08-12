@@ -410,7 +410,7 @@
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
 
                 <!-- DB work required from the server image. Create the template Derby databases -->
-                <server.init.command>$STI_SCRIPTS_PATH/init-derby-from-war.sh --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war --jetty-version=${jetty.version}</server.init.command>
+                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war --jetty-version=${jetty.version}</server.init.command>
             </properties>
         </profile>
         <profile>
@@ -558,7 +558,7 @@
                             <alias>${project.artifactId}-dbms</alias>
                             <build>
                                 <skip>${skipDatabaseImage}</skip>
-                                <from>entando/${db.base.image}:${entando.version}</from>
+                                <from>entando/${db.base.image}:${project.version}</from>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
                                     <targetDir>/tmp</targetDir>
@@ -616,7 +616,7 @@
                             <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
-                                <from>entando/${server.base.image}:${entando.version}</from>
+                                <from>entando/${server.base.image}:${project.version}</from>
                                 <skip>${skipServerImage}</skip>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
