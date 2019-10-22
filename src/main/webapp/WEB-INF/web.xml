@@ -14,6 +14,7 @@
             classpath*:spring/apsadmin/**/**.xml
             classpath*:spring/plugins/**/aps/**/**.xml
             classpath*:spring/plugins/**/apsadmin/**/**.xml
+            classpath*:spring/aps/managers/keycloak.xml
         </param-value>
     </context-param>
     <context-param>
