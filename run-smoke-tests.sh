@@ -25,5 +25,5 @@ docker run --rm --network=${APPLICATION_NAME}-network \
     || { echo "LoginWithTestUser smoke test failed"; exit 5; }
 
 #post-test cleanup
-mvn -P${JEE_SERVER} -P${DBMS} docker:stop 2>/dev/null
-docker volume rm ${APPLICATION_NAME}-entando-data ${APPLICATION_NAME}-entando-db-data 2>/dev/null
+mvn -P${JEE_SERVER} -P${DBMS} docker:stop 2>/dev/null || true
+docker volume rm ${APPLICATION_NAME}-entando-data ${APPLICATION_NAME}-entando-db-data 2>/dev/null || true
