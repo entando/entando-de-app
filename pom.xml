@@ -209,6 +209,12 @@
             <version>10.9.1.0</version>
             <scope>test</scope>
         </dependency>
+	<dependency>
+            <groupId>net.bytebuddy</groupId>
+            <artifactId>byte-buddy</artifactId>
+            <version>1.9.10</version>
+        </dependency>
+
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
@@ -910,7 +916,8 @@
                 <artifactId>maven-war-plugin</artifactId>
                 <version>3.2.2</version>
                 <configuration>
-                    <dependentWarExcludes>WEB-INF/lib/byte-buddy-1.7.9.jar</dependentWarExcludes>
+                    <!-- This is explicitly declared in project deps.-->
+                    <dependentWarExcludes>WEB-INF/lib/byte-buddy-*.jar</dependentWarExcludes>
                     <webResources>
                         <resource>
                             <directory>src/main/tld</directory>
