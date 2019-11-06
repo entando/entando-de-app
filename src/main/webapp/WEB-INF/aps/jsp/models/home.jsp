@@ -1,4 +1,5 @@
 <%@ taglib prefix="wp" uri="/aps-core" %>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="<wp:info key="currentLang" />">
     <head>
@@ -38,7 +39,7 @@
             </div>
 
             <div class="login-buttons-lp">
-                <a href="<wp:info key="systemParam" paramName="applicationBaseURL" />do/login" class="btn btn-login">
+                <a href="<jstl:url value="/do/login"/>" class="btn btn-login">
                     GO TO LOG IN PAGE
                 </a>
             </div>
