@@ -15,7 +15,7 @@ mvn dependency:purge-local-repository -DsnapshotsOnly=true
 mvn clean package   -P${JEE_SERVER} -P${DBMS} docker:start || { echo "Maven build failed"; exit 1; }
 docker run --rm --network=${APPLICATION_NAME}-network \
     -e ENTANDO_APPBUILDER_URL=http://appbuilder:5000  \
-    entando/entando-smoke-tests:5.1.0-SNAPSHOT mvn verify -Dtest=org.entando.selenium.smoketests.STAddTestUserTest \
+    entando/entando-smoke-tests:6.0.0-SNAPSHOT mvn verify -Dtest=org.entando.selenium.smoketests.STAddTestUserTest \
     || { echo "AddTestUser smoke test failed"; exit 2; }
 mvn -P${JEE_SERVER} -P${DBMS} docker:stop || { echo "Stopping containers from Maven failed"; exit 3; }
 mvn -P${JEE_SERVER} -P${DBMS} docker:start || { echo "Restarting containers from Maven failed"; exit 4; }
