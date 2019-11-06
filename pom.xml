@@ -92,7 +92,7 @@
         <skipDocker>true</skipDocker>
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
-        <entando.version>5.2.0-SNAPSHOT</entando.version>
+        <entando.version>6.0.0-SNAPSHOT</entando.version>
         <entando.keycloak.plugin.version>6.0.0-SNAPSHOT</entando.keycloak.plugin.version>
         <spring.version>5.1.8.RELEASE</spring.version>
         <struts2.version>2.5.17</struts2.version>
@@ -638,7 +638,7 @@
                             <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
-                                <from>entando/${server.base.image}:5.2.0</from>
+                                <from>entando/${server.base.image}:${entando.version}</from>
                                 <skip>${skipServerImage}</skip>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
@@ -726,7 +726,7 @@
                             </run>
                         </image>
                         <image>
-                            <name>entando/appbuilder-with-digital-exchange:${entando.version}</name>
+                            <name>entando/appbuilder-with-digital-exchange:5.2.0</name>
                             <run>
                                 <skip>${skipAppBuilderImage}</skip>
                                 <network>
