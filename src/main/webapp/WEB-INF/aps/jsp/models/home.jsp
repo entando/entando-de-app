@@ -45,9 +45,9 @@
             </div>
 
             <div id="social-link">
-                <a href="http://www.entando.com" target="_blank"><img src="<wp:resourceURL />administration/img/entando_icon.png"></a>
-                <a href="http://github.com/entando/" target="_blank"><img src="<wp:resourceURL />administration/img/github.png"></a>
-                <a href="https://twitter.com/entando" target="_blank"><img src="<wp:resourceURL />administration/img/twitter.png"></a>
+                <a href="http://www.entando.com" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/entando_icon.png"></a>
+                <a href="http://github.com/entando/" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/github.png"></a>
+                <a href="https://twitter.com/entando" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/twitter.png"></a>
             </div>
         </div>
         <div id="bottom-footer">
