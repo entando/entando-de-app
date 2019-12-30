@@ -32,3 +32,15 @@ If you want also to automatically run the images you can use the `docker:run` co
 ```
 mvn clean package -Pjetty-container -Pmysql -Pkeycloak -DskipTests docker:run
 ```
+
+
+# Deploying to Kubernetes
+Clone the repository
+Change the project name to your preferred project name. From your favourite IDE
+ - files update should be pom.xml, entando-app.yaml
+Deploy your Entando Kubernetes operator to K8S
+Setup Keycloak
+    - Point to an existing Keycloak instance
+    - Install lightweight instance
+Deploy Entando App itself
+Point to ...       
