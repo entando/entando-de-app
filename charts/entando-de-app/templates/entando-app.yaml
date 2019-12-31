@@ -1,0 +1,9 @@
+apiVersion: entando.org/v1
+kind: EntandoApp
+metadata:
+  name: {{ .Values.appName }}
+  namespace: {{ .Release.Namespace}}
+spec:
+  dbms: postgresql
+  replicas: 1
+  standardServerImage: wildfly
