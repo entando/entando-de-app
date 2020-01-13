@@ -14,8 +14,6 @@ pipelineConfig:
         steps:
           - sh: mvn versions:set -DnewVersion=$PREVIEW_VERSION
             name: set-version
-          - sh: fix-git-branches
-            name: fix-git-for-sonar
           - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}
             name: create-admin-rolebinding
           - sh: mvn-verify-pr -P${EXECUTABLE_TYPE}
@@ -31,8 +29,6 @@ pipelineConfig:
       build:
         replace: true
         steps:
-          - sh: fetch-history-by-days 30
-            name: fetch-history-for-sonar
           - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}ms
             name: create-admin-rolebinding
           - sh: mvn-deploy-release -P${EXECUTABLE_TYPE}
