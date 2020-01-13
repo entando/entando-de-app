@@ -70,6 +70,9 @@
         <test.database.serv.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
         -->
         <github.organization>entando-k8s-infrastructure</github.organization>
+        <sonar.host.url>https://sonarcloud.io</sonar.host.url>
+        <sonar.organization>${github.organization}</sonar.organization>
+        <sonar.projectKey>${github.organization}_${project.artifactId}</sonar.projectKey>
         <test.database.driver>org.apache.derby.jdbc.EmbeddedDriver</test.database.driver>
         <test.database.hostname>localhost</test.database.hostname>
         <test.database.port>1527</test.database.port>
@@ -1115,6 +1118,7 @@
                         </filesets>
                     </configuration>
                 </plugin>
+            </plugins>
         </pluginManagement>
     </build>
     <reporting>
