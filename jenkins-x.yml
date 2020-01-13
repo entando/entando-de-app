@@ -39,10 +39,3 @@ pipelineConfig:
             name: post-build
 #          - sh: run-inter-process-tests
 #            name: run-inter-process-tests
-      promote:
-        replace: true
-        steps:
-          - sh: jx step changelog --version v\$(cat ../../VERSION)
-            name: changelog
-          - sh: publish-image-info
-            name: update-image-map
