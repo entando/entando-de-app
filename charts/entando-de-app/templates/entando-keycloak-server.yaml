@@ -1,9 +1,0 @@
-apiVersion: entando.org/v1
-kind: EntandoKeycloakServer
-metadata:
-  name: {{ .Values.appName }}-keycloak
-  namespace: {{ .Release.Namespace}}
-spec:
-  dbms: none
-  isDefault: true
-  replicas: 1

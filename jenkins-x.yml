@@ -1,17 +1,12 @@
-buildPack: maven
+buildPack: maven-java11
 pipelineConfig:
   agent:
-    image: maven-graalvm
+    image: entando-jx-maven-java11
   env:
     - name: PIPELINE_CODE
-      value: qs
+      value: deap
     - name: _JAVA_OPTIONS
       value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms1000m -Xmx12000m
-    - name: ENTANDO_DEFAULT_ROUTING_SUFFIX
-      valueFrom:
-        secretKeyRef:
-          name: entando-jx-common-secret
-          key: default.routing.suffix
   pipelines:
     pullRequest:
       build:
@@ -19,39 +14,16 @@ pipelineConfig:
         steps:
           - sh: mvn versions:set -DnewVersion=$PREVIEW_VERSION
             name: set-version
-          - sh: git fetch origin
-            name: fetch-full-repo
-          - sh: >-
-              if ! kubectl get clusterrolebinding ${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}-is-admin; then
-                kubectl create clusterrolebinding ${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}-is-admin --clusterrole=cluster-admin --serviceaccount=${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}:default
-              fi
+          - sh: fix-git-branches
+            name: fix-git-for-sonar
+          - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}
             name: create-admin-rolebinding
-          - sh: >-
-              mvn clean verify sonar:sonar \
-                -Pin-process-verification -P${EXECUTABLE_TYPE} \
-                -Dsonar.login=${SONAR_TOKEN} \
-                -Dsonar.pullrequest.key=${PULL_NUMBER} \
-                -Dsonar.pullrequest.base=master \
-                -Dsonar.pullrequest.branch=${BRANCH_NAME} \
-                -Dsonar.pullrequest.provider=github \
-                -Dsonar.pullrequest.vsts.token.secured=${SONAR_GITHUB_TOKEN} \
-                -Dsonar.pullrequest.github.repository=${REPO_OWNER}/${REPO_NAME} \
-                -DautoUpdate=false \
-                -DconnectionString=${OWASPDB_URL} \
-                -DdatabasePassword=${OWASPDB_PASSWORD} \
-                -DdatabaseUser=${OWASPDB_USERNAME}
-            name: mvn-verify
+          - sh: mvn-verify-pr -P${EXECUTABLE_TYPE}
+            name: mvn-verify-pr
           - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -p ${EXECUTABLE_TYPE} -f skaffold.yaml
             name: container-build
-          - sh: >-
-              mvn verify -Pinter-process-verification \
-                -Dentando.k8s.operator.registry=${DOCKER_REGISTRY} \
-                -Dentando.k8s.operator.tests.run.target=K8S \
-                -Dentando.default.routing.suffix=${ENTANDO_DEFAULT_ROUTING_SUFFIX} \
-                -Dentando.test.namespace.override=${REPO_NAME} \
-                -Dentando.test.name.suffix=${PIPELINE_CODE}pr${PULL_NUMBER} \
-                -Dentando.test.image.version=${PREVIEW_VERSION} \
-            name: run-end-to-end-tests
+#          - sh: run-inter-process-tests
+#            name: run-inter-process-tests
       promote:
         replace: true
         steps: []
@@ -59,18 +31,22 @@ pipelineConfig:
       build:
         replace: true
         steps:
-          - sh: git fetch origin
-            name: fetch-full-repo
-          - sh: ./prepare-namespace.sh ${REPO_NAME}-${PIPELINE_CODE}ms
-            name: prepare-namespace
-          - sh:  mvn clean package -Pwildfly -Pderby docker:build
-            name: mvn-docker-build
-          - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME-wildfly:\$(cat VERSION)
+          - sh: fetch-history-by-days 30
+            name: fetch-history-for-sonar
+          - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}ms
+            name: create-admin-rolebinding
+          - sh: mvn-deploy-release -P${EXECUTABLE_TYPE}
+            name: mvn-deploy-release
+          - sh: echo "This avoids unwanted kaniko command substitution"  &&  skaffold build -p ${EXECUTABLE_TYPE} -f skaffold.yaml
+            name: container-build
+          - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)
             name: post-build
-          - sh: >-
-              kubectl run entando-smoke-test  -i -t --restart=Never \
-                --env="ENTANDO_APPBUILDER_URL=http://test-entando-${PIPELINE_CODE}ms.${ENTANDO_DEFAULT_ROUTING_SUFFIX}/app-builder/" \
-                --env="ENTANDO_ENGINE_URL=http://test-entando-${PIPELINE_CODE}ms.${ENTANDO_DEFAULT_ROUTING_SUFFIX}/entando-de-app" \
-                --image=entando/entando-smoke-tests:6.0.0 \
-                --command -- mvn verify -Dtags=login-tests \
-            name: run-end-to-end-tests
+#          - sh: run-inter-process-tests
+#            name: run-inter-process-tests
+      promote:
+        replace: true
+        steps:
+          - sh: jx step changelog --version v\$(cat ../../VERSION)
+            name: changelog
+          - sh: publish-image-info
+            name: update-image-map
