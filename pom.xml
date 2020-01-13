@@ -227,12 +227,12 @@
             <type>war</type>
         </dependency>
 
-<!--Temporarily add the PAM plugin so the old widgets are present -->
+        <!--Temporarily add the PAM plugin so the old widgets are present -->
         <dependency>
-           <groupId>org.entando.entando.plugins</groupId>
-           <artifactId>entando-plugin-jpkiebpm</artifactId>
-           <version>${entando.version}</version>
-           <type>war</type>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpkiebpm</artifactId>
+            <version>${entando.version}</version>
+            <type>war</type>
         </dependency>
 
     </dependencies>
@@ -363,7 +363,10 @@
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
 
                 <!-- DB work required from the server image. Create the template Derby databases -->
-                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war --jetty-version=${jetty.version}</server.init.command>
+                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh
+                    --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war
+                    --jetty-version=${jetty.version}
+                </server.init.command>
             </properties>
         </profile>
         <profile>
@@ -373,7 +376,9 @@
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-postgresql95-base</db.base.image>
-                <db.init.command>$STI_SCRIPTS_PATH/init-postgresql-from-war.sh --war-file=/tmp/${project.build.finalName}.war --jetty-version=${jetty.version}</db.init.command>
+                <db.init.command>$STI_SCRIPTS_PATH/init-postgresql-from-war.sh
+                    --war-file=/tmp/${project.build.finalName}.war --jetty-version=${jetty.version}
+                </db.init.command>
                 <db.volume.mount.path>/var/lib/pgsql/data</db.volume.mount.path>
                 <db.server.port>5432</db.server.port>
 
@@ -404,7 +409,9 @@
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-mysql57-base</db.base.image>
-                <db.init.command>$STI_SCRIPTS_PATH/init-mysql-from-war.sh --war-file=/tmp/${project.build.finalName}.war --jetty-version=${jetty.version} </db.init.command>
+                <db.init.command>$STI_SCRIPTS_PATH/init-mysql-from-war.sh --war-file=/tmp/${project.build.finalName}.war
+                    --jetty-version=${jetty.version}
+                </db.init.command>
                 <db.volume.mount.path>/var/lib/mysql/data</db.volume.mount.path>
                 <db.server.port>3306</db.server.port>
 
@@ -1082,12 +1089,19 @@
                     </dependency>
                 </dependencies>
             </plugin>
-        
-      <plugin>
-        <groupId>org.apache.maven.plugins</groupId>
-        <artifactId>maven-deploy-plugin</artifactId>
-        <version>2.8.2</version></plugin>
-    </plugins>
+
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-deploy-plugin</artifactId>
+                <version>2.8.2</version>
+            </plugin>
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-site-plugin</artifactId>
+                <version>3.8.2</version>
+            </plugin>
+
+        </plugins>
         <pluginManagement>
             <plugins>
                 <plugin>
