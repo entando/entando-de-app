@@ -19,7 +19,7 @@ pipelineConfig:
           - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}
             name: create-admin-rolebinding
           - sh: mvn-verify-pr -P${EXECUTABLE_TYPE}
-            name: mvn-verify-pr
+            name: mvn clean verify
           - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -p ${EXECUTABLE_TYPE} -f skaffold.yaml
             name: container-build
 #          - sh: run-inter-process-tests
@@ -36,7 +36,7 @@ pipelineConfig:
           - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}ms
             name: create-admin-rolebinding
           - sh: mvn-deploy-release -P${EXECUTABLE_TYPE}
-            name: mvn-deploy-release
+            name: mvn clean package
           - sh: echo "This avoids unwanted kaniko command substitution"  &&  skaffold build -p ${EXECUTABLE_TYPE} -f skaffold.yaml
             name: container-build
           - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)
