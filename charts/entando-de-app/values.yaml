@@ -4,5 +4,5 @@
 app:
   replicaCount: 1
   name: entando-de-app
-  repository: draft
-  tag: dev
+  repository: docker-registry.default.svc:5000/entando/entando-de-app
+  tag: 6.0.6
