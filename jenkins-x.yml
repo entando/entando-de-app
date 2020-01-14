@@ -5,6 +5,8 @@ pipelineConfig:
   env:
     - name: PIPELINE_CODE
       value: deap
+    - name: JEE_SERVER
+      value: wildfly
     - name: _JAVA_OPTIONS
       value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms1000m -Xmx12000m
   pipelines:
@@ -18,7 +20,7 @@ pipelineConfig:
             name: create-admin-rolebinding
           - sh: mvn clean verify
             name: mvn-verify
-          - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -f skaffold.yaml
+          - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -p ${JEE_SERVER} -f skaffold.yaml
             name: container-build
 #          - sh: run-inter-process-tests
 #            name: run-inter-process-tests
@@ -33,7 +35,7 @@ pipelineConfig:
             name: create-admin-rolebinding
           - sh: mvn clean package
             name: mvn-build
-          - sh: echo "This avoids unwanted kaniko command substitution"  &&  skaffold build -f skaffold.yaml
+          - sh: echo "This avoids unwanted kaniko command substitution"  &&  skaffold build -p ${JEE_SERVER} -f skaffold.yaml
             name: container-build
           - sh: jx step post build --image $DOCKER_REGISTRY/$ORG/$APP_NAME:\$(cat VERSION)
             name: post-build

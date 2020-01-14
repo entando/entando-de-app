@@ -1,0 +1,3 @@
+FROM entando/entando-eap71-base:6.0.0
+COPY target/*.war /opt/eap/standalone/deployments/
+#RUN $ENTANDO_COMMON_PATH/init-derby-from-war.sh
