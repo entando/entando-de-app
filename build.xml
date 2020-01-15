@@ -1,7 +1,0 @@
-<project name="entando-de-app" default="WAR-build" basedir=".">
-	<description>entando-de-app - Build file</description>
-	
-	<import file="buildProperties.xml"/>
-	<import file="buildTasks.xml"/>
-	
-</project>

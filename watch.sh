@@ -1,3 +1,4 @@
+
 #!/usr/bin/env bash
 
 # watch the java files and continously deploy the service

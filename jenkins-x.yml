@@ -16,8 +16,6 @@ pipelineConfig:
         steps:
           - sh: mvn versions:set -DnewVersion=$PREVIEW_VERSION
             name: set-version
-          - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}pr${PULL_NUMBER}
-            name: create-admin-rolebinding
           - sh: mvn clean verify
             name: mvn-verify
           - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -p ${JEE_SERVER} -f skaffold.yaml
@@ -31,8 +29,6 @@ pipelineConfig:
       build:
         replace: true
         steps:
-          - sh: prepare-permissions ${REPO_NAME}-${PIPELINE_CODE}ms
-            name: create-admin-rolebinding
           - sh: mvn clean package
             name: mvn-build
           - sh: echo "This avoids unwanted kaniko command substitution"  &&  skaffold build -p ${JEE_SERVER} -f skaffold.yaml
