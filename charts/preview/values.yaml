@@ -1,14 +1,15 @@
 
 preview:
+  prepareInfrastructure: true
   app:
-    repository: docker-registry.default.svc:5000/entando/entando-de-app
+    repository: docker.io/entando/entando-de-app
     tag: 6.0.8
-    pullPolicy: IfNotPresent
-  entando-operator:
+  operator:
+    deployLocally: true
     env:
-      ENTANDO_DOCKER_IMAGE_VERSION_DEFAULT: 6.0.0
-      ENTANDO_DOCKER_REGISTRY_OVERRIDE: docker-registry.default.svc:5000
-      ENTANDO_DOCKER_IMAGE_NAMESPACE_OVERRIDE: entando
+      ENTANDO_DOCKER_IMAGE_VERSION_FALLBACK: 6.0.0
+      ENTANDO_DOCKER_REGISTRY_OVERRIDE: docker.io
+      ENTANDO_DOCKER_IMAGE_ORG_OVERRIDE: entando
       ENTANDO_DEFAULT_ROUTING_SUFFIX: apps.serv.run
       ENTANDO_POD_READINESS_TIMEOUT_SECONDS: "600"
       ENTANDO_POD_COMPLETION_TIMEOUT_SECONDS: "600"

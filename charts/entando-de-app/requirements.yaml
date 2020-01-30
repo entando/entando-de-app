@@ -1,0 +1,6 @@
+dependencies:
+- alias: operator
+  name: entando-k8s-controller-coordinator
+  repository: https://chartmuseum-jx.apps.serv.run
+  version: 6.0.50
+  condition: operator.deployLocally

@@ -19,6 +19,7 @@ spec:
       metadata:
         name: "{{ .Values.app.name }}-eci"
       spec:
+        dbms: postgresql
         replicas: 1
         isDefault: true
     - kind: "EntandoApp"
@@ -28,6 +29,6 @@ spec:
         name: "{{ .Values.app.name }}"
       spec:
         dbms: postgresql
-        replicas: {{ .Values.app.replicaCount }}
-        customServerImage: "{{ .Values.app.repository }}:{{ .Values.app.tag }}"
+        replicas: 1
+        standardServerImage: wildfly
         ingressPath: /entando-de-app

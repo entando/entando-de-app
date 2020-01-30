@@ -8,7 +8,7 @@ entandoStatus:
   entandoDeploymentPhase: "requested"
 spec:
   components:
-{{- if }}
+{{- if .Values.prepareInfrastructure }}
     - kind: "EntandoKeycloakServer"
       metadata:
         name: "{{ .Values.app.name }}-kc"
@@ -20,9 +20,9 @@ spec:
       metadata:
         name: "{{ .Values.app.name }}-eci"
       spec:
+        dbms: postgresql
         replicas: 1
         isDefault: true
-{{- else }}
 {{- end }}
     - kind: "EntandoApp"
       metadata:
