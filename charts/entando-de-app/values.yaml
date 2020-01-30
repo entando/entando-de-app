@@ -11,5 +11,3 @@ app:
   name: entando-de-app
   webContext: "/entando-de-app"
   replicaCount: 1
-
-
