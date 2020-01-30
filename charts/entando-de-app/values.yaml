@@ -6,8 +6,8 @@ operator:
   deployLocally: false
 prepareInfrastructure: false
 app:
-  repository: draft
-  tag: dev
+  repository: docker.io/entando/entando-de-app
+  tag: 6.0.17
   name: entando-de-app
   webContext: "/entando-de-app"
   replicaCount: 1
