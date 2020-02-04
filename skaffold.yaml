@@ -31,7 +31,7 @@ profiles:
         template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.DIGEST_HEX}}'
     local: {}
   deploy:
-    helm:N
+    helm:
       releases:
       - name: entando-de-app
         chartPath: charts/entando-de-app

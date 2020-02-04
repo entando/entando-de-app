@@ -40,10 +40,10 @@ pipelineConfig:
               - sh: jx step post build --image $DOCKER_REGISTRY/${ORG}/${APP_NAME}-${JEE_SERVER}:\$(cat VERSION)
                 name: post-build
               - dir: charts/preview
-                steps:
-                  - sh: make preview
-                    name: make-preview
-                  - sh: jx preview --name ${REPO_NAME}-${JEE_SERVER}-${PIPELINE_CODE}ms --app $APP_NAME --dir ../.. --namespace ${REPO_NAME}-${JEE_SERVER}-${PIPELINE_CODE}ms
-                    name: jx-preview
+                sh: make preview
+                name: make-preview
+              - dir: charts/preview
+                sh: jx preview --name ${REPO_NAME}-${JEE_SERVER}-${PIPELINE_CODE}ms --app $APP_NAME --dir ../.. --namespace ${REPO_NAME}-${JEE_SERVER}-${PIPELINE_CODE}ms
+                name: jx-preview
 #          - sh: run-inter-process-tests
 #            name: run-inter-process-tests
