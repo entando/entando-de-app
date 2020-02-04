@@ -1,6 +1,0 @@
-dependencies:
-- name: entando-de-app
-  repository: file://../entando-de-app
-  version: 0.1.0
-digest: sha256:5b2760e733f989cefc158a2d5fb11d8eb3fcea5ee47718b926be79dacc020ef3
-generated: "2020-01-14T13:31:08.705866171+02:00"

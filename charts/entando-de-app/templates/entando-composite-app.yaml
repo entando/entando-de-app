@@ -13,7 +13,7 @@ spec:
       metadata:
         name: "{{ .Values.app.name }}-kc"
       spec:
-        dbms: none
+        dbms: postgresql
         isDefault: true
         replicas: 1
     - kind: "EntandoClusterInfrastructure"
