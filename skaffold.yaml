@@ -12,6 +12,18 @@ build:
 deploy:
   kubectl: {}
 profiles:
+- name: eap
+  build:
+    artifacts:
+    - image: entando/entando-de-app-eap
+      docker:
+        dockerfile: Dockerfile.eap
+- name: wildfly
+  build:
+    artifacts:
+    - image: entando/entando-de-app-wildfly
+      docker:
+        dockerfile: Dockerfile.wildfly
 - name: dev
   build:
     tagPolicy:
@@ -19,7 +31,7 @@ profiles:
         template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.DIGEST_HEX}}'
     local: {}
   deploy:
-    helm:
+    helm:N
       releases:
       - name: entando-de-app
         chartPath: charts/entando-de-app
