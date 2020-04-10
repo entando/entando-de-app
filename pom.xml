@@ -226,14 +226,6 @@
             <type>war</type>
         </dependency>
 
-        <!--Temporarily add the PAM plugin so the old widgets are present -->
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpkiebpm</artifactId>
-            <version>${entando.version}</version>
-            <type>war</type>
-        </dependency>
-
     </dependencies>
 
     <profiles>
