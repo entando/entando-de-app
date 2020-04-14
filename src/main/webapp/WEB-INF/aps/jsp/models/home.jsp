@@ -35,7 +35,7 @@
                     <p><strong>Default Password:</strong> adminadmin</p>
                 </div>
                 
-                <a href="<wp:info key="systemParam" paramName="applicationBaseURL" />do/login" class="btn btn-login">
+                <a href="<jstl:url value="/do/login"/>" class="btn btn-login">
                     GO TO LOG IN PAGE
                 </a>
 
