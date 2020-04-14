@@ -44,7 +44,7 @@
                     <a href="http://github.com/entando/" target="_blank"><img src="<wp:resourceURL />administration/img/github.png"></a>
                     <a href="https://twitter.com/entando" target="_blank"><img src="<wp:resourceURL />administration/img/twitter.png"></a>
                 </div>
-                <div class="copyright-entando">Copyright 2020 <span class="entando-sm-write">Entando</span></div>
+                <div class="copyright-entando">Copyright <%= new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()) %>&nbsp;<span class="entando-sm-write">Entando</span></div>
             </div>
         </div>
     </body>
