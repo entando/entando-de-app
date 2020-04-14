@@ -1,4 +1,5 @@
 <%@ taglib prefix="wp" uri="/aps-core" %>
+<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
 <!DOCTYPE html>
 <html lang="<wp:info key="currentLang" />">
     <head>
