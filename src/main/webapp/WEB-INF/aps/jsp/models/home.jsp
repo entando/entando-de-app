@@ -20,7 +20,7 @@
         <div class="container e6-home-container">
             <div>
                 <div class="logo-entando-top">
-                    <img class="logo-entando-login" src="<wp:resourceURL />administration/img/login-logo.svg" />
+                    <img class="logo-entando-login" src="<wp:resourceURL />administration/img/login-logo.svg" alt="Entando 6" />
                 </div>
                 <div class="ux_brand-lp">The Entando <wp:info key="systemParam" paramName="version" /> has been successfully installed</div>
                 <div class="entando-intro lgfont">
@@ -40,9 +40,9 @@
                 </a>
 
                 <div id="social-link">
-                    <a href="http://www.entando.com" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/entando_icon.png"></a>
-                    <a href="http://github.com/entando/" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/github.png"></a>
-                    <a href="https://twitter.com/entando" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/twitter.png"></a>
+                    <a href="http://www.entando.com" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/entando_icon.png" alt="Entando" /></a>
+                    <a href="http://github.com/entando/" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/github.png" alt="Entando on Github" /></a>
+                    <a href="https://twitter.com/entando" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/twitter.png" alt="Entando on Twitter" /></a>
                 </div>
                 <div class="copyright-entando">Copyright <%= new java.text.SimpleDateFormat("yyyy").format(new java.util.Date()) %>&nbsp;<span class="entando-sm-write">Entando</span></div>
             </div>
