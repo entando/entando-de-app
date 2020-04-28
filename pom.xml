@@ -292,24 +292,6 @@
             </properties>
         </profile>
         <profile>
-            <id>tomcat</id>
-            <properties>
-                <!--Image configuration -->
-                <skipDocker>false</skipDocker>
-                <skipAppBuilderImage>false</skipAppBuilderImage>
-                <jee.server>tomcat</jee.server>
-
-                <entando.engine.address>${docker.host.address}</entando.engine.address>
-                <app.builder.depends.on>${project.artifactId}-engine</app.builder.depends.on>
-
-                <skipServerImage>false</skipServerImage>
-                <jboss.home.in.image>none</jboss.home.in.image>
-                <server.base.image>entando-tomcat85-base</server.base.image>
-
-                <derby.base.folder>/entando-data/databases</derby.base.folder>
-            </properties>
-        </profile>
-        <profile>
             <id>jetty-container</id>
             <properties>
                 <!--Image configuration -->
@@ -497,7 +479,7 @@
                             <alias>${project.artifactId}-dbms</alias>
                             <build>
                                 <skip>${skipDatabaseImage}</skip>
-                                <from>entando/${db.base.image}:5.2.0</from>
+                                <from>entando/${db.base.image}:6.1.0</from>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
                                     <targetDir>/tmp</targetDir>
