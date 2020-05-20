@@ -93,12 +93,22 @@
         <postgres.driver.version>9.4.1212</postgres.driver.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
         <jetty.version>9.4.8.v20180619</jetty.version>
+
+        <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
         <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
         <keycloak.realm>entando</keycloak.realm>
         <keycloak.client.id>entando-app</keycloak.client.id>
         <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
+
+        <!-- CORS Configuration -->
+        <cors.enabled>true</cors.enabled>
+        <cors.access.control.allow.origin>*</cors.access.control.allow.origin>
+        <cors.access.control.allow.headers>Content-Type, Authorization</cors.access.control.allow.headers>
+        <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
+        <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
+        <cors.access.control.maxAge>3600</cors.access.control.maxAge>
     </properties>
     <dependencies>
         <dependency>
@@ -244,6 +254,9 @@
                 <appbuilder.port>5000</appbuilder.port>
                 <entando.engine.port>8080</entando.engine.port>
                 <db.server.local.port>${db.server.port}</db.server.local.port>
+
+                <cors.access.control.allow.origin>http://localhost:3000</cors.access.control.allow.origin>
+                <cors.access.control.allow.credentials>true</cors.access.control.allow.credentials>
             </properties>
         </profile>
         <profile>
@@ -566,6 +579,12 @@
                                     <KEYCLOAK_CLIENT_ID>${keycloak.client.id}</KEYCLOAK_CLIENT_ID>
                                     <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
                                     <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
+                                    <CORS_ENABLED>${cors.enabled}</CORS_ENABLED>
+                                    <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}</CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
+                                    <CORS_ACCESS_CONTROL_ALLOW_HEADERS>${cors.access.control.allow.headers}</CORS_ACCESS_CONTROL_ALLOW_HEADERS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_METHODS>${cors.access.control.allow.methods}</CORS_ACCESS_CONTROL_ALLOW_METHODS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>${cors.access.control.allow.credentials}</CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
+                                    <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}</CORS_ACCESS_CONTROL_MAX_AGE>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -601,6 +620,12 @@
                                     <KEYCLOAK_CLIENT_ID>${keycloak.client.id}</KEYCLOAK_CLIENT_ID>
                                     <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
                                     <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
+                                    <CORS_ENABLED>${cors.enabled}</CORS_ENABLED>
+                                    <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}</CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
+                                    <CORS_ACCESS_CONTROL_ALLOW_HEADERS>${cors.access.control.allow.headers}</CORS_ACCESS_CONTROL_ALLOW_HEADERS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_METHODS>${cors.access.control.allow.methods}</CORS_ACCESS_CONTROL_ALLOW_METHODS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>${cors.access.control.allow.credentials}</CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
+                                    <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}</CORS_ACCESS_CONTROL_MAX_AGE>
                                 </env>
                                 <dependsOn>
                                     <container>${entando.engine.depends.on}</container>
@@ -1018,6 +1043,30 @@
                         <systemProperty>
                             <name>keycloak.public.client.id</name>
                             <value>${keycloak.public.client.id}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>cors.enabled</name>
+                            <value>${cors.enabled}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>cors.access.control.allow.origin</name>
+                            <value>${cors.access.control.allow.origin}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>cors.access.control.allow.methods</name>
+                            <value>${cors.access.control.allow.methods}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>cors.access.control.allow.headers</name>
+                            <value>${cors.access.control.allow.headers}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>cors.access.control.allow.credentials</name>
+                            <value>${cors.access.control.allow.credentials}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>cors.access.control.maxAge</name>
+                            <value>${cors.access.control.maxAge}</value>
                         </systemProperty>
                     </systemProperties>
                 </configuration>
