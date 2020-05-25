@@ -103,7 +103,6 @@
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
 
         <!-- CORS Configuration -->
-        <cors.enabled>true</cors.enabled>
         <cors.access.control.allow.origin>*</cors.access.control.allow.origin>
         <cors.access.control.allow.headers>Content-Type, Authorization</cors.access.control.allow.headers>
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
