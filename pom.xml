@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.1.1</version>
+    <version>6.1.16</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -329,14 +329,14 @@
                 <skipDatabaseImage>true</skipDatabaseImage>
                 <entando.engine.depends.on></entando.engine.depends.on>
                 <!--DB connection properties-->
-                <portdb.database>portdb</portdb.database>
+                <portdb.database>entandoPort</portdb.database>
                 <portdb.url>jdbc:derby:${derby.base.folder}/${portdb.database};create=true</portdb.url>
                 <portdb.username>agile</portdb.username>
                 <portdb.password>agile</portdb.password>
                 <portdb.driverClassName>org.apache.derby.jdbc.EmbeddedDriver</portdb.driverClassName>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
 
-                <servdb.database>servdb</servdb.database>
+                <servdb.database>entandoServ</servdb.database>
                 <servdb.url>jdbc:derby:${derby.base.folder}/${servdb.database};create=true</servdb.url>
                 <servdb.username>agile</servdb.username>
                 <servdb.password>agile</servdb.password>
