@@ -329,7 +329,7 @@
                 <skipDatabaseImage>true</skipDatabaseImage>
                 <entando.engine.depends.on></entando.engine.depends.on>
                 <!--DB connection properties-->
-                <portdb.database>entandoPort;</portdb.database>
+                <portdb.database>entandoPort</portdb.database>
                 <portdb.url>jdbc:derby:${derby.base.folder}/${portdb.database};create=true</portdb.url>
                 <portdb.username>agile</portdb.username>
                 <portdb.password>agile</portdb.password>
