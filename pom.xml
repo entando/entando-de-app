@@ -108,6 +108,9 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
+
+        <!-- CSRF Configuration -->
+        <csrf.enabled>false</csrf.enabled>
     </properties>
     <dependencies>
         <dependency>
@@ -1066,6 +1069,10 @@
                         <systemProperty>
                             <name>cors.access.control.maxAge</name>
                             <value>${cors.access.control.maxAge}</value>
+                        </systemProperty>
+                        <systemProperty>
+                            <name>csrf.enabled</name>
+                            <value>${csrf.enabled}</value>
                         </systemProperty>
                     </systemProperties>
                 </configuration>
