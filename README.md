@@ -46,3 +46,13 @@ Setup Keycloak
     - Install lightweight instance
 Deploy Entando App itself
 Point to ...       
+
+## CSRF Protection
+CSRF is disabled by default. To enable it, change the following configuration in the pom.xml file to:
+```
+<csrf.enabled>true</csrf.enabled>
+```
+The CSRF protection strategy used by entando-de-app is based on a CSRF token inserted into all forms. 
+This CSRF token is sent to the front-end through a cookie named **XSRF-TOKEN** and this token is expected back as parameter named **_csrf**.
+
+Be aware that any customized form created by the user will need to send this CSRF token, otherwise a HTTP 403 Forbidden error will be received. 
