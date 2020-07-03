@@ -33,6 +33,16 @@
     </distributionManagement>
     <repositories>
         <repository>
+            <id>jx-releases</id>
+            <url>https://nexus-jx.apps.serv.run/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+        <repository>
             <id>sonatype-snapshots</id>
             <url>https://oss.sonatype.org/content/repositories/snapshots</url>
             <releases>
@@ -88,9 +98,9 @@
         <autoCreateNetwork>true</autoCreateNetwork>
         <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
         <entando.version>6.2.0-SNAPSHOT</entando.version>
-        <spring.version>5.1.8.RELEASE</spring.version>
-        <struts2.version>2.5.17</struts2.version>
-        <postgres.driver.version>9.4.1212</postgres.driver.version>
+        <entando-engine.version>6.2.7</entando-engine.version>
+        <entando-admin-console.version>6.2.8</entando-admin-console.version>
+        <entando-portal-ui.version>6.2.3</entando-portal-ui.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
         <jetty.version>9.4.8.v20180619</jetty.version>
 
@@ -108,34 +118,52 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
+        <entando-app-view-cms-default.version>6.2.3</entando-app-view-cms-default.version>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.entando</groupId>
+                <artifactId>entando-core-parent</artifactId>
+                <version>6.2.10</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-engine</artifactId>
-            <version>${entando.version}</version>
+            <version>${entando-engine.version}</version>
             <type>jar</type>
-            <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-engine</artifactId>
-            <version>${entando.version}</version>
+            <version>${entando-engine.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-admin-console</artifactId>
-            <version>${entando.version}</version>
-            <type>jar</type>
+            <version>${entando-admin-console.version}</version>
             <scope>provided</scope>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-admin-console</artifactId>
-            <version>${entando.version}</version>
+            <version>${entando-admin-console.version}</version>
             <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando</groupId>
+            <artifactId>entando-admin-console</artifactId>
+            <version>${entando-admin-console.version}</version>
+            <type>test-jar</type>
+            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
@@ -145,48 +173,44 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
-            <artifactId>entando-admin-console</artifactId>
-            <version>${entando.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
             <artifactId>entando-portal-ui</artifactId>
-            <version>${entando.version}</version>
-            <type>jar</type>
+            <version>${entando-portal-ui.version}</version>
             <scope>provided</scope>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-portal-ui</artifactId>
-            <version>${entando.version}</version>
+            <version>${entando-portal-ui.version}</version>
             <type>war</type>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-portal-ui</artifactId>
-            <version>${entando.version}</version>
+            <version>${entando-portal-ui.version}</version>
             <type>test-jar</type>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.bundles.app-view</groupId>
+            <artifactId>entando-app-view-cms-default</artifactId>
+            <version>${entando-app-view-cms-default.version}</version>
+            <type>war</type>
         </dependency>
 
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -198,37 +222,22 @@
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
-            <version>10.9.1.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
-            <version>10.9.1.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.bytebuddy</groupId>
-            <artifactId>byte-buddy</artifactId>
-            <version>1.9.10</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
-            <version>2.5.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.bundles.app-view</groupId>
-            <artifactId>entando-app-view-cms-default</artifactId>
-            <version>${entando.version}</version>
-            <type>war</type>
         </dependency>
 
     </dependencies>
@@ -806,6 +815,7 @@
                                 </artifactItem>
                             </artifactItems>
                             <includes>WEB-INF/aps/jsp/internalservlet/api/**/*.jsp</includes>
+                            <excludes>WEB-INF/lib/*.*</excludes>
                         </configuration>
                     </execution>
                     <!--					<execution>
@@ -839,7 +849,6 @@
                 <version>3.2.2</version>
                 <configuration>
                     <!-- This is explicitly declared in project deps.-->
-                    <dependentWarExcludes>WEB-INF/lib/byte-buddy-*.jar</dependentWarExcludes>
                     <webResources>
                         <resource>
                             <directory>src/main/tld</directory>
@@ -862,6 +871,44 @@
                     <filters>
                         <filter>${*}</filter>
                     </filters>
+                    <overlays>
+                        <overlay>
+                            <groupId>org.entando.entando</groupId>
+                            <artifactId>entando-admin-console</artifactId>
+                            <excludes>
+                                <exclude>
+                                    WEB-INF/lib/entando-engine*.jar
+                                </exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando</groupId>
+                            <artifactId>entando-portal-ui</artifactId>
+                            <excludes>
+                                <exclude>
+                                    WEB-INF/lib/entando-admin-console*.jar
+                                </exclude>
+                                <exclude>
+                                    WEB-INF/lib/entando-engine*.jar
+                                </exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.bundles.app-view</groupId>
+                            <artifactId>entando-app-view-cms-default</artifactId>
+                            <excludes>
+                                <exclude>
+                                    WEB-INF/lib/entando-admin-console*.jar
+                                </exclude>
+                                <exclude>
+                                    WEB-INF/lib/entando-portal-ui*.jar
+                                </exclude>
+                                <exclude>
+                                    WEB-INF/lib/entando-engine*.jar
+                                </exclude>
+                            </excludes>
+                        </overlay>
+                    </overlays>
                 </configuration>
             </plugin>
             <plugin>
@@ -939,6 +986,7 @@
                         <defaultsDescriptor>${basedir}/src/main/jetty/webdefault.xml</defaultsDescriptor>
                         <contextPath>/${project.artifactId}</contextPath>
                         <jettyEnvXml>${project.basedir}/src/main/jetty/jetty-env.xml</jettyEnvXml>
+<!--                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>-->
                     </webApp>
                     <systemProperties>
                         <systemProperty>
