@@ -80,7 +80,7 @@
         <test.database.password>agile</test.database.password>
         <test.database.port.url>jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testPort;create=true</test.database.port.url>
         <test.database.serv.url>jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true</test.database.serv.url>
-        <docker.host.address>172.17.0.1</docker.host.address>
+        <docker.host.address>localhost</docker.host.address>
         <env.db.environment>production</env.db.environment>
         <entando.engine.web.context>${project.build.finalName}</entando.engine.web.context>
         <skipDocker>true</skipDocker>
@@ -96,10 +96,10 @@
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
-        <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
+        <keycloak.auth.url>http://localhost:8180/auth</keycloak.auth.url>
         <keycloak.realm>entando</keycloak.realm>
         <keycloak.client.id>entando-app</keycloak.client.id>
-        <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
+        <keycloak.client.secret>dee897c4-33e4-4747-9d2d-be82a7784980</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
 
         <!-- CORS Configuration -->
@@ -351,7 +351,7 @@
             <id>postgresql</id>
             <properties>
                 <db.vendor>postgresql</db.vendor>
-                <skipDatabaseImage>false</skipDatabaseImage>
+                <skipDatabaseImage>true</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-postgresql95-base</db.base.image>
                 <db.init.command>$STI_SCRIPTS_PATH/init-postgresql-from-war.sh --war-file=/tmp/${project.build.finalName}.war --jetty-version=${jetty.version}</db.init.command>
@@ -360,15 +360,15 @@
 
                 <portdb.database>portdb</portdb.database>
                 <portdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${portdb.database}</portdb.url>
-                <portdb.username>portdbuser</portdb.username>
-                <portdb.password>portdb123</portdb.password>
+                <portdb.username>agile</portdb.username>
+                <portdb.password>agile</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>org.postgresql.Driver</portdb.driverClassName>
 
                 <servdb.database>servdb</servdb.database>
                 <servdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${servdb.database}</servdb.url>
-                <servdb.username>servdbuser</servdb.username>
-                <servdb.password>servdb123</servdb.password>
+                <servdb.username>agile</servdb.username>
+                <servdb.password>agile</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
                 <servdb.driverClassName>org.postgresql.Driver</servdb.driverClassName>
 
