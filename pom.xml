@@ -50,6 +50,7 @@
         <entando-plugin-jpversioning.version>6.2.3</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.2.2</entando-plugin-jpseo.version>
         <entando-plugin-jpmail.version>6.2.2</entando-plugin-jpmail.version>
+        <entando-plugin-jpcontentscheduler.version>6.2.2</entando-plugin-jpcontentscheduler.version>
         <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
@@ -236,6 +237,24 @@
                 <version>${entando-plugin-jpmail.version}</version>
                 <type>war</type>
             </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                <version>${entando-plugin-jpcontentscheduler.version}</version>
+                <classifier>classes</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.entando.entando.plugins</groupId>
+                        <artifactId>entando-plugin-jacms</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                <version>${entando-plugin-jpcontentscheduler.version}</version>
+                <type>war</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -274,6 +293,11 @@
             <classifier>classes</classifier>
         </dependency>
         <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <scope>provided</scope>
@@ -307,6 +331,11 @@
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpmail</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
             <type>war</type>
         </dependency>
         <dependency>
@@ -1030,6 +1059,13 @@
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpmail</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/lib/*.jar</exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                             <excludes>
                                 <exclude>WEB-INF/lib/*.jar</exclude>
                             </excludes>
