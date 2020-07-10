@@ -49,6 +49,7 @@
         <entando-plugin-jacms.version>6.2.8</entando-plugin-jacms.version>
         <entando-plugin-jpversioning.version>6.2.3</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.2.2</entando-plugin-jpseo.version>
+        <entando-plugin-jpmail.version>6.2.2</entando-plugin-jpmail.version>
         <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
@@ -211,7 +212,30 @@
                     </exclusion>
                 </exclusions>
             </dependency>
-
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpseo</artifactId>
+                <version>${entando-plugin-jpseo.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <version>${entando-plugin-jpmail.version}</version>
+                <classifier>classes</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.entando.entando.plugins</groupId>
+                        <artifactId>entando-plugin-jacms</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <version>${entando-plugin-jpmail.version}</version>
+                <type>war</type>
+            </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
@@ -245,6 +269,11 @@
             <classifier>classes</classifier>
         </dependency>
         <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpmail</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
             <scope>provided</scope>
@@ -268,6 +297,16 @@
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-keycloak-auth</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpseo</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpmail</artifactId>
             <type>war</type>
         </dependency>
         <dependency>
@@ -704,7 +743,6 @@
                                 <env>
                                     <PORTDB_USERNAME>${portdb.username}</PORTDB_USERNAME>
                                     <PORTDB_PASSWORD>${portdb.password}</PORTDB_PASSWORD>
-                                    <PORTDB_PASSWORD>${portdb.password}</PORTDB_PASSWORD>
                                     <PORTDB_URL>${portdb.url}</PORTDB_URL>
                                     <PORTDB_JNDI>${portdb.jndi}</PORTDB_JNDI>
                                     <SERVDB_USERNAME>${servdb.username}</SERVDB_USERNAME>
@@ -978,6 +1016,20 @@
                         <overlay>
                             <groupId>org.entando.entando</groupId>
                             <artifactId>entando-portal-ui</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/lib/*.jar</exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpseo</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/lib/*.jar</exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpmail</artifactId>
                             <excludes>
                                 <exclude>WEB-INF/lib/*.jar</exclude>
                             </excludes>
