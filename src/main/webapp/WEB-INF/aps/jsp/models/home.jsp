@@ -1,5 +1,6 @@
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="wp" uri="/aps-core" %>
-<%@ taglib prefix="jstl" uri="http://java.sun.com/jsp/jstl/core" %>
+
 <!DOCTYPE html>
 <html lang="<wp:info key="currentLang" />">
     <head>
@@ -15,6 +16,12 @@
         <script src="<wp:resourceURL />administration/js/jquery-2.2.4.min.js"></script>
         <script src="<wp:resourceURL />administration/bootstrap/js/bootstrap.min.js"></script>
     </head>
+
+    <c:set var="appBuilderIntegrationEnabled" ><wp:info key="systemParam" paramName="appBuilderIntegrationEnabled" /></c:set>
+    <c:set var="appBuilderBaseURL" ><wp:info key="systemParam" paramName="appBuilderBaseURL" /></c:set>
+    <c:set var="version" ><wp:info key="systemParam" paramName="version" /></c:set>
+    <c:set var = "appBuilderVersion"><c:out value="${version.replaceAll('.([^.]+)$', '')}"/></c:set>
+
     <body id="background-full-e6">
 
         <div class="container e6-home-container">
@@ -22,7 +29,7 @@
                 <div class="logo-entando-top">
                     <img class="logo-entando-login" src="<wp:resourceURL />administration/img/login-logo.svg" alt="Entando 6" />
                 </div>
-                <div class="ux_brand-lp">The Entando <wp:info key="systemParam" paramName="version" /> has been successfully installed</div>
+                <div class="ux_brand-lp">The Entando <c:out value="${appBuilderVersion}" /> has been successfully installed</div>
                 <div class="entando-intro lgfont">
                     This is the default page after installing Entando successfully.
                 </div>
@@ -34,10 +41,20 @@
                     <p><strong>Default Username:</strong> admin</p>
                     <p><strong>Default Password:</strong> adminadmin</p>
                 </div>
-                
-                <a href="<jstl:url value="/do/login"/>" class="btn btn-login">
-                    GO TO LOG IN PAGE
-                </a>
+
+                <c:choose>
+                    <c:when test = "${appBuilderIntegrationEnabled == 'true'}">
+                        <a href='<c:out value="${appBuilderBaseURL}"/>' class="btn btn-login">
+                            GO TO LOG IN PAGE
+                        </a>
+                    </c:when>
+
+                    <c:otherwise>
+                        <a href="<c:url value="/do/login"/>" class="btn btn-login">
+                            GO TO LOG IN PAGE
+                        </a>
+                    </c:otherwise>
+                </c:choose>
 
                 <div id="social-link">
                     <a href="http://www.entando.com" target="_blank" rel="noopener noreferrer"><img src="<wp:resourceURL />administration/img/entando_icon.png" alt="Entando" /></a>
