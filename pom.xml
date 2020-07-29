@@ -43,12 +43,12 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.2.21</entando-engine.version>
+        <entando-engine.version>6.2.23</entando-engine.version>
         <entando-admin-console.version>6.2.23</entando-admin-console.version>
         <entando-portal-ui.version>6.2.5</entando-portal-ui.version>
         <entando-plugin-jacms.version>6.2.13</entando-plugin-jacms.version>
         <entando-plugin-jpversioning.version>6.2.4</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.2.5</entando-plugin-jpseo.version>
+        <entando-plugin-jpseo.version>6.2.6</entando-plugin-jpseo.version>
         <entando-plugin-jpmail.version>6.2.3</entando-plugin-jpmail.version>
         <entando-plugin-jpcontentscheduler.version>6.2.3</entando-plugin-jpcontentscheduler.version>
         <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
@@ -97,10 +97,10 @@
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
-        <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
+        <keycloak.auth.url>http://quickstart-kc-sprint6-rc.apps.rd.entando.org/auth</keycloak.auth.url>
         <keycloak.realm>entando</keycloak.realm>
-        <keycloak.client.id>entando-app</keycloak.client.id>
-        <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
+        <keycloak.client.id>quickstart-server</keycloak.client.id>
+        <keycloak.client.secret>5b0cd1b1-2711-4414-a96f-ce3aef7f9839</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
 
         <!-- CORS Configuration -->
@@ -398,7 +398,7 @@
             <id>jetty-local</id>
             <properties>
                 <!--Image configuration -->
-                <skipDocker>false</skipDocker>
+                <skipDocker>true</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
                 <jee.server>jetty</jee.server>
                 <entando.engine.address>localhost</entando.engine.address>
