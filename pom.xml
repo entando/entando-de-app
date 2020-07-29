@@ -97,10 +97,10 @@
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
-        <keycloak.auth.url>http://quickstart-kc-sprint6-rc.apps.rd.entando.org/auth</keycloak.auth.url>
+        <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
         <keycloak.realm>entando</keycloak.realm>
-        <keycloak.client.id>quickstart-server</keycloak.client.id>
-        <keycloak.client.secret>5b0cd1b1-2711-4414-a96f-ce3aef7f9839</keycloak.client.secret>
+        <keycloak.client.id>entando-app</keycloak.client.id>
+        <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
 
         <!-- CORS Configuration -->
@@ -398,7 +398,7 @@
             <id>jetty-local</id>
             <properties>
                 <!--Image configuration -->
-                <skipDocker>true</skipDocker>
+                <skipDocker>false</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
                 <jee.server>jetty</jee.server>
                 <entando.engine.address>localhost</entando.engine.address>
