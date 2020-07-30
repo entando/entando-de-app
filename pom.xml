@@ -109,6 +109,7 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
+        <cors.enabled>true</cors.enabled>
         <entando-app-view-cms-default.version>6.2.3</entando-app-view-cms-default.version>
     </properties>
     <dependencyManagement>
@@ -390,7 +391,12 @@
             <artifactId>commons-dbcp2</artifactId>
             <scope>test</scope>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.taglibs</groupId>
+            <artifactId>taglibs-standard-impl</artifactId>
+            <version>1.2.5</version>
+            <scope>compile</scope>
+        </dependency>
     </dependencies>
 
     <profiles>
