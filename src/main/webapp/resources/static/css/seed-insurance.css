@@ -1,0 +1,539 @@
+@font-face {
+    font-family: Merriweather-Black;
+    src: url("../fonts/Merriweather-Black.ttf");
+}
+@font-face {
+    font-family: Cabin-Medium;
+    src: url("../fonts/Cabin-Medium.ttf");
+}
+@font-face {
+    font-family: Cabin-Regular;
+    src: url("../fonts/Cabin-Regular.ttf");
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+body {
+    font-family: Cabin-Regular, sans-serif;
+    font-size: 22px;
+    font-weight: 100;
+}
+h1 {
+    font-family: Merriweather-Black, serif;
+    font-size: 47px;
+    font-weight: 900;
+    padding-bottom: 19px;
+}
+h2 {
+    font-family: Merriweather-Black, sans-serif;
+    font-style: normal;
+    font-weight: 900;
+    font-size: 36px;
+}
+
+.insurance .language {
+    grid-area: login;
+    background: transparent;
+    border: none ;
+    color: #484848;
+    font-family: Cabin-Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    height: 42px;
+    min-width: 94px;
+    width: auto;
+    text-transform: capitalize;
+    padding: .1em;
+    box-shadow:none;
+}
+
+.insurance .search-query {
+    border-radius:4px;
+    border: 1px solid #8CC63F;
+    padding: 0 10px;
+    height: 38px;
+}
+
+.insurance .breadcrumb-item+.breadcrumb-item::before {
+    display: inline-block;
+    padding-right: .5rem;
+    color: #6c757d;
+    content: ">";
+}
+
+.insurance .breadcrumb-item.active {
+    color: #8CC63F;
+}
+
+.insurance .login, .custom-navbar .login {
+    grid-area: login;
+    background: #8CC63F;
+    border-radius: 4px;
+    color: #fff;
+    font-family: Cabin-Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 15px;
+    height: 38px;
+    min-width: 94px;
+    width: auto;
+    text-transform: capitalize;
+    padding: 0;
+}
+
+.insurance .dropdown-item.active, .dropdown-item:active {
+    color: #fff;
+    text-decoration: none;
+    background-color: #8CC63F;
+}
+
+.insurance .navbar-search {
+    height: 54px;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0;
+}
+.insurance .navbar-search .fas {
+    position:absolute;
+    right:10px;
+
+}
+.insurance .navbar {
+    font-size: 18px;
+    padding: 0 9%;
+    box-shadow: none;
+    border-bottom: 1px solid #f5f5f5;
+    display: flex;
+    align-items: center;
+}
+.insurance .breadcrumb {
+    padding: 10px 0;
+    margin-bottom: 1rem;
+
+}
+
+.first-header {
+    width: 100%;
+    display: flex;
+}
+
+.search-language {
+    display: flex;
+    justify-content: flex-end;
+    width: 50%;
+}
+
+.back-button {
+    width: 50%;
+}
+
+.first-nav {
+    position:relative;
+    background:#F5F5F6;
+}
+
+.second-nav {
+    position:relative;
+    background:#fff;
+    /* height:108px; */
+}
+
+.insurance .navbar-position {
+    padding: 0 9%;
+    margin: 0;
+}
+
+.insurance .breadcrumb-item a {
+    color: #000;
+}
+
+.insurance .navbar.navbar-light .breadcrumb .nav-item.active>.nav-link, .insurance .navbar.navbar-light .navbar-nav .nav-item.active>.nav-link {
+    background-color: rgba(141, 198, 63, 0);
+    color: #8CC63F;
+}
+
+.insurance .nav li a,.insurance .custom-navbar .custom-navbar .navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 21px;
+    margin-top: -5px;
+}
+
+.insurance .navbar-menu .nav-item {
+    text-decoration: none;
+    text-transform: capitalize;
+    font-size: 18px;
+}
+
+.insurance .text-wrapper {
+    width: 57%;
+    margin: 20% auto;
+}
+
+.insurance-main-banner {
+    background-size: cover !important;
+    background-repeat: no-repeat!important;
+}
+
+.insurance-main-banner .text-wrapper {
+    color:#fff;
+}
+
+.insurance .insurance-centered-content {
+    margin:100px 0;
+}
+
+.insurance .insurance-centered-content .text-center {
+    padding:0 20%;
+    font-size:16px;
+}
+.insurance .insurance-centered-content .subtitle {
+    color: #000;
+    font-weight: 600;
+}
+
+.insurance .insurance-centered-content h2 p {
+    color: #000;
+}
+
+.insurance .insurance-centered-content h2 p strong {
+    color: #8CC63F;  
+}
+
+.insurance .image-on-left .text-wrapper {
+    width: 57%;
+    float: none;
+    margin: 6% auto;
+}
+
+.insurance  .image-on-left {
+    display:flex;
+    padding: 100px 9%;
+}
+
+.insurance .img-wrapper {
+    display:flex;
+    width: 50%;
+    display: flex;
+    justify-content: center;
+}
+
+.insurance .content-text-wrapper {
+    display:flex;
+    width: 50%;
+}
+
+.insurance .box-centered {
+    display: flex;
+    width: 95%;
+    justify-content: center;
+    flex-direction:column;
+}
+
+.insurance .btn-blue {
+    background: #1C228C !Important;
+    width: 163px;
+    height: 38px;
+    line-height: 13px;
+    border-radius:4px;
+}
+
+.insurance .btn-outline-primary {
+    color: #000 !important;
+    background-color: transparent !important;
+    border: 1px solid #8CC63F !important;
+    box-shadow: none;
+    border-radius: 4px;
+}
+
+.insurance .btn-dark-green, .insurance .btn-blue, .insurance .btn-green, .insurance .btn-attaches, .go-back  {
+    width: fit-content;
+    height: 38px;
+    line-height: 13px;
+    border-radius: 4px;
+    margin:10px 0;
+}
+
+.insurance .btn-dark-green {
+    background-color: #15840C !important;
+}
+
+.insurance .btn-blue {
+
+}
+
+.insurance .btn-green {
+    background:#8CC63F !Important;
+
+}
+
+.insurance .card-insurance a.btn-green {
+    color: #fff;
+}
+
+.if-insurance  {
+    background:#F5F5F7;
+    padding: 5% 10% 7%;
+}
+
+.if-insurance .line_title {
+    text-align:center;
+}
+
+
+.if-insurance .line_title H1 {
+    font-size:40px;
+    margin: 40px 0;
+}
+
+.insurance .card-insurance {
+    width: 32%;
+    height:auto;
+    padding:3rem;
+    text-align:center;
+    background: #FFFFFF;
+    box-shadow: 0px 0px 11px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    transition: all 0.4s;
+}
+.insurance .card-insurance a {
+    color:#000;
+}
+
+.insurance .card-insurance:hover {
+    background: linear-gradient(180deg, #32932A -27.08%, #184437 100%);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    color:#fff;
+    transition: all 0.4s;
+}
+.insurance .card-insurance:hover a {
+    background: linear-gradient(180deg, #32932A -27.08%, #184437 100%);
+    box-shadow: 0px 0px 14px rgba(0, 0, 0, 0.35);
+    border-radius: 4px;
+    color:#fff;
+    transition: all 0.4s;
+}
+
+.card-insurance p:nth-child(2){
+    margin-top:20px;
+    font-weight:600;
+}
+
+.card-insurance p:nth-child(3){
+
+}
+
+.insurance .navbar-nav.navbar-menu {
+    margin-top:19px;
+}
+
+.insurance .footer {
+    display: flex;
+    background-color: #ffffff;
+    height: 136px;
+    width: 100%;
+    padding: 0 10%;
+}
+
+.insurance .half-side p {
+    color: #8CC63F;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: left;
+}
+
+.insurance .half-side p:nth-child(2),.insurance .half-side p:nth-child(3) {
+    color: #000;
+    font-size: 15px;
+    line-height: 15px;
+    text-align: left;
+}
+
+.insurance .half-side {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+}
+
+.insurance .half-side:nth-child(2) {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    align-items:flex-end;
+}
+
+.insurance .footer-content {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.insurance .if-insurance .justify-content-start {
+    -ms-flex-pack: start!important;
+    justify-content: space-between !important;
+}
+
+.insurance .image-on-right {
+    display: flex;
+    padding: 100px 9%;
+}
+
+.insurance .category {
+    color: #8CC63F;
+    font-size: 16px;
+    text-transform:uppercase;
+}
+
+.with-categories img {
+    height:195px;
+    margin-bottom:20px;
+}
+
+.card-insurance.with-categories p:nth-child(3) {
+    font-size:24px;
+    font-weight:600;
+    margin:20px 0;
+}
+
+.card-insurance.with-categories p:nth-child(4) {
+    font-size: 16px;
+    line-height:19px;
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.if-insurance .nav-pagination {
+
+    margin-top: 23px;
+}
+
+.if-insurance .pagination .page-item.active .page-link:hover {
+    background-color: #8CC63F;
+}
+
+.if-insurance .pagination .page-item.active .page-link {
+    color: #fff;
+    background: #8CC63F;
+    box-shadow:none;
+    transition: all 0.2s linear;
+    border: 1px solid #8CC63F;
+}
+.if-insurance .pagination .page-item .page-link {
+    color: #000;
+    border:1px solid #c1c1c1;
+    min-width: 37px;
+    text-align: center;
+}
+
+.image-on-right p {
+    color:#fff;
+}
+
+.products .body p {
+    color:#000;
+    font-size: 17px;
+    line-height: 21px;
+}
+
+.detail p{
+    color:#000;
+}
+
+.detail .body p{
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.detail .mbody p{
+    font-weight: normal;
+    font-size: 16px;
+    line-height: 19px;
+}
+
+
+.detail .mtitle {
+    font-weight: 900;
+    font-size: 26px;
+    line-height: 113.2%;
+    margin:20px 0;
+}
+
+.detail .mimage {
+    margin:20px 0;
+    /* width: 100%; */
+}
+
+.insurance .main-wrapper {
+    display:flex;
+    width:57%;
+}
+
+.insurance .go-back {
+    color: #000 !important;
+    background-color: transparent !important;
+    border: 1px solid #8CC63F !important;
+    box-shadow: none;
+    border-radius: 4px;
+
+}
+
+.insurance .search-query {
+    font-size:15px;
+    width:200px;
+}
+
+.insurance .search-query {
+    font-size:15px;
+    width:200px;
+}
+
+.insurance .form-horizontal {
+    padding: 1rem 0 3rem;
+}
+
+.insurance .form-group {
+}
+
+.form-inline {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-flow: row wrap;
+    flex-flow: row wrap;
+    -ms-flex-align: center;
+    align-items: center;
+    justify-content: center;
+}
+.form-group select {
+    margin-left: -44px;    
+}
+
+select.form-control, input.form-control {
+    min-width: 195px !important;
+}
+.btn-attaches {
+    position:relative;
+    border: 1px solid #15840c;
+    text-align: start;
+    min-width: 168px;
+}
+
+.btn-attaches .fas {
+    position:absolute;
+    right:15px;
+    color: #15840c;
+}
+
+.mimage img {
+    width:100%;
+}
+
+.logo-insurance {
+   padding:1rem 0;
+}
