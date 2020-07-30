@@ -137,47 +137,34 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('seed_
 </html>
 ');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, configui, bundleid) VALUES ('keyclock_login', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('keyclock_login', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">keycloak redirect</property>
 <property key="it">keycloak redirect</property>
-</properties>', NULL, NULL, NULL, NULL, 0, 'free', '', '');
+</properties>', NULL, NULL, NULL, NULL, 1, 'free');
 
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('keyclock_login', 'keyclock_login', NULL, '<#assign wp=JspTaglibs["/aps-core"]>
-<@wp.headInfo type="JS" info="entando-misc-jquery/jquery-1.10.0.min.js" />
-<@wp.headInfo type="JS" info="entando-misc-bootstrap/bootstrap.min.js" />
-
-<ul class="nav pull-right">
-  <li class="span2 dropdown <#if (accountExpired?? && accountExpired == true) || (wrongAccountCredential?? && wrongAccountCredential == true)>open</#if>">
-  <#if (Session.currentUser != "guest")>
-    <div class="btn-group">
-      <button class="btn span2 text-left dropdown-toggle" data-toggle="dropdown">
-        ${Session.currentUser}
-        <span class="caret pull-right"></span>
-      </button>
-      <ul class="dropdown-menu pull-right well-small">
-        <li class="padding-medium-vertical">
-          <@wp.ifauthorized permission="enterBackend">
-          <p>
-            <a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/main.action?request_locale=<@wp.info key="currentLang" />"><span class="icon-wrench"></span> <@wp.i18n key="ESLF_ADMINISTRATION" /></a>
-          </p>
-          </@wp.ifauthorized>
-          <div class="divider"></div>
-          <p class="help-block text-right">
-            <a class="btn" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/logout.action"><@wp.i18n key="ESLF_SIGNOUT" /></a>
-          </p>
-          <@wp.pageWithWidget var="editProfilePageVar" widgetTypeCode="userprofile_editCurrentUser" />
-          <#if (editProfilePageVar??) >
-          <p class="help-block text-right">
-            <a href="<@wp.url page="${editProfilePageVar.code}" />" ><@wp.i18n key="ESLF_PROFILE_CONFIGURATION" /></a>
-          </p>
-          </#if>
-        </li>
-      </ul>
-    </div>  
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('keyclock_login', 'keyclock_login', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
+<#if (Session.currentUser.username != "guest") >
+    <div style="display: flex; color: white; padding: 10px; height: 100%;">
+      <span class="btn btn-warning" style="color: white">
+<@wp.i18n key="WELCOME" />, 
+<em>
+  <#if (Session.currentUser.profile??) && (Session.currentUser.profile.displayName??)>
+     <span>${Session.currentUser.profile.displayName}</span>
   <#else>
-    <#assign keycloakEnabledVar ><@wp.info key="systemParam" paramName="keycloakEnabled" /></#assign>
-    <#if (keycloakEnabledVar == ''true'') >
+     ${Session.currentUser}</#if>
+   </em>
+  </span>
+      <@wp.ifauthorized permission="enterBackend">
+      <a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/main.action?request_locale=<@wp.info key="currentLang" />" class="btn btn-primary"><@wp.i18n key="ADMINISTRATION" /></a>
+      </@wp.ifauthorized>
+      <a href="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/logout.action" class="btn btn-primary"><@wp.i18n key="LOGOUT" /></a>
+      <@wp.pageWithWidget widgetTypeCode="userprofile_editCurrentUser" var="userprofileEditingPageVar" listResult=false />
+      <#if (userprofileEditingPageVar??) >
+      <a href="<@wp.url page="${userprofileEditingPageVar.code}" />" ><@wp.i18n key="userprofile_CONFIGURATION" /></a>
+      </#if>
+    </div>
+ <#else>
     <script src="<@wp.info key="systemParam" paramName="keycloakAuthUrl" />/js/keycloak.js"></script>
     <script>
         var keycloak = Keycloak({
@@ -192,48 +179,20 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
           } 
         });
     </script>
-    <form action="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/login" method="get">
+    <form action="<@wp.info key="systemParam" paramName="applicationBaseURL" />do/login" method="get" class="form-horizontal margin-medium-top">
         <input type="hidden" name="redirectTo" value="<@wp.url/>" />
-        <input type="submit" value="Sign In" class="btn btn-primary" />
+        <input type="submit" value="Sign In" class="btn btn-primary" style="padding: 4px 24px" />
     </form>
-    <#else>
-    <a class="dropdown-toggle text-right" data-toggle="dropdown" href="#"><@wp.i18n key="ESLF_SIGNIN" /> <span class="caret"></span></a>
-    <ul class="dropdown-menu well-small">
-      <li>
-        <form class="form-vertical" method="POST">
-          <#if (accountExpired?? && accountExpired == true)>
-          <div class="alert alert-error">
-            <button class="close" data-dismiss="alert">x</button>
-            <@wp.i18n key="ESLF_USER_STATUS_EXPIRED" />
-          </div>
-          </#if>
-          <#if (wrongAccountCredential?? && wrongAccountCredential == true)>
-          <div class="alert alert-error">
-            <button class="close" data-dismiss="alert">x</button>
-            <@wp.i18n key="ESLF_USER_STATUS_CREDENTIALS_INVALID" />
-          </div>
-          </#if>
-          <input type="text" name="username" class="input-large" placeholder="<@wp.i18n key="ESLF_USERNAME" />">
-          <input type="password" name="password" class="input-large" placeholder="<@wp.i18n key="ESLF_PASSWORD" />">
-          <p class="text-right">
-            <input type="submit" class="btn btn-primary" value="<@wp.i18n key="ESLF_SIGNIN" />" />
-          </p>
-        </form>
-      </li>
-    </ul>
-    </#if>
-  </#if>
-  </li>
-</ul>', NULL, 0);
+</#if>', 1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation - Bar</property>
 <property key="it">Navigazione - Barra Orizzontale</property>
 </properties>','<config>
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
-</config>',NULL,NULL,NULL,1,NULL,NULL,NULL);
+</config>',NULL,NULL,NULL,1);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar','entando-widget-navigation_bar',NULL,'<#assign c=JspTaglibs[ "http://java.sun.com/jsp/jstl/core" ]>
 <#assign wp=JspTaglibs[ "/aps-core" ]>
 <@wp.currentPage param="code" var="currentPageCode" />
@@ -438,11 +397,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
      </#list>
     </li>
 </#if>',1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Breadcrumb</property>
 <property key="it">Briciole di pane</property>
-</properties>',NULL,NULL,NULL,NULL,0,'free','','');
+</properties>',NULL,NULL,NULL,NULL,1,'free');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentViewCode" />
 
@@ -477,17 +436,21 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
         </ol>
     </nav>
 </div>
-',NULL,0);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('search_form','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">search form</property>
-<property key="it">Barra ricerca</property>
-</properties>
+',NULL,1);
 
-',NULL,'jacms',NULL,NULL,0,'free','','');
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('search_form','search_form',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
-<@wp.pageWithWidget var="searchResultPageVar" widgetTypeCode="search_result" />
-<form class="navbar-search " action="<#if (searchResultPageVar??) ><@wp.url page="${searchResultPageVar.code}" /></#if>" method="get">
-<i class="fas fa-search"></i>
-<input type="text" name="search" class="search-query" placeholder="<@wp.i18n key="ESSF_SEARCH" />" />
-</form>',NULL,0);
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_SIGNOUT','en','Logout');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_SIGNOUT','it','Esci');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_PROFILE_CONFIGURATION','en','Profile Configuration');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_PROFILE_CONFIGURATION','it','Configurazione Profilo');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_SIGNIN','en','Log in');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_SIGNIN','it','Entra');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_PASSWORD','en','Password');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_PASSWORD','it','Password');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USERNAME','en','Username');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USERNAME','it','Username');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USER_STATUS_CREDENTIALS_INVALID','en','Invalid credentials');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USER_STATUS_CREDENTIALS_INVALID','it','Invalid credentials');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USER_STATUS_EXPIRED','en','User expired');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USER_STATUS_EXPIRED','it','User expired');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HERE','en','You''re here');
+INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HERE','it','Sei qui');
