@@ -182,12 +182,6 @@
                 <artifactId>entando-plugin-jpmail</artifactId>
                 <version>${entando-plugin-jpmail.version}</version>
                 <classifier>classes</classifier>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.entando.entando.plugins</groupId>
-                        <artifactId>entando-plugin-jacms</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
@@ -201,12 +195,6 @@
                 <artifactId>entando-plugin-jpversioning</artifactId>
                 <version>${entando-plugin-jpversioning.version}</version>
                 <classifier>classes</classifier>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.entando.entando.plugins</groupId>
-                        <artifactId>entando-plugin-jacms</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
@@ -239,12 +227,6 @@
                 <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                 <version>${entando-plugin-jpcontentscheduler.version}</version>
                 <classifier>classes</classifier>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.entando.entando.plugins</groupId>
-                        <artifactId>entando-plugin-jacms</artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
@@ -1058,51 +1040,30 @@
                         <overlay>
                             <groupId>org.entando.entando</groupId>
                             <artifactId>entando-admin-console</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando</groupId>
                             <artifactId>entando-portal-ui</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jacms</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpmail</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpseo</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpcontentscheduler</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpversioning</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.bundles.app-view</groupId>
