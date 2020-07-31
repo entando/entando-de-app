@@ -98,7 +98,6 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
-        <entando-app-view-cms-default.version>6.2.5</entando-app-view-cms-default.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -234,13 +233,6 @@
                 <version>${entando-plugin-jpcontentscheduler.version}</version>
                 <type>war</type>
             </dependency>
-            <!--app-view-cms-->
-            <dependency>
-                <groupId>org.entando.entando.bundles.app-view</groupId>
-                <artifactId>entando-app-view-cms-default</artifactId>
-                <version>${entando-app-view-cms-default.version}</version>
-                <type>war</type>
-            </dependency>
             <!--keycloak-->
             <dependency>
                 <groupId>org.entando.entando</groupId>
@@ -304,47 +296,42 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
-        <!-- war overlays -->
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-admin-console</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-portal-ui</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jacms</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpmail</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpseo</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpversioning</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.bundles.app-view</groupId>
-            <artifactId>entando-app-view-cms-default</artifactId>
-            <type>war</type>
-        </dependency>
+            <!-- war overlays -->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-admin-console</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-portal-ui</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jacms</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpseo</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpversioning</artifactId>
+                <type>war</type>
+            </dependency>
         <!-- test dependencies -->
         <dependency>
             <groupId>org.entando.entando</groupId>
@@ -1064,13 +1051,6 @@
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpversioning</artifactId>
-                        </overlay>
-                        <overlay>
-                            <groupId>org.entando.entando.bundles.app-view</groupId>
-                            <artifactId>entando-app-view-cms-default</artifactId>
-                            <excludes>
-                                <exclude>WEB-INF/lib/*.jar</exclude>
-                            </excludes>
                         </overlay>
                     </overlays>
                 </configuration>
