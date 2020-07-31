@@ -21,17 +21,6 @@
     </organization>
     <repositories>
         <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
-            <releases>
-                <enabled>true</enabled>
-            </releases>
-            <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
-            </snapshots>
-        </repository>
-        <repository>
             <id>jx-releases</id>
             <url>https://nexus-jx.apps.serv.run/repository/maven-releases/</url>
             <releases>
@@ -43,15 +32,15 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.2.23</entando-engine.version>
-        <entando-admin-console.version>6.2.35</entando-admin-console.version>
-        <entando-portal-ui.version>6.2.5</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.2.13</entando-plugin-jacms.version>
-        <entando-plugin-jpversioning.version>6.2.4</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.2.7</entando-plugin-jpseo.version>
-        <entando-plugin-jpmail.version>6.2.4</entando-plugin-jpmail.version>
-        <entando-plugin-jpcontentscheduler.version>6.2.4</entando-plugin-jpcontentscheduler.version>
-        <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
+        <entando-engine.version>6.2.24</entando-engine.version>
+        <entando-admin-console.version>6.2.36</entando-admin-console.version>
+        <entando-portal-ui.version>6.2.6</entando-portal-ui.version>
+        <entando-plugin-jacms.version>6.2.17</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>6.2.5</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>6.2.6</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.2.8</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>6.2.6</entando-plugin-jpcontentscheduler.version>
+        <entando.keycloak.plugin.version>6.2.2</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
@@ -109,22 +98,31 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
-        <entando-app-view-cms-default.version>6.2.3</entando-app-view-cms-default.version>
+        <entando-app-view-cms-default.version>6.2.5</entando-app-view-cms-default.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.entando</groupId>
                 <artifactId>entando-core-parent</artifactId>
-                <version>6.2.12</version>
+                <version>6.2.14</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
+            <!--engine-->
             <dependency>
                 <groupId>org.entando.entando</groupId>
                 <artifactId>entando-engine</artifactId>
                 <version>${entando-engine.version}</version>
             </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-engine</artifactId>
+                <version>${entando-engine.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <!--admin-console-->
             <dependency>
                 <groupId>org.entando.entando</groupId>
                 <artifactId>entando-admin-console</artifactId>
@@ -139,24 +137,12 @@
             </dependency>
             <dependency>
                 <groupId>org.entando.entando</groupId>
-                <artifactId>entando-engine</artifactId>
-                <version>${entando-engine.version}</version>
-                <type>test-jar</type>
-                <scope>test</scope>
-            </dependency>
-            <dependency>
-                <groupId>org.entando.entando</groupId>
                 <artifactId>entando-admin-console</artifactId>
                 <version>${entando-admin-console.version}</version>
                 <type>test-jar</type>
                 <scope>test</scope>
             </dependency>
-            <dependency>
-                <groupId>org.entando.entando</groupId>
-                <artifactId>entando-keycloak-auth</artifactId>
-                <version>${entando.keycloak.plugin.version}</version>
-                <type>war</type>
-            </dependency>
+            <!--portal-ui-->
             <dependency>
                 <groupId>org.entando.entando</groupId>
                 <artifactId>entando-portal-ui</artifactId>
@@ -176,12 +162,7 @@
                 <type>test-jar</type>
                 <scope>test</scope>
             </dependency>
-            <dependency>
-                <groupId>org.entando.entando.bundles.app-view</groupId>
-                <artifactId>entando-app-view-cms-default</artifactId>
-                <version>${entando-app-view-cms-default.version}</version>
-                <type>war</type>
-            </dependency>
+            <!--jacms-->
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
                 <artifactId>entando-plugin-jacms</artifactId>
@@ -189,6 +170,32 @@
                 <classifier>classes</classifier>
                 <type>jar</type>
             </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jacms</artifactId>
+                <version>${entando-plugin-jacms.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpmail-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <version>${entando-plugin-jpmail.version}</version>
+                <classifier>classes</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.entando.entando.plugins</groupId>
+                        <artifactId>entando-plugin-jacms</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <version>${entando-plugin-jpmail.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpversioning-->
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
                 <artifactId>entando-plugin-jpversioning</artifactId>
@@ -203,6 +210,13 @@
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpversioning</artifactId>
+                <version>${entando-plugin-jpversioning.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpseo-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
                 <artifactId>entando-plugin-jpseo</artifactId>
                 <version>${entando-plugin-jpseo.version}</version>
                 <classifier>classes</classifier>
@@ -219,24 +233,7 @@
                 <version>${entando-plugin-jpseo.version}</version>
                 <type>war</type>
             </dependency>
-            <dependency>
-                <groupId>org.entando.entando.plugins</groupId>
-                <artifactId>entando-plugin-jpmail</artifactId>
-                <version>${entando-plugin-jpmail.version}</version>
-                <classifier>classes</classifier>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.entando.entando.plugins</groupId>
-                        <artifactId>entando-plugin-jacms</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.entando.entando.plugins</groupId>
-                <artifactId>entando-plugin-jpmail</artifactId>
-                <version>${entando-plugin-jpmail.version}</version>
-                <type>war</type>
-            </dependency>
+            <!--jpcontentscheduler-->
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
                 <artifactId>entando-plugin-jpcontentscheduler</artifactId>
@@ -254,10 +251,24 @@
                 <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                 <version>${entando-plugin-jpcontentscheduler.version}</version>
                 <type>war</type>
+            </dependency>
+            <!--app-view-cms-->
+            <dependency>
+                <groupId>org.entando.entando.bundles.app-view</groupId>
+                <artifactId>entando-app-view-cms-default</artifactId>
+                <version>${entando-app-view-cms-default.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--keycloak-->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-keycloak-auth</artifactId>
+                <version>${entando.keycloak.plugin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
     <dependencies>
+        <!--TODO clean this up. we are controlling these in the dependencyManagement seciotn -->
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-engine</artifactId>
@@ -279,6 +290,11 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpmail</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpversioning</artifactId>
             <classifier>classes</classifier>
         </dependency>
@@ -289,13 +305,12 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpmail</artifactId>
+            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
             <classifier>classes</classifier>
         </dependency>
         <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
-            <classifier>classes</classifier>
+            <groupId>org.entando.entando</groupId>
+            <artifactId>entando-keycloak-auth</artifactId>
         </dependency>
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
@@ -319,13 +334,8 @@
             <type>war</type>
         </dependency>
         <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-keycloak-auth</artifactId>
-            <type>war</type>
-        </dependency>
-        <dependency>
             <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpseo</artifactId>
+            <artifactId>entando-plugin-jacms</artifactId>
             <type>war</type>
         </dependency>
         <dependency>
@@ -335,7 +345,17 @@
         </dependency>
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpseo</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+            <type>war</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpversioning</artifactId>
             <type>war</type>
         </dependency>
         <dependency>
@@ -1051,7 +1071,7 @@
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
-                            <artifactId>entando-plugin-jpseo</artifactId>
+                            <artifactId>entando-plugin-jacms</artifactId>
                             <excludes>
                                 <exclude>WEB-INF/lib/*.jar</exclude>
                             </excludes>
@@ -1065,7 +1085,21 @@
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpseo</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/lib/*.jar</exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                            <excludes>
+                                <exclude>WEB-INF/lib/*.jar</exclude>
+                            </excludes>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpversioning</artifactId>
                             <excludes>
                                 <exclude>WEB-INF/lib/*.jar</exclude>
                             </excludes>
@@ -1076,10 +1110,6 @@
                             <excludes>
                                 <exclude>WEB-INF/lib/*.jar</exclude>
                             </excludes>
-                        </overlay>
-                        <overlay>
-                            <groupId>org.entando.entando</groupId>
-                            <artifactId>entando-keycloak-auth</artifactId>
                         </overlay>
                     </overlays>
                 </configuration>
