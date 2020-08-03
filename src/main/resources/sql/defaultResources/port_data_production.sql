@@ -62,6 +62,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('seed_
 </frames>
 
 ',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<#assign jpseo=JspTaglibs["/jpseo-aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
 
 <html lang="en">
@@ -71,8 +72,18 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('seed_
             <@wp.currentPage param="title" /> - <@wp.i18n key="SALES_DEMO" />
         </title>
         <meta name="viewport" content="width=device-width,  user-scalable=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
+        <@jpseo.currentPage param="description" var="metaDescrVar" />
+        <#if (metaDescrVar??) && (metaDescrVar!="")>
+                <meta name="description" content="${metaDescrVar}" />
+        </#if>
+        <@jpseo.seoMetaTag key="author" var="metaAuthorVar" />
+        <#if (metaAuthorVar??) && (metaAuthorVar!="")>
+                <meta name="author" content="${metaAuthorVar}" />
+        </#if>
+        <@jpseo.seoMetaTag key="keywords" var="metaKeywords" />
+        <#if (metaKeywords??) && (metaKeywords!="")>
+                <meta name="keywords" content="${metaKeywords}" />
+        </#if>
         <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
 
         <!-- FA -->
