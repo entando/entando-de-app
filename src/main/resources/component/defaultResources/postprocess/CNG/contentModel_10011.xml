@@ -1,0 +1,21 @@
+<!--
+  keep the 10000 set for the bundles
+  change the x to something suitable and unused
+  set the last column to NULL if your Content Model doesn't need any stylesheet at all
+  You'll want to provide at least one Default Content Model, and one Content Model for lists
+-->
+<contentModel>
+  <id>10011</id>
+  <contentType>CNG</contentType>
+  <description>Lists - Default</description>
+  <shape><![CDATA[<div class="search-result">
+  <h3><a href="$content.contentLink">$content.Title.text</a></h3>
+  <a class="search-link" href="$content.contentLink">$content.contentLink</a>
+#if ( $content.Abstract.text != "" )
+  <p>
+    $content.Abstract.text
+  </p>
+#end
+</div>
+<div class="hr-line-dashed"></div>]]></shape>
+</contentModel>
