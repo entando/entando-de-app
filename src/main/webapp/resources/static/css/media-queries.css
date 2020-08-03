@@ -212,7 +212,7 @@
         background: rgb(140,198,63);
         border: none;
         color: rgb(255,255,255);
-        font-family: Cabin-Regular;
+        font-family: Cabin-Regular, sans-serif;
         font-style: normal;
         font-weight: 400;
         font-size: 19px;
