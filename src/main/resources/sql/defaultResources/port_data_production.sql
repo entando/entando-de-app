@@ -3,7 +3,6 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('seed_
 	<frame pos="0">
 		<descr>brand</descr>
 		<sketch x1="0" y1="0" x2="1" y2="0" />
-		<defaultWidget code="Brand-Logo" />
 	</frame>
 	<frame pos="1">
 		<descr>navbar</descr>
@@ -454,3 +453,313 @@ INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USER_STATU
 INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESLF_USER_STATUS_EXPIRED','it','User expired');
 INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HERE','en','You''re here');
 INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HERE','it','Sei qui');
+
+
+
+
+
+
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('OotbcHomepage','Ootbc Homepage','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+	<frame pos="0">
+		<descr>Header</descr>
+		<sketch x1="0" y1="0" x2="11" y2="0" />
+	</frame>
+	<frame pos="1">
+		<descr>Colonna 12</descr>
+		<sketch x1="0" y1="1" x2="11" y2="1" />
+	</frame>
+	<frame pos="2">
+		<descr>Colonna 12</descr>
+		<sketch x1="0" y1="2" x2="11" y2="2" />
+	</frame>
+	<frame pos="3">
+		<descr>Colonna 12</descr>
+		<sketch x1="0" y1="3" x2="11" y2="3" />
+	</frame>
+	<frame pos="4">
+		<descr>Colonna 12</descr>
+		<sketch x1="0" y1="4" x2="11" y2="4" />
+	</frame>
+	<frame pos="5">
+		<descr>Colonna 12</descr>
+		<sketch x1="0" y1="5" x2="11" y2="5" />
+	</frame>
+	<frame pos="6">
+		<descr>Footer</descr>
+		<sketch x1="0" y1="6" x2="11" y2="6" />
+	</frame>
+</frames>
+
+',NULL,'<#assign jpseo=JspTaglibs["/jpseo-aps-core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" /> - Entando
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <@jpseo.currentPage param="description" var="metaDescrVar" />
+        <#if (metaDescrVar??) && (metaDescrVar!="")>
+                <meta name="description" content="${metaDescrVar}" />
+        </#if>
+        <@jpseo.seoMetaTag key="author" var="metaAuthorVar" />
+        <#if (metaAuthorVar??) && (metaAuthorVar!="")>
+                <meta name="author" content="${metaAuthorVar}" />
+        </#if>
+        <@jpseo.seoMetaTag key="keywords" var="metaKeywords" />
+        <#if (metaKeywords??) && (metaKeywords!="")>
+                <meta name="keywords" content="${metaKeywords}" />
+        </#if>
+        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <link rel="stylesheet" href="<@wp.resourceURL />ootbc-bundle/static/css/ootbc.css" rel="stylesheet">
+
+        <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
+    </head>
+    <body>
+        <div class="header">
+            <@wp.show frame=0 />
+        </div>
+        <div class="page__body">
+            <@wp.show frame=1 />
+            <@wp.show frame=2 />
+            <@wp.show frame=3 />
+            <@wp.show frame=4 />
+            <@wp.show frame=5 />
+        </div>
+        <div class="page__footer">
+            <@wp.show frame=6 />
+        </div>
+  </body>
+</html>
+');
+INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Home - test</property>
+<property key="it">Home - test</property>
+</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-07-31 10:22:15');
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Home - test</property>
+<property key="it">Home - test</property>
+</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-07-31 10:22:15');
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Ootbc header Widget</property>
+<property key="it">Ootbc header Widget</property>
+</properties>','<config>
+    <parameter name="menuItems" />
+    <parameter name="logo" />
+    <parameter name="theme" />
+    <parameter name="sideNavigation" />
+    <parameter name="logoRedirectPage" />
+    <parameter name="tagline" />
+    <parameter name="icons" />
+    <action name="configSimpleParameter"/>
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.8887cab1.chunk.js","ootbc-bundle/static/js/main.0acb2ec5.chunk.js","ootbc-bundle/static/js/runtime-main.45dc1061.js"],"customElement":"header-config"}',NULL);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Ootbc footer Widget</property>
+<property key="it">Ootbc footer Widget</property>
+</properties>','<config>
+    <parameter name="copyright" />
+    <parameter name="theme" />
+    <parameter name="linkSocial1" />
+    <parameter name="linkSocial2" />
+    <parameter name="linkSocial3" />
+    <parameter name="linkSocial4" />
+    <parameter name="linkSocial5" />
+    <parameter name="linkSocial6" />
+    <parameter name="page1" />
+    <parameter name="page2" />
+    <parameter name="page3" />
+    <parameter name="page4" />
+    <parameter name="social1" />
+    <parameter name="social2" />
+    <parameter name="social3" />
+    <parameter name="social4" />
+    <parameter name="social5" />
+    <parameter name="social6" />
+    <action name="configSimpleParameter"/>
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle');
+
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="copyright">Entando - PI: 03264290929</property>
+<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
+<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
+<property key="theme">blue_entando</property>
+<property key="social2">linkedin</property>
+<property key="page3">Sitemap</property>
+<property key="social1">facebook</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
+<property key="logo">Entando_light.svg</property>
+<property key="theme">light</property>
+<property key="sideNavigation">true</property>
+<property key="logoRedirectPage">homepage</property>
+<property key="tagline">Entando Ootb</property>
+<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="copyright">Entando - PI: 03264290929</property>
+<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
+<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
+<property key="theme">blue_entando</property>
+<property key="social2">linkedin</property>
+<property key="page3">Sitemap</property>
+<property key="social1">facebook</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
+<property key="logo">Entando_light.svg</property>
+<property key="theme">light</property>
+<property key="sideNavigation">true</property>
+<property key="logoRedirectPage">homepage</property>
+<property key="tagline">Entando Ootb</property>
+<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
+</properties>');
+
+
+
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-header-widget','ootbc-header-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<script src="<@wp.resourceURL />ootbc-bundle/static/js/2.3b049955.chunk.js"></script>
+<script src="<@wp.resourceURL />ootbc-bundle/static/js/main.3f90a792.chunk.js"></script>
+<script src="<@wp.resourceURL />ootbc-bundle/static/js/runtime-main.b759d654.js"></script>
+<link href="<@wp.resourceURL />ootbc-bundle/static/css/main.fbc3daf0.chunk.css" rel="stylesheet">
+<#-- entando_resource_injection_point -->
+<#-- Don''t add anything above this line. The build scripts will automatically link the compiled JS and CSS for you and add them above this line so that the widget can be loaded-->
+
+<#-- This is the custom element -->
+<@wp.currentWidget param="config" configParam="logo" var="configLogo" />
+<@wp.currentWidget param="config" configParam="tagline" var="configTagline" />
+<@wp.currentWidget param="config" configParam="theme" var="configTheme" />
+<@wp.currentWidget param="config" configParam="sideNavigation" var="configSideNavigation" />
+<@wp.currentWidget param="config" configParam="icons" var="configIcons" />
+<@wp.currentWidget param="config" configParam="menuItems" var="configMenuItems" />
+
+<header-widget
+  logo="${configLogo}"
+  logoAction="<@wp.url page="homepage" />"
+  tagline="${configTagline}"
+  theme="${configTheme}"
+  sideNavigation="${configSideNavigation}"
+  icons="${configIcons}"
+  menuItems="${configMenuItems}"
+  action="<@wp.url />"
+  imgUrl="<@wp.imgURL />"
+/>
+',1);
+
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-footer-widget','ootbc-footer-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.currentWidget param="config" configParam="copyright" var="configCopyright" />
+<@wp.currentWidget param="config" configParam="theme" var="configTheme" />
+
+<@wp.currentWidget param="config" configParam="linkSocial1" var="configLinkSocial1" />
+<@wp.currentWidget param="config" configParam="social1" var="configSocial1" />
+<@wp.currentWidget param="config" configParam="linkSocial2" var="configLinkSocial2" />
+<@wp.currentWidget param="config" configParam="social2" var="configSocial2" />
+<@wp.currentWidget param="config" configParam="linkSocial3" var="configLinkSocial3" />
+<@wp.currentWidget param="config" configParam="social3" var="configSocial3" />
+<@wp.currentWidget param="config" configParam="linkSocial4" var="configLinkSocial4" />
+<@wp.currentWidget param="config" configParam="social4" var="configSocial4" />
+<@wp.currentWidget param="config" configParam="linkSocial5" var="configLinkSocial5" />
+<@wp.currentWidget param="config" configParam="social5" var="configSocial5" />
+<@wp.currentWidget param="config" configParam="linkSocial6" var="configLinkSocial6" />
+<@wp.currentWidget param="config" configParam="social6" var="configSocial6" />
+
+<@wp.currentWidget param="config" configParam="page1" var="configPage1" />
+<@wp.currentWidget param="config" configParam="page2" var="configPage2" />
+<@wp.currentWidget param="config" configParam="page3" var="configPage3" />
+<@wp.currentWidget param="config" configParam="page4" var="configPage4" />
+
+<#if !(configCopyright?has_content)>
+    <#assign configCopyright="">
+</#if>
+<#if !(configTheme?has_content)>
+    <#assign configTheme="">
+</#if>
+
+<#assign configCopyrightYear=.now?string(''yyyy'')>
+<#assign copyrightSymbol="&#xA9;">
+
+<link rel="stylesheet" type="text/css" href="<@wp.resourceURL />ootbc-bundle/static/css/footer.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<div class="footer__ootb ${configTheme}">
+    <div class="footer__ootb--column">
+        <div class="footer__ootb--utilities">
+        <#if configPage1?has_content>
+            <#assign refPage1=configPage1?lower_case?replace(" ", "_", "r")>
+            <a href="<@wp.url page="${refPage1}" />">
+                ${configPage1}
+            </a>
+            <span>&nbsp;|&nbsp;</span>
+        </#if>
+        <#if configPage2?has_content>
+            <#assign refPage2=configPage2?lower_case?replace(" ", "_", "r")>
+            <a href="<@wp.url page="${refPage2}" />">
+                ${configPage2}
+            </a>
+            <span>&nbsp;|&nbsp;</span>
+        </#if>
+        <#if configPage3?has_content>
+            <#assign refPage3=configPage3?lower_case?replace(" ", "_", "r")>
+            <a href="<@wp.url page="${refPage3}" />">
+                ${configPage3}
+            </a>
+            <span>&nbsp;|&nbsp;</span>
+        </#if>
+        <#if configPage4?has_content>
+            <#assign refPage4=configPage4?lower_case?replace(" ", "_", "r")>
+            <a href="<@wp.url page="${refPage4}" />">
+                ${configPage4}
+            </a>
+        </#if>
+        </div>
+        <div class="footer__ootb--copyright">
+            <span>${copyrightSymbol} Copyright ${configCopyrightYear} ${configCopyright}</span>
+        </div>
+    </div>
+    <div class="footer__ootb--column">
+        <div class="footer__ootb--social-badge">
+            <#if configLinkSocial1?has_content && configSocial1?has_content>
+            <a href="${configLinkSocial1}" class="fa fa-${configSocial1}"></a>
+            </#if>
+            <#if configLinkSocial2?has_content && configSocial2?has_content>
+            <a href="${configLinkSocial2}" class="fa fa-${configSocial2}"></a>
+            </#if>
+            <#if configLinkSocial3?has_content && configSocial3?has_content>
+            <a href="${configLinkSocial3}" class="fa fa-${configSocial3}"></a>
+            </#if>
+            <#if configLinkSocial4?has_content && configSocial4?has_content>
+            <a href="${configLinkSocial4}" class="fa fa-${configSocial4}"></a>
+            </#if>
+            <#if configLinkSocial5?has_content && configSocial5?has_content>
+            <a href="${configLinkSocial5}" class="fa fa-${configSocial5}"></a>
+            </#if>
+            <#if configLinkSocial6?has_content && configSocial6?has_content>
+            <a href="${configLinkSocial6}" class="fa fa-${configSocial6}"></a>
+            </#if>
+        </div>
+    </div>
+</div>
+',1);
