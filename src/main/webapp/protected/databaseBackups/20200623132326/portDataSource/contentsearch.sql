@@ -1,0 +1,16 @@
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS795','title','Dealing with a financial emergency',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS795','title','Dealing with a financial emergency',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS798','title','Fraud and Cyber Security Systems',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS798','title','Fraud and Cyber Security Systems',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS788','title','Emergency cash: What are your options?',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS788','title','Emergency cash: What are your options?',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS791','title','How to tackle financial stress',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS791','title','How to tackle financial stress',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS799','title','Manufacturers Respond to Coronavirus',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS799','title','Manufacturers Respond to Coronavirus',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS794','title','Employees are moving into ergonomic home-work setups ',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS794','title','Employees are moving into ergonomic home-work setups ',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS855','title','Do debt funds still have a place in an investor’s portfolio? ',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS855','title','Do debt funds still have a place in an investor’s portfolio? ',NULL,NULL,'it');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS853','title','Debt relief for poorest countries could extend beyond 2020 ',NULL,NULL,'en');
+INSERT INTO contentsearch (contentid,attrname,textvalue,datevalue,numvalue,langcode) VALUES ('NWS853','title','Debt relief for poorest countries could extend beyond 2020 ',NULL,NULL,'it');

@@ -1,0 +1,349 @@
+/* To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. */
+/* Created on : 03-july-2020, 14.10.45 Author : D.Minnai */
+@media (max-width: 1024px) and (min-width: 320px) and (orientation: portrait) {
+    .first-nav {
+        display: none !important;
+    }
+    .logo-insurance img {
+        width: 266px;
+    }
+    .insurance .text-wrapper {
+        width: 100%;
+        text-align:center;
+        padding:15% 2%;
+        margin:0;
+    }
+    .insurance .main-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    .insurance .insurance-centered-content .text-center {
+        padding: 0 4%;
+        margin:0;
+        font-size: 16px;
+    }
+
+    .insurance-centered-content .body p {
+        font-size:20px;
+    }
+
+    .insurance-centered-content .subtitle {
+        font-size:22px;
+    }
+
+    .insurance .img-wrapper {
+        display: flex;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding:15% 2%;
+        margin:0;
+
+    }
+
+    .insurance .image-on-left {
+        display: flex;
+        flex-direction:column;
+        padding: 100px 9%;
+    }
+    .img_right img {
+        width:100%
+    }
+    .insurance .content-text-wrapper {
+        display: flex;
+        width: 100%;
+        text-align:center;
+    }
+    .insurance .half-side p:nth-child(2), .insurance .half-side p:nth-child(3) {
+        color: #000;
+        font-size: 15px;
+        line-height: 15px;
+        text-align:center;
+    }
+
+    .list-with-row {
+        padding:15% 2%;
+        margin:0;
+
+    }
+
+    .insurance .card-insurance {
+        margin:10px;
+    }
+
+    .insurance .half-side {
+        width: 100%;
+        display: flex; 
+        flex-direction: column; 
+    }
+    .insurance .half-side:nth-child(2) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .insurance .half-side p {
+        color: #8CC63F;
+        font-size: 16px;
+        line-height: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .insurance .footer {
+        display: flex;
+        background-color: #ffffff;
+        height: auto;
+        width: 100%;
+        padding:15% 2%;
+        margin:0;
+        flex-direction: column;
+    }
+
+    .insurance .card-insurance {
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+    }
+    .image-on-right.products img{
+        display:none;   
+    }
+
+    .image-on-right.products .img-wrapper, .image-on-right .img-wrapper {
+        display:none;
+    }
+    .insurance .image-on-right {
+        display: flex;
+        padding: 100px 3%;
+    }
+    .card-insurance.with-categories p:nth-child(4) {
+        font-size: 18px;
+        line-height: 19px;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+    .detail .mbody p {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .insurance .search-query {
+        font-size: 21px;
+        width: 100%;
+    }
+
+    .insurance .navbar-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-menu .nav-item a {
+        color: black;
+    }
+    .login-drop.dropdown-menu {
+        display: block;
+        position: relative !important;
+        border: none;
+        box-shadow: none;
+        z-index: 1;
+        padding: 0;
+    }
+
+    .insurance .btn-dark-green, .insurance .btn-blue, .insurance .btn-green, .insurance .btn-attaches, .go-back {
+        width: 100%;
+        height: 38px;
+        line-height: 13px;
+        border-radius: 4px;
+        margin: 10px 0;
+        text-align: center;
+    }
+    .insurance .language {
+ 
+    color: #000;
+    font-family: Cabin-Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 21px;
+    height: 42px;
+   
+}
+
+}
+@media (min-width: 320px) and (max-width: 1024px) and (orientation: landscape) {
+    .first-nav {
+        display: none !important;
+    }
+    .logo-insurance img {
+        width: 266px;
+    }
+    .insurance .text-wrapper {
+        width: 100%;
+        text-align:center;
+        padding:15% 2%;
+        margin:0;
+    }
+    .insurance .main-wrapper {
+        display: flex;
+        width: 100%;
+    }
+
+    .insurance .insurance-centered-content .text-center {
+        padding: 0 2%;
+        margin:0;
+        font-size: 16px;
+    }
+
+    .insurance-centered-content .body p {
+        font-size:20px;
+    }
+
+    .insurance-centered-content .subtitle {
+        font-size:22px;
+    }
+
+    .insurance .img-wrapper {
+        display: flex;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        padding: 0 2%;
+        margin:0;
+    }
+
+    .insurance .image-on-left {
+        display: flex;
+        flex-direction:column;
+        padding: 100px 9%;
+    }
+    .img_right img {
+        width:100%
+    }
+    .insurance .content-text-wrapper {
+        display: flex;
+        width: 100%;
+        text-align:center;
+    }
+    .insurance .half-side p:nth-child(2), .insurance .half-side p:nth-child(3) {
+        color: #000;
+        font-size: 15px;
+        line-height: 15px;
+        text-align:center;
+    }
+
+    .list-with-row {
+        padding:15% 2%;
+        margin:0;
+
+    }
+
+    .insurance .card-insurance {
+        margin:10px;
+    }
+
+    .insurance .half-side {
+        width: 100%;
+        display: flex; 
+        flex-direction: column; 
+    }
+    .insurance .half-side:nth-child(2) {
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .insurance .half-side p {
+        color: #8CC63F;
+        font-size: 16px;
+        line-height: 15px;
+        text-align: center;
+        width: 100%;
+    }
+
+    .insurance .footer {
+        display: flex;
+        background-color: #ffffff;
+        height: auto;
+        width: 100%;
+        padding:15% 2%;
+        margin:0;
+        flex-direction: column;
+    }
+
+    .insurance .card-insurance {
+        width: 100%;
+        height: auto;
+        padding: 3rem;
+    }
+    .image-on-right.products img{
+        display:none;   
+    }
+
+    .image-on-right.products .img-wrapper, .image-on-right .img-wrapper {
+        display:none;
+    }
+    .insurance .image-on-right {
+        display: flex;
+        padding: 100px 3%;
+    }
+    .card-insurance.with-categories p:nth-child(4) {
+        font-size: 18px;
+        line-height: 19px;
+        font-weight: 500;
+        margin: 20px 0;
+    }
+    .detail .mbody p {
+        font-weight: normal;
+        font-size: 18px;
+        line-height: 21px;
+    }
+
+    .insurance .search-query {
+        font-size: 21px;
+        width: 100%;
+    }
+
+    .insurance .navbar-menu {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .navbar-menu .nav-item a {
+        color: black;
+    }
+    .login-drop.dropdown-menu {
+        display: block;
+        position: relative !important;
+        border: none;
+        box-shadow: none;
+        z-index: 1;
+        padding: 0;
+    }
+
+    .insurance .btn-dark-green, .insurance .btn-blue, .insurance .btn-green, .insurance .btn-attaches, .go-back {
+        width: 100%;
+        height: 38px;
+        line-height: 13px;
+        border-radius: 4px;
+        margin: 10px 0;
+        text-align: center;
+    }
+        .insurance .nav li a, .insurance .custom-navbar .custom-navbar .navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+    text-decoration: none;
+    padding: 10px;
+    text-transform: capitalize;
+    font-size: 26px;
+    margin-top: 0;
+}
+.insurance .language {
+    color: #000;
+    font-family: Cabin-Regular;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 26px;
+    height: 42px;
+}
+}

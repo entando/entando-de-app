@@ -1,0 +1,1294 @@
+/* To change this license header, choose License Headers in Project Properties. To change this template file, choose Tools | Templates and open the template in the editor. */
+/* Created on : 18-mar-2020, 7.10.05 Author : D.Minnai */
+@media (max-width: 1024px) and (min-width: 320px) and (orientation: portrait) {
+    body {
+        font-family: Cabin-Regular, sans-serif;
+        font-size: 16px;
+        font-weight: 100;
+    }
+    h1,h2 {
+        font-family: Merriweather-Black, serif;
+        font-size: 30px;
+        font-weight: 900;
+        padding-bottom: 0px;
+        text-align: center;
+    }
+    .navbar .login-group .login-drop a {
+        font-size: 21px !important;
+        padding: 10px;
+        font-size: .9375rem;
+        font-weight: 300;
+    }
+    .login-drop.dropdown-menu {
+        display: block;
+        position: relative !important;
+        border: none;
+        box-shadow: none;
+        z-index: 1;
+    }
+    .login-group {
+        display: block;
+    }
+    .login-group .login {
+        display: none;
+    }
+    .navbar .dropdown-menu .dropdown-content-wrapper a span {
+        font-size: 16px;
+        font-weight: 400;
+        margin-left: 16px;
+        line-height: 4px;
+    }
+    .nav li a, .custom-navbar .custom-navbar .navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+        text-decoration: none;
+        padding: 10px;
+    }
+    .custom-navbar .row {
+        margin: 0px;
+        padding: 0;
+    }
+    .card-header {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+        background-color: #c0e571;
+        color: #285e0e;
+        cursor: pointer;
+        height: 58px;
+        margin-bottom: 24px!important;
+        padding: .75rem 1.25rem .75rem 41px;
+    }
+    .card-header h2 {
+        text-align: left;
+    }
+    .md-accordion .card .card-header a: not(.collapsed) .rotate-icon {
+        background-image: url(../img/ellipse-minus.png);
+        height: 34px;
+        width: 34px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .md-accordion .card .card-header a.collapsed .rotate-icon {
+        background-image: url(../img/ellipse-plus.png);
+        height: 34px;
+        width: 34px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    .custom-navbar .navbar {
+        font-size: 21px;
+        padding: 0 1%;
+        background: rgb(255, 255, 255);
+    }
+    .logo img {
+        height: 64px;
+        width: 115px;
+    }
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+    }
+    .dropdown-col {
+        font-weight: 400;
+        font-size: 16px;
+        padding: 0;
+    }
+    .checking {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/interest-account-icon.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 22px;
+        margin-top: 18px;
+        margin-left: 8px;
+        padding-left: 26px;
+        width: auto;
+    }
+    .savings {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/savings-icon.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 24px;
+        margin-top: 14px;
+        margin-left: 8px;
+        padding-left: 26px;
+        width: auto;
+    }
+    .debit-cards {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/credit-card-icon.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 24px;
+        margin-top: 19px;
+        margin-left: 11px;
+        padding-left: 31px;
+        width: auto;
+    }
+    .send-money {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/money-icon.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 19px;
+        margin-top: 15px;
+        margin-left: 8px;
+        padding-left: 35px;
+        width: auto;
+    }
+    .dropdown-right {
+        font-weight: 400;
+        font-size: 16px;
+        padding: 0;
+    }
+    .dropdown-footer-heading {
+        font-size: 18px;
+        margin: 2px 0px 0 0px;
+        padding: 0 9%;
+    }
+    .dropdown-wrapper {
+        background: #FFFFFF;
+        height: 97px;
+        width: 364px;
+        padding: 0;
+    }
+    .dropdown-wrapper-footer {
+        background: #D8EAA0;
+        color: rgba(0, 0, 0, 0.51);
+        font-family: Cabin-Medium;
+        font-style: normal;
+        font-weight: 500;
+        height: 146px;
+    }
+    .dropdown-footer-content {
+        font-size: 15px;
+        margin: 0;
+        line-height: 26px;
+    }
+    .custom-navbar .user {
+        margin: 0 10px 8px 0;
+        text-align: end;
+        color: #15830c;
+    }
+    .custom-navbar .dropdown-toggle: : after {
+        border: solid rgb(0, 0, 0);
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 4px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        color: inherit;
+    }
+    .custom-navbar .sign-up {
+        grid-area: sign-up;
+        background: rgb(14,104,55);
+        border: none;
+        color: rgb(255,255,255);
+        font-family: Cabin-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
+        height: 36px;
+        line-height: 30px;
+        width: 88px;
+        text-transform: capitalize;
+        padding: .1em;
+        margin-left: 9px;
+        margin-bottom: 1em;
+    }
+    .custom-navbar .login {
+        grid-area: login;
+        background: rgb(140,198,63);
+        border: none;
+        color: rgb(255,255,255);
+        font-family: Cabin-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 19px;
+        height: 36px;
+        width: auto;
+        text-transform: capitalize;
+        padding: .1em;
+        margin-bottom: 1em;
+    }
+    .main-banner .text-wrapper {
+        width: 98%;
+        margin: 54% auto;
+        float: none;
+        background: #807f7fb3;
+        padding: 3%;
+        color: #fff;
+    }
+    .main-banner-green .text-wrapper {
+        width: 98%;
+        margin: 6% auto;
+        float: none;
+        text-align: justify;
+    }
+    .main-banner-green .centered-image img {
+        position: relative;
+        margin: 0% 0 0 0 auto;
+        width: 95%;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 6%;
+    }
+    .fine-print {
+        font-size: 16px;
+        font-weight: 100;
+        margin-top: 20px;
+    }
+    .main-banner-12 .main-banner-12-inner-wrapper {
+        background: rgba(255, 255, 255, 0.87);
+        width: 90%;
+        margin: 0 auto;
+    }
+    .main-banner-12 .text-wrapper-inner {
+        width: 98%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 3%;
+    }
+    .main-banner-12 .centered-image img {
+        position: relative;
+        margin: 0% auto;
+        width: 76%;
+        display: flex;
+        align-items: center;
+    }
+    .main-banner-accordion .text-wrapper, .main-banner-darkgreen .text-wrapper, .main-banner-white .text-wrapper {
+        width: 98%;
+        margin: 5% auto;
+        float: none;
+        text-align: justify;
+    }
+    .main-banner-accordion .accordion {
+        padding: 0;
+    }
+    .main-banner-accordion .accordion .card-body {
+        margin: 0;
+        text-align: justify;
+    }
+    .main-banner-white .btn-cta {
+        background: rgb(140,198,63);
+        border: none;
+        font-family: Cabin-Regular, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 22px;
+        width: 100%;
+        margin: 0;
+    }
+    .footer-content p {
+        color: #15840C;
+        font-size: 17px;
+        padding-top: 10px;
+        text-align: left;
+        line-height: 23px;
+        text-align: center;
+    }
+    /*#############dashboard ###########*/
+    .dashboard-container {
+        padding: 1% 1%;
+    }
+    .current-page {
+        font-family: Cabin-regular;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        text-transform: capitalize;
+        padding: 0;
+        margin: 26% 0% 9% 0%;
+    }
+    .CheckingCard {
+        height: 168px;
+        background: #FFFFFF;
+        padding: 5%;
+        box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        transition: .3s ease;
+        margin-bottom: .5em;
+    }
+    .CheckingCard__balance {
+        font-weight: 500;
+        font-size: 33px;
+        color: #000000;
+        margin: 6% 0 0% 0;
+    }
+    .CheckingCard__title {
+        font-weight: 500;
+        font-size: 20px;
+        color: #0E6837;
+        margin: 0px 4px;
+        line-height: 20px;
+    }
+    .CheckingCard__value {
+        font-size: 17px;
+        color: #C7C7C7;
+        line-height: 17px;
+    }
+    .CheckingCard__balance-caption {
+        font-weight: 500;
+        font-size: 18px;
+        color: #C7C7C7;
+        text-transform: capitalize;
+        margin-bottom: 0;
+    }
+    .CheckingCard__balance-reward {
+        font-weight: 500;
+        font-size: 17px;
+        color: #C7C7C7;
+    }
+    span.CheckingCard__balance-reward-value {
+        font-weight: 500;
+        font-size: 17px;
+        color: #000;
+    }
+    .CheckingCard__icon {
+        height: 19px;
+    }
+    .NotificationBar__btn {
+        font-size: 18px;
+    }
+    .NotificationBar {
+        height: 140px;
+        background: #D8EAA0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        position: relative;
+        margin: 3% 2% 3% 2%;
+    }
+    .NotificationBar__btn {
+        padding: .3em;
+    }
+    .NotificationBar__modal {
+        border: none !important;
+        font-weight: 500;
+        font-size: 18px;
+        padding: 0;
+        box-shadow: none;
+        text-transform: inherit;
+    }
+    .NotificationBar {
+        height: auto;
+        background: #ffffff;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        position: relative;
+        margin: 10px;
+    }
+    .NotificationBar__btn {
+        padding: .6em;
+        width: 100%;
+        background: #D8EAA0;
+        margin: 1%;
+    }
+    .NotificationBar__modal: hover, .NotificationBar__modal: focus, .NotificationBar__modal: active {
+        font-size: 18px;
+        font-weight: 500;
+        border: none !important;
+        padding: 0;
+        box-shadow: none;
+    }
+    div.dataTables_wrapper div.dataTables_length.d-flex.flex-row label {
+        margin-top: 1.2rem;
+        margin-right: 1rem;
+        font-size: 18px;
+        color: #0E6837;
+    }
+    div.dataTables_wrapper div.dataTables_length select, div.dataTables_wrapper div.dataTables_length input {
+        width: auto;
+        background: transparent;
+        border: 0px;
+        font-size: 18px;
+        height: 30px;
+        margin-top: 19px;
+        color: #C7C7C7;
+        outline: none;
+        margin-bottom: unset;
+    }
+    .dataTables_filter.md-form {
+        position: relative;
+        margin-top: 0;
+        margin-bottom: 1.5rem;
+    }
+    .Table__notification {
+        display: block;
+    }
+    .Table__notification thead th {
+        font-size: 18px;
+        line-height: 21px;
+        color: #15840C;
+        padding: 1rem 0;
+        text-transform: capitalize;
+    }
+    .Table__notification .table td, .Table__notification .table th {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+    .dataTables_wrapper {
+        margin: 0 -13px;
+    }
+    .NotificationBar__btn .modal-title {
+        font-size: 24px;
+    }
+    .NotificationBar__btn .modal-dialog {
+        max-width: 90%;
+        margin: 1.75rem auto;
+    }
+    .NotificationBar__btn table td {
+        font-size: 16px;
+        font-weight: 300;
+    }
+    #DtTable__Notification_wrapper .table td {
+        font-size: 18px;
+        font-weight: 300;
+    }
+    #DtTable__Notification_wrapper input {
+        border: 1px solid #ced4da;
+        font-size: 18px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+        top: 0;
+    }
+    div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+        font-size: 18px;
+        line-height: 18px;
+        color: #0E6837;
+        text-align: center;
+        margin-bottom: 1rem;
+        width: 100%;
+    }
+    .dataTables_paginate .pagination {
+        display: -ms-flexbox;
+        display: inline-flex;
+        /* list-style: none;
+        */
+        border-radius: .25rem;
+        text-align: center;
+        padding-left: unset;
+        margin: 0 auto;
+    }
+    #DtTable__Notification_wrapper .pagination .page-item .page-link {
+        font-size: 18px;
+        color: #212529;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        -webkit-transition: all 0.3s linear;
+        transition: all 0.3s linear;
+    }
+    .footer {
+        display: grid;
+        grid-area: footer;
+        align-items: center;
+        background-color: #184437;
+        height: auto;
+    }
+    /*####### UserForm #########*/
+    .UserForm .my-auto {
+        padding: 0;
+    }
+    .UserForm__wrapper {
+        width: 100%;
+        margin-top: 3em;
+    }
+    .UserForm .sign-in {
+        background: #0E6837 ;
+        color: #fff;
+    }
+    .UserForm a {
+        color: #0E6837;
+    }
+    .UserForm--icon {
+        color: #0E6837;
+    }
+    .ApplyBanner__title {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .ApplyBanner h1 {
+        font-size: 35px;
+        line-height: 59px;
+        color: #184437;
+        width: 89%;
+        margin: 0 auto;
+    }
+    .ApplyBanner__image-imposed {
+        margin: -12% auto;
+        width: 100%;
+    }
+    .ApplyBanner__image-wrapper {
+        background-image: url(../img/8flowers.png);
+        background-repeat: repeat-x;
+        width: 100%;
+        text-align: center;
+        margin: 12% 0;
+        height: 254px;
+    }
+    .ApplyBanner__footer {
+        text-align: center;
+        margin: 3rem 0;
+    }
+    .ApplyBanner h3 {
+        font-weight: 500;
+        font-size: 30px;
+    }
+    .benefits-features {
+        margin: 2rem 0;
+    }
+    .benefits-features h1 {
+        font-size: 35px;
+        line-height: 45px;
+    }
+    .benefits-features h3 {
+        color: #184437;
+        font-family: Merriweather-Black, serif;
+        font-weight: 900;
+        font-size: 30px;
+        padding: 0;
+    }
+    .benefits-features p {
+        padding: 0;
+        text-align: justify;
+    }
+    .credit-banner-green .text-wrapper h1 {
+        font-size: 35px;
+        line-height: 45px;
+        color: #184437;
+    }
+    .credit-banner-green .text-wrapper {
+        width: 89%;
+        float: none;
+        margin: 6% auto;
+    }
+    .credit-banner-green .text-wrapper p {
+        font-size: 20px;
+        line-height: 30px;
+        text-align: justify;
+    }
+    .ApplyForm__form {
+        width: 100%;
+    }
+    .ApplyForm {
+        background: #D8EAA0;
+        position: relative;
+        padding: 0%;
+    }
+    .ApplyForm__wrapper {
+        width: auto;
+        margin-top: 2rem;
+    }
+    .ApplyForm__title {
+        font-family: Merriweather-Black, serif;
+        font-size: 35px;
+        line-height: 45px;
+        text-align: center;
+        color: #184437;
+    }
+
+    .interests-composite h1 {
+        color: #fff;
+        font-size: 78px;
+        font-family: Cabin-Regular, sans-serif;
+    }
+
+    .interests-composite h3 {
+        padding: 0 10%;
+        font-size: 33px;
+        margin-bottom: 1rem;
+        font-family: Merriweather-Black, serif;
+    }   
+
+    .interests-composite p {
+        padding: 0 4%;
+        text-align: justify;
+    }
+    .banner-landscape img {
+        width: 100%;
+        margin-top: 6px;
+        z-index: -1;
+    }
+
+    .FindAtm__wrapper {
+        padding: 0;
+    }
+    .FindAtm__btn {
+        background: #C0E570;
+        border: none;
+        color: #0E6837;
+        font-family: Cabin-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        min-width: 90px;
+        width: auto;
+        text-transform: capitalize;
+        padding: .1em;
+    }
+.navbar-search {
+    height: 54px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0 9px;
+}
+}
+@media (min-width: 320px) and (max-width: 1024px) and (orientation: landscape) {
+    body {
+        font-family: Cabin-Regular, sans-serif;
+        font-size: 16px;
+        font-weight: 100;
+    }
+    h1 {
+        font-family: Merriweather-Black, serif;
+        font-size: 32px;
+        font-weight: 900;
+        padding-bottom: 8px;
+    }
+    .navbar .login-group .login-drop a {
+        font-size: 26px !important;
+        padding: 10px;
+        font-size: .9375rem;
+        font-weight: 300;
+    }
+    .login-drop.dropdown-menu {
+        display: block;
+        position: relative !important;
+        border: none;
+        box-shadow: none;
+        z-index: 1;
+    }
+    .login-group {
+        display: block;
+    }
+    .login-group .login {
+        display: none;
+    }
+    .navbar .dropdown-menu .dropdown-content-wrapper a span {
+        font-size: 21px;
+        font-weight: 600;
+        margin-left: 24px;
+        line-height: 15px;
+    }
+    .custom-navbar .navbar {
+        font-size: 30px;
+        padding: 0 1%;
+        background: rgb(255, 255, 255);
+        height: auto;
+        overflow-y: scroll;
+    }
+    .logo img {
+        height: 50px;
+        width: 108px;
+    }
+    .navbar-toggler-icon {
+        display: inline-block;
+        width: 1.5em;
+        height: 1.5em;
+        vertical-align: middle;
+    }
+    .dropdown-col {
+        font-weight: 700;
+        font-size: 21px;
+    }
+    .custom-navbar .user {
+        margin: 0 10px 8px 0;
+        text-align: end;
+        color: #15830c;
+    }
+    .custom-navbar .row {
+        margin: 0 -10px;
+        padding: 0;
+    }
+    .checking {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/interest-account-icon.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 30px;
+        margin-top: 18px;
+        margin-left: 0px;
+        padding-left: 35px;
+        width: auto;
+    }
+    .savings {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/savings-icon.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 30px;
+        margin-top: 22px;
+        margin-left: 0px;
+        padding-left: 34px;
+        width: auto;
+    }
+    .debit-cards {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/credit-card-icon.svg);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 30px;
+        margin-top: 22px;
+        margin-left: 18px;
+        padding-left: 36px;
+        width: auto;
+    }
+    .send-money {
+        display: flex;
+        align-items: center;
+        background-image: url(../img/money-icon.png);
+        background-position: left;
+        background-repeat: no-repeat;
+        background-size: contain;
+        height: 30px;
+        margin-top: 22px;
+        margin-left: 0;
+        padding-left: 56px;
+        width: auto;
+    }
+    .dropdown-right {
+        grid-area: dropdown-right;
+        font-weight: 700;
+        font-size: 21px;
+        /* height: 186px;
+        */
+    }
+    .dropdown-footer-heading {
+        font-size: 21px;
+        margin: 7px 0px 0 0px;
+    }
+    .dropdown-wrapper {
+        background: #FFFFFF;
+        height: 123px;
+        width: 644px;
+    }
+    .dropdown-wrapper-footer {
+        background: #D8EAA0;
+        color: rgba(0, 0, 0, 0.51);
+        font-family: Cabin-Medium;
+        font-style: normal;
+        font-weight: 500;
+        height: 144px;
+    }
+    .dropdown-footer-content {
+        font-size: 19px;
+        margin: 4px 0px 0 -14px;
+        line-height: 23px;
+    }
+    .custom-navbar .dropdown-toggle: : after {
+        border: solid rgb(0, 0, 0);
+        border-width: 0 2px 2px 0;
+        display: inline-block;
+        padding: 5px;
+        transform: rotate(45deg);
+        -webkit-transform: rotate(45deg);
+        color: inherit;
+    }
+    .custom-navbar .sign-up {
+        grid-area: sign-up;
+        background: rgb(14,104,55);
+        border: none;
+        color: rgb(255,255,255);
+        font-family: Cabin-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        height: 36px;
+        line-height: 30px;
+        width: 121px;
+        text-transform: capitalize;
+        padding: .1em;
+        margin-left: 9px;
+        margin-bottom: 1em;
+    }
+    .custom-navbar .login {
+        grid-area: login;
+        background: rgb(140,198,63);
+        border: none;
+        color: rgb(255,255,255);
+        font-family: Cabin-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        height: 36px;
+        width: 124px;
+        text-transform: capitalize;
+        padding: .1em;
+        margin-bottom: 1em;
+    }
+    .custom-navbar .nav li a, .custom-navbar .custom-navbar .navbar.navbar-light .breadcrumb .nav-item .nav-link, .navbar.navbar-light .navbar-nav .nav-item .nav-link {
+        text-decoration: none;
+        padding: 5px 0 0px 8px;
+        font-size: 25px;
+    }
+    .main-banner .text-wrapper {
+        width: 63%;
+        margin: 34% auto;
+        float: none;
+        background: #807f7fb3;
+        padding: 3%;
+        color: #fff;
+    }
+    .main-banner-green .text-wrapper {
+        width: 63%;
+        /* margin: 6% auto;
+        */
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 5%;
+        margin-bottom: 1%;
+    }
+    .main-banner-green .centered-image img {
+        position: relative;
+        margin: 0% 0 0 0 auto;
+        width: 40%;
+        display: flex;
+        align-items: center;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 7%;
+    }
+    .fine-print {
+        font-size: 12px;
+        font-weight: 100;
+        margin-top: 20px;
+    }
+    .main-banner-12 .main-banner-12-inner-wrapper {
+        background: rgba(255, 255, 255, 0.87);
+        width: 83%;
+        margin: 0 auto;
+    }
+    .main-banner-12 .text-wrapper-inner {
+        width: 63%;
+        float: none;
+        margin-left: auto;
+        margin-right: auto;
+        margin-top: 2%;
+        margin-bottom: 1%;
+    }
+    .main-banner-12 .centered-image img {
+        position: relative;
+        margin: 0% auto;
+        width: 76%;
+        display: flex;
+        align-items: center;
+    }
+    .main-banner-accordion .text-wrapper, .main-banner-darkgreen .text-wrapper, .main-banner-white .text-wrapper {
+        width: 63%;
+        margin: 5% auto;
+        float: none;
+    }
+    .main-banner-accordion .accordion {
+        padding: 1em 6%;
+    }
+    .main-banner-accordion .accordion .card-body {
+        margin: 0 19px;
+        text-align: justify;
+    }
+    .main-banner-white .btn-cta {
+        background: rgb(140,198,63);
+        border: none;
+        font-family: Cabin-Regular, sans-serif;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        width: 100%;
+    }
+    .card-header {
+        border-bottom: none;
+        display: flex;
+        align-items: center;
+        background-color: #c0e571;
+        color: #285e0e;
+        cursor: pointer;
+        height: 54px;
+        margin-bottom: 11px!important;
+        padding: .75rem 1.25rem .75rem 41px;
+    }
+    .card-header-left-margin {
+        margin-left: 39px;
+        font-size: 25px;
+    }
+    .md-accordion .card .card-header a: not(.collapsed) .rotate-icon {
+        background-image: url(../img/ellipse-minus.png);
+        height: 30px;
+        width: 30px;
+        position: absolute;
+        background-repeat: no-repeat;
+        background-size: cover;
+    }
+    /*#############dashboard ###########*/
+    .dashboard-container {
+        padding: 1% 1%;
+    }
+    .current-page {
+        font-family: Cabin-regular;
+        font-style: normal;
+        font-weight: 500;
+        font-size: 30px;
+        text-transform: capitalize;
+        padding: 11% 0 8%;
+        text-align: center;
+    }
+    .CheckingCard {
+        height: 257px;
+        background: #FFFFFF;
+        padding: 5%;
+        box-shadow: 0px 0px 18px rgba(0, 0, 0, 0.25);
+        border-radius: 20px;
+        transition: .3s ease;
+        margin-bottom: 1em;
+    }
+    .CheckingCard__balance {
+        font-weight: 500;
+        font-size: 40px;
+        color: #000000;
+        margin: 2% 0 0% 0;
+    }
+    .CheckingCard__title {
+        font-weight: 500;
+        font-size: 30px;
+        color: #0E6837;
+        margin: 0px 20px;
+        line-height: 35px;
+    }
+    .CheckingCard__value {
+        font-size: 23px;
+        color: #C7C7C7;
+        line-height: 33px;
+    }
+    .CheckingCard__balance-caption {
+        font-weight: 500;
+        font-size: 25px;
+        color: #C7C7C7;
+        text-transform: capitalize;
+    }
+    .CheckingCard__balance-reward {
+        font-weight: 500;
+        font-size: 27px;
+        color: #C7C7C7;
+    }
+    span.CheckingCard__balance-reward-value {
+        font-weight: 500;
+        font-size: 27px;
+        color: #000;
+    }
+    .CheckingCard__icon {
+        height: 40px;
+    }
+    .NotificationBar__btn {
+        font-size: 30px;
+    }
+    .NotificationBar {
+        height: 140px;
+        background: #D8EAA0;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-around;
+        position: relative;
+        margin: 3% 2% 3% 2%;
+    }
+    .NotificationBar__btn {
+        padding: .3em;
+    }
+    .NotificationBar__modal {
+        border: none !important;
+        font-weight: 500;
+        font-size: 28px;
+        padding: 0;
+        box-shadow: none;
+        text-transform: inherit;
+    }
+    .NotificationBar {
+        height: auto;
+        background: #ffffff;
+        width: 100%;
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+        position: relative;
+        margin: 10px;
+    }
+    .NotificationBar__btn {
+        padding: .6em;
+        width: 100%;
+        background: #D8EAA0;
+        margin: 1%;
+    }
+    .NotificationBar__modal: hover, .NotificationBar__modal: focus, .NotificationBar__modal: active {
+        font-size: 28px;
+        font-weight: 500;
+        border: none !important;
+        padding: 0;
+        box-shadow: none;
+    }
+    div.dataTables_wrapper div.dataTables_length.d-flex.flex-row label {
+        margin-top: 1.2rem;
+        margin-right: 1rem;
+        font-size: 30px;
+        color: #0E6837;
+    }
+    div.dataTables_wrapper div.dataTables_length select, div.dataTables_wrapper div.dataTables_length input {
+        width: auto;
+        background: transparent;
+        border: 0px;
+        font-size: 23px;
+        height: 30px;
+        margin-top: 30px;
+        color: #C7C7C7;
+        outline: none;
+        text-align: center;
+    }
+    .Table__notification thead th {
+        font-size: 24px;
+        line-height: 24px;
+        color: #15840C;
+        padding: 1rem 0;
+        text-transform: capitalize;
+    }
+    .Table__notification .table td, .Table__notification .table th {
+        padding: 0;
+        vertical-align: top;
+        border-top: 1px solid #dee2e6;
+    }
+    .dataTables_wrapper {
+        margin: 20px 0 0;
+    }
+    .NotificationBar__btn .modal-title {
+        font-size: 30px;
+    }
+    .NotificationBar__btn .modal-header .close {
+        padding: 1rem 1rem;
+        margin: -1rem -1rem -1rem auto;
+        font-size: 40px;
+    }
+    .NotificationBar__btn .modal-dialog {
+        max-width: 90%;
+        margin: 1.75rem auto;
+    }
+    .NotificationBar__btn table td {
+        font-size: 22px;
+        font-weight: 300;
+    }
+    #DtTable__Notification_wrapper .table td {
+        font-size: 20px;
+        font-weight: 300;
+    }
+    #DtTable__Notification_wrapper input {
+        border: 1px solid #ced4da;
+        font-size: 27px;
+        width: 100%;
+        margin: 0;
+        position: relative;
+    }
+    div.dataTables_wrapper div.dataTables_info, div.dataTables_wrapper div.dataTables_paginate {
+        font-size: 20px;
+        line-height: 36px;
+        color: #0E6837;
+        text-align: center;
+    }
+    .dataTables_paginate .pagination {
+        display: inline-flex;
+        border-radius: .25rem;
+        text-align: center;
+        padding-left: unset;
+        margin: 0 auto;
+    }
+    #DtTable__Notification_wrapper .pagination .page-item .page-link {
+        font-size: 20px;
+        color: #212529;
+        background-color: transparent;
+        border: 0;
+        outline: 0;
+        transition: all 0.3s linear;
+    }
+    .footer {
+        display: grid;
+        grid-area: footer;
+        align-items: center;
+        background-color: #184437;
+        height: auto;
+    }
+    .footer-content p {
+        color: #8CC63F;
+        font-size: 15px;
+        line-height: 15px;
+        text-align: left;
+        padding: .5rem;
+    }
+    .UserForm .my-auto {
+        padding: 0;
+    }
+    .UserForm__wrapper {
+        width: 100%;
+        margin-top: 3em;
+    }
+    .UserForm .sign-in {
+        background: #0E6837 ;
+        color: #fff;
+    }
+    .UserForm a {
+        color: #0E6837;
+    }
+    .UserForm--icon {
+        color: #0E6837;
+    }
+    .ApplyBanner__title {
+        text-align: center;
+        margin-top: 3rem;
+    }
+    .ApplyBanner h1 {
+        font-size: 35px;
+        line-height: 59px;
+        color: #184437;
+        width: 89%;
+        margin: 0 auto;
+    }
+    .ApplyBanner__image-imposed {
+        margin: -12% auto;
+        width: 100%;
+    }
+    .ApplyBanner__image-wrapper {
+        background-image: url(../img/8flowers.png);
+        background-repeat: repeat-x;
+        width: 100%;
+        text-align: center;
+        margin: 12% 0;
+        height: 254px;
+    }
+    .ApplyBanner__footer {
+        text-align: center;
+        margin: 3rem 0;
+    }
+    .ApplyBanner h3 {
+        font-weight: 500;
+        font-size: 30px;
+    }
+    .benefits-features {
+        margin: 2rem 0;
+    }
+    .benefits-features h1 {
+        font-size: 35px;
+        line-height: 45px;
+        padding: 0;
+    }
+    .benefits-features p {
+        padding: 0 4%;
+        text-align: justify;
+    }
+    .benefits-features h3 {
+        color: #184437;
+        font-family: Merriweather-Black, serif;
+        font-weight: 900;
+        font-size: 30px;
+    }
+    .credit-banner-green .text-wrapper h1 {
+        font-size: 35px;
+        line-height: 45px;
+        color: #184437;
+    }
+    .credit-banner-green .text-wrapper {
+        width: 89%;
+        float: none;
+        margin: 6% auto;
+    }
+    .ApplyForm__form {
+        width: 100%;
+    }
+    .ApplyForm {
+        background: #D8EAA0;
+        position: relative;
+        padding: 0%;
+    }
+    .ApplyForm__wrapper {
+        width: auto;
+        margin-top: 2rem;
+    }
+    .ApplyForm__title {
+        font-family: Merriweather-Black, serif;
+        font-size: 35px;
+        line-height: 45px;
+        text-align: center;
+        color: #184437;
+    }
+    .interests-composite h1 {
+        color: #fff;
+        font-size: 78px;
+        font-family: Cabin-Regular, sans-serif;
+    }
+
+    .interests-composite h3 {
+        padding: 0 10%;
+        font-size: 33px;
+        margin-bottom: 1rem;
+        font-family: Merriweather-Black, serif;
+    }   
+
+    .interests-composite p {
+        padding: 0 4%;
+        text-align: justify;
+    }
+    .banner-landscape img {
+        width: 100%;
+        margin-top: 6px;
+        z-index: -1;
+    }
+
+    .FindAtm__wrapper {
+        padding: 0 2%;
+    }
+    .FindAtm__btn {
+        background: #C0E570;
+        border: none;
+        color: #0E6837;
+        font-family: Cabin-Regular;
+        font-style: normal;
+        font-weight: 400;
+        font-size: 23px;
+        min-width: 90px;
+        width: auto;
+        text-transform: capitalize;
+        padding: .1em;
+    }
+.navbar-search {
+    height: 54px;
+    display: flex;
+    justify-content: start;
+    align-items: center;
+    margin: 0 9px;
+}
+}

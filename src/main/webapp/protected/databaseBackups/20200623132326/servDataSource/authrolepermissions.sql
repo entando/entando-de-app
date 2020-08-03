@@ -1,0 +1,10 @@
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('admin','superuser');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('editor','enterBackend');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('editor','editContents');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('editor','manageResources');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('editor','manageCategories');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('supervisor','enterBackend');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('supervisor','editContents');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('supervisor','validateContents');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('supervisor','manageResources');
+INSERT INTO authrolepermissions (rolename,permissionname) VALUES ('supervisor','manageCategories');
