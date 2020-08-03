@@ -1,0 +1,81 @@
+<content>
+	<description>Sample - Lorem Ipsum</description>
+	<typeCode>CNG</typeCode>
+	<typeDescription>Generic Content</typeDescription>
+	<mainGroup>free</mainGroup>
+	<attributes>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>Title</name>
+			<type>Text</type>
+			<value>Heading</value>
+			<roles>
+				<role>jacms:title</role>
+			</roles>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>Abstract</name>
+			<type>Hypertext</type>
+			<htmlValue><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></htmlValue>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>MainBody</name>
+			<type>Hypertext</type>
+			<htmlValue><![CDATA[<p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui.</p>]]></htmlValue>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">
+			<name>Picture</name>
+			<type>Image</type>
+			<resource>
+				<text>The very first Entando Logo in an artistic reprise</text>
+				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
+				<resourceId>logoDarkBlue</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=logoDarkBlue</restResourcePath>
+			</resource>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>Caption</name>
+			<type>Text</type>
+			<value>One caption to rule 'em all</value>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttribute">
+			<name>Links</name>
+			<type>Monolist</type>
+			<attributes>
+				<attribute xsi:type="jaxbLinkAttribute">
+					<name>Links</name>
+					<type>Link</type>
+					<link>
+						<text>Entando.com</text>
+						<url>http://www.entando.com/</url>
+						<symbolicLink>
+							<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
+						</symbolicLink>
+					</link>
+				</attribute>
+				<attribute xsi:type="jaxbLinkAttribute">
+					<name>Links</name>
+					<type>Link</type>
+					<link>
+						<text>Entando.org</text>
+						<url>http://www.entando.org/</url>
+						<symbolicLink>
+							<symbolicDestination>#!U;http://www.entando.org/!#</symbolicDestination>
+						</symbolicLink>
+					</link>
+				</attribute>
+				<attribute xsi:type="jaxbLinkAttribute">
+					<name>Links</name>
+					<type>Link</type>
+					<link>
+						<text>Entando @GitHub</text>
+						<url>http://www.github.com/entando/</url>
+						<symbolicLink>
+							<symbolicDestination>#!U;http://www.github.com/entando/!#</symbolicDestination>
+						</symbolicLink>
+					</link>
+				</attribute>
+			</attributes>
+		</attribute>
+	</attributes>
+	<lastEditor>admin</lastEditor>
+</content>

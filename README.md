@@ -11,13 +11,13 @@ You will need though to use the correct profiles to run it.
 
 Here the command to use 
 ```
-mvn clean package jetty:run -Pjetty-local -Pderby
+mvn clean package jetty:run-war -Pjetty-local -Pderby
 ```
 
 If you want to use keycloak as external authorization service, add the keycloak profile and update the proper variables (you can find them in the `properties` tag in the pom)
 
 ```
-mvn clean package jetty:run -Pjetty-local -Pderby -Pkeycloak
+mvn clean package jetty:run-war -Pjetty-local -Pderby -Pkeycloak
 ```
 
 ## Using docker
