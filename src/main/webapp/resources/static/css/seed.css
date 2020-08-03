@@ -170,7 +170,7 @@ h2 {
     grid-template-areas: '. . . . .' '. dropdown-footer-heading-left dropdown-footer-heading-left dropdown-footer-heading-right dropdown-footer-heading-right' '. dropdown-footer-content-left dropdown-footer-content-middle dropdown-footer-content-right .';
     background: #D8EAA0;
     color: rgba(0, 0, 0, 0.51);
-    font-family: Cabin-Medium;
+    font-family: Cabin-Medium, sans-serif;
     font-style: normal;
     font-weight: 500;
     height: 194px;
@@ -204,7 +204,7 @@ h2 {
     background: #0E6837;
     border: none;
     color: #fff;
-    font-family: Cabin-Regular;
+    font-family: Cabin-Regular, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -332,7 +332,7 @@ h2 {
     margin-top: 44px;
 }
 .accordion-content p {
-    font-family: Cabin-Regular;
+    font-family: Cabin-Regular, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 22px;
@@ -439,7 +439,7 @@ h2 {
     background: #0e6837;
     border: none;
     color: #fff;
-    font-family: Cabin-Regular;
+    font-family: Cabin-Regular, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -487,7 +487,7 @@ h2 {
 .dropdown-wrapper-footer {
     background: #D8EAA0;
     color: rgba(0, 0, 0, 0.51);
-    font-family: Cabin-Medium;
+    font-family: Cabin-Medium, sans-serif;
     font-style: normal;
     font-weight: 500;
     height: 174px;
@@ -609,7 +609,7 @@ h3, .accordion h3 {
     background: #8cc63f;
     border: none;
     color: #fff;
-    font-family: Cabin-Regular;
+    font-family: Cabin-Regular, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 15px;
@@ -649,7 +649,7 @@ h3, .accordion h3 {
 .custom-navbar .user {
 }
 .current-page {
-    font-family: Cabin-regular;
+    font-family: Cabin-regular, sans-serif;
     font-style: normal;
     font-weight: 500;
     font-size: 49px;
@@ -862,7 +862,6 @@ div.dataTables_paginate .pagination {
     font-family: Merriweather-Black, serif;
     font-size: 47px;
     font-weight: 900;
-    font-size: 47px;
     line-height: 59px;
     text-align: center;
     color: #184437;
@@ -888,7 +887,7 @@ div.dataTables_paginate .pagination {
 .ApplyForm label {
     font-weight: 500;
     font-size: 18px;
-    font-family: Cabin-medium;
+    font-family: Cabin-medium, sans-serif;
     margin-bottom: 1.2px;
 }
 .credit-banner-green {
@@ -926,7 +925,6 @@ div.dataTables_paginate .pagination {
 .benefits-features h3 {
     color: #184437;
     font-family: Merriweather-Black, serif;
-    font-size: 47px;
     font-weight: 900;
     font-size: 33px;
     padding: 0 4rem;
@@ -1052,7 +1050,7 @@ div.dataTables_paginate .pagination {
     background: #C0E570;
     border: none;
     color: #0E6837;
-    font-family: Cabin-Regular;
+    font-family: Cabin-Regular, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 23px;

@@ -21,7 +21,7 @@
 .footer__ootb {
   padding: 1rem;
   display: flex;
-  font-family: Roboto;
+  font-family: Roboto, sans-serif;
   font-style: normal;
   font-size: 14.002px;
   line-height: 16px;
