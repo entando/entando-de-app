@@ -535,27 +535,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('Ootbc
   </body>
 </html>
 ');
-INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
-INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Home - test</property>
-<property key="it">Home - test</property>
-</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
-<config>
-  <useextratitles>false</useextratitles>
-  <charset>utf8</charset>
-  <mimeType>text/html</mimeType>
-</config>','2020-07-31 10:22:15');
-INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Home - test</property>
-<property key="it">Home - test</property>
-</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
-<config>
-  <useextratitles>false</useextratitles>
-  <charset>utf8</charset>
-  <mimeType>text/html</mimeType>
-</config>','2020-07-31 10:22:15');
+
 
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -571,76 +551,6 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
     <parameter name="icons" />
     <action name="configSimpleParameter"/>
 </config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.8887cab1.chunk.js","ootbc-bundle/static/js/main.0acb2ec5.chunk.js","ootbc-bundle/static/js/runtime-main.45dc1061.js"],"customElement":"header-config"}',NULL);
-
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Ootbc footer Widget</property>
-<property key="it">Ootbc footer Widget</property>
-</properties>','<config>
-    <parameter name="copyright" />
-    <parameter name="theme" />
-    <parameter name="linkSocial1" />
-    <parameter name="linkSocial2" />
-    <parameter name="linkSocial3" />
-    <parameter name="linkSocial4" />
-    <parameter name="linkSocial5" />
-    <parameter name="linkSocial6" />
-    <parameter name="page1" />
-    <parameter name="page2" />
-    <parameter name="page3" />
-    <parameter name="page4" />
-    <parameter name="social1" />
-    <parameter name="social2" />
-    <parameter name="social3" />
-    <parameter name="social4" />
-    <parameter name="social5" />
-    <parameter name="social6" />
-    <action name="configSimpleParameter"/>
-</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle');
-
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="copyright">Entando - PI: 03264290929</property>
-<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
-<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
-<property key="theme">blue_entando</property>
-<property key="social2">linkedin</property>
-<property key="page3">Sitemap</property>
-<property key="social1">facebook</property>
-</properties>');
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
-<property key="logo">Entando_light.svg</property>
-<property key="theme">light</property>
-<property key="sideNavigation">true</property>
-<property key="logoRedirectPage">homepage</property>
-<property key="tagline">Entando Ootb</property>
-<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
-</properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="copyright">Entando - PI: 03264290929</property>
-<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
-<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
-<property key="theme">blue_entando</property>
-<property key="social2">linkedin</property>
-<property key="page3">Sitemap</property>
-<property key="social1">facebook</property>
-</properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
-<property key="logo">Entando_light.svg</property>
-<property key="theme">light</property>
-<property key="sideNavigation">true</property>
-<property key="logoRedirectPage">homepage</property>
-<property key="tagline">Entando Ootb</property>
-<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
-</properties>');
-
-
-
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-header-widget','ootbc-header-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <script src="<@wp.resourceURL />ootbc-bundle/static/js/2.3b049955.chunk.js"></script>
 <script src="<@wp.resourceURL />ootbc-bundle/static/js/main.3f90a792.chunk.js"></script>
@@ -669,7 +579,31 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   imgUrl="<@wp.imgURL />"
 />
 ',1);
-
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Ootbc footer Widget</property>
+<property key="it">Ootbc footer Widget</property>
+</properties>','<config>
+    <parameter name="copyright" />
+    <parameter name="theme" />
+    <parameter name="linkSocial1" />
+    <parameter name="linkSocial2" />
+    <parameter name="linkSocial3" />
+    <parameter name="linkSocial4" />
+    <parameter name="linkSocial5" />
+    <parameter name="linkSocial6" />
+    <parameter name="page1" />
+    <parameter name="page2" />
+    <parameter name="page3" />
+    <parameter name="page4" />
+    <parameter name="social1" />
+    <parameter name="social2" />
+    <parameter name="social3" />
+    <parameter name="social4" />
+    <parameter name="social5" />
+    <parameter name="social6" />
+    <action name="configSimpleParameter"/>
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-footer-widget','ootbc-footer-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentWidget param="config" configParam="copyright" var="configCopyright" />
 <@wp.currentWidget param="config" configParam="theme" var="configTheme" />
@@ -763,3 +697,208 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
     </div>
 </div>
 ',1);
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-sitemap-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Ootbc Sitemap Widget</property>
+<property key="it">Ootbc Sitemap Widget</property>
+</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,'ootbc-bundle');
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-sitemap-widget','ootbc-sitemap-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.currentPage param="code" var="currentPageCode" />
+<@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
+<link rel="stylesheet" type="text/css" href="<@wp.resourceURL />ootbc-bundle/static/css/sitemap.css">
+
+<div class="well well-small sitemap">
+<h2>Site Map</h2>
+
+<ul class="nav nav-list">
+<@wp.nav spec="code(homepage).subtree(50)" var="page">
+   <#if (previousPage?? && previousPage.code??)>
+	<#assign previousLevel=previousPage.level>
+	<#assign level=page.level>
+	<@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
+	<@wp.freemarkerTemplateParameter var="level" valueName="level" />
+	<@wp.fragment code="entando_widget_navigation_menu_include" escapeXml=false />
+   </#if>
+   <@wp.freemarkerTemplateParameter var="previousPage" valueName="page" />
+</@wp.nav>
+<#if (previousPage??)>
+   <#assign previousLevel = previousPage.level>
+   <#assign level=0>
+   <@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
+   <@wp.freemarkerTemplateParameter var="level" valueName="level" />
+   <@wp.fragment code="entando_widget_navigation_menu_include" escapeXml=false />
+   <#if (previousLevel != 0)>
+	<#list 0..(previousLevel - 1) as ignoreMe>
+		</ul></li>
+	</#list>
+   </#if>
+</#if>
+</ul>
+</div>
+<@wp.freemarkerTemplateParameter var="previousPage" valueName="" removeOnEndTag=true />
+',1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando_widget_navigation_menu_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<#assign liClass="">
+<#assign aClass="">
+<#if (previousPage.code == currentPageCode)>
+  <#assign liClass='' class="active" ''>
+</#if>
+<#if previousPage.voidPage>
+ <#assign liClass='' class="nav-header" ''>
+    <#assign aClass='' class="a-void" ''>
+</#if>
+<#if previousLevel == 0>
+  <#assign aClass='' class="root-a" ''>
+</#if>
+<li ${liClass}>
+   <#if (!previousPage.voidPage)>
+   	<a href="${previousPage.url}"  ${aClass}>
+   <#else>
+        <a ${aClass}>
+   </#if>
+   <!-- [ ${previousLevel} ]-->
+<#--  CHECK THIS
+${homeIcon}
+-->
+   ${previousPage.title}
+     </a>
+
+   <#if (previousLevel == level)>
+	</li>
+   </#if>
+   <#if (previousLevel < level)>
+	<ul class="nav-list">
+   </#if>
+   <#if (previousLevel > level)>
+	<#list 1..(previousLevel - level) as ignoreMe>
+		</li></ul>
+	</#list>
+   </#if>
+',1);
+
+INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
+INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage_test',1);
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Home - test</property>
+<property key="it">Home - test</property>
+</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-07-31 10:22:15');
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('sitemap','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Sitemap</property>
+<property key="it">Sitemap</property>
+</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-06-08 08:43:13');
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Home - test</property>
+<property key="it">Home - test</property>
+</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-07-31 10:22:15');
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('sitemap','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Sitemap</property>
+<property key="it">Sitemap</property>
+</properties>','OotbcHomepage',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-06-08 08:43:13');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="copyright">Entando - PI: 03264290929</property>
+<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
+<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
+<property key="theme">blue_entando</property>
+<property key="social2">linkedin</property>
+<property key="page3">Sitemap</property>
+<property key="social1">facebook</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
+<property key="logo">Entando_light.svg</property>
+<property key="theme">light</property>
+<property key="sideNavigation">true</property>
+<property key="logoRedirectPage">homepage</property>
+<property key="tagline">Entando Ootb</property>
+<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'ootbc-sitemap-widget',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
+<property key="logo">Entando_light.svg</property>
+<property key="sideNavigation">true</property>
+<property key="logoRedirectPage">homepage</property>
+<property key="tagline">Entando Ootb</property>
+<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="copyright">Entando - PI: 03264290929</property>
+<property key="social2">linkedin</property>
+<property key="social1">facebook</property>
+<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
+<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
+<property key="page3">Sitemap</property>
+<property key="theme">blue_entando</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="copyright">Entando - PI: 03264290929</property>
+<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
+<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
+<property key="theme">blue_entando</property>
+<property key="social2">linkedin</property>
+<property key="page3">Sitemap</property>
+<property key="social1">facebook</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
+<property key="logo">Entando_light.svg</property>
+<property key="theme">light</property>
+<property key="sideNavigation">true</property>
+<property key="logoRedirectPage">homepage</property>
+<property key="tagline">Entando Ootb</property>
+<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'ootbc-sitemap-widget',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="menuItems">[{menuItem=Smart Inbox, submenuItems=[Sea, Lake]}, {menuItem=Excursions, submenuItems=[]}]</property>
+<property key="logo">Entando_light.svg</property>
+<property key="theme">light</property>
+<property key="sideNavigation">true</property>
+<property key="logoRedirectPage">homepage</property>
+<property key="tagline">Entando Ootb</property>
+<property key="icons">[InfoCircle_BlueTheme.svg, Envelope_BlueTheme.svg, SignIn_BlueTheme.svg]</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',6,'ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="copyright">Entando - PI: 03264290929</property>
+<property key="social2">linkedin</property>
+<property key="social1">facebook</property>
+<property key="linkSocial2">https://www.linkedin.com/company/entando/</property>
+<property key="linkSocial1">https://it-it.facebook.com/Entando/</property>
+<property key="page3">Sitemap</property>
+<property key="theme">blue_entando</property>
+</properties>');
+
+
+
