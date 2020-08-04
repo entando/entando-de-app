@@ -470,7 +470,7 @@ INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HE
 
 
 
-INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('OotbcHomepage','Ootbc Homepage','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('OotbcHomepage','Homepage Template','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
 	<frame pos="0">
 		<descr>Header</descr>
@@ -550,8 +550,8 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('Ootbc
 
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Ootbc header Widget</property>
-<property key="it">Ootbc header Widget</property>
+<property key="en">Header</property>
+<property key="it">Header</property>
 </properties>','<config>
     <parameter name="menuItems" />
     <parameter name="logo" />
@@ -592,8 +592,8 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 ',1);
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Ootbc footer Widget</property>
-<property key="it">Ootbc footer Widget</property>
+<property key="en">Footer</property>
+<property key="it">Footer</property>
 </properties>','<config>
     <parameter name="copyright" />
     <parameter name="theme" />
@@ -710,8 +710,8 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 ',1);
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-sitemap-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Ootbc Sitemap Widget</property>
-<property key="it">Ootbc Sitemap Widget</property>
+<property key="en">Sitemap</property>
+<property key="it">Mappa del Sito</property>
 </properties>',NULL,NULL,NULL,NULL,1,'free',NULL,'ootbc-bundle');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-sitemap-widget','ootbc-sitemap-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentPageCode" />
