@@ -1,0 +1,28 @@
+body {
+  margin: 0;
+  font-family: "Roboto", sans-serif;
+  background: #F4F4F8 !important;
+}
+
+.page__body {
+  height: 79vh;
+  margin: 0 0 0 256px;
+}
+
+.page__footer {
+  position: absolute;
+  top: calc(77px + 79vh);
+ height: 15vh;
+  width: 100%;
+  display: flex;
+    z-index: 6000;
+}
+.header {
+height: 77px;
+}
+.header li {
+margin: 0;
+}
+.header  .bx--side-nav--ux {
+height: 79vh;
+}

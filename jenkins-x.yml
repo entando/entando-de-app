@@ -5,6 +5,8 @@ pipelineConfig:
   env:
     - name: PIPELINE_CODE
       value: deap
+    - name: ENTANDO_DOCKER_IMAGE_INFO_CONFIGMAP
+      value: entando-docker-image-info-v6.1
     - name: _JAVA_OPTIONS
       value: -XX:+UnlockExperimentalVMOptions -Dsun.zip.disableMemoryMapping=true -XX:+UseParallelGC -XX:MinHeapFreeRatio=5 -XX:MaxHeapFreeRatio=10 -XX:GCTimeRatio=4 -XX:AdaptiveSizePolicyWeight=90 -Xms1000m -Xmx12000m
   pipelines:
@@ -39,7 +41,7 @@ pipelineConfig:
                 name: container-build
               - sh: jx step post build --image "${DOCKER_REGISTRY}/${ORG}/${APP_NAME}-${JEE_SERVER}:$(cat VERSION)"
                 name: post-build
-              - sh: env APP_NAME="${APP_NAME}-${JEE_SERVER}" publish-image-info
+              - sh: kubectl patch configmap ${ENTANDO_DOCKER_IMAGE_INFO_CONFIGMAP} -n entando -p "{\"data\":{\"${APP_NAME}-${JEE_SERVER}\":\"{\\\"version\\\":\\\"${VERSION}\\\",\\\"executable-type\\\":\\\"${EXECUTABLE_TYPE}\\\",\\\"registry\\\":\\\"${DOCKER_REGISTRY}\\\",\\\"organization\\\":\\\"entando\\\"}\"}}"
                 name: update-image-map
 #              - dir: charts/preview
 #                sh: make preview

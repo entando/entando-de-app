@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-        xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
@@ -19,38 +19,28 @@
         <name>Entando Inc.</name>
         <url>http://www.entando.com/</url>
     </organization>
-    <distributionManagement>
-        <repository>
-            <id>${maven.release.repository.id}</id>
-            <name>Releases</name>
-            <url>${maven.release.repository.url}</url>
-        </repository>
-        <snapshotRepository>
-            <id>${maven.snapshot.repository.id}</id>
-            <name>Snapshot</name>
-            <url>${maven.snapshot.repository.url}</url>
-        </snapshotRepository>
-    </distributionManagement>
     <repositories>
         <repository>
-            <id>sonatype-snapshots</id>
-            <url>https://oss.sonatype.org/content/repositories/snapshots</url>
+            <id>jx-releases</id>
+            <url>https://nexus-jx.apps.serv.run/repository/maven-releases/</url>
             <releases>
                 <enabled>true</enabled>
             </releases>
             <snapshots>
-                <enabled>true</enabled>
-                <updatePolicy>always</updatePolicy>
+                <enabled>false</enabled>
             </snapshots>
         </repository>
     </repositories>
     <properties>
-        <maven.release.repository.id>sonatype-nexus-stage</maven.release.repository.id>
-        <maven.snapshot.repository.id>sonatype-nexus-snapshot</maven.snapshot.repository.id>
-        <maven.snapshot.repository.url>https://oss.sonatype.org/content/repositories/snapshots
-        </maven.snapshot.repository.url>
-        <maven.release.repository.url>https://oss.sonatype.org/service/local/staging/deploy/maven2/
-        </maven.release.repository.url>
+        <entando-admin-console.version>6.2.40</entando-admin-console.version>
+        <entando-engine.version>6.2.33</entando-engine.version>
+        <entando-portal-ui.version>6.2.6</entando-portal-ui.version>
+        <entando-plugin-jacms.version>6.2.30</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>6.2.5</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>6.2.7</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.2.10</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>6.2.6</entando-plugin-jpcontentscheduler.version>
+        <entando.keycloak.plugin.version>6.2.2</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
@@ -78,21 +68,21 @@
         <test.database.port>1527</test.database.port>
         <test.database.username>agile</test.database.username>
         <test.database.password>agile</test.database.password>
-        <test.database.port.url>jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testPort;create=true</test.database.port.url>
-        <test.database.serv.url>jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true</test.database.serv.url>
+        <test.database.port.url>
+            jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testPort;create=true
+        </test.database.port.url>
+        <test.database.serv.url>
+            jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true
+        </test.database.serv.url>
         <docker.host.address>172.17.0.1</docker.host.address>
         <env.db.environment>production</env.db.environment>
         <entando.engine.web.context>${project.build.finalName}</entando.engine.web.context>
         <skipDocker>true</skipDocker>
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
-        <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
         <entando.version>6.2.0-SNAPSHOT</entando.version>
-        <spring.version>5.1.8.RELEASE</spring.version>
-        <struts2.version>2.5.17</struts2.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
-        <postgres.driver.version>9.4.1212</postgres.driver.version>
-        <jetty.version>9.4.8.v20180619</jetty.version>
+        <jetty.version>9.4.30.v20200611</jetty.version>
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
@@ -109,84 +99,258 @@
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
     </properties>
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.entando</groupId>
+                <artifactId>entando-core-parent</artifactId>
+                <version>6.2.14</version>
+                <scope>import</scope>
+                <type>pom</type>
+            </dependency>
+            <!--engine-->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-engine</artifactId>
+                <version>${entando-engine.version}</version>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-engine</artifactId>
+                <version>${entando-engine.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <!--admin-console-->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-admin-console</artifactId>
+                <version>${entando-admin-console.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-admin-console</artifactId>
+                <version>${entando-admin-console.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-admin-console</artifactId>
+                <version>${entando-admin-console.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <!--portal-ui-->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-portal-ui</artifactId>
+                <version>${entando-portal-ui.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-portal-ui</artifactId>
+                <version>${entando-portal-ui.version}</version>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-portal-ui</artifactId>
+                <version>${entando-portal-ui.version}</version>
+                <type>test-jar</type>
+                <scope>test</scope>
+            </dependency>
+            <!--jacms-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jacms</artifactId>
+                <version>${entando-plugin-jacms.version}</version>
+                <classifier>classes</classifier>
+                <type>jar</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jacms</artifactId>
+                <version>${entando-plugin-jacms.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpmail-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <version>${entando-plugin-jpmail.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <version>${entando-plugin-jpmail.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpversioning-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpversioning</artifactId>
+                <version>${entando-plugin-jpversioning.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpversioning</artifactId>
+                <version>${entando-plugin-jpversioning.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpseo-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpseo</artifactId>
+                <version>${entando-plugin-jpseo.version}</version>
+                <classifier>classes</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.entando.entando.plugins</groupId>
+                        <artifactId>entando-plugin-jacms</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpseo</artifactId>
+                <version>${entando-plugin-jpseo.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--jpcontentscheduler-->
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                <version>${entando-plugin-jpcontentscheduler.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                <version>${entando-plugin-jpcontentscheduler.version}</version>
+                <type>war</type>
+            </dependency>
+            <!--keycloak-->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-keycloak-auth</artifactId>
+                <version>${entando.keycloak.plugin.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
     <dependencies>
+        <!--TODO clean this up. we are controlling these in the dependencyManagement seciotn -->
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-engine</artifactId>
-            <version>${entando.version}</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-engine</artifactId>
-            <version>${entando.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-admin-console</artifactId>
-            <version>${entando.version}</version>
-            <type>jar</type>
-            <scope>provided</scope>
+            <classifier>classes</classifier>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
-            <artifactId>entando-admin-console</artifactId>
-            <version>${entando.version}</version>
-            <type>war</type>
+            <artifactId>entando-portal-ui</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jacms</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpmail</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpversioning</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpseo</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+            <classifier>classes</classifier>
         </dependency>
         <dependency>
             <groupId>org.entando.entando</groupId>
             <artifactId>entando-keycloak-auth</artifactId>
-            <version>${entando.keycloak.plugin.version}</version>
-            <type>war</type>
         </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-admin-console</artifactId>
-            <version>${entando.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-portal-ui</artifactId>
-            <version>${entando.version}</version>
-            <type>jar</type>
-            <scope>provided</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-portal-ui</artifactId>
-            <version>${entando.version}</version>
-            <type>war</type>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando</groupId>
-            <artifactId>entando-portal-ui</artifactId>
-            <version>${entando.version}</version>
-            <type>test-jar</type>
-            <scope>test</scope>
-        </dependency>
-
         <dependency>
             <groupId>javax.servlet.jsp</groupId>
             <artifactId>jsp-api</artifactId>
-            <version>2.2</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
-            <version>3.1.0</version>
             <scope>provided</scope>
+        </dependency>
+            <!-- war overlays -->
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-admin-console</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando</groupId>
+                <artifactId>entando-portal-ui</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jacms</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpmail</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpseo</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpversioning</artifactId>
+                <type>war</type>
+            </dependency>
+        <!-- test dependencies -->
+        <dependency>
+            <groupId>org.entando.entando</groupId>
+            <artifactId>entando-engine</artifactId>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando</groupId>
+            <artifactId>entando-admin-console</artifactId>
+            <type>test-jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando</groupId>
+            <artifactId>entando-portal-ui</artifactId>
+            <type>test-jar</type>
         </dependency>
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-test</artifactId>
-            <version>${spring.version}</version>
             <scope>test</scope>
         </dependency>
         <dependency>
@@ -198,37 +362,22 @@
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derby</artifactId>
-            <version>10.9.1.0</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
-            <version>10.9.1.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>net.bytebuddy</groupId>
-            <artifactId>byte-buddy</artifactId>
-            <version>1.9.10</version>
         </dependency>
         <dependency>
             <groupId>junit</groupId>
             <artifactId>junit</artifactId>
-            <version>4.12</version>
             <scope>test</scope>
         </dependency>
         <dependency>
             <groupId>org.apache.commons</groupId>
             <artifactId>commons-dbcp2</artifactId>
-            <version>2.5.0</version>
             <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.bundles.app-view</groupId>
-            <artifactId>entando-app-view-cms-default</artifactId>
-            <version>${entando.version}</version>
-            <type>war</type>
         </dependency>
 
     </dependencies>
@@ -344,7 +493,7 @@
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
 
                 <!-- DB work required from the server image. Create the template Derby databases -->
-                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh  --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war --jetty-version=${jetty.version}</server.init.command>
+                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war</server.init.command>
             </properties>
         </profile>
         <profile>
@@ -354,19 +503,21 @@
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-postgresql95-base</db.base.image>
-                <db.init.command>$STI_SCRIPTS_PATH/init-postgresql-from-war.sh --war-file=/tmp/${project.build.finalName}.war --jetty-version=${jetty.version}</db.init.command>
+                <db.init.command>$STI_SCRIPTS_PATH/init-postgresql-from-war.sh --war-file=/tmp/${project.build.finalName}.war</db.init.command>
                 <db.volume.mount.path>/var/lib/pgsql/data</db.volume.mount.path>
                 <db.server.port>5432</db.server.port>
 
                 <portdb.database>portdb</portdb.database>
-                <portdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${portdb.database}</portdb.url>
+                <portdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${portdb.database}
+                </portdb.url>
                 <portdb.username>portdbuser</portdb.username>
                 <portdb.password>portdb123</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>org.postgresql.Driver</portdb.driverClassName>
 
                 <servdb.database>servdb</servdb.database>
-                <servdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${servdb.database}</servdb.url>
+                <servdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${servdb.database}
+                </servdb.url>
                 <servdb.username>servdbuser</servdb.username>
                 <servdb.password>servdb123</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
@@ -383,7 +534,7 @@
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.base.image>entando-mysql57-base</db.base.image>
-                <db.init.command>$STI_SCRIPTS_PATH/init-mysql-from-war.sh --war-file=/tmp/${project.build.finalName}.war --jetty-version=${jetty.version}</db.init.command>
+                <db.init.command>$STI_SCRIPTS_PATH/init-mysql-from-war.sh --war-file=/tmp/${project.build.finalName}.war</db.init.command>
                 <db.volume.mount.path>/var/lib/mysql/data</db.volume.mount.path>
                 <db.server.port>3306</db.server.port>
 
@@ -548,7 +699,7 @@
                             <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
-                                <from>entando/${server.base.image}:6.1.1</from>
+                                <from>entando/${server.base.image}:6.1.5</from>
                                 <skip>${skipServerImage}</skip>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
@@ -579,11 +730,16 @@
                                     <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
                                     <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
                                     <CORS_ENABLED>${cors.enabled}</CORS_ENABLED>
-                                    <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}</CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
-                                    <CORS_ACCESS_CONTROL_ALLOW_HEADERS>${cors.access.control.allow.headers}</CORS_ACCESS_CONTROL_ALLOW_HEADERS>
-                                    <CORS_ACCESS_CONTROL_ALLOW_METHODS>${cors.access.control.allow.methods}</CORS_ACCESS_CONTROL_ALLOW_METHODS>
-                                    <CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>${cors.access.control.allow.credentials}</CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
-                                    <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}</CORS_ACCESS_CONTROL_MAX_AGE>
+                                    <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}
+                                    </CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
+                                    <CORS_ACCESS_CONTROL_ALLOW_HEADERS>${cors.access.control.allow.headers}
+                                    </CORS_ACCESS_CONTROL_ALLOW_HEADERS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_METHODS>${cors.access.control.allow.methods}
+                                    </CORS_ACCESS_CONTROL_ALLOW_METHODS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>${cors.access.control.allow.credentials}
+                                    </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
+                                    <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
+                                    </CORS_ACCESS_CONTROL_MAX_AGE>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -620,11 +776,16 @@
                                     <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
                                     <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
                                     <CORS_ENABLED>${cors.enabled}</CORS_ENABLED>
-                                    <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}</CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
-                                    <CORS_ACCESS_CONTROL_ALLOW_HEADERS>${cors.access.control.allow.headers}</CORS_ACCESS_CONTROL_ALLOW_HEADERS>
-                                    <CORS_ACCESS_CONTROL_ALLOW_METHODS>${cors.access.control.allow.methods}</CORS_ACCESS_CONTROL_ALLOW_METHODS>
-                                    <CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>${cors.access.control.allow.credentials}</CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
-                                    <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}</CORS_ACCESS_CONTROL_MAX_AGE>
+                                    <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}
+                                    </CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
+                                    <CORS_ACCESS_CONTROL_ALLOW_HEADERS>${cors.access.control.allow.headers}
+                                    </CORS_ACCESS_CONTROL_ALLOW_HEADERS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_METHODS>${cors.access.control.allow.methods}
+                                    </CORS_ACCESS_CONTROL_ALLOW_METHODS>
+                                    <CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>${cors.access.control.allow.credentials}
+                                    </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
+                                    <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
+                                    </CORS_ACCESS_CONTROL_MAX_AGE>
                                 </env>
                                 <dependsOn>
                                     <container>${entando.engine.depends.on}</container>
@@ -806,6 +967,7 @@
                                 </artifactItem>
                             </artifactItems>
                             <includes>WEB-INF/aps/jsp/internalservlet/api/**/*.jsp</includes>
+                            <excludes>WEB-INF/lib/*.*</excludes>
                         </configuration>
                     </execution>
                     <!--					<execution>
@@ -839,7 +1001,6 @@
                 <version>3.2.2</version>
                 <configuration>
                     <!-- This is explicitly declared in project deps.-->
-                    <dependentWarExcludes>WEB-INF/lib/byte-buddy-*.jar</dependentWarExcludes>
                     <webResources>
                         <resource>
                             <directory>src/main/tld</directory>
@@ -862,6 +1023,36 @@
                     <filters>
                         <filter>${*}</filter>
                     </filters>
+                    <overlays>
+                        <overlay>
+                            <groupId>org.entando.entando</groupId>
+                            <artifactId>entando-admin-console</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando</groupId>
+                            <artifactId>entando-portal-ui</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jacms</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpmail</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpseo</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpversioning</artifactId>
+                        </overlay>
+                    </overlays>
                 </configuration>
             </plugin>
             <plugin>
@@ -876,7 +1067,7 @@
                             <exportAntProperties>true</exportAntProperties>
                             <target>
                                 <taskdef resource="net/sf/antcontrib/antcontrib.properties"
-                                        classpathref="maven.plugin.classpath"/>
+                                         classpathref="maven.plugin.classpath"/>
                                 <if>
                                     <available file="src/main/webapp/WEB-INF/aps/jsp/internalservlet/api" type="dir"/>
                                     <then>
@@ -939,6 +1130,7 @@
                         <defaultsDescriptor>${basedir}/src/main/jetty/webdefault.xml</defaultsDescriptor>
                         <contextPath>/${project.artifactId}</contextPath>
                         <jettyEnvXml>${project.basedir}/src/main/jetty/jetty-env.xml</jettyEnvXml>
+                        <!--                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>-->
                     </webApp>
                     <systemProperties>
                         <systemProperty>
@@ -1078,7 +1270,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>5.1.18</version>
+                        <version>8.0.20</version>
                     </dependency>
                     <dependency>
                         <groupId>org.apache.derby</groupId>

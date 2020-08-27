@@ -1,0 +1,57 @@
+<content>
+	<description>Sample - News 6</description>
+	<typeCode>NWS</typeCode>
+	<typeDescription>News</typeDescription>	
+	<mainGroup>free</mainGroup>
+	<attributes>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbDateAttribute">
+			<name>Date</name>
+			<type>Date</type>
+			<value>2012-06-13T00:00:00+02:00</value>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>Title</name>
+			<type>Text</type>
+			<value>Here come the news 6</value>
+			<roles>
+				<role>jacms:title</role>
+			</roles>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>Abstract</name>
+			<type>Hypertext</type>
+			<htmlValue>
+			<![CDATA[
+			<p> Scenester farm-to-table, ethical pinterest DIY quinoa before they sold out cardigan. Wolf sriracha portland ethical freegan. Fingerstache locavore +1 selvage chambray. Flexitarian umami cray quinoa raw denim whatever. American viral vegan DIY polaroid, sweater etsy williamsburg +1 bicycle rights whatever PBR hoodie photo booth. Master blog mumblecore vice, pork belly fap leggings sweater. Synth whatever put a bird on it lo-fi, stumptown tumblr typewriter helvetica odd future banksy post-ironic selvage.</p>
+			]]>
+			</htmlValue>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>MainBody</name>
+			<type>Hypertext</type>
+			<htmlValue>
+			<![CDATA[
+			<p> Scenester farm-to-table, ethical pinterest DIY quinoa before they sold out cardigan. Wolf sriracha portland ethical freegan. Fingerstache locavore +1 selvage chambray. Flexitarian umami cray quinoa raw denim whatever. American viral vegan DIY polaroid, sweater etsy williamsburg +1 bicycle rights whatever PBR hoodie photo booth. Master blog mumblecore vice, pork belly fap leggings sweater. Synth whatever put a bird on it lo-fi, stumptown tumblr typewriter helvetica odd future banksy post-ironic selvage.</p> <p> Mustache brunch single-origin coffee, pitchfork hoodie messenger bag freegan fixie fingerstache twee ethical pour-over. Stumptown lomo DIY art party organic next level. Squid cliche gentrify mustache. American apparel chambray leggings PBR pour-over skateboard. Mcsweeney&#39;s next level retro tumblr, ethical fanny pack beard. Put a bird on it mustache art party, biodiesel banh mi artisan direct trade thundercats trust fund wayfarers vice authentic. Lo-fi chillwave small batch, organic pour-over williamsburg VHS narwhal leggings ennui ethnic tofu.</p>
+			]]>
+			</htmlValue>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttribute">
+			<name>Links</name>
+			<type>Monolist</type>
+			<attributes>
+				<attribute xsi:type="jaxbLinkAttribute">
+					<name>Link</name>
+					<type>Link</type>
+					<link>
+						<text>Entando.com</text>
+						<url>http://www.entando.com/</url>
+						<symbolicLink>
+							<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
+						</symbolicLink>
+					</link>
+				</attribute>
+			</attributes>
+		</attribute>
+	</attributes>
+	<lastEditor>admin</lastEditor>
+</content>
