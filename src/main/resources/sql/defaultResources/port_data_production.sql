@@ -960,3 +960,322 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
 </properties>', 0, NULL);
+
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage1','Homepage 1','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+  <frame pos="0">
+      <descr>Logo</descr>
+      <sketch x1="0" y1="0" x2="2" y2="0" />
+  </frame>
+  <frame pos="1">
+      <descr>Navigation bar</descr>
+      <sketch x1="3" y1="0" x2="5" y2="0" />
+  </frame>
+  <frame pos="2">
+      <descr>Search</descr>
+      <sketch x1="6" y1="0" x2="8" y2="0" />
+  </frame>
+  <frame pos="3">
+      <descr>Login</descr>
+      <sketch x1="9" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="4">
+      <descr>Breadcrumb</descr>
+      <sketch x1="0" y1="1" x2="11" y2="1" />
+  </frame>
+  <frame pos="5">
+      <descr>Banner</descr>
+      <sketch x1="0" y1="2" x2="11" y2="2" />
+  </frame>
+  <frame pos="6">
+      <descr>News</descr>
+      <sketch x1="0" y1="3" x2="11" y2="3" />
+  </frame>
+  <frame pos="7">
+      <descr>Frame 4 Colonne 16</descr>
+      <sketch x1="0" y1="4" x2="11" y2="4" />
+  </frame>
+  <frame pos="8">
+      <descr>Footer 1 Colonne 16</descr>
+      <sketch x1="0" y1="5" x2="11" y2="5" />
+  </frame>
+  <frame pos="9">
+      <descr>Footer 2 Colonne 16</descr>
+      <sketch x1="0" y1="6" x2="11" y2="6" />
+  </frame>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" />
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <!-- Custom OOTB page template styles -->
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
+        <!-- Carbon Design System -->
+        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        </head>
+        <body>
+          <div class="Homepage1__header">
+            <div class="Homepage__logo"><@wp.show frame=0 /></div>
+            <div class="Homepage__menu"><@wp.show frame=1 /></div>
+            <div class="Homepage__search"><@wp.show frame=2 /></div>
+            <div class="Homepage__login"><@wp.show frame=3 /></div>
+          </div>
+          <div class="bx--grid">
+            <div class="bx--row"><@wp.show frame=4 /></div>
+            <div class="bx--row"><@wp.show frame=5 /></div>
+            <div class="bx--row"><@wp.show frame=6 /></div>
+            <div class="bx--row"><@wp.show frame=7 /></div>
+          </div>
+          <div class="Homepage__footer"><@wp.show frame=8 /></div>
+          <div class="Homepage__footer"><@wp.show frame=9 /></div>
+        </body>
+</html>
+');
+
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage2','Homepage 2','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+  <frame pos="0">
+      <descr>Header</descr>
+      <sketch x1="0" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="1">
+      <descr>Frame 1 Colonne 8</descr>
+      <sketch x1="0" y1="1" x2="5" y2="1" />
+  </frame>
+  <frame pos="2">
+      <descr>Frame 2 Colonne 8</descr>
+      <sketch x1="6" y1="1" x2="11" y2="1" />
+  </frame>
+  <frame pos="3">
+      <descr>Frame 3 Colonne 8</descr>
+      <sketch x1="0" y1="2" x2="5" y2="2" />
+  </frame>
+  <frame pos="4">
+      <descr>Frame 4 Colonne 8</descr>
+      <sketch x1="6" y1="2" x2="11" y2="2" />
+  </frame>
+  <frame pos="5">
+      <descr>"Frame 5 Colonne 8</descr>
+      <sketch x1="0" y1="3" x2="5" y2="3" />
+  </frame>
+  <frame pos="6">
+      <descr>Frame 6 Colonne 8</descr>
+      <sketch x1="6" y1="3" x2="11" y2="3" />
+  </frame>
+  <frame pos="7">
+      <descr>Frame 7 Colonne 8</descr>
+      <sketch x1="0" y1="4" x2="5" y2="4" />
+  </frame>
+  <frame pos="8">
+      <descr>Frame 8 Colonne 8</descr>
+      <sketch x1="6" y1="4" x2="11" y2="4" />
+  </frame>
+  <frame pos="9">
+      <descr>Footer Colonne 16</descr>
+      <sketch x1="0" y1="5" x2="11" y2="5" />
+  </frame>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" />
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <!-- Custom OOTB page template styles -->
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
+        <!-- Carbon Design System -->
+        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        </head>
+        <body>
+          <div class="Homepage2_header"><@wp.show frame=0 /></div>
+          <div class="bx--grid">
+            <div class="bx--row">
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=1 /></div>
+                  <div><@wp.show frame=3 /></div>
+                  <div><@wp.show frame=5 /></div>
+                  <div><@wp.show frame=7 /></div>
+              </div>
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=2 /></div>
+                  <div><@wp.show frame=4 /></div>
+                  <div><@wp.show frame=6 /></div>
+                  <div><@wp.show frame=8 /></div>
+                </div>
+            </div>
+          </div>
+          <div class="Homepage__footer"><@wp.show frame=9 /></div>
+        </body>
+</html>
+');
+
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage3','Homepage 3','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+  <frame pos="0">
+      <descr>Header</descr>
+      <sketch x1="0" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="1">
+      <descr>Frame 1 Colonne 8</descr>
+      <sketch x1="0" y1="1" x2="5" y2="1" />
+  </frame>
+  <frame pos="2">
+      <descr>Frame 2 Colonne 8</descr>
+      <sketch x1="6" y1="1" x2="11" y2="1" />
+  </frame>
+  <frame pos="3">
+      <descr>Frame 3 Colonne 8</descr>
+      <sketch x1="0" y1="2" x2="5" y2="2" />
+  </frame>
+  <frame pos="4">
+      <descr>Frame 4 Colonne 8</descr>
+      <sketch x1="6" y1="2" x2="11" y2="2" />
+  </frame>
+  <frame pos="5">
+      <descr>"Frame 5 Colonne 8</descr>
+      <sketch x1="0" y1="3" x2="5" y2="3" />
+  </frame>
+  <frame pos="6">
+      <descr>Frame 6 Colonne 8</descr>
+      <sketch x1="6" y1="3" x2="11" y2="3" />
+  </frame>
+  <frame pos="7">
+      <descr>Frame 7 Colonne 8</descr>
+      <sketch x1="0" y1="4" x2="5" y2="4" />
+  </frame>
+  <frame pos="8">
+      <descr>Frame 8 Colonne 8</descr>
+      <sketch x1="6" y1="4" x2="11" y2="4" />
+  </frame>
+  <frame pos="9">
+      <descr>Frame 9 Colonne 8</descr>
+      <sketch x1="0" y1="5" x2="5" y2="5" />
+  </frame>
+  <frame pos="10">
+      <descr>Frame 10 Colonne 8</descr>
+      <sketch x1="6" y1="5" x2="11" y2="5" />
+  </frame>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" />
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <!-- Custom OOTB page template styles -->
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
+        <!-- Carbon Design System -->
+        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        </head>
+        <body>
+          <div class="Homepage3_header"><@wp.show frame=0 /></div>
+          <div class="bx--grid">
+            <div class="bx--row">
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=1 /></div>
+                  <div><@wp.show frame=3 /></div>
+                  <div><@wp.show frame=5 /></div>
+                  <div><@wp.show frame=7 /></div>
+                  <div><@wp.show frame=9 /></div>
+              </div>
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=2 /></div>
+                  <div><@wp.show frame=4 /></div>
+                  <div><@wp.show frame=6 /></div>
+                  <div><@wp.show frame=8 /></div>
+                  <div><@wp.show frame=10 /></div>
+                </div>
+            </div>
+          </div>
+        </body>
+</html>
+');
+
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage4','Homepage 4','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+  <frame pos="0">
+      <descr>Header</descr>
+      <sketch x1="0" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="1">
+      <descr>Frame 1 Colonne 8</descr>
+      <sketch x1="0" y1="1" x2="5" y2="2" />
+  </frame>
+  <frame pos="2">
+      <descr>Frame 2 Colonne 8</descr>
+      <sketch x1="6" y1="1" x2="11" y2="1" />
+  </frame>
+  <frame pos="3">
+      <descr>Frame 3 Colonne 8</descr>
+      <sketch x1="6" y1="2" x2="11" y2="2" />
+  </frame>
+  <frame pos="4">
+      <descr>Frame 4 Colonne 8</descr>
+      <sketch x1="0" y1="3" x2="5" y2="4" />
+  </frame>
+  <frame pos="5">
+      <descr>"Frame 5 Colonne 8</descr>
+      <sketch x1="6" y1="3" x2="11" y2="3" />
+  </frame>
+  <frame pos="6">
+      <descr>Frame 6 Colonne 8</descr>
+      <sketch x1="6" y1="4" x2="11" y2="4" />
+  </frame>
+  <frame pos="7">
+      <descr>Footer Colonne 16</descr>
+      <sketch x1="0" y1="5" x2="11" y2="5" />
+  </frame>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" />
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <!-- Custom OOTB page template styles -->
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
+        <!-- Carbon Design System -->
+        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        </head>
+        <body>
+          <div class="Homepage4_header"><@wp.show frame=0 /></div>
+          <div class="bx--grid">
+            <div class="bx--row">
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=1 /></div>
+                  <div><@wp.show frame=4 /></div>
+              </div>
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=2 /></div>
+                  <div><@wp.show frame=3 /></div>
+                  <div><@wp.show frame=5 /></div>
+                  <div><@wp.show frame=6 /></div>
+                </div>
+            </div>
+          </div>
+          <div class="Homepage__footer"><@wp.show frame=7 /></div>
+        </body>
+</html>
+');
