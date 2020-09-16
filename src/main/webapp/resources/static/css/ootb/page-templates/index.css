@@ -58,32 +58,25 @@ table {
   --default-button-background-color: #E5E5E5;
 }
 
-.Homepage1__header {
-  display: grid;
-  background-color: var(--primary-color);
-  padding: 12px 13px;
-  grid-template-columns: auto 1fr minmax(auto, 20px) minmax(auto, 60px);
-  grid-column-gap: 20px; }
-
-.Homepage2__branding {
+.Homepage__branding {
   display: grid;
   background-color: var(--primary-color);
   padding: 12px 13px;
   grid-template-columns: auto 1fr minmax(auto, 60px);
   grid-column-gap: 20px; }
 
-.Homepage2__lower-header {
+.Homepage__lower-header {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 60px); }
 
-.Homepage3__branding {
+.Homepage__branding {
   display: grid;
   background-color: var(--primary-color);
   padding: 12px 13px;
   grid-template-columns: auto 1fr minmax(auto, 60px);
   grid-column-gap: 20px; }
 
-.Homepage3__lower-header {
+.Homepage__lower-header {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 60px); }
 
