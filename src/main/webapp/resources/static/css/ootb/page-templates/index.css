@@ -87,7 +87,7 @@ table {
   display: grid;
   grid-template-columns: 1fr minmax(auto, 60px); }
 
-.Homepage4__header {
+.Homepage__header {
   display: grid;
   background-color: var(--primary-color);
   padding: 12px 13px;

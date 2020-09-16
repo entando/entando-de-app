@@ -1018,7 +1018,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
           <div class="Homepage1 Homepage__header">
@@ -1096,7 +1096,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
           <div class="Homepage2 Homepage__header"><@wp.show frame=0 /></div>
@@ -1182,7 +1182,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
           <div class="Homepage3 Homepage__header"><@wp.show frame=0 /></div>
@@ -1215,31 +1215,31 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
       <sketch x1="0" y1="0" x2="11" y2="0" />
   </frame>
   <frame pos="1">
-      <descr>Frame 1 Colonne 8</descr>
+      <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="5" y2="2" />
   </frame>
   <frame pos="2">
-      <descr>Frame 2 Colonne 8</descr>
+      <descr>Frame 2</descr>
       <sketch x1="6" y1="1" x2="11" y2="1" />
   </frame>
   <frame pos="3">
-      <descr>Frame 3 Colonne 8</descr>
+      <descr>Frame 3</descr>
       <sketch x1="6" y1="2" x2="11" y2="2" />
   </frame>
   <frame pos="4">
-      <descr>Frame 4 Colonne 8</descr>
+      <descr>Frame 4</descr>
       <sketch x1="0" y1="3" x2="5" y2="4" />
   </frame>
   <frame pos="5">
-      <descr>"Frame 5 Colonne 8</descr>
+      <descr>"Frame 5</descr>
       <sketch x1="6" y1="3" x2="11" y2="3" />
   </frame>
   <frame pos="6">
-      <descr>Frame 6 Colonne 8</descr>
+      <descr>Frame 6</descr>
       <sketch x1="6" y1="4" x2="11" y2="4" />
   </frame>
   <frame pos="7">
-      <descr>Footer Colonne 16</descr>
+      <descr>Footer</descr>
       <sketch x1="0" y1="5" x2="11" y2="5" />
   </frame>
 </frames>
@@ -1257,7 +1257,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
           <div class="Homepage4 Homepage__header"><@wp.show frame=0 /></div>
