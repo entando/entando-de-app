@@ -992,15 +992,15 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
       <sketch x1="0" y1="3" x2="11" y2="3" />
   </frame>
   <frame pos="7">
-      <descr>Frame 4 Colonne 16</descr>
+      <descr>Frame</descr>
       <sketch x1="0" y1="4" x2="11" y2="4" />
   </frame>
   <frame pos="8">
-      <descr>Footer 1 Colonne 16</descr>
+      <descr>Footer 1</descr>
       <sketch x1="0" y1="5" x2="11" y2="5" />
   </frame>
   <frame pos="9">
-      <descr>Footer 2 Colonne 16</descr>
+      <descr>Footer 2</descr>
       <sketch x1="0" y1="6" x2="11" y2="6" />
   </frame>
 </frames>
@@ -1021,7 +1021,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
         </head>
         <body>
-          <div class="Homepage1__header">
+          <div class="Homepage1 Homepage__header">
             <div class="Homepage__logo"><@wp.show frame=0 /></div>
             <div class="Homepage__menu"><@wp.show frame=1 /></div>
             <div class="Homepage__search"><@wp.show frame=2 /></div>
@@ -1046,39 +1046,39 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
       <sketch x1="0" y1="0" x2="11" y2="0" />
   </frame>
   <frame pos="1">
-      <descr>Frame 1 Colonne 8</descr>
+      <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="5" y2="1" />
   </frame>
   <frame pos="2">
-      <descr>Frame 2 Colonne 8</descr>
+      <descr>Frame 2</descr>
       <sketch x1="6" y1="1" x2="11" y2="1" />
   </frame>
   <frame pos="3">
-      <descr>Frame 3 Colonne 8</descr>
+      <descr>Frame 3</descr>
       <sketch x1="0" y1="2" x2="5" y2="2" />
   </frame>
   <frame pos="4">
-      <descr>Frame 4 Colonne 8</descr>
+      <descr>Frame 4</descr>
       <sketch x1="6" y1="2" x2="11" y2="2" />
   </frame>
   <frame pos="5">
-      <descr>"Frame 5 Colonne 8</descr>
+      <descr>"Frame 5</descr>
       <sketch x1="0" y1="3" x2="5" y2="3" />
   </frame>
   <frame pos="6">
-      <descr>Frame 6 Colonne 8</descr>
+      <descr>Frame 6</descr>
       <sketch x1="6" y1="3" x2="11" y2="3" />
   </frame>
   <frame pos="7">
-      <descr>Frame 7 Colonne 8</descr>
+      <descr>Frame 7</descr>
       <sketch x1="0" y1="4" x2="5" y2="4" />
   </frame>
   <frame pos="8">
-      <descr>Frame 8 Colonne 8</descr>
+      <descr>Frame 8</descr>
       <sketch x1="6" y1="4" x2="11" y2="4" />
   </frame>
   <frame pos="9">
-      <descr>Footer Colonne 16</descr>
+      <descr>Footer</descr>
       <sketch x1="0" y1="5" x2="11" y2="5" />
   </frame>
 </frames>
@@ -1099,7 +1099,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
         </head>
         <body>
-          <div class="Homepage2_header"><@wp.show frame=0 /></div>
+          <div class="Homepage2 Homepage__header"><@wp.show frame=0 /></div>
           <div class="bx--grid">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
@@ -1128,43 +1128,43 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
       <sketch x1="0" y1="0" x2="11" y2="0" />
   </frame>
   <frame pos="1">
-      <descr>Frame 1 Colonne 8</descr>
+      <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="5" y2="1" />
   </frame>
   <frame pos="2">
-      <descr>Frame 2 Colonne 8</descr>
+      <descr>Frame 2</descr>
       <sketch x1="6" y1="1" x2="11" y2="1" />
   </frame>
   <frame pos="3">
-      <descr>Frame 3 Colonne 8</descr>
+      <descr>Frame 3</descr>
       <sketch x1="0" y1="2" x2="5" y2="2" />
   </frame>
   <frame pos="4">
-      <descr>Frame 4 Colonne 8</descr>
+      <descr>Frame 4</descr>
       <sketch x1="6" y1="2" x2="11" y2="2" />
   </frame>
   <frame pos="5">
-      <descr>"Frame 5 Colonne 8</descr>
+      <descr>"Frame 5</descr>
       <sketch x1="0" y1="3" x2="5" y2="3" />
   </frame>
   <frame pos="6">
-      <descr>Frame 6 Colonne 8</descr>
+      <descr>Frame 6</descr>
       <sketch x1="6" y1="3" x2="11" y2="3" />
   </frame>
   <frame pos="7">
-      <descr>Frame 7 Colonne 8</descr>
+      <descr>Frame 7</descr>
       <sketch x1="0" y1="4" x2="5" y2="4" />
   </frame>
   <frame pos="8">
-      <descr>Frame 8 Colonne 8</descr>
+      <descr>Frame 8</descr>
       <sketch x1="6" y1="4" x2="11" y2="4" />
   </frame>
   <frame pos="9">
-      <descr>Frame 9 Colonne 8</descr>
+      <descr>Frame 9</descr>
       <sketch x1="0" y1="5" x2="5" y2="5" />
   </frame>
   <frame pos="10">
-      <descr>Frame 10 Colonne 8</descr>
+      <descr>Frame 10</descr>
       <sketch x1="6" y1="5" x2="11" y2="5" />
   </frame>
 </frames>
@@ -1185,7 +1185,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
         </head>
         <body>
-          <div class="Homepage3_header"><@wp.show frame=0 /></div>
+          <div class="Homepage3 Homepage__header"><@wp.show frame=0 /></div>
           <div class="bx--grid">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
@@ -1260,7 +1260,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="https://unpkg.com/carbon-components/css/carbon-components.min.css">
         </head>
         <body>
-          <div class="Homepage4_header"><@wp.show frame=0 /></div>
+          <div class="Homepage4 Homepage__header"><@wp.show frame=0 /></div>
           <div class="bx--grid">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
