@@ -1,0 +1,56 @@
+<!--
+  keep the 10000 set for the bundles
+  change the x to something suitable and unused
+  set the last column to NULL if your Content Template doesn't need any stylesheet at all
+  You'll want to provide at least one Default Content Template, and one Content Template for lists
+-->
+<contentModel>
+  <id>10001</id>
+  <contentType>MPC</contentType>
+  <description>Content - Detail</description>
+  <shape><![CDATA[
+    <article>
+      <h1>$content.title.text</h1>
+    #if ( $content.image.getImagePath("0") != "" )
+      <figure class="well well-small text-center">
+        <img src="$content.image.getImagePath("0")" alt="$content.image.text" />
+        #if ( $content.caption.text != "" )
+        <figcaption><p class="margin-medium-all">$content.caption.text</p></figcaption>
+        #end
+      </figure>
+    #end
+    #if ($content.paragraphs.size()>0)
+      <main class="content-body">
+      #foreach ($item in $content.paragraphs )
+        <h3>$item.ptitle</h3>
+        <p>$item.pbody<p>
+        #if ( $item.pimage.getImagePath("0") != "" )
+          <figure class="well well-small text-center">
+            <img src="$item.pimage.getImagePath("0")" alt="$item.pimage.text" />
+            #if ( $item.pcaption.text != "" )
+            <figcaption><p class="margin-medium-all">$item.pcaption.text</p></figcaption>
+            #end
+          </figure>
+        #end
+      #end
+      </main>
+    #end
+    #if ($content.attaches.size()>0)
+      <h2>$i18n.getLabel("CNG_ATTACHMENTS")</h2>
+      <ul>
+      #foreach ($item in $content.attaches )
+        <li><a href="$item.attachPath">$item.text</a></li>
+      #end
+      </ul>
+    #end
+    #if ($content.links.size()>0)
+      <h2>$i18n.getLabel("CNG_LINKS")</h2>
+      <ul>
+      #foreach ($item in $content.links)
+        <li><a href="$item.destination">$item.text</a></li>
+      #end
+      </ul>
+    #end
+    </article>
+  ]]></shape>
+</contentModel>

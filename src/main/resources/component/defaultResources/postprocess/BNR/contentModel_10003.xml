@@ -1,0 +1,31 @@
+<!--
+  keep the 10000 set for the bundles
+  change the x to something suitable and unused
+  set the last column to NULL if your Content Template doesn't need any stylesheet at all
+  You'll want to provide at least one Default Content Template, and one Content Template for lists
+-->
+<contentModel>
+  <id>10001</id>
+  <contentType>MPC</contentType>
+  <description>Banner - Text, Image, CTA</description>
+  <shape><![CDATA[
+    <div>
+      <h1>$content.title.text</h1>
+      #if ( $content.image.getImagePath("0") != "" )
+        <figure class="well well-small text-center">
+          <img src="$content.image.getImagePath("0")" alt="$content.image.text" />
+        </figure>
+      #end
+
+      #if ( $content.abstract.text != "" )
+        <p>
+          $content.abstract.text
+        </p>
+      #end
+
+      #if ( $content.link.text != "" )
+        <a class="call-to-action" href="$content.link.destination">$content.link.text</a></li>
+      #end      
+    </div>
+  ]]></shape>
+</contentModel>
