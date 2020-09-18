@@ -980,28 +980,24 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
       <sketch x1="9" y1="0" x2="11" y2="0" />
   </frame>
   <frame pos="4">
-      <descr>Breadcrumb</descr>
+      <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="11" y2="1" />
   </frame>
   <frame pos="5">
-      <descr>Banner</descr>
+      <descr>Frame 2</descr>
       <sketch x1="0" y1="2" x2="11" y2="2" />
   </frame>
   <frame pos="6">
-      <descr>News</descr>
+      <descr>Frame 3</descr>
       <sketch x1="0" y1="3" x2="11" y2="3" />
   </frame>
   <frame pos="7">
-      <descr>Frame</descr>
+      <descr>Frame 4</descr>
       <sketch x1="0" y1="4" x2="11" y2="4" />
   </frame>
   <frame pos="8">
-      <descr>Footer 1</descr>
+      <descr>Footer</descr>
       <sketch x1="0" y1="5" x2="11" y2="5" />
-  </frame>
-  <frame pos="9">
-      <descr>Footer 2</descr>
-      <sketch x1="0" y1="6" x2="11" y2="6" />
   </frame>
 </frames>
 
@@ -1034,7 +1030,6 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
             <div class="bx--row"><@wp.show frame=7 /></div>
           </div>
           <div class="Homepage__footer"><@wp.show frame=8 /></div>
-          <div class="Homepage__footer"><@wp.show frame=9 /></div>
         </body>
 </html>
 ');
@@ -1042,42 +1037,54 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage2','Homepage 2','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
-      <descr>Header</descr>
-      <sketch x1="0" y1="0" x2="11" y2="0" />
+      <descr>Logo</descr>
+      <sketch x1="0" y1="0" x2="2" y2="0" />
   </frame>
   <frame pos="1">
+      <descr>Navigation bar</descr>
+      <sketch x1="3" y1="0" x2="5" y2="0" />
+  </frame>
+  <frame pos="2">
+      <descr>Search</descr>
+      <sketch x1="6" y1="0" x2="8" y2="0" />
+  </frame>
+  <frame pos="3">
+      <descr>Login</descr>
+      <sketch x1="9" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="4">
       <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="5" y2="1" />
   </frame>
-  <frame pos="2">
+  <frame pos="5">
       <descr>Frame 2</descr>
       <sketch x1="6" y1="1" x2="11" y2="1" />
   </frame>
-  <frame pos="3">
+  <frame pos="6">
       <descr>Frame 3</descr>
       <sketch x1="0" y1="2" x2="5" y2="2" />
   </frame>
-  <frame pos="4">
+  <frame pos="7">
       <descr>Frame 4</descr>
       <sketch x1="6" y1="2" x2="11" y2="2" />
   </frame>
-  <frame pos="5">
-      <descr>"Frame 5</descr>
+  <frame pos="8">
+      <descr>Frame 5</descr>
       <sketch x1="0" y1="3" x2="5" y2="3" />
   </frame>
-  <frame pos="6">
+  <frame pos="9">
       <descr>Frame 6</descr>
       <sketch x1="6" y1="3" x2="11" y2="3" />
   </frame>
-  <frame pos="7">
+  <frame pos="10">
       <descr>Frame 7</descr>
       <sketch x1="0" y1="4" x2="5" y2="4" />
   </frame>
-  <frame pos="8">
+  <frame pos="11">
       <descr>Frame 8</descr>
       <sketch x1="6" y1="4" x2="11" y2="4" />
   </frame>
-  <frame pos="9">
+  <frame pos="12">
       <descr>Footer</descr>
       <sketch x1="0" y1="5" x2="11" y2="5" />
   </frame>
@@ -1099,24 +1106,29 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
-          <div class="Homepage2 Homepage__header"><@wp.show frame=0 /></div>
+          <div class="Homepage2 Homepage__header">
+            <div class="Homepage__logo"><@wp.show frame=0 /></div>
+            <div class="Homepage__menu"><@wp.show frame=1 /></div>
+            <div class="Homepage__search"><@wp.show frame=2 /></div>
+            <div class="Homepage__login"><@wp.show frame=3 /></div>
+          </div>
           <div class="bx--grid">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
-                  <div><@wp.show frame=1 /></div>
-                  <div><@wp.show frame=3 /></div>
-                  <div><@wp.show frame=5 /></div>
-                  <div><@wp.show frame=7 /></div>
-              </div>
-              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
-                  <div><@wp.show frame=2 /></div>
                   <div><@wp.show frame=4 /></div>
                   <div><@wp.show frame=6 /></div>
                   <div><@wp.show frame=8 /></div>
+                  <div><@wp.show frame=10 /></div>
+              </div>
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=5 /></div>
+                  <div><@wp.show frame=7 /></div>
+                  <div><@wp.show frame=9 /></div>
+                  <div><@wp.show frame=11 /></div>
                 </div>
             </div>
           </div>
-          <div class="Homepage__footer"><@wp.show frame=9 /></div>
+          <div class="Homepage__footer"><@wp.show frame=12 /></div>
         </body>
 </html>
 ');
@@ -1124,46 +1136,58 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage3','Homepage 3','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
-      <descr>Header</descr>
-      <sketch x1="0" y1="0" x2="11" y2="0" />
+      <descr>Logo</descr>
+      <sketch x1="0" y1="0" x2="2" y2="0" />
   </frame>
   <frame pos="1">
+      <descr>Navigation bar</descr>
+      <sketch x1="3" y1="0" x2="5" y2="0" />
+  </frame>
+  <frame pos="2">
+      <descr>Search</descr>
+      <sketch x1="6" y1="0" x2="8" y2="0" />
+  </frame>
+  <frame pos="3">
+      <descr>Login</descr>
+      <sketch x1="9" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="4">
       <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="5" y2="1" />
   </frame>
-  <frame pos="2">
+  <frame pos="5">
       <descr>Frame 2</descr>
       <sketch x1="6" y1="1" x2="11" y2="1" />
   </frame>
-  <frame pos="3">
+  <frame pos="6">
       <descr>Frame 3</descr>
       <sketch x1="0" y1="2" x2="5" y2="2" />
   </frame>
-  <frame pos="4">
+  <frame pos="7">
       <descr>Frame 4</descr>
       <sketch x1="6" y1="2" x2="11" y2="2" />
   </frame>
-  <frame pos="5">
-      <descr>"Frame 5</descr>
+  <frame pos="8">
+      <descr>Frame 5</descr>
       <sketch x1="0" y1="3" x2="5" y2="3" />
   </frame>
-  <frame pos="6">
+  <frame pos="9">
       <descr>Frame 6</descr>
       <sketch x1="6" y1="3" x2="11" y2="3" />
   </frame>
-  <frame pos="7">
+  <frame pos="10">
       <descr>Frame 7</descr>
       <sketch x1="0" y1="4" x2="5" y2="4" />
   </frame>
-  <frame pos="8">
+  <frame pos="11">
       <descr>Frame 8</descr>
       <sketch x1="6" y1="4" x2="11" y2="4" />
   </frame>
-  <frame pos="9">
+  <frame pos="12">
       <descr>Frame 9</descr>
       <sketch x1="0" y1="5" x2="5" y2="5" />
   </frame>
-  <frame pos="10">
+  <frame pos="13">
       <descr>Frame 10</descr>
       <sketch x1="6" y1="5" x2="11" y2="5" />
   </frame>
@@ -1185,22 +1209,27 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
-          <div class="Homepage3 Homepage__header"><@wp.show frame=0 /></div>
+          <div class="Homepage3 Homepage__header">
+            <div class="Homepage__logo"><@wp.show frame=0 /></div>
+            <div class="Homepage__menu"><@wp.show frame=1 /></div>
+            <div class="Homepage__search"><@wp.show frame=2 /></div>
+            <div class="Homepage__login"><@wp.show frame=3 /></div>
+          </div>
           <div class="bx--grid">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
-                  <div><@wp.show frame=1 /></div>
-                  <div><@wp.show frame=3 /></div>
-                  <div><@wp.show frame=5 /></div>
-                  <div><@wp.show frame=7 /></div>
-                  <div><@wp.show frame=9 /></div>
-              </div>
-              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
-                  <div><@wp.show frame=2 /></div>
                   <div><@wp.show frame=4 /></div>
                   <div><@wp.show frame=6 /></div>
                   <div><@wp.show frame=8 /></div>
                   <div><@wp.show frame=10 /></div>
+                  <div><@wp.show frame=12/></div>
+              </div>
+              <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
+                  <div><@wp.show frame=5 /></div>
+                  <div><@wp.show frame=7 /></div>
+                  <div><@wp.show frame=9 /></div>
+                  <div><@wp.show frame=11 /></div>
+                  <div><@wp.show frame=13 /></div>
                 </div>
             </div>
           </div>
@@ -1211,34 +1240,46 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage4','Homepage 4','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
-      <descr>Header</descr>
-      <sketch x1="0" y1="0" x2="11" y2="0" />
+      <descr>Logo</descr>
+      <sketch x1="0" y1="0" x2="2" y2="0" />
   </frame>
   <frame pos="1">
+      <descr>Navigation bar</descr>
+      <sketch x1="3" y1="0" x2="5" y2="0" />
+  </frame>
+  <frame pos="2">
+      <descr>Search</descr>
+      <sketch x1="6" y1="0" x2="8" y2="0" />
+  </frame>
+  <frame pos="3">
+      <descr>Login</descr>
+      <sketch x1="9" y1="0" x2="11" y2="0" />
+  </frame>
+  <frame pos="4">
       <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="5" y2="2" />
   </frame>
-  <frame pos="2">
+  <frame pos="5">
       <descr>Frame 2</descr>
       <sketch x1="6" y1="1" x2="11" y2="1" />
   </frame>
-  <frame pos="3">
+  <frame pos="6">
       <descr>Frame 3</descr>
       <sketch x1="6" y1="2" x2="11" y2="2" />
   </frame>
-  <frame pos="4">
+  <frame pos="7">
       <descr>Frame 4</descr>
       <sketch x1="0" y1="3" x2="5" y2="4" />
   </frame>
-  <frame pos="5">
-      <descr>"Frame 5</descr>
+  <frame pos="8">
+      <descr>Frame 5</descr>
       <sketch x1="6" y1="3" x2="11" y2="3" />
   </frame>
-  <frame pos="6">
+  <frame pos="9">
       <descr>Frame 6</descr>
       <sketch x1="6" y1="4" x2="11" y2="4" />
   </frame>
-  <frame pos="7">
+  <frame pos="10">
       <descr>Footer</descr>
       <sketch x1="0" y1="5" x2="11" y2="5" />
   </frame>
@@ -1260,22 +1301,27 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
         </head>
         <body>
-          <div class="Homepage4 Homepage__header"><@wp.show frame=0 /></div>
+          <div class="Homepage4 Homepage__header">
+            <div class="Homepage__logo"><@wp.show frame=0 /></div>
+            <div class="Homepage__menu"><@wp.show frame=1 /></div>
+            <div class="Homepage__search"><@wp.show frame=2 /></div>
+            <div class="Homepage__login"><@wp.show frame=3 /></div>
+          </div>
           <div class="bx--grid">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
-                  <div><@wp.show frame=1 /></div>
                   <div><@wp.show frame=4 /></div>
+                  <div><@wp.show frame=7 /></div>
               </div>
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
-                  <div><@wp.show frame=2 /></div>
-                  <div><@wp.show frame=3 /></div>
                   <div><@wp.show frame=5 /></div>
                   <div><@wp.show frame=6 /></div>
+                  <div><@wp.show frame=8 /></div>
+                  <div><@wp.show frame=9 /></div>
                 </div>
             </div>
           </div>
-          <div class="Homepage__footer"><@wp.show frame=7 /></div>
+          <div class="Homepage__footer"><@wp.show frame=10 /></div>
         </body>
 </html>
 ');
