@@ -699,7 +699,7 @@
                             <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
-                                <from>entando/${server.base.image}:6.1.5</from>
+                                <from>entando/${server.base.image}:6.2.1</from>
                                 <skip>${skipServerImage}</skip>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>

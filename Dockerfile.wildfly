@@ -1,4 +1,4 @@
-FROM entando/entando-wildfly12-base:6.1.5
+FROM entando/entando-wildfly12-base:6.2.1
 ENV APPBUILDERINTEGRATIONENABLED="true" \
     APPBUILDERBASEURL="/app-builder/"
 COPY target/*.war /wildfly/standalone/deployments/
