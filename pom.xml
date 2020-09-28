@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <entando-admin-console.version>6.2.40</entando-admin-console.version>
-        <entando-engine.version>6.2.45</entando-engine.version>
+        <entando-engine.version>6.2.54</entando-engine.version>
         <entando-portal-ui.version>6.2.6</entando-portal-ui.version>
         <entando-plugin-jacms.version>6.2.38</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>6.2.5</entando-plugin-jpmail.version>
@@ -699,7 +699,7 @@
                             <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
-                                <from>entando/${server.base.image}:6.1.5</from>
+                                <from>entando/${server.base.image}:6.2.1</from>
                                 <skip>${skipServerImage}</skip>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
