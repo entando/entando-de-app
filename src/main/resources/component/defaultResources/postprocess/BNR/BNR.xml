@@ -33,6 +33,12 @@
 			<description>Image</description>
 			<type>Image</type>
 		</attribute>
-		<!-- TODO add image placement (allowed values: RIGHT, LEFT) that should be of Enumerator type (check with Eu) -->
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbEnumeratorAttributeType">
+			<name>placement</name>
+			<description>Image Placement</description>
+			<type>Enumerator</type>
+			<customSeparator>,</customSeparator>
+			<staticItems>RIGHT,LEFT</staticItems>
+		</attribute>
 	</attributes>
 </contentType>
