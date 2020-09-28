@@ -5,8 +5,8 @@
   You'll want to provide at least one Default Content Template, and one Content Template for lists
 -->
 <contentModel>
-  <id>10001</id>
-  <contentType>MPC</contentType>
+  <id>10003</id>
+  <contentType>BNR</contentType>
   <description>Banner - Text, Image, CTA</description>
   <shape><![CDATA[
     <div>

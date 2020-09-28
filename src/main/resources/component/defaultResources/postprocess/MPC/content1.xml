@@ -17,7 +17,7 @@
 			<type>Hypertext</type>
 			<htmlValue><![CDATA[<p>This is a template for multi purpose content.</p>]]></htmlValue>
 		</attribute>
-		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttributeType">
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttribute">
 			<name>paragraphs</name>
 			<type>Monolist</type>
 			<nestedAttribute>
@@ -57,7 +57,7 @@
 			<type>Monolist</type>
 			<attributes>
 				<attribute xsi:type="jaxbLinkAttribute">
-					<name>link</name>
+					<name>Links</name>
 					<type>Link</type>
 					<link>
 						<text>Learn more</text>
@@ -68,7 +68,7 @@
 					</link>
 				</attribute>
 			</attributes>
-		</attribute>		
+		</attribute>
 	</attributes>
 	<lastEditor>admin</lastEditor>
 </content>

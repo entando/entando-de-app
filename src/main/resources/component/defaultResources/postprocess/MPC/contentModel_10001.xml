@@ -11,14 +11,6 @@
   <shape><![CDATA[
     <article>
       <h1>$content.title.text</h1>
-    #if ( $content.image.getImagePath("0") != "" )
-      <figure class="well well-small text-center">
-        <img src="$content.image.getImagePath("0")" alt="$content.image.text" />
-        #if ( $content.caption.text != "" )
-        <figcaption><p class="margin-medium-all">$content.caption.text</p></figcaption>
-        #end
-      </figure>
-    #end
     #if ($content.paragraphs.size()>0)
       <main class="content-body">
       #foreach ($item in $content.paragraphs )

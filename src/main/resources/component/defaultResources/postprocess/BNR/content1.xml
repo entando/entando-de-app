@@ -1,7 +1,7 @@
 <content>
-	<description>Sample</description>
-	<typeCode>MPC</typeCode>
-	<typeDescription>Multi-Purpose Content</typeDescription>
+	<description>Sample Banner</description>
+	<typeCode>BNR</typeCode>
+	<typeDescription>Banner</typeDescription>
 	<mainGroup>free</mainGroup>
 	<attributes>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
@@ -16,7 +16,7 @@
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
 			<name>abstract</name>
 			<type>Hypertext</type>
-			<htmlValue><![CDATA[<p>This is a template for multi purpose content.</p>]]></htmlValue>
+			<htmlValue><![CDATA[<p>This is a template for banner content.</p>]]></htmlValue>
 		</attribute>
 
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">
@@ -30,7 +30,7 @@
 			</resource>						
 		</attribute>		
 
-		<attribute xsi:type="jaxbLinkAttribute">
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbLinkAttribute">
 			<name>link</name>
 			<type>Link</type>
 			<link>
