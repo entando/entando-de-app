@@ -1,0 +1,43 @@
+<contentType>
+	<defaultModelId>10003</defaultModelId>
+	<typeCode>BNR</typeCode>
+	<typeDescription>Banner</typeDescription>
+	<attributes>
+		<attribute>
+			<name>title</name>
+			<description>Title</description>
+			<type>Text</type>
+			<roles>
+				<role>jacms:title</role>
+			</roles>
+			<searchable>true</searchable>
+			<indexable>true</indexable>
+			<validationRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="textAttributeValidationRules">
+				<required>true</required>
+			</validationRules>
+		</attribute>
+		<attribute>
+			<name>abstract</name>
+			<description>Abstract</description>
+			<type>Hypertext</type>
+			<indexable>true</indexable>
+		</attribute>
+		<attribute>
+			<name>link</name>
+			<description>Link</description>
+			<type>Link</type>
+		</attribute>
+		<attribute>
+			<name>image</name>
+			<description>Image</description>
+			<type>Image</type>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbEnumeratorAttributeType">
+			<name>placement</name>
+			<description>Image Placement</description>
+			<type>Enumerator</type>
+			<customSeparator>,</customSeparator>
+			<staticItems>RIGHT,LEFT</staticItems>
+		</attribute>
+	</attributes>
+</contentType>
