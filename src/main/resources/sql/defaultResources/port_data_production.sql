@@ -147,11 +147,11 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('seed_
 </html>
 ');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('keyclock_login', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, overridable) VALUES ('keyclock_login', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">keycloak redirect</property>
 <property key="it">keycloak redirect</property>
-</properties>', NULL, NULL, NULL, NULL, 1, 'free');
+</properties>', NULL, NULL, NULL, NULL, 1, 'free', 0);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('keyclock_login', 'keyclock_login', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#if (Session.currentUser.username != "guest") >
@@ -195,14 +195,14 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
     </form>
 </#if>', 1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,overridable) VALUES ('entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation - Bar</property>
 <property key="it">Navigazione - Barra Orizzontale</property>
 </properties>','<config>
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
-</config>',NULL,NULL,NULL,1);
+</config>',NULL,NULL,NULL,1,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar','entando-widget-navigation_bar',NULL,'<#assign c=JspTaglibs[ "http://java.sun.com/jsp/jstl/core" ]>
 <#assign wp=JspTaglibs[ "/aps-core" ]>
 <@wp.currentPage param="code" var="currentPageCode" />
@@ -276,7 +276,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 
 </ul>
 <@wp.freemarkerTemplateParameter var="previousPage" valueName="" removeOnEndTag=true />',1);
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar_include',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]> 
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar_include',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]> 
 <#assign liClass='' class="nav-item dropdown no-son-page"''>
 <#assign homeIcon="">
@@ -407,11 +407,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
      </#list>
     </li>
 </#if>',1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,overridable) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Breadcrumb</property>
 <property key="it">Briciole di pane</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free');
+</properties>',NULL,NULL,NULL,NULL,1,'free',0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentViewCode" />
 
@@ -548,7 +548,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('Ootbc
 ');
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid,overridable) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Header</property>
 <property key="it">Header</property>
@@ -561,7 +561,7 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
     <parameter name="tagline" />
     <parameter name="icons" />
     <action name="configSimpleParameter"/>
-</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.8887cab1.chunk.js","ootbc-bundle/static/js/main.0acb2ec5.chunk.js","ootbc-bundle/static/js/runtime-main.45dc1061.js"],"customElement":"header-config"}',NULL);
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.8887cab1.chunk.js","ootbc-bundle/static/js/main.0acb2ec5.chunk.js","ootbc-bundle/static/js/runtime-main.45dc1061.js"],"customElement":"header-config"}',NULL,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-header-widget','ootbc-header-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <script src="<@wp.resourceURL />ootbc-bundle/static/js/2.3b049955.chunk.js"></script>
 <script src="<@wp.resourceURL />ootbc-bundle/static/js/main.3f90a792.chunk.js"></script>
@@ -590,7 +590,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   imgUrl="<@wp.imgURL />"
 />
 ',1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid,overridable) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Footer</property>
 <property key="it">Footer</property>
@@ -614,7 +614,7 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
     <parameter name="social5" />
     <parameter name="social6" />
     <action name="configSimpleParameter"/>
-</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle');
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle',0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-footer-widget','ootbc-footer-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentWidget param="config" configParam="copyright" var="configCopyright" />
 <@wp.currentWidget param="config" configParam="theme" var="configTheme" />
@@ -708,11 +708,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
     </div>
 </div>
 ',1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-sitemap-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid,overridable) VALUES ('ootbc-sitemap-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Mappa del Sito</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,'ootbc-bundle');
+</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,'ootbc-bundle',0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-sitemap-widget','ootbc-sitemap-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentPageCode" />
 <@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
@@ -929,7 +929,7 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_LINKS', 'i
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'en', 'View details');
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'it', 'Continua');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup,overridable) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Latest News</property>
 <property key="it">Notizie - Ultime Notizie</property>
@@ -944,9 +944,9 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
 <property key="linkDescr_en">Archive</property>
-</properties>', 0, NULL);
+</properties>', 0, NULL,1);
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup,overridable) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Archive</property>
 <property key="it">Notizie - Archivio</property>
@@ -959,7 +959,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="title_en">News Archive</property>
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
-</properties>', 0, NULL);
+</properties>', 0, NULL,1);
 
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage1','Homepage 1','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
