@@ -59,10 +59,12 @@ table {
 
 :root {
   --primary-color: #002F87;
+  --secondary-color: #0F62FE;
   --primary-background-color: #FFFFFF;
   --secondary-background-color: #F4F4F8;
   --nav-link-text-color: #C6C6C6;
-  --primary-button-background-color: #1062FE;
+  --primary-button-text-color: #FFFFFF;
+  --primary-button-background-color: #0F62FE;
   --default-button-background-color: #E5E5E5;
 }
 
