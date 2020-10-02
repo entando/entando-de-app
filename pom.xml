@@ -226,6 +226,12 @@
                 <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                 <version>${entando-plugin-jpcontentscheduler.version}</version>
                 <classifier>classes</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.entando.entando.plugins</groupId>
+                        <artifactId>entando-plugin-jpmail</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
