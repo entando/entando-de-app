@@ -3,8 +3,8 @@
 # Declare variables to be passed into your templates.
 prepareInfrastructure: false
 app:
-  repository: draft
-  tag: dev
+  repository: docker.io/entando/entando-de-app
+  tag: 6.1.127
   name: entando-de-app
   webContext: "/entando-de-app"
   replicaCount: 1

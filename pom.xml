@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.1.16</version>
+    <version>6.1.127</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
