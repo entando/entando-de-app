@@ -194,219 +194,6 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
         <input type="submit" value="Sign In" class="btn btn-primary" style="padding: 4px 24px" />
     </form>
 </#if>', 1);
-
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-widget-navigation_bar','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">Navigation - Bar</property>
-<property key="it">Navigazione - Barra Orizzontale</property>
-</properties>','<config>
-	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
-	<action name="navigatorConfig" />
-</config>',NULL,NULL,NULL,1);
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar','entando-widget-navigation_bar',NULL,'<#assign c=JspTaglibs[ "http://java.sun.com/jsp/jstl/core" ]>
-<#assign wp=JspTaglibs[ "/aps-core" ]>
-<@wp.currentPage param="code" var="currentPageCode" />
-<@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
-<ul class="navbar-nav navbar-menu">
-    <#assign homeClass=''class="home"''>
-    <#if (currentPageCode=="home" )>
-    <#assign homeClass=''class="home active"''>
-    </#if>
-    <@wp.nav var="page">
-    <#if (previousPage?? && previousPage.code??)>
-    <#assign previousLevel=previousPage.level>
-    <#assign level=page.level>
-    <@wp.freemarkerTemplateParameter var="level" valueName="level" />
-    <@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
-    <@wp.fragment code="entando-widget-navigation_bar_include" escapeXml=false />
-    </#if>
-    <@wp.freemarkerTemplateParameter var="previousPage" valueName="page" />
-    </@wp.nav>
-    <#if (previousPage??)>
-    <#assign previousLevel=previousPage.level>
-    <#assign level=0>
-    <@wp.freemarkerTemplateParameter var="level" valueName="level" />
-    <@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
-    <@wp.fragment code="entando-widget-navigation_bar_include" escapeXml=false />
-    <#if (previousLevel !=0 )>
-    <#list 0..(previousLevel - 1) as ignoreMe>
-</ul>
-</li>
-</#list>
-<#else>
-</ul>
-</#if>
-</#if>
-
-<@wp.freemarkerTemplateParameter var="previousPage" valueName="" removeOnEndTag=true />','<#assign wp=JspTaglibs["/aps-core"]>
-
-<@wp.headInfo type="JS" info="entando-misc-jquery/jquery-3.4.1.min.js" />
-<@wp.headInfo type="JS" info="entando-misc-bootstrap/bootstrap.min.js" />
-
-<@wp.currentPage param="code" var="currentPageCode" />
-<@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
-<ul class="nav">
-<@wp.nav var="page">
-
-<#if (previousPage?? && previousPage.code??)>
-	<#assign previousLevel=previousPage.level>
-	<#assign level=page.level>
-        <@wp.freemarkerTemplateParameter var="level" valueName="level" />
-	<@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
-	<@wp.fragment code="entando-widget-navigation_bar_include" escapeXml=false />
-</#if>
-
-	<@wp.freemarkerTemplateParameter var="previousPage" valueName="page" />
-</@wp.nav>
-
-<#if (previousPage??)>
-	<#assign previousLevel=previousPage.level>
-        <#assign level=0>
-	<@wp.freemarkerTemplateParameter var="level" valueName="level" />
-	<@wp.freemarkerTemplateParameter var="previousLevel" valueName="previousLevel" />
-	<@wp.fragment code="entando-widget-navigation_bar_include" escapeXml=false />
-
-        <#if (previousLevel != 0)>
-        <#list 0..(previousLevel - 1) as ignoreMe>
-            </ul></li>
-        </#list>
-
-	</#if>
-</#if>
-
-</ul>
-<@wp.freemarkerTemplateParameter var="previousPage" valueName="" removeOnEndTag=true />',1);
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-widget-navigation_bar_include',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]> 
-<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]> 
-<#assign liClass='' class="nav-item dropdown no-son-page"''>
-<#assign homeIcon="">
-<#assign caret="">
-<#assign ulClass='' ''>
-<#assign aClassAndData="">
-<#assign aURL=previousPage.url>
-<#if (previousPage.voidPage)>
-  <#assign aURL=''#'' />
-</#if>
-<#if (previousPage.code?contains("homepage"))>
-  <#assign homeIcon=''<i class="icon-home"></i>&#32;''>
-</#if>
-<#if (previousPage.code==currentPageCode)>
-  <#assign liClass='' class="nav-item active dropdown "''>
-</#if>
-<#if (previousLevel < level)>
-  <#assign liClass='' class="nav-item dropdown "''>
-    <#if (previousPage.code==currentPageCode)>
-      <#assign liClass='' class="dropdown active"''>
-    </#if>
-    <#if previousPage.voidPage>
-      <#assign liClass='' class="dropdown"''>
-    </#if>
-    <#if (previousLevel> 0) >
-      <#assign liClass='' class="dropdown-submenu"''>
-        <#if (previousPage.code==currentPageCode)>
-          <#assign liClass='' class="dropdown-submenu active''>
-        </#if>
-        <#assign ulClass='' class="dropdown-menu"''>
-    </#if>
-    <#assign aClassAndData='' class="nav-link dropdown-toggle" data-toggle="dropdown"''>
-      <#if (previousLevel==0)>
-        <#assign caret='' ''>
-          <#assign liClass='' class="nav-item dropdown "''>
-      </#if>
-</#if>
-<#if (previousLevel==0)>
-  <li ${liClass} padre>
-</#if>
-<#if (aURL !='''' )>
- 
-  <a href="${aURL}" ${aClassAndData} class="nav-link no-son-page">${homeIcon}${previousPage.title}${caret}</a>
-</#if>
-
-
-<#if (aURL=='''' )>
-  <a href="#">
-</#if>
-<#if (previousLevel==level)>
-  <#if (previousLevel==0)>
-    </li>
-  </#if>
-</#if>
-<#if (previousLevel < level)>
-  <ul class="dropdown-menu">
-</#if>
-<#if (previousLevel> level)>
-  <#list 1..(previousLevel - level) as ignoreMe>
-    </ul>
-  </#list>
-  </li>
-</#if>','<#assign wp=JspTaglibs["/aps-core"]>
-<#assign c=JspTaglibs["http://java.sun.com/jsp/jstl/core"]>
-
-
-<#assign liClass="">
-<#assign homeIcon="">
-<#assign caret="">
-<#assign ulClass='' class="dropdown-menu"''>
-<#assign aClassAndData="">
-<#assign aURL=previousPage.url>
-
-<#if (previousPage.voidPage)>
-       <#assign aURL=''#'' />
-</#if>
-
-<#if (previousPage.code?contains("homepage"))>
-     <#assign homeIcon=''<i class="icon-home"></i>&#32;''>
-</#if>
-
-<#if (previousPage.code == currentPageCode)>
-     <#assign liClass='' class="active"''>
-</#if>
-
-<#if (previousLevel < level)>
-    <#assign liClass='' class="dropdown"'' >
-
-    <#if (previousPage.code == currentPageCode)>
-	<#assign liClass='' class="dropdown active"''>
-    </#if>
-
-    <#if previousPage.voidPage>
-	<#assign liClass='' class=" dropdown"'' >
-    </#if>
-
-    <#if (previousLevel > 0) >
-	<#assign liClass='' class="dropdown-submenu"''>
-	<#if (previousPage.code == currentPageCode)>
-		<#assign liClass='' class="dropdown-submenu active"''>
-    	</#if>
-
-	<#assign ulClass='' class="dropdown-menu"''>
-    </#if>
-
-    <#assign aClassAndData='' class="dropdown-toggle" data-toggle="dropdown"''>
-
-    <#if (previousLevel == 0)>
-	<#assign caret='' <span class="caret"></span>''>
-    </#if>
-</#if>
-
-<li ${liClass} >
-	<a href="${aURL}"  ${aClassAndData} >
-				<!-- [ ${previousLevel} ] -->
-				${homeIcon}
-				${previousPage.title}
-				${caret}
-	</a>
-
-<#if (previousLevel == level)></li></#if>
-<#if (previousLevel < level)>
-    <ul ${ulClass}>
-</#if>
-<#if (previousLevel > level)>
-     <#list 1..(previousLevel - level) as ignoreMe>
-            </li></ul>
-     </#list>
-    </li>
-</#if>',1);
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Breadcrumb</property>
@@ -961,6 +748,13 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="modelId">10021</property>
 </properties>', 0, NULL);
 
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando_ootb_carbon_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<script src="<@wp.resourceURL />ootb-widgets/static/js/2.ootb.chunk.js"></script>
+<script src="<@wp.resourceURL />ootb-widgets/static/js/main.ootb.chunk.js"></script>
+<script src="<@wp.resourceURL />ootb-widgets/static/js/runtime-main.ootb.js"></script>
+<link href="<@wp.resourceURL />ootb-widgets/static/css/main.ootb.chunk.css" rel="stylesheet">
+',1);
+
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage1','Homepage 1','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
@@ -1002,6 +796,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </frames>
 
 ',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
 
 <html lang="en">
     <head>
@@ -1010,20 +805,22 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
             <@wp.currentPage param="title" />
         </title>
         <meta name="viewport" content="width=device-width,  user-scalable=no" />
-        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <link rel="icon" href="${appUrl}favicon.png" type="image/png" />
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
+        <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
         </head>
         <body>
-          <div class="Homepage1 Homepage__header">
-            <div class="Homepage__logo"><@wp.show frame=0 /></div>
-            <div class="Homepage__menu"><@wp.show frame=1 /></div>
-            <div class="Homepage__search"><@wp.show frame=2 /></div>
-            <div class="Homepage__login"><@wp.show frame=3 /></div>
-          </div>
-          <div class="bx--grid">
+          <header-fragment app-url="${appUrl}">
+            <template>
+                <@wp.show frame=0 />
+                <@wp.show frame=1 />
+                <@wp.show frame=2 />
+                <@wp.show frame=3 />
+            </template>
+          </header-fragment>
+          <div class="bx--grid Homepage__body">
             <div class="bx--row"><@wp.show frame=4 /></div>
             <div class="bx--row"><@wp.show frame=5 /></div>
             <div class="bx--row"><@wp.show frame=6 /></div>
@@ -1091,6 +888,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </frames>
 
 ',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
 
 <html lang="en">
     <head>
@@ -1099,20 +897,22 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
             <@wp.currentPage param="title" />
         </title>
         <meta name="viewport" content="width=device-width,  user-scalable=no" />
-        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <link rel="icon" href="${appUrl}favicon.png" type="image/png" />
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
+        <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
         </head>
         <body>
-          <div class="Homepage2 Homepage__header">
-            <div class="Homepage__logo"><@wp.show frame=0 /></div>
-            <div class="Homepage__menu"><@wp.show frame=1 /></div>
-            <div class="Homepage__search"><@wp.show frame=2 /></div>
-            <div class="Homepage__login"><@wp.show frame=3 /></div>
-          </div>
-          <div class="bx--grid">
+          <header-fragment app-url="${appUrl}">
+            <template>
+                <@wp.show frame=0 />
+                <@wp.show frame=1 />
+                <@wp.show frame=2 />
+                <@wp.show frame=3 />
+            </template>
+          </header-fragment>
+          <div class="bx--grid Homepage__body">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
                   <div><@wp.show frame=4 /></div>
@@ -1194,6 +994,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </frames>
 
 ',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
 
 <html lang="en">
     <head>
@@ -1202,20 +1003,22 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
             <@wp.currentPage param="title" />
         </title>
         <meta name="viewport" content="width=device-width,  user-scalable=no" />
-        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <link rel="icon" href="${appUrl}favicon.png" type="image/png" />
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
+        <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
         </head>
         <body>
-          <div class="Homepage3 Homepage__header">
-            <div class="Homepage__logo"><@wp.show frame=0 /></div>
-            <div class="Homepage__menu"><@wp.show frame=1 /></div>
-            <div class="Homepage__search"><@wp.show frame=2 /></div>
-            <div class="Homepage__login"><@wp.show frame=3 /></div>
-          </div>
-          <div class="bx--grid">
+          <header-fragment app-url="${appUrl}">
+            <template>
+                <@wp.show frame=0 />
+                <@wp.show frame=1 />
+                <@wp.show frame=2 />
+                <@wp.show frame=3 />
+            </template>
+          </header-fragment>
+          <div class="bx--grid Homepage__body">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
                   <div><@wp.show frame=4 /></div>
@@ -1286,6 +1089,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </frames>
 
 ',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
 
 <html lang="en">
     <head>
@@ -1294,20 +1098,22 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
             <@wp.currentPage param="title" />
         </title>
         <meta name="viewport" content="width=device-width,  user-scalable=no" />
-        <link rel="icon" href="<@wp.info key="systemParam" paramName="applicationBaseURL" />favicon.png" type="image/png" />
+        <link rel="icon" href="${appUrl}favicon.png" type="image/png" />
         <!-- Custom OOTB page template styles -->
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
-        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/carbon-components.min.css" rel="stylesheet">
+        <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
         </head>
         <body>
-          <div class="Homepage4 Homepage__header">
-            <div class="Homepage__logo"><@wp.show frame=0 /></div>
-            <div class="Homepage__menu"><@wp.show frame=1 /></div>
-            <div class="Homepage__search"><@wp.show frame=2 /></div>
-            <div class="Homepage__login"><@wp.show frame=3 /></div>
-          </div>
-          <div class="bx--grid">
+          <header-fragment app-url="${appUrl}">
+            <template>
+                <@wp.show frame=0 />
+                <@wp.show frame=1 />
+                <@wp.show frame=2 />
+                <@wp.show frame=3 />
+            </template>
+          </header-fragment>
+          <div class="bx--grid Homepage__body">
             <div class="bx--row">
               <div class="bx--col-sm-4 bx--col-md-4 bx--no-gutter">
                   <div><@wp.show frame=4 /></div>
@@ -1327,3 +1133,149 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 ');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth_with_redirect',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script>  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''login-required'', promiseType: ''native'', enableLogging: true })        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script>  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               function onKeycloakInitialized(isAuthenticated) {        if (isAuthenticated) {          console.info(consolePrefix, ''Keycloak initialized, user authenticated'');        } else {          console.info(consolePrefix, ''Keycloak initialized, user not authenticated'');        }      };      window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''check-sso'', promiseType: ''native'', enableLogging: true })        .then(onKeycloakInitialized)        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-default-logo','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Entando Default Logo</property>
+<property key="it">Entando Logo Predefinito</property>
+</properties>',NULL,NULL,NULL,NULL,1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-default-logo','entando-default-logo',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
+<img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Logo" role="logo" />','<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
+<img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Entando" role="logo" />',1);
+
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-choose-language','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Entando Language Chooser</property>
+<property key="it">Entando Language Chooser</property>
+</properties>',NULL,NULL,NULL,NULL,1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-choose-language','entando-choose-language',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.info key="langs" var="langsVar" />
+<@wp.info key="currentLang" var="currentLangVar" />
+
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+<#assign langstrs = [] />
+<#list langsVar as curLangVar>
+  <#assign langurl><@wp.url lang="${curLangVar.code}" paramRepeat=true /></#assign>
+  <#assign langstr = ["{\"code\": \"" + curLangVar.code + "\", \"descr\": \"" + curLangVar.descr + "\", \"url\": \""+ langurl +"\"}"]  />
+  <#assign langstrs = langstrs + langstr />
+</#list>
+<#assign lang_json_string = langstrs?join(", ") />
+
+<choose-language-widget
+  currentLang="${currentLangVar}"
+  languages="[${lang_json_string?html}]"
+></choose-language-widget>','<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.info key="langs" var="langsVar" />
+<@wp.info key="currentLang" var="currentLangVar" />
+
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+<#assign langstrs = [] />
+<#list langsVar as curLangVar>
+  <#assign langurl><@wp.url lang="${curLangVar.code}" paramRepeat=true /></#assign>
+  <#assign langstr = ["{\"code\": \"" + curLangVar.code + "\", \"descr\": \"" + curLangVar.descr + "\", \"url\": \""+ langurl +"\"}"]  />
+  <#assign langstrs = langstrs + langstr />
+</#list>
+<#assign lang_json_string = langstrs?join(", ") />
+
+<choose-language-widget
+  currentLang="${currentLangVar}"
+  languages="[${lang_json_string?html}]"
+></choose-language-widget>',1);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-login-button','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Entando Keycloak Login Button</property>
+<property key="it">Entando Keycloak Login Button</property>
+</properties>',NULL,NULL,NULL,NULL,1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-login-button','entando-login-button',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+<#assign sessionUser = "" />
+<#assign userDisplayName = "" />
+<#if (Session.currentUser.username != "guest") >
+   <#assign sessionUser = Session.currentUser.username />
+   <#if (Session.currentUser.profile??) && (Session.currentUser.profile.displayName??)>
+      <#assign userDisplayName = Session.currentUser.profile.displayName />
+   <#else>
+      <#assign userDisplayName = Session.currentUser />
+   </#if>
+</#if>
+
+<login-button-widget
+   app-url="<@wp.info key="systemParam" paramName="applicationBaseURL" />"
+   session-user="${sessionUser}"
+   user-display-name="${userDisplayName}"
+   page="<@wp.url />"
+></login-button-widget>','<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+<#assign sessionUser = "" />
+<#assign userDisplayName = "" />
+<#if (Session.currentUser.username != "guest") >
+   <#assign sessionUser = Session.currentUser.username />
+   <#if (Session.currentUser.profile??) && (Session.currentUser.profile.displayName??)>
+      <#assign userDisplayName = Session.currentUser.profile.displayName />
+   <#else>
+      <#assign userDisplayName = Session.currentUser />
+   </#if>
+</#if>
+
+<login-button-widget
+   app-url="<@wp.info key="systemParam" paramName="applicationBaseURL" />"
+   session-user="${sessionUser}"
+   user-display-name="${userDisplayName}"
+   page="<@wp.url />"
+></login-button-widget>',1);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-navigation-bar-widget','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Entando Navigation Bar</property>
+<property key="it">Entando Navigazione Barra Orizzontale</property>
+</properties>','<config>
+	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
+	<action name="navigatorConfig" />
+</config>',NULL,NULL,NULL,1);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-navigation-bar-widget','entando-navigation-bar-widget',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.currentPage param="code" var="currentPageCode" />
+
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+<#assign navstrs = [] />
+<@wp.nav var="page">
+  <#assign navstr = ["{\"code\": \"" + page.code + "\", \"title\": \"" + page.title + "\", \"level\": \"" + page.level + "\", \"url\": \""+ page.url +"\", \"voidPage\": " + page.voidPage?string("true", "false") + "}"]  />
+  <#assign navstrs = navstrs + navstr />
+</@wp.nav>
+<#assign nav_json_string = navstrs?join(", ") />
+
+<navigation-bar-widget
+  current-page="${currentPageCode}"
+  nav-items="[${nav_json_string?html}]"
+></navigation-bar-widget>','<#assign wp=JspTaglibs["/aps-core"]>
+
+<@wp.currentPage param="code" var="currentPageCode" />
+
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+<#assign navstrs = [] />
+<@wp.nav var="page">
+  <#assign navstr = ["{\"code\": \"" + page.code + "\", \"title\": \"" + page.title + "\", \"level\": \"" + page.level + "\", \"url\": \""+ page.url +"\", \"voidPage\": " + page.voidPage?string("true", "false") + "}"]  />
+  <#assign navstrs = navstrs + navstr />
+</@wp.nav>
+<#assign nav_json_string = navstrs?join(", ") />
+
+<navigation-bar-widget
+  current-page="${currentPageCode}"
+  nav-items="[${nav_json_string?html}]"
+></navigation-bar-widget>',1);
