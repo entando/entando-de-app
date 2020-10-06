@@ -13,36 +13,7 @@
                 </datasource>
             </defaultSqlResources>
             <postProcesses>
-                <!-- Multi-Purpose Content -->
-                <selfRestCall langCode="en" namespace="jacms" resourceName="contentType"
-                              method="POST" expected="202" printresponse="true" >
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/MPC/MPC.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="contentModel"
-                              method="POST" expected="200" printresponse="true" >
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/MPC/contentModel_10001.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="contentModel"
-                              method="POST" expected="200" printresponse="true" >
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/MPC/contentModel_10011.xml" />
-                </selfRestCall>
-                <!-- avoid loop dependency between Content and Content Templates (Models) -->
-                <selfRestCall langCode="en" namespace="jacms" resourceName="contentType" 
-                              method="PUT" expected="200" printresponse="true" >
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/MPC/MPC.xml" />
-                </selfRestCall>
-                <!--// avoid loop dependency between Content and Content Templates (Models) -->
-                <selfRestCall langCode="en" namespace="jacms" resourceName="image" 
-                              method="POST" expected="200" printresponse="true" >
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/MPC/image1.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content" 
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/MPC/content1.xml" />
-                </selfRestCall>
+                
 
                 <!-- Banner -->
                 <selfRestCall langCode="en" namespace="jacms" resourceName="contentType"
@@ -97,41 +68,7 @@
                     </query>
                     <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content1.xml" />
                 </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content2.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content3.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content4.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content5.xml" />
-                </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content6.xml" />
-                </selfRestCall>
+                
             </postProcesses>
         </environment>
         <environment code="test">
