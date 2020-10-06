@@ -60,7 +60,9 @@ table {
 :root {
   --primary-color: #002F87;
   --secondary-color: #0F62FE;
+  --primary-button-hover-color: #01276E;
   --primary-background-color: #FFFFFF;
+  --secondary-color: #FFFFFF;
   --secondary-background-color: #F4F4F8;
   --nav-link-text-color: #C6C6C6;
   --primary-button-text-color: #FFFFFF;
@@ -117,6 +119,10 @@ table {
   display: grid;
   justify-content: center;
   align-content: center;
+}
+
+.Homepage__body {
+  min-height: calc(100vh - 100px);
 }
 
 .Homepage__footer {
