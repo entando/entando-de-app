@@ -810,6 +810,10 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+        <@wp.outputHeadInfo type="CSS">
+            <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
+        </@wp.outputHeadInfo>
         </head>
         <body>
           <header-fragment app-url="${appUrl}">
@@ -902,6 +906,10 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+        <@wp.outputHeadInfo type="CSS">
+            <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
+        </@wp.outputHeadInfo>
         </head>
         <body>
           <header-fragment app-url="${appUrl}">
@@ -1008,6 +1016,10 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+        <@wp.outputHeadInfo type="CSS">
+            <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
+        </@wp.outputHeadInfo>
         </head>
         <body>
           <header-fragment app-url="${appUrl}">
@@ -1103,6 +1115,10 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+        <@wp.outputHeadInfo type="CSS">
+            <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
+        </@wp.outputHeadInfo>
         </head>
         <body>
           <header-fragment app-url="${appUrl}">
