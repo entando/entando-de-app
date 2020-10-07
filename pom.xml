@@ -33,12 +33,12 @@
     </repositories>
     <properties>
         <entando-admin-console.version>6.2.41</entando-admin-console.version>
-        <entando-engine.version>6.2.61</entando-engine.version>
+        <entando-engine.version>6.2.62</entando-engine.version>
         <entando-portal-ui.version>6.2.8</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.2.42</entando-plugin-jacms.version>
+        <entando-plugin-jacms.version>6.2.43</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>6.2.9</entando-plugin-jpmail.version>
         <entando-plugin-jpversioning.version>6.2.10</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.2.13</entando-plugin-jpseo.version>
+        <entando-plugin-jpseo.version>6.2.14</entando-plugin-jpseo.version>
         <entando-plugin-jpcontentscheduler.version>6.2.9</entando-plugin-jpcontentscheduler.version>
         <entando.keycloak.plugin.version>6.2.4</entando.keycloak.plugin.version>
         <!--
