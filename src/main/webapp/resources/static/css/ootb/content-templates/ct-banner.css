@@ -19,7 +19,6 @@
 }
 .banner-abstract > div {
     flex: 1;
-    align-self: center;
     padding: 30px 16px;
 }
 .banner-abstract > div > h1 {
@@ -64,6 +63,7 @@
         flex: 1;
     }
     .banner-abstract > div {
+        align-self: center;
         padding: 80px 32px;
     }
     .banner-abstract > div > h1 {
