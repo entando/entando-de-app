@@ -37,7 +37,7 @@
 			<description>Image Placement</description>
 			<type>Enumerator</type>
 			<customSeparator>,</customSeparator>
-			<staticItems>RIGHT,LEFT</staticItems>
+			<staticItems>LEFT,RIGHT</staticItems>
 		</attribute>
 	</attributes>
 </contentType>
