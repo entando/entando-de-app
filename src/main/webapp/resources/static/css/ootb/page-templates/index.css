@@ -112,6 +112,7 @@ table {
   display: grid;
   justify-content: right;
   align-content: center;
+  padding: 10px;
 }
 
 .Homepage__login {
