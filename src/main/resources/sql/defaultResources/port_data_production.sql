@@ -147,11 +147,11 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('seed_
 </html>
 ');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('keyclock_login', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlydefaultconfig) VALUES ('keyclock_login', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">keycloak redirect</property>
 <property key="it">keycloak redirect</property>
-</properties>', NULL, NULL, NULL, NULL, 1, 'free');
+</properties>', NULL, NULL, NULL, NULL, 1, 'free', 1);
 
 INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('keyclock_login', 'keyclock_login', NULL, NULL, '<#assign wp=JspTaglibs["/aps-core"]>
 <#if (Session.currentUser.username != "guest") >
@@ -194,11 +194,11 @@ INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, lock
         <input type="submit" value="Sign In" class="btn btn-primary" style="padding: 4px 24px" />
     </form>
 </#if>', 1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlydefaultconfig) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Breadcrumb</property>
 <property key="it">Briciole di pane</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free');
+</properties>',NULL,NULL,NULL,NULL,1,'free',1);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentViewCode" />
 
@@ -335,7 +335,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('Ootbc
 ');
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid, readonlydefaultconfig) VALUES ('ootbc-header-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Header</property>
 <property key="it">Header</property>
@@ -348,7 +348,7 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
     <parameter name="tagline" />
     <parameter name="icons" />
     <action name="configSimpleParameter"/>
-</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.8887cab1.chunk.js","ootbc-bundle/static/js/main.0acb2ec5.chunk.js","ootbc-bundle/static/js/runtime-main.45dc1061.js"],"customElement":"header-config"}',NULL);
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.8887cab1.chunk.js","ootbc-bundle/static/js/main.0acb2ec5.chunk.js","ootbc-bundle/static/js/runtime-main.45dc1061.js"],"customElement":"header-config"}',NULL, 0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-header-widget','ootbc-header-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <script src="<@wp.resourceURL />ootbc-bundle/static/js/2.3b049955.chunk.js"></script>
 <script src="<@wp.resourceURL />ootbc-bundle/static/js/main.3f90a792.chunk.js"></script>
@@ -377,7 +377,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   imgUrl="<@wp.imgURL />"
 />
 ',1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid, readonlydefaultconfig) VALUES ('ootbc-footer-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Footer</property>
 <property key="it">Footer</property>
@@ -401,7 +401,7 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
     <parameter name="social5" />
     <parameter name="social6" />
     <action name="configSimpleParameter"/>
-</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle');
+</config>',NULL,NULL,NULL,1,'free','{"resources":["ootbc-bundle/static/js/2.ebab26f7.chunk.js","ootbc-bundle/static/js/main.580b8a09.chunk.js","ootbc-bundle/static/js/runtime-main.e2a7a9b2.js"],"customElement":"footer-config"}','ootbc-bundle',0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-footer-widget','ootbc-footer-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentWidget param="config" configParam="copyright" var="configCopyright" />
 <@wp.currentWidget param="config" configParam="theme" var="configTheme" />
@@ -495,11 +495,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
     </div>
 </div>
 ',1);
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid) VALUES ('ootbc-sitemap-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,bundleid, readonlydefaultconfig) VALUES ('ootbc-sitemap-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Mappa del Sito</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,'ootbc-bundle');
+</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,'ootbc-bundle',0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('ootbc-sitemap-widget','ootbc-sitemap-widget',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentPageCode" />
 <@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
@@ -716,7 +716,7 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_LINKS', 'i
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'en', 'View details');
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'it', 'Continua');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlydefaultconfig) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Latest News</property>
 <property key="it">Notizie - Ultime Notizie</property>
@@ -731,9 +731,9 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
 <property key="linkDescr_en">Archive</property>
-</properties>', 0, NULL);
+</properties>', 0, NULL, 0);
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlydefaultconfig) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News - Archive</property>
 <property key="it">Notizie - Archivio</property>
@@ -746,7 +746,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="title_en">News Archive</property>
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
-</properties>', 0, NULL);
+</properties>', 0, NULL, 0);
 
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando_ootb_carbon_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <script src="<@wp.resourceURL />ootb-widgets/static/js/2.ootb.chunk.js"></script>
@@ -1150,11 +1150,11 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth_with_redirect',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script>  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''login-required'', promiseType: ''native'', enableLogging: true })        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script>  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               function onKeycloakInitialized(isAuthenticated) {        if (isAuthenticated) {          console.info(consolePrefix, ''Keycloak initialized, user authenticated'');        } else {          console.info(consolePrefix, ''Keycloak initialized, user not authenticated'');        }      };      window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''check-sso'', promiseType: ''native'', enableLogging: true })        .then(onKeycloakInitialized)        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-default-logo','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlydefaultconfig) VALUES ('entando-default-logo','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Entando Default Logo</property>
 <property key="it">Entando Logo Predefinito</property>
-</properties>',NULL,NULL,NULL,NULL,1);
+</properties>',NULL,NULL,NULL,NULL,1,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-default-logo','entando-default-logo',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
@@ -1164,11 +1164,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Entando" role="logo" />',1);
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-choose-language','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlydefaultconfig) VALUES ('entando-choose-language','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Entando Language Chooser</property>
 <property key="it">Entando Language Chooser</property>
-</properties>',NULL,NULL,NULL,NULL,1);
+</properties>',NULL,NULL,NULL,NULL,1,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-choose-language','entando-choose-language',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.info key="langs" var="langsVar" />
@@ -1207,11 +1207,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   languages="[${lang_json_string?html}]"
 ></choose-language-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-login-button','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlydefaultconfig) VALUES ('entando-login-button','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Entando Keycloak Login Button</property>
 <property key="it">Entando Keycloak Login Button</property>
-</properties>',NULL,NULL,NULL,NULL,1);
+</properties>',NULL,NULL,NULL,NULL,1,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-login-button','entando-login-button',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
@@ -1254,14 +1254,14 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
    page="<@wp.url />"
 ></login-button-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked) VALUES ('entando-navigation-bar-widget','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlydefaultconfig) VALUES ('entando-navigation-bar-widget','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Entando Navigation Bar</property>
 <property key="it">Entando Navigazione Barra Orizzontale</property>
 </properties>','<config>
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
-</config>',NULL,NULL,NULL,1);
+</config>',NULL,NULL,NULL,1,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando-navigation-bar-widget','entando-navigation-bar-widget',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.currentPage param="code" var="currentPageCode" />
