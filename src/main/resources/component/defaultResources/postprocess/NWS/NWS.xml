@@ -5,7 +5,7 @@
 	<typeDescription>News</typeDescription>
 	<attributes>
 		<attribute>
-			<name>Date</name>
+			<name>date</name>
 			<type>Date</type>
 			<searchable>true</searchable>
 			<validationRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="dateAttributeValidationRules">
@@ -13,7 +13,7 @@
 			</validationRules>
 		</attribute>
 		<attribute>
-			<name>Title</name>
+			<name>title</name>
 			<type>Text</type>
 			<roles>
 				<role>jacms:title</role>
@@ -25,42 +25,36 @@
 			</validationRules>
 		</attribute>
 		<attribute>
-			<name>Abstract</name>
+			<name>abstract</name>
 			<type>Hypertext</type>
 			<indexable>true</indexable>
 		</attribute>
 		<attribute>
-			<name>MainBody</name>
+			<name>body</name>
 			<description>Main Body</description>
 			<type>Hypertext</type>
 			<indexable>true</indexable>
 		</attribute>
 		<attribute>
-			<name>Picture</name>
+			<name>image</name>
 			<type>Image</type>
 		</attribute>
 		<attribute>
-			<name>Caption</name>
+			<name>link</name>
+			<description>Link</description>
+			<type>Link</type>
+		</attribute>
+		<attribute>
+			<name>category</name>
 			<type>Text</type>
 			<indexable>true</indexable>
 		</attribute>
-		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttributeType">
-			<name>Links</name>
-			<type>Monolist</type>
-			<nestedType>
-				<name>Links</name>
-				<type>Link</type>
-				<indexable>true</indexable>
-			</nestedType>
-		</attribute>
-		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttributeType">
-			<name>Attaches</name>
-			<type>Monolist</type>
-			<nestedType>
-				<name>Attaches</name>
-				<type>Attach</type>
-				<indexable>true</indexable>
-			</nestedType>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbEnumeratorAttributeType">
+			<name>direction</name>
+			<description>Direction or orientation of the content</description>
+			<type>Enumerator</type>
+			<customSeparator>,</customSeparator>
+			<staticItems>VERTICAL,HORIZONTAL</staticItems>
 		</attribute>
 	</attributes>
 </contentType>

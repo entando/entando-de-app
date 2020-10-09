@@ -9,23 +9,24 @@
   <contentType>BNR</contentType>
   <description>Banner - Text, Image, CTA</description>
   <shape><![CDATA[
-    <div>
-      <h1>$content.title.text</h1>
+    <article class="banner-container #if ($content.placement.text == "RIGHT") reverse #end">
       #if ( $content.image.getImagePath("0") != "" )
-        <figure class="well well-small text-center">
-          <img src="$content.image.getImagePath("0")" alt="$content.image.text" />
-        </figure>
+        <div class="banner-image">
+            <img src="$content.image.getImagePath("0")" alt="$content.image.text">
+        </div>
       #end
-
-      #if ( $content.abstract.text != "" )
-        <p>
-          $content.abstract.text
-        </p>
-      #end
-
-      #if ( $content.link.text != "" )
-        <a class="call-to-action" href="$content.link.destination">$content.link.text</a></li>
-      #end      
-    </div>
+      <div class="banner-abstract">
+          <div>
+              <h1>$content.title.text</h1>
+              #if ( $content.abstract.text != "" )
+                <p>$content.abstract.text</p>
+              #end
+              #if ( $content.link.destination != "" )
+                <a href="$content.link.destination">$content.link.text</a>
+              #end
+          </div>
+      </div>
+    </article>
   ]]></shape>
+  <stylesheet>ootb/content-templates/ct-banner.css</stylesheet>
 </contentModel>

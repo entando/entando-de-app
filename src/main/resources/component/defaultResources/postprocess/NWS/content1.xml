@@ -5,12 +5,12 @@
 	<mainGroup>free</mainGroup>
 	<attributes>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbDateAttribute">
-			<name>Date</name>
+			<name>date</name>
 			<type>Date</type>
 			<value>2012-06-13T00:00:00+02:00</value>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
-			<name>Title</name>
+			<name>title</name>
 			<type>Text</type>
 			<value>Here come the news 1</value>
 			<roles>
@@ -18,7 +18,7 @@
 			</roles>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
-			<name>Abstract</name>
+			<name>abstract</name>
 			<type>Hypertext</type>
 			<htmlValue>
 			<![CDATA[
@@ -27,7 +27,7 @@
 			</htmlValue>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
-			<name>MainBody</name>
+			<name>body</name>
 			<type>Hypertext</type>
 			<htmlValue>
 			<![CDATA[
@@ -35,22 +35,31 @@
 			]]>
 			</htmlValue>
 		</attribute>
-		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbListAttribute">
-			<name>Links</name>
-			<type>Monolist</type>
-			<attributes>
-				<attribute xsi:type="jaxbLinkAttribute">
-					<name>Link</name>
-					<type>Link</type>
-					<link>
-						<text>Entando.com</text>
-						<url>http://www.entando.com/</url>
-						<symbolicLink>
-							<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
-						</symbolicLink>
-					</link>
-				</attribute>
-			</attributes>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbLinkAttribute">
+			<name>link</name>
+			<type>Link</type>
+			<link>
+				<text>Entando.com</text>
+				<url>http://www.entando.com/</url>
+				<symbolicLink>
+					<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
+				</symbolicLink>
+			</link>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">
+			<type>Image</type>
+			<name>image</name>
+			<resource>
+				<text>Entando at Work</text>
+				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
+				<resourceId>entandoAtWork</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=entandoAtWork</restResourcePath>
+			</resource>	
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>category</name>
+			<type>Text</type>
+			<value>Category</value>
 		</attribute>
 	</attributes>
 	<lastEditor>admin</lastEditor>

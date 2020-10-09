@@ -7,13 +7,28 @@
 <contentModel>
   <id>10021</id>
   <contentType>NWS</contentType>
-  <description>Lists - Default</description>
-  <shape><![CDATA[<article>
-<p class="text-right"><time class="label" datetime="$content.Date.shortDate">$content.Date.getFormattedDate("EEEE dd MMMM yyyy")</time></p>
-<h2>$content.Title.text</h2>
-#if ( $content.Abstract.text != "" )
-  $content.Abstract.text
-#end
-<p class="text-right"><a class="btn" href="$content.contentLink">$i18n.getLabel("NWS_READ_MORE")</a></p>
+  <description>News - List Item</description>
+  <shape><![CDATA[<article class="news-container #if ($content.direction.text == "HORIZONTAL") horizontal #end">
+    #if ( $content.image.getImagePath("0") != "" )
+      <div class="news-image">
+          <img src="$content.image.getImagePath("0")" alt="$content.image.text">
+      </div>
+    #end
+    <div class="news-abstract">
+        <div>
+            #if ( $content.category.text != "" )
+              <h3 class="news-category">$content.category.text</h3>
+            #end
+            <time class="news-date" datetime="$content.date.shortDate">$content.date.getFormattedDate("dd MMMM yyyy")</time>
+            <h1 class="news-title">$content.title.text</h1>
+            #if ( $content.abstract.text != "" )
+              <p>$content.abstract.text</p>
+            #end
+            #if ( $content.link.destination != "" )
+              <a href="$content.link.destination">$content.link.text</a>
+            #end
+        </div>
+    </div>
 </article>]]></shape>
+  <stylesheet>ootb/content-templates/ct-news.css</stylesheet>
 </contentModel>

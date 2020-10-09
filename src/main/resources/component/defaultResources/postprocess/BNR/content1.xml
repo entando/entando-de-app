@@ -23,10 +23,10 @@
 			<type>Image</type>
 			<name>image</name>
 			<resource>
-				<text>The very first Entando Logo in an artistic reprise</text>
+				<text>Entando at Plan</text>
 				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
-				<resourceId>logoDarkBlue</resourceId>
-				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=logoDarkBlue</restResourcePath>
+				<resourceId>entandoAtPlan</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=entandoAtPlan</restResourcePath>
 			</resource>						
 		</attribute>		
 
