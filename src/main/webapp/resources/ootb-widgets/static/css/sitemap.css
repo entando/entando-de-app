@@ -1,0 +1,34 @@
+.sitemap {
+  margin: 0 auto;
+}
+.sitemap li {
+  margin: 1rem 0;
+}
+.sitemap a {
+  font-size: 18px;
+  color: #203753;
+  text-decoration: none;
+}
+.sitemap a:hover {
+  font-weight: bold;
+}
+.sitemap h2 {
+  text-align: center;
+ padding: 4rem;
+}
+.sitemap .nav {
+  margin: 0 auto;
+  list-style-type: disc;
+}
+.sitemap .root-a {
+  font-weight: bold;
+}
+.sitemap .a-void:hover {
+  font-weight: normal;
+}
+.sitemap ul {
+  padding-left: 40px;
+}
+.sitemap .nav-list {
+list-style-type: disc;
+}

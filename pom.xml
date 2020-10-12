@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.1.127</version>
+    <version>6.2.0-SNAPSHOT</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -32,15 +32,15 @@
         </repository>
     </repositories>
     <properties>
-        <entando-admin-console.version>6.2.40</entando-admin-console.version>
-        <entando-engine.version>6.2.60</entando-engine.version>
-        <entando-portal-ui.version>6.2.7</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.2.41</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>6.2.8</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>6.2.9</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.2.12</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>6.2.7</entando-plugin-jpcontentscheduler.version>
-        <entando.keycloak.plugin.version>6.2.0-SNAPSHOT</entando.keycloak.plugin.version>
+        <entando-admin-console.version>6.2.45</entando-admin-console.version>
+        <entando-engine.version>6.2.66</entando-engine.version>
+        <entando-portal-ui.version>6.2.8</entando-portal-ui.version>
+        <entando-plugin-jacms.version>6.2.45</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>6.2.9</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>6.2.10</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.2.14</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>6.2.9</entando-plugin-jpcontentscheduler.version>
+        <entando.keycloak.plugin.version>6.2.4</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
@@ -226,14 +226,6 @@
                 <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                 <version>${entando-plugin-jpcontentscheduler.version}</version>
                 <classifier>classes</classifier>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.entando.entando.plugins</groupId>
-                        <artifactId>
-                            entando-plugin-jpmail
-                        </artifactId>
-                    </exclusion>
-                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
@@ -437,7 +429,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando-eap72-clustered-base</server.base.image>
+                <server.base.image>entando-eap71-clustered-base</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -455,7 +447,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando-wildfly15-base</server.base.image>
+                <server.base.image>entando-wildfly12-base</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
