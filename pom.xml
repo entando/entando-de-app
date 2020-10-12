@@ -40,7 +40,7 @@
         <entando-plugin-jpversioning.version>6.2.10</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.2.14</entando-plugin-jpseo.version>
         <entando-plugin-jpcontentscheduler.version>6.2.9</entando-plugin-jpcontentscheduler.version>
-        <entando.keycloak.plugin.version>6.2.4</entando.keycloak.plugin.version>
+        <entando.keycloak.plugin.version>6.2.5</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
