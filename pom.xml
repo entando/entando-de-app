@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <entando-admin-console.version>6.2.50</entando-admin-console.version>
-        <entando-engine.version>6.2.70</entando-engine.version>
+        <entando-engine.version>6.2.71</entando-engine.version>
         <entando-portal-ui.version>6.2.8</entando-portal-ui.version>
         <entando-plugin-jacms.version>6.2.48</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>6.2.9</entando-plugin-jpmail.version>
