@@ -1,6 +1,6 @@
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlydefaultconfig) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Breadcrumb</property>
+<property key="en">Breadcrumbs</property>
 <property key="it">Briciole di pane</property>
 </properties>',NULL,NULL,NULL,NULL,1,'free',1);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
