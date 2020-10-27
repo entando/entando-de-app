@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xmlns:context="http://www.springframework.org/schema/context"
+        xmlns:jee="http://www.springframework.org/schema/jee"
+        xmlns:util="http://www.springframework.org/schema/util"
+        xmlns:cache="http://www.springframework.org/schema/cache"
+        xmlns:p="http://www.springframework.org/schema/p"
+        xmlns:aop="http://www.springframework.org/schema/aop"
+        xmlns:task="http://www.springframework.org/schema/task"
+        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-4.0.xsd
+			http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+			http://www.springframework.org/schema/jee http://www.springframework.org/schema/jee/spring-jee-4.0.xsd
+			http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-4.0.xsd
+			http://www.springframework.org/schema/cache http://www.springframework.org/schema/cache/spring-cache-4.0.xsd
+			http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+			http://www.springframework.org/schema/task http://www.springframework.org/schema/task/spring-task-4.0.xsd">
+
+    <jee:jndi-lookup id="defaultCache" jndi-name="java:comp/env/defaultCache" />
+    <jee:jndi-lookup id="pageCache" jndi-name="java:comp/env/pageCache" />
+    <jee:jndi-lookup id="pageModelCache" jndi-name="java:comp/env/pageModelCache" />
+    <jee:jndi-lookup id="categoryCache" jndi-name="java:comp/env/categoryCache" />
+    <jee:jndi-lookup id="widgetTypeCache" jndi-name="java:comp/env/widgetTypeCache" />
+    <jee:jndi-lookup id="configCache" jndi-name="java:comp/env/configCache" />
+    <jee:jndi-lookup id="roleCache" jndi-name="java:comp/env/roleCache" />
+    <jee:jndi-lookup id="groupCache" jndi-name="java:comp/env/groupCache" />
+    <jee:jndi-lookup id="langCache" jndi-name="java:comp/env/langCache" />
+    <jee:jndi-lookup id="cacheInfoCache" jndi-name="java:comp/env/cacheInfoCache" />
+    <jee:jndi-lookup id="i18lnCache" jndi-name="java:comp/env/i18lnCache" />
+    <jee:jndi-lookup id="userProfileCache" jndi-name="java:comp/env/userProfileCache" />
+    <jee:jndi-lookup id="initializerCache" jndi-name="java:comp/env/initializerCache" />
+    <jee:jndi-lookup id="apiCatalogCache" jndi-name="java:comp/env/apiCatalogCache" />
+    <jee:jndi-lookup id="keyGeneratorCache" jndi-name="java:comp/env/keyGeneratorCache" />
+    <jee:jndi-lookup id="dataObjectCache" jndi-name="java:comp/env/dataObjectCache" />
+    <jee:jndi-lookup id="dataObjectModelCache" jndi-name="java:comp/env/dataObjectModelCache" />
+    <jee:jndi-lookup id="dataObjectMapperCache" jndi-name="java:comp/env/dataObjectMapperCache" />
+    <jee:jndi-lookup id="jacmsContentManagerCache" jndi-name="java:comp/env/jacmsContentManagerCache" />
+    <jee:jndi-lookup id="jacmsContentModelCache" jndi-name="java:comp/env/jacmsContentModelCache" />
+    <jee:jndi-lookup id="jacmsContentPageMapperCache" jndi-name="java:comp/env/jacmsContentPageMapperCache" />
+    <jee:jndi-lookup id="jacmsResourceManagerCache" jndi-name="java:comp/env/jacmsResourceManagerCache" />
+
+</beans>

@@ -129,5 +129,158 @@
             </New>
         </Arg>
     </New>
-
+    <New id="defaultCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>defaultCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="pageCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>pageCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="pageModelCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>pageModelCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="categoryCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>categoryCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="widgetTypeCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>widgetTypeCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="configCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>configCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="roleCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>roleCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="groupCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>groupCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="langCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>langCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="cacheInfoCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>cacheInfoCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="i18lnCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>i18lnCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="userProfileCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>userProfileCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="initializerCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>initializerCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="apiCatalogCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>apiCatalogCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="keyGeneratorCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>keyGeneratorCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="dataObjectCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>dataObjectCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="dataObjectModelCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>dataObjectModelCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="widgetTypeCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>dataObjectMapperCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="jacmsContentManagerCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jacmsContentManagerCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="jacmsContentModelCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jacmsContentModelCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="jacmsContentPageMapperCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jacmsContentPageMapperCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
+    <New id="jacmsResourceManagerCache" class="org.eclipse.jetty.plus.jndi.Resource">
+        <Arg>jacmsResourceManagerCache</Arg>
+        <Arg>
+            <New class="java.util.concurrent.ConcurrentHashMap">
+            </New>
+        </Arg>
+    </New>
 </Configure>
