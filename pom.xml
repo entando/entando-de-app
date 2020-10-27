@@ -226,6 +226,12 @@
                 <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                 <version>${entando-plugin-jpcontentscheduler.version}</version>
                 <classifier>classes</classifier>
+                <exclusions>
+                    <exclusion>
+                        <groupId>org.entando.entando.plugins</groupId>
+                        <artifactId>entando-plugin-jpmail</artifactId>
+                    </exclusion>
+                </exclusions>
             </dependency>
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
@@ -296,6 +302,18 @@
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
         </dependency>
+        <!-- infinispan -->
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-core</artifactId>
+            <version>9.4.8.Final</version>
+        </dependency>
+        <dependency>
+            <groupId>org.infinispan</groupId>
+            <artifactId>infinispan-commons</artifactId>
+            <version>9.4.8.Final</version>
+        </dependency>
+
             <!-- war overlays -->
             <dependency>
                 <groupId>org.entando.entando</groupId>
@@ -1133,6 +1151,10 @@
                         <!--                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>-->
                     </webApp>
                     <systemProperties>
+                        <systemProperty>
+                            <name>org.eclipse.jetty.LEVEL</name>
+                            <value>FATAL</value>
+                        </systemProperty>
                         <systemProperty>
                             <name>entando.version</name>
                             <value>${entando.version}</value>
