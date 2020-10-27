@@ -1,6 +1,6 @@
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlydefaultconfig) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Breadcrumb</property>
+<property key="en">Breadcrumbs</property>
 <property key="it">Briciole di pane</property>
 </properties>',NULL,NULL,NULL,NULL,1,'free',1);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
@@ -291,7 +291,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <link href="<@wp.resourceURL />ootb-widgets/static/css/main.ootb.chunk.css" rel="stylesheet">
 ',1);
 
-INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage1','Homepage 1','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-column','1 Column','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
       <descr>Logo</descr>
@@ -375,7 +375,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </html>
 ');
 
-INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage2','Homepage 2','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x4-1-column','1-2x4-1 Columns','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
       <descr>Logo</descr>
@@ -485,7 +485,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </html>
 ');
 
-INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage3','Homepage 3','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2-column','1-2 Columns','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
       <descr>Logo</descr>
@@ -600,7 +600,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homep
 </html>
 ');
 
-INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('homepage4','Homepage 4','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2-1-column','1-2x2-1 Columns','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
       <descr>Logo</descr>
@@ -707,7 +707,7 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Sample Homepage</property>
 <property key="it">Sample Homepage</property>
-</properties>','homepage1',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf8</charset>
@@ -718,7 +718,7 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Sitemap</property>
-</properties>','homepage1',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -728,7 +728,7 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Search Result</property>
 <property key="it">Risultati della Ricerca</property>
-</properties>','homepage1',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -738,7 +738,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <properties>
 <property key="en">Sample Homepage</property>
 <property key="it">Sample Homepage</property>
-</properties>','homepage1',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf8</charset>
@@ -748,7 +748,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Sitemap</property>
-</properties>','homepage1',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -758,7 +758,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <properties>
 <property key="en">Search Result</property>
 <property key="it">Risultati della Ricerca</property>
-</properties>','homepage1',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
