@@ -1,8 +1,8 @@
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlydefaultconfig) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlypagewidgetconfig) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Breadcrumbs</property>
 <property key="it">Briciole di pane</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free',1);
+</properties>',NULL,NULL,NULL,NULL,1,'free',0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentViewCode" />
 
@@ -59,7 +59,7 @@ INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HE
 
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlydefaultconfig) VALUES ('logo','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig) VALUES ('logo','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Logo</property>
 <property key="it">Logo</property>
@@ -70,10 +70,10 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Logo" role="logo" />','<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
-<img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Entando" role="logo" />',1);
+<img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Entando" role="logo" />',0);
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlydefaultconfig) VALUES ('language','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig) VALUES ('language','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Language</property>
 <property key="it">Linguaggio</property>
@@ -116,7 +116,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   languages="[${lang_json_string?html}]"
 ></choose-language-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlydefaultconfig) VALUES ('keycloak-login','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig) VALUES ('keycloak-login','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Login</property>
 <property key="it">Login</property>
@@ -163,7 +163,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
    page="<@wp.url />"
 ></login-button-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlydefaultconfig) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation Menu</property>
 <property key="it">Menu di Navigazione</property>
@@ -205,7 +205,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   nav-items="[${nav_json_string?html}]"
 ></navigation-bar-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,readonlydefaultconfig) VALUES ('sitemap','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,readonlypagewidgetconfig) VALUES ('sitemap','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Mappa del Sito</property>
@@ -846,7 +846,7 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_LINKS', 'i
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'en', 'View details');
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'it', 'Continua');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlydefaultconfig) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News Latest</property>
 <property key="it">Notizie Ultime</property>
@@ -863,7 +863,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="linkDescr_en">Archive</property>
 </properties>', 0, NULL, 0);
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlydefaultconfig) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News Archive</property>
 <property key="it">Notizie Archivio</property>
