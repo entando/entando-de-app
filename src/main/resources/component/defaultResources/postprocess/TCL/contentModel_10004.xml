@@ -1,0 +1,36 @@
+<!--
+  keep the 10000 set for the bundles
+  change the x to something suitable and unused
+  set the last column to NULL if your Content Model doesn't need any stylesheet at all
+  You'll want to provide at least one Default Content Model, and one Content Model for lists
+-->
+<contentModel>
+  <id>10004</id>
+  <contentType>TCL</contentType>
+  <description>2-column-content</description>
+  <shape><![CDATA[<article class="tcol-content">
+    #if ( $content.image.getImagePath("0") != "" )
+      <img class="tcol-content-image" src="$content.image.getImagePath("0")" alt="$content.image.text">
+    #end
+    <div class="tcol-content-main">
+      <div class="tcol-content-headings">
+        <div>
+          <h1 class="tcol-content-title">$content.title.text</h1>
+          #if ( $content.subtitle.text != "" )
+            <h2 class="tcol-content-subtitle">$content.subtitle.text</h2>
+          #end
+        </div>
+        <div></div>
+      </div>
+      <div class="tcol-content-paragraphs">
+        <div class="tcol-content-pcontainer">
+          $content.col1.text
+        </div>
+        <div class="tcol-content-pcontainer">
+          $content.col2.text
+        </div>
+      </div>
+    </div>
+  </article>]]></shape>
+  <stylesheet>ootb/content-templates/ct-2-col.css</stylesheet>
+</contentModel>
