@@ -1,0 +1,58 @@
+<content>
+	<description>Entando and JHipster: How It Works</description>
+	<typeCode>NWS</typeCode>
+	<typeDescription>News</typeDescription>	
+	<mainGroup>free</mainGroup>
+	<attributes>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbDateAttribute">
+			<name>date</name>
+			<type>Date</type>
+			<value>2020-09-04T00:00:00+02:00</value>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>title</name>
+			<type>Text</type>
+			<value>Entando and JHipster: How It Works</value>
+			<roles>
+				<role>jacms:title</role>
+			</roles>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>abstract</name>
+			<type>Hypertext</type>
+			<htmlValue>
+			<![CDATA[
+			<p> Entando’s sponsorship of JHipster reaffirms our commitment to open source and to incorporating the best open source technologies in the Entando platform</p>
+			]]>
+			</htmlValue>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>body</name>
+			<type>Hypertext</type>
+			<htmlValue>
+			<![CDATA[
+			<p> Entando’s sponsorship of JHipster reaffirms our commitment to open source and to incorporating the best open source technologies in the Entando platform. JHipster has been included in Entando since the 6.0 release, helping customers generate microservices and micro frontends. The ability to customize JHipster via a Blueprint has given us the flexibility to automate key elements of the Entando platform and to enhance the developer experience.</p>
+<p>With our sponsorship we’re looking forward to getting more deeply involved in the JHipster community and to contribute to JHipster 7 and beyond.</p>
+<p>Technical Notes</p>
+<p>JHipster and the blueprint pattern give Entando developers the ability to quickly create a standardized Spring Boot microservice which can be installed into an Entando cluster on Kubernetes.  </p>
+			]]>
+			</htmlValue>
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">
+			<type>Image</type>
+			<name>image</name>
+			<resource>
+				<text>HTML Code</text>
+				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
+				<resourceId>htmlCode</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=htmlCode</restResourcePath>
+			</resource>	
+		</attribute>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>category</name>
+			<type>Text</type>
+			<value>Category</value>
+		</attribute>
+	</attributes>
+	<lastEditor>admin</lastEditor>
+</content>

@@ -1,0 +1,60 @@
+<content>
+	<description>A Modern Platform for Modern UX</description>
+	<typeCode>BNR</typeCode>
+	<typeDescription>Banner</typeDescription>
+	<mainGroup>free</mainGroup>
+	<attributes>
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
+			<name>title</name>
+			<type>Text</type>
+			<value>A Modern Platform for Modern UX</value>
+			<roles>
+				<role>jacms:title</role>
+			</roles>
+		</attribute>
+
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbHypertextAttribute">
+			<name>abstract</name>
+			<type>Hypertext</type>
+			<htmlValue><![CDATA[<p>
+      Entando is an open source software company providing the leading micro frontend platform building enterprise web apps on Kubernetes. 
+The company,  founded in 2010 as an open-source system integrator, was re-founded as a product company in 2015 in response to the growing demand for tools and services  to create modern online experiences. Since then, Entando has stepped into international markets. It’s headquartered in San Diego, California with R&D and sales offices in Europe, and features teams all over the world, including the United States, Italy, Brazil, South Africa, Ukraine, and the Philippines.
+
+In 2015, Entando was named in the “Cool Vendors in Web Computing” Gartner report. In 2017, it became an official Red Hat Technology Partner, followed in 2018 by an OEM agreement with Red Hat. Also in 2018 the platform won the Digital360 Awards prize in the cloud computing category.
+
+As a leader in modern software paradigms, Entando seeks to continuously and rigorously optimize and standardize the enterprise experience of building applications in the modern world, helping them succeed in any field. Entando has particular expertise in the banking, public sector, and services industries.
+Entando services span various software subscription and service levels and are designed to meet each customer’s specific needs. The Entando solution consists of Subscription Support Services, Certification and Training, and Consulting Services.
+
+Entando is supported by a strong ecosystem of certified partners that bring both industry expertise and local delivery capabilities to address our customers’ most common needs: time to market, continuous innovation, and simplicity.
+
+      
+      
+      </p>]]></htmlValue>
+		</attribute>
+
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">
+			<type>Image</type>
+			<name>image</name>
+			<resource>
+				<text>Entando at Plan</text>
+				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
+				<resourceId>entandoAtPlan</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=entandoAtPlan</restResourcePath>
+			</resource>						
+		</attribute>		
+
+		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbLinkAttribute">
+			<name>link</name>
+			<type>Link</type>
+			<link>
+				<text>Learn more</text>
+				<url>http://www.entando.com/</url>
+				<symbolicLink>
+					<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
+				</symbolicLink>
+			</link>
+		</attribute>
+		
+	</attributes>
+	<lastEditor>admin</lastEditor>
+</content>
