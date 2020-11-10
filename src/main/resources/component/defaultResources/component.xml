@@ -112,6 +112,14 @@
                               method="PUT" expected="200" printresponse="true" >
                     <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/TCL/TCL.xml" />
                 </selfRestCall>
+
+                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
+                              method="POST" expected="200" printresponse="true" >
+                    <query>
+                        <parameter name="insertOnLine" value="true" />
+                    </query>
+                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/TCL/content1.xml" />
+                </selfRestCall>
                 
             </postProcesses>
         </environment>
