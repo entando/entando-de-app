@@ -778,7 +778,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('about_us','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">About Us</property>
-<property key="it">Riguardo a Noi</property>
+<property key="it">Chi Siamo</property>
 </properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
