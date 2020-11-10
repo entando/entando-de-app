@@ -904,7 +904,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 </properties>', NULL, NULL, 'content_viewer_list', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="maxElements">4</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=date)</property>
 <property key="title_it">Notizie</property>
 <property key="linkDescr_it">Archivio</property>
 <property key="pageLink">news</property>
@@ -922,8 +922,8 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <properties>
 <property key="maxElemForItem">10</property>
 <property key="title_it">Archivio Notizie</property>
-<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=Date)</property>
-<property key="filters">(order=DESC;attributeFilter=true;key=Date)</property>
+<property key="userFilters">(attributeFilter=false;key=fulltext)+(attributeFilter=true;key=date)</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=date)</property>
 <property key="title_en">News Archive</property>
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
