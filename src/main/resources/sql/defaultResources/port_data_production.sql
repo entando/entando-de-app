@@ -703,6 +703,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
 INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
 INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage_test',1);
 INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',4);
+INSERT INTO pages (code,parentcode,pos) VALUES ('about_us','homepage',5);
 INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sample Homepage</property>
@@ -728,6 +729,16 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Search Result</property>
 <property key="it">Risultati della Ricerca</property>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-06-08 08:43:13');
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('about_us','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">About Us</property>
+<property key="it">Chi Siamo</property>
 </properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
@@ -764,6 +775,16 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
   <charset>utf-8</charset>
   <mimeType>text/html</mimeType>
 </config>','2020-06-08 08:43:13');
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('about_us','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">About Us</property>
+<property key="it">Chi Siamo</property>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-06-08 08:43:13');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -775,7 +796,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ho
 <properties>
 <property key="ownerGroup">free</property>
 <property key="joinGroups">()</property>
-<property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS3},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
+<property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS4},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
 </properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
@@ -796,6 +817,21 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('se
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
 
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',2,'search_form',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentDescription">Sample - About Us</property>
+<property key="ownerGroup">free</property>
+<property key="contentId">TCL7</property>
+<property key="joinGroups">[]</property>
+</properties>');
+
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -807,7 +843,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 <properties>
 <property key="ownerGroup">free</property>
 <property key="joinGroups">()</property>
-<property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS3},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
+<property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS4},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
@@ -827,6 +863,21 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_r
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
+
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',2,'search_form',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentDescription">Sample - About Us</property>
+<property key="ownerGroup">free</property>
+<property key="contentId">TCL7</property>
+<property key="joinGroups">[]</property>
+</properties>');
 
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('CNG_ATTACHMENTS', 'en', 'Attachments');
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('CNG_ATTACHMENTS', 'it', 'Allegati');
