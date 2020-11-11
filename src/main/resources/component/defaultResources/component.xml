@@ -62,6 +62,10 @@
                               method="POST" expected="200" printresponse="true" >
                     <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/contentModel_10021.xml" />
                 </selfRestCall>
+                <selfRestCall langCode="en" namespace="jacms" resourceName="contentModel"
+                              method="POST" expected="200" printresponse="true" >
+                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/contentModel_10022.xml" />
+                </selfRestCall>
                 <!-- avoid loop dependency between Content and Content Templates (Models) -->
                 <selfRestCall langCode="en" namespace="jacms" resourceName="contentType"
                               method="PUT" expected="200" printresponse="true" >

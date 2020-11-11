@@ -10,7 +10,7 @@
 			<roles>
 				<role>jacms:title</role>
 			</roles>
-			<searchable>true</searchable>
+			<searchable>false</searchable>
 			<indexable>true</indexable>
 			<validationRules xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="textAttributeValidationRules">
 				<required>true</required>

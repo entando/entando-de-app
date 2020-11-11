@@ -1,0 +1,24 @@
+<!--
+  keep the 10000 set for the bundles
+  change the x to something suitable and unused
+  set the last column to NULL if your Content Model doesn't need any stylesheet at all
+  You'll want to provide at least one Default Content Model, and one Content Model for lists
+-->
+<contentModel>
+  <id>10022</id>
+  <contentType>NWS</contentType>
+  <description>News - Search Results</description>
+  <shape><![CDATA[<article class="search-result-news-container #if ($content.direction.text == "HORIZONTAL") horizontal #end">
+    <div class="search-result-news-box">
+        <div class="search-result-news-title">
+		    NEWS#if ( $content.category.text != "" ) - $content.category.text#end
+	    </div>
+	    <h2 class="search-result-news-content-title">$content.title.text</h2>
+        #if ( $content.abstract.text != "" )
+        <div class="search-result-news-content-text">$content.abstract.text</div>
+        #end
+        <time class="search-result-news-date" datetime="$content.date.shortDate">$content.date.getFormattedDate("dd MMMM yyyy")</time>
+    </div>
+</article>]]></shape>
+  <stylesheet>ootb/content-templates/ct-news.css</stylesheet>
+</contentModel>
