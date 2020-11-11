@@ -291,6 +291,40 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <link href="<@wp.resourceURL />ootb-widgets/static/css/main.ootb.chunk.css" rel="stylesheet">
 ',1);
 
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,defaultconfig,locked,maingroup, readonlypagewidgetconfig, widgetcategory) VALUES ('NWS_Search_Results','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News Search Results</property>
+<property key="it">Risultati Ricerca News</property>
+</properties>',NULL,NULL,NULL,NULL, 0,'free' , 0, 'cms');
+
+
+
+INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('NWS_Search_Results', 'NWS_Search_Results', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+<h1 class="search-result-title"><@wp.i18n key="SEARCH_RESULTS" /></h1>
+<#if (RequestParameters.search?? && RequestParameters.search!='''')>
+<@jacms.searcher listName="contentListResult" />
+</#if>
+<p class="search-result-searched-text"><@wp.i18n key="SEARCHED_FOR" />: <em><strong><#if (RequestParameters.search??)>${RequestParameters.search}</#if></strong></em></p>
+<#if (contentListResult??) && (contentListResult?has_content) && (contentListResult?size > 0)>
+<@wp.pager listName="contentListResult" objectName="groupContent" max=10 pagerIdFromFrame=true advanced=true offset=5>
+	<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" removeOnEndTag=true >
+	<p><em><@wp.i18n key="SEARCH_RESULTS_INTRO" /> <!--  whitespace hack -->
+	${groupContent.size}
+	<@wp.i18n key="SEARCH_RESULTS_OUTRO" /> [${groupContent.begin + 1} &ndash; ${groupContent.end + 1}]:</em></p>
+	<@wp.fragment code="default_pagerBlock" escapeXml=false />
+	<#list contentListResult as contentId>
+	<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
+		<@jacms.content contentId="${contentId}" modelId="10022" />
+	</#if>
+	</#list>
+	<@wp.fragment code="default_pagerBlock" escapeXml=false />
+	</@wp.freemarkerTemplateParameter>
+</@wp.pager>
+<#else>
+<p class="alert alert-info"><@wp.i18n key="SEARCH_NOTHING_FOUND" /></p>
+</#if>', NULL, 0);
+
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-column','1 Column','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
@@ -815,7 +849,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('se
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -862,7 +896,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_r
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
