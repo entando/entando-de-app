@@ -703,7 +703,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
 INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
 INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage_test',1);
 INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',4);
-INSERT INTO pages (code,parentcode,pos) VALUES ('about_us','homepage',5);
+INSERT INTO pages (code,parentcode,pos) VALUES ('about_us','homepage_test',2);
 INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sample Homepage</property>
@@ -719,7 +719,7 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Sitemap</property>
-</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -729,7 +729,7 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Search Result</property>
 <property key="it">Risultati della Ricerca</property>
-</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -759,7 +759,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Sitemap</property>
-</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -769,7 +769,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <properties>
 <property key="en">Search Result</property>
 <property key="it">Risultati della Ricerca</property>
-</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -788,7 +788,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',3,'keycloak-login',NULL);
@@ -802,7 +802,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ho
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak-login',NULL);
@@ -811,7 +811,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('si
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
@@ -820,7 +820,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('se
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak-login',NULL);
@@ -835,7 +835,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',3,'keycloak-login',NULL);
@@ -849,7 +849,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak-login',NULL);
@@ -858,7 +858,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap'
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
@@ -867,7 +867,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_r
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage).subtree(4) + parent + current</property>
+<property key="navSpec">code(homepage_test).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak-login',NULL);
