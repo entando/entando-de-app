@@ -133,3 +133,15 @@ table {
   color: var(--nav-link-text-color);
   align-content: center;
 }
+
+.search-result-title {
+    width: 100%;
+    margin-top: 1em;
+    font-size: 2rem;
+    font-weight: 400;
+}
+
+.search-result-searched-text {
+   width: 100%;
+   margin-top: 1em;
+}
