@@ -23,6 +23,12 @@
 			<indexable>true</indexable>
 		</attribute>
 		<attribute>
+			<name>body</name>
+			<description>Main Body</description>
+			<type>Hypertext</type>
+			<indexable>true</indexable>
+		</attribute>
+		<attribute>
 			<name>link</name>
 			<description>Link</description>
 			<type>Link</type>
