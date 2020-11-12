@@ -216,7 +216,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <link rel="stylesheet" type="text/css" href="<@wp.resourceURL />ootb-widgets/static/css/sitemap.css">
 
 <div class="well well-small sitemap">
-<h2>Site Map</h2>
+<h2>Sitemap</h2>
 
 <ul class="nav nav-list">
 <@wp.nav spec="code(homepage).subtree(50)" var="page">
@@ -841,6 +841,10 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('si
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',4,'sitemap',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -850,6 +854,10 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('se
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -864,6 +872,10 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 <property key="ownerGroup">free</property>
 <property key="contentId">TCL7</property>
 <property key="joinGroups">[]</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
@@ -888,6 +900,10 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap'
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',4,'sitemap',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -897,6 +913,10 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_r
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -911,6 +931,10 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us
 <property key="ownerGroup">free</property>
 <property key="contentId">TCL7</property>
 <property key="joinGroups">[]</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('CNG_ATTACHMENTS', 'en', 'Attachments');

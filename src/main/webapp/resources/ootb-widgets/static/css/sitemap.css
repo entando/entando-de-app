@@ -1,11 +1,11 @@
 .sitemap {
-  margin: 0 auto;
+  padding: 2.5em 2em;
 }
 .sitemap li {
   margin: 1rem 0;
 }
 .sitemap a {
-  font-size: 18px;
+  font-size: 16px;
   color: #203753;
   text-decoration: none;
 }
@@ -13,15 +13,17 @@
   font-weight: bold;
 }
 .sitemap h2 {
-  text-align: center;
- padding: 4rem;
+  margin-top: 0;
+  margin-bottom: 0.83em;
+  font-size: 2.5em;
+  font-weight: normal;
 }
 .sitemap .nav {
   margin: 0 auto;
   list-style-type: disc;
 }
 .sitemap .root-a {
-  font-weight: bold;
+  display: none;
 }
 .sitemap .a-void:hover {
   font-weight: normal;
@@ -29,6 +31,14 @@
 .sitemap ul {
   padding-left: 40px;
 }
+.sitemap > ul {
+  padding-left: 0;
+}
+
+.sitemap > ul > li.nav-header {
+  list-style: none;
+}
+
 .sitemap .nav-list {
 list-style-type: disc;
 }
