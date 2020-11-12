@@ -735,8 +735,8 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
 ');
 
 INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
-INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage_test',1);
-INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',4);
+INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage',4);
+INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',5);
 INSERT INTO pages (code,parentcode,pos) VALUES ('about_us','homepage_test',2);
 INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -753,7 +753,7 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Sitemap</property>
-</properties>','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -832,6 +832,10 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ho
 <property key="joinGroups">()</property>
 <property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS4},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
 </properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -890,6 +894,10 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 <property key="ownerGroup">free</property>
 <property key="joinGroups">()</property>
 <property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS4},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
