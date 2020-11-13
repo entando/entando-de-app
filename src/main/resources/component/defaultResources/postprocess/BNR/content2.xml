@@ -17,6 +17,7 @@
 			<name>abstract</name>
 			<type>Hypertext</type>
 			<htmlValue><![CDATA[<p>
+<<<<<<< HEAD
       Entando is an open source software company providing the leading micro frontend platform building enterprise web apps on Kubernetes.
       </p>]]></htmlValue>
 		</attribute>
@@ -33,6 +34,9 @@ As a leader in modern software paradigms, Entando seeks to continuously and rigo
 Entando services span various software subscription and service levels and are designed to meet each customer’s specific needs. The Entando solution consists of Subscription Support Services, Certification and Training, and Consulting Services.
 
 Entando is supported by a strong ecosystem of certified partners that bring both industry expertise and local delivery capabilities to address our customers’ most common needs: time to market, continuous innovation, and simplicity.
+=======
+      By integrating leading edge open source projects and extending their capabilities, Entando allows developers and operations teams to create modern UX on Kubernetes.      
+>>>>>>> bdbaaa7d3b6f6bfa2f2cf425fd28e7cf50f60718
       </p>]]></htmlValue>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">

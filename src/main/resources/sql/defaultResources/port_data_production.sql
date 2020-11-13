@@ -826,11 +826,19 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ho
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',4,'row_content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentDescription">A Modern Platform for Modern UX</property>
+<property key="contentId">BNR3</property>
+<property key="joinGroups">()</property>
+<property key="modelId">10003</property>
+<property key="ownerGroup">free</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',5,'row_content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="ownerGroup">free</property>
 <property key="joinGroups">()</property>
-<property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS4},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
+<property key="contents">[{modelId=10021,contentDescription=Why You Need a Micro Frontend Platform for Kubernetes,contentId=NWS5},{modelId=10021,contentId=NWS6}]</property>
 </properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
@@ -873,11 +881,19 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',4,'row_content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="contentDescription">A Modern Platform for Modern UX</property>
+<property key="contentId">BNR3</property>
+<property key="joinGroups">()</property>
+<property key="modelId">10003</property>
+<property key="ownerGroup">free</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',5,'row_content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="ownerGroup">free</property>
 <property key="joinGroups">()</property>
-<property key="contents">[{modelId=10021,contentDescription=Sample - News 1,contentId=NWS4},{modelId=10003,contentDescription=Sample Banner,contentId=BNR2}]</property>
+<property key="contents">[{modelId=10021,contentDescription=Why You Need a Micro Frontend Platform for Kubernetes,contentId=NWS5},{modelId=10021,contentId=NWS6}]</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
