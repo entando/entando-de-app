@@ -210,7 +210,9 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 <property key="en">Sitemap</property>
 <property key="it">Mappa del Sito</property>
 </properties>',NULL,NULL,NULL,NULL,1,'free',NULL,0, 'navigation');
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('sitemap','sitemap',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('sitemap','sitemap',NULL,NULL,'<#assign jacms=JspTaglibs["/jacms-aps-core"]>
+<#assign wp=JspTaglibs["/aps-core"]>
+<@jacms.contentList listName="contentList" contentType="NWS" />
 <@wp.currentPage param="code" var="currentPageCode" />
 <@wp.freemarkerTemplateParameter var="currentPageCode" valueName="currentPageCode" />
 <link rel="stylesheet" type="text/css" href="<@wp.resourceURL />ootb-widgets/static/css/sitemap.css">
@@ -241,6 +243,15 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 	</#list>
    </#if>
 </#if>
+<ul class="nav nav-list">
+     <li class="nav-header">
+     <strong>News</strong>
+<ul class="nav-list">
+<#list contentList as contentId>
+	<@jacms.content contentId="${contentId}" modelId="10020" />
+</#list>
+</ul>
+</li>
 </ul>
 </div>
 <@wp.freemarkerTemplateParameter var="previousPage" valueName="" removeOnEndTag=true />
@@ -248,40 +259,32 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('sitemap_menu_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <#assign liClass="">
 <#assign aClass="">
-<#if (previousPage.code == currentPageCode)>
-  <#assign liClass='' class="active" ''>
-</#if>
 <#if previousPage.voidPage>
  <#assign liClass='' class="nav-header" ''>
     <#assign aClass='' class="a-void" ''>
 </#if>
-<#if previousLevel == 0>
-  <#assign aClass='' class="root-a" ''>
-</#if>
 <li ${liClass}>
-   <#if (!previousPage.voidPage)>
-   	<a href="${previousPage.url}"  ${aClass}>
-   <#else>
-        <a ${aClass}>
-   </#if>
-   <!-- [ ${previousLevel} ]-->
-<#--  CHECK THIS
-${homeIcon}
--->
-   ${previousPage.title}
-     </a>
-
-   <#if (previousLevel == level)>
-	</li>
-   </#if>
-   <#if (previousLevel < level)>
-	<ul class="nav-list">
-   </#if>
-   <#if (previousLevel > level)>
-	<#list 1..(previousLevel - level) as ignoreMe>
-		</li></ul>
-	</#list>
-   </#if>
+<#if previousLevel != 0>
+<#if (!previousPage.voidPage)>
+<a href="${previousPage.url}"  ${aClass}>
+<#else>
+<a ${aClass}>
+</#if>
+${previousPage.title}</a>
+<#else>
+<strong>Pages</strong>
+</#if>
+<#if (previousLevel == level)>
+</li>
+</#if>
+<#if (previousLevel < level)>
+<ul class="nav-list">
+</#if>
+<#if (previousLevel > level)>
+<#list 1..(previousLevel - level) as ignoreMe>
+</li></ul>
+</#list>
+</#if>
 ',1);
 
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando_ootb_carbon_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
@@ -733,11 +736,100 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
         </body>
 </html>
 ');
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('content-page','Content Page','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+  <frame pos="0">
+      <descr>Logo</descr>
+      <sketch x1="0" y1="0" x2="2" y2="0" />
+      <defaultWidget code="logo" />
+  </frame>
+  <frame pos="1">
+      <descr>Navigation bar</descr>
+      <sketch x1="3" y1="0" x2="5" y2="0" />
+      <defaultWidget code="navigation-menu" />
+  </frame>
+  <frame pos="2">
+      <descr>Search</descr>
+      <sketch x1="6" y1="0" x2="8" y2="0" />
+      <defaultWidget code="search_form" />
+  </frame>
+  <frame pos="3">
+      <descr>Login</descr>
+      <sketch x1="9" y1="0" x2="11" y2="0" />
+      <defaultWidget code="keycloak-login" />
+  </frame>
+  <frame pos="4" main="true">
+      <descr>Content Frame</descr>
+      <defaultWidget code="content_viewer">
+        <properties>
+          <property key="modelId">10002</property>
+        </properties>
+      </defaultWidget>
+      <sketch x1="0" y1="1" x2="11" y2="1" />
+  </frame>
+  <frame pos="5">
+      <descr>Frame 2</descr>
+      <sketch x1="0" y1="2" x2="11" y2="2" />
+  </frame>
+  <frame pos="6">
+      <descr>Frame 3</descr>
+      <sketch x1="0" y1="3" x2="11" y2="3" />
+  </frame>
+  <frame pos="7">
+      <descr>Frame 4</descr>
+      <sketch x1="0" y1="4" x2="11" y2="4" />
+  </frame>
+  <frame pos="8">
+      <descr>Footer</descr>
+      <sketch x1="0" y1="5" x2="11" y2="5" />
+  </frame>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" />
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <link rel="icon" href="${appUrl}favicon.png" type="image/png" />
+        <!-- Custom OOTB page template styles -->
+        <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
+        <!-- Carbon Design System -->
+        <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+
+        <@wp.outputHeadInfo type="CSS">
+            <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
+        </@wp.outputHeadInfo>
+        </head>
+        <body>
+          <header-fragment app-url="${appUrl}">
+            <template>
+                <@wp.show frame=0 />
+                <@wp.show frame=1 />
+                <@wp.show frame=2 />
+                <@wp.show frame=3 />
+            </template>
+          </header-fragment>
+          <div class="bx--grid Homepage__body">
+            <div class="bx--row"><@wp.show frame=4 /></div>
+            <div class="bx--row"><@wp.show frame=5 /></div>
+            <div class="bx--row"><@wp.show frame=6 /></div>
+            <div class="bx--row"><@wp.show frame=7 /></div>
+          </div>
+          <div class="Homepage__footer"><@wp.show frame=8 /></div>
+        </body>
+</html>
+');
 
 INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
 INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage',4);
 INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',5);
 INSERT INTO pages (code,parentcode,pos) VALUES ('about_us','homepage_test',2);
+INSERT INTO pages (code,parentcode,pos) VALUES ('content_details','homepage_test',3);
 INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sample Homepage</property>
@@ -779,6 +871,16 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
   <charset>utf-8</charset>
   <mimeType>text/html</mimeType>
 </config>','2020-06-08 08:43:13');
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('content_details','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Content Details</property>
+<property key="it">Dettagli del Contenuto</property>
+</properties>','content-page',2,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-06-08 08:43:13');
 INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sample Homepage</property>
@@ -814,6 +916,16 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <property key="en">About Us</property>
 <property key="it">Chi Siamo</property>
 </properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+</config>','2020-06-08 08:43:13');
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('content_details','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Content Details</property>
+<property key="it">Dettagli del Contenuto</property>
+</properties>','content-page',2,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -889,6 +1001,18 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',0,'logo',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage_test).children</property>
+</properties>');
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',2,'search_form',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',4,'content_viewer',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -957,6 +1081,18 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us
 <property key="joinGroups">[]</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(sitemap)</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',0,'logo',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage_test).children</property>
+</properties>');
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',2,'search_form',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',4,'content_viewer',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');

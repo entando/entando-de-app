@@ -20,7 +20,7 @@
               <h3 class="news-category">$content.category.text</h3>
             #end
             <time class="news-date" datetime="$content.date.shortDate">$content.date.getFormattedDate("dd MMMM yyyy")</time>
-            <h1 class="news-title">$content.title.text</h1>
+            <h1 class="news-title"><a href="$content.getContentLink()">$content.title.text</a></h1>
             #if ( $content.abstract.text != "" )
               <p>$content.abstract.text</p>
             #end

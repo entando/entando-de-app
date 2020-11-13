@@ -8,7 +8,7 @@
   <id>10002</id>
   <contentType>NWS</contentType>
   <description>News - Detail</description>
-  <shape><![CDATA[<article class="news-container">
+  <shape><![CDATA[<article class="news-container details">
     #if ( $content.image.getImagePath("0") != "" )
       <div class="news-image">
           <img src="$content.image.getImagePath("0")" alt="$content.image.text">

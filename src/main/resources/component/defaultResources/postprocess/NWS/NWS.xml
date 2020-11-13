@@ -3,6 +3,7 @@
 	<listModelId>10021</listModelId>
 	<typeCode>NWS</typeCode>
 	<typeDescription>News</typeDescription>
+	<viewPage>content_details</viewPage>
 	<attributes>
 		<attribute>
 			<name>date</name>

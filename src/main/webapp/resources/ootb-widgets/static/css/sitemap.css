@@ -4,13 +4,14 @@
 .sitemap li {
   margin: 1rem 0;
 }
+
 .sitemap a {
   font-size: 16px;
   color: #203753;
   text-decoration: none;
 }
 .sitemap a:hover {
-  font-weight: bold;
+  text-decoration: underline;
 }
 .sitemap h2 {
   margin-top: 0;
@@ -22,8 +23,8 @@
   margin: 0 auto;
   list-style-type: disc;
 }
-.sitemap .root-a {
-  display: none;
+.sitemap .nav.nav-list {
+  margin-top: 40px;
 }
 .sitemap .a-void:hover {
   font-weight: normal;
@@ -37,6 +38,10 @@
 
 .sitemap > ul > li.nav-header {
   list-style: none;
+}
+
+.sitemap > ul > li.nav-header > strong {
+  font-size: 18px;
 }
 
 .sitemap .nav-list {
