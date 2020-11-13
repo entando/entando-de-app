@@ -48,7 +48,7 @@
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>category</name>
 			<type>Text</type>
-			<value>Product</value>
+			<value>PRODUCT</value>
 		</attribute>
 	</attributes>
 	<lastEditor>admin</lastEditor>
