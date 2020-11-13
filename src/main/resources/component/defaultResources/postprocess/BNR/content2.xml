@@ -63,7 +63,7 @@ Entando is supported by a strong ecosystem of certified partners that bring both
 			<name>link</name>
 			<type>Link</type>
 			<link>
-				<text>Learn more</text>
+				<text>Learn more and Entando.com</text>
 				<url>http://www.entando.com/</url>
 				<symbolicLink>
 					<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
