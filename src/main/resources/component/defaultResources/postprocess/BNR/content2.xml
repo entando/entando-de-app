@@ -48,7 +48,7 @@
 			<name>link</name>
 			<type>Link</type>
 			<link>
-				<text>Learn more and Entando.com</text>
+				<text>Learn more at Entando.com</text>
 				<url>http://www.entando.com/</url>
 				<symbolicLink>
 					<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>

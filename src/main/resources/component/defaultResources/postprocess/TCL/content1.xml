@@ -17,7 +17,7 @@
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>title</name>
 			<type>Text</type>
-			<value>About US</value>
+			<value>About Us</value>
 			<roles>
 				<role>jacms:title</role>
 			</roles>
