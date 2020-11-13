@@ -25,7 +25,7 @@
               <p>$content.abstract.text</p>
             #end
             #if ( $content.link.destination != "" )
-              <a href="$content.link.destination">$content.link.text</a>
+              <a class="bx--btn bx--btn--primary" href="$content.link.destination">$content.link.text</a>
             #end
         </div>
     </div>
