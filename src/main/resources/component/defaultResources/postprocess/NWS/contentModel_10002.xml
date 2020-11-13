@@ -23,7 +23,7 @@
             <h1 class="news-title">$content.title.text</h1>
             <p>$content.body.text</p>
             #if ( $content.link.destination != "" )
-              <a href="$content.link.destination">$content.link.text</a>
+              <a class="bx--btn bx--btn--primary" href="$content.link.destination">$content.link.text</a>
             #end
         </div>
     </div>

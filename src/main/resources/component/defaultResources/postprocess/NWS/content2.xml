@@ -39,16 +39,16 @@
 			<type>Image</type>
 			<name>image</name>
 			<resource>
-				<text>Entando at Plan</text>
+				<text>Entando at Work</text>
 				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
-				<resourceId>entandoAtPlan</resourceId>
-				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=entandoAtPlan</restResourcePath>
+				<resourceId>entandoAtWork</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=entandoAtWork</restResourcePath>
 			</resource>	
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>category</name>
 			<type>Text</type>
-			<value>Category</value>
+			<value>Product</value>
 		</attribute>
 	</attributes>
 	<lastEditor>admin</lastEditor>
