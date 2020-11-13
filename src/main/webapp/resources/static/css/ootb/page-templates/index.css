@@ -127,7 +127,6 @@ table {
 }
 
 .Homepage__footer {
-  display: grid;
   height: 50px;
   background-color: var(--primary-color);
   color: var(--nav-link-text-color);

@@ -3,9 +3,11 @@
     height: 100%;
     width: 100%;
     flex-direction: column;
+    padding-bottom: 25px;
 }
 .banner-image {
     flex: 1;
+    order: 1;
 }
 .banner-image img {
     width: 100%;
@@ -16,6 +18,7 @@
 .banner-abstract {
     flex: 1;
     display: flex;
+    order: 0;
 }
 .banner-abstract > div {
     flex: 1;
@@ -31,13 +34,10 @@
     font-size: 1rem;
 }
 .banner-abstract > div > a {
-    display: block;
-    width: 50%;
-    padding: 0.5rem 1rem;
-    background: var(--primary-button-background-color);
+    min-width: 200px;
+    line-height: 1.8em;
     font-size: 0.875rem;
     text-decoration: none;
-    color: var(--primary-button-text-color);
 }
 
 @media only screen and (min-width: 480px) {
@@ -46,9 +46,6 @@
     }
     .banner-abstract > div {
         padding: 30px 32px;
-    }
-    .banner-abstract > div > a {
-        width: 25%;
     }
 }
 
