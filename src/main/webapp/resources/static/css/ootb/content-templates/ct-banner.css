@@ -7,7 +7,6 @@
 }
 .banner-image {
     flex: 1;
-    order: 1;
 }
 .banner-image img {
     width: 100%;
@@ -18,7 +17,6 @@
 .banner-abstract {
     flex: 1;
     display: flex;
-    order: 0;
 }
 .banner-abstract > div {
     flex: 1;
