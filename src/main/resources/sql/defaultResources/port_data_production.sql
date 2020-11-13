@@ -822,7 +822,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('se
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -877,7 +877,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_r
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
