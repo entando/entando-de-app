@@ -1,5 +1,5 @@
 <content>
-	<description>Sample - News 1</description>
+	<description>Why You Need a Micro Frontend Platform for Kubernetes</description>
 	<typeCode>NWS</typeCode>
 	<typeDescription>News</typeDescription>	
 	<mainGroup>free</mainGroup>
@@ -7,12 +7,12 @@
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbDateAttribute">
 			<name>date</name>
 			<type>Date</type>
-			<value>2012-06-13T00:00:00+02:00</value>
+			<value>2020-09-01T00:00:00+02:00</value>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>title</name>
 			<type>Text</type>
-			<value>Here come the news 1</value>
+			<value>Why You Need a Micro Frontend Platform for Kubernetes</value>
 			<roles>
 				<role>jacms:title</role>
 			</roles>
@@ -22,7 +22,7 @@
 			<type>Hypertext</type>
 			<htmlValue>
 			<![CDATA[
-			<p> Scenester farm-to-table, ethical pinterest DIY quinoa before they sold out cardigan. Wolf sriracha portland ethical freegan. Fingerstache locavore +1 selvage chambray. Flexitarian umami cray quinoa raw denim whatever. American viral vegan DIY polaroid, sweater etsy williamsburg +1 bicycle rights whatever PBR hoodie photo booth. Master blog mumblecore vice, pork belly fap leggings sweater. Synth whatever put a bird on it lo-fi, stumptown tumblr typewriter helvetica odd future banksy post-ironic selvage.</p>
+			<p> In a world where customers will abandon your brand after even one bad online experience, constantly innovating UX is essential to any business plan. However, when your organization builds large web apps with a monolithic structure, it can be difficult to respond to user needs in real time.</p>
 			]]>
 			</htmlValue>
 		</attribute>
@@ -31,20 +31,9 @@
 			<type>Hypertext</type>
 			<htmlValue>
 			<![CDATA[
-			<p> Scenester farm-to-table, ethical pinterest DIY quinoa before they sold out cardigan. Wolf sriracha portland ethical freegan. Fingerstache locavore +1 selvage chambray. Flexitarian umami cray quinoa raw denim whatever. American viral vegan DIY polaroid, sweater etsy williamsburg +1 bicycle rights whatever PBR hoodie photo booth. Master blog mumblecore vice, pork belly fap leggings sweater. Synth whatever put a bird on it lo-fi, stumptown tumblr typewriter helvetica odd future banksy post-ironic selvage.</p> <p> Mustache brunch single-origin coffee, pitchfork hoodie messenger bag freegan fixie fingerstache twee ethical pour-over. Stumptown lomo DIY art party organic next level. Squid cliche gentrify mustache. American apparel chambray leggings PBR pour-over skateboard. Mcsweeney&#39;s next level retro tumblr, ethical fanny pack beard. Put a bird on it mustache art party, biodiesel banh mi artisan direct trade thundercats trust fund wayfarers vice authentic. Lo-fi chillwave small batch, organic pour-over williamsburg VHS narwhal leggings ennui ethnic tofu.</p>
+			<p> In a world where customers will abandon your brand after even one bad online experience, constantly innovating UX is essential to any business plan. However, when your organization builds large web apps with a monolithic structure, it can be difficult to respond to user needs in real time. To overcome this challenge, many IT leaders have opted for a more modular approach to development. Building applications with micro frontends in a Kubernetes environment can help you structure your organization into independent teams that have control over a particular business function within a larger app at every layer of the stack. In so doing, you allow your decision making units to be smaller, which enables your organization to innovate more quickly overall. So then why do you need a micro frontend platform for Kuberntes? What does a platform add that enhances this process?  Here are 3 compelling reasons your enterprise needs a micro frontend platform.</p>
 			]]>
 			</htmlValue>
-		</attribute>
-		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbLinkAttribute">
-			<name>link</name>
-			<type>Link</type>
-			<link>
-				<text>Entando.com</text>
-				<url>http://www.entando.com/</url>
-				<symbolicLink>
-					<symbolicDestination>#!U;http://www.entando.com/!#</symbolicDestination>
-				</symbolicLink>
-			</link>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbResourceAttribute">
 			<type>Image</type>
@@ -59,7 +48,7 @@
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>category</name>
 			<type>Text</type>
-			<value>Category</value>
+			<value>PRODUCT</value>
 		</attribute>
 	</attributes>
 	<lastEditor>admin</lastEditor>

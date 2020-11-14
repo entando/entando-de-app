@@ -1,6 +1,7 @@
 <contentType>
 	<defaultModelId>10004</defaultModelId>
-	<typeCode>TCL</typeCode>
+    <listModelId>10024</listModelId>
+    <typeCode>TCL</typeCode>
 	<typeDescription>2 columns</typeDescription>
 	<attributes>
     <attribute>

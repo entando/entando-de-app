@@ -1,6 +1,7 @@
 <contentType>
-	<defaultModelId>10003</defaultModelId>
-	<typeCode>BNR</typeCode>
+    <defaultModelId>10003</defaultModelId>
+    <listModelId>10023</listModelId>
+    <typeCode>BNR</typeCode>
 	<typeDescription>Banner</typeDescription>
 	<attributes>
 		<attribute>
