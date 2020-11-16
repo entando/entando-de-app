@@ -835,7 +835,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 <properties>
 <property key="contentDescription">Sample - About Us</property>
 <property key="ownerGroup">free</property>
-<property key="contentId">TCL7</property>
+<property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
 
@@ -890,7 +890,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us
 <properties>
 <property key="contentDescription">Sample - About Us</property>
 <property key="ownerGroup">free</property>
-<property key="contentId">TCL7</property>
+<property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
 
