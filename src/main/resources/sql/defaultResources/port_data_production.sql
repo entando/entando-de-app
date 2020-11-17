@@ -876,7 +876,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Sitemap</property>
-</properties>','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
+</properties>','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
@@ -908,7 +908,7 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
 <property key="it">News</property>
 </properties>
 
-','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
