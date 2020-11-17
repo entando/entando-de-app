@@ -294,40 +294,6 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <link href="<@wp.resourceURL />ootb-widgets/static/css/main.ootb.chunk.css" rel="stylesheet">
 ',1);
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,defaultconfig,locked,maingroup, readonlypagewidgetconfig, widgetcategory) VALUES ('NWS_Search_Results','<?xml version="1.0" encoding="UTF-8"?>
-<properties>
-<property key="en">News Search Results</property>
-<property key="it">Risultati Ricerca News</property>
-</properties>',NULL,NULL,NULL,NULL, 0,'free' , 0, 'cms');
-
-
-
-INSERT INTO guifragment (code, widgettypecode, plugincode, gui, defaultgui, locked) VALUES ('NWS_Search_Results', 'NWS_Search_Results', NULL, '<#assign jacms=JspTaglibs["/jacms-aps-core"]>
-<#assign wp=JspTaglibs["/aps-core"]>
-<h1 class="search-result-title"><@wp.i18n key="SEARCH_RESULTS" /></h1>
-<#if (RequestParameters.search?? && RequestParameters.search!='''')>
-<@jacms.searcher listName="contentListResult" />
-</#if>
-<p class="search-result-searched-text"><@wp.i18n key="SEARCHED_FOR" />: <em><strong><#if (RequestParameters.search??)>${RequestParameters.search}</#if></strong></em></p>
-<#if (contentListResult??) && (contentListResult?has_content) && (contentListResult?size > 0)>
-<@wp.pager listName="contentListResult" objectName="groupContent" max=10 pagerIdFromFrame=true advanced=true offset=5>
-	<@wp.freemarkerTemplateParameter var="group" valueName="groupContent" removeOnEndTag=true >
-	<p><em><@wp.i18n key="SEARCH_RESULTS_INTRO" /> <!--  whitespace hack -->
-	${groupContent.size}
-	<@wp.i18n key="SEARCH_RESULTS_OUTRO" /> [${groupContent.begin + 1} &ndash; ${groupContent.end + 1}]:</em></p>
-	<@wp.fragment code="default_pagerBlock" escapeXml=false />
-	<#list contentListResult as contentId>
-	<#if (contentId_index >= groupContent.begin) && (contentId_index <= groupContent.end)>
-		<@jacms.content contentId="${contentId}" modelId="10022" />
-	</#if>
-	</#list>
-	<@wp.fragment code="default_pagerBlock" escapeXml=false />
-	</@wp.freemarkerTemplateParameter>
-</@wp.pager>
-<#else>
-<p class="alert alert-info"><@wp.i18n key="SEARCH_NOTHING_FOUND" /></p>
-</#if>', NULL, 0);
-
 INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-column','1 Column','<?xml version="1.0" encoding="UTF-8"?>
 <frames>
   <frame pos="0">
@@ -829,7 +795,7 @@ INSERT INTO pages (code,parentcode,pos) VALUES ('homepage_test','homepage', 3);
 INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage',4);
 INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',5);
 INSERT INTO pages (code,parentcode,pos) VALUES ('about_us','homepage_test',2);
-INSERT INTO pages (code,parentcode,pos) VALUES ('content_details','homepage_test',3);
+INSERT INTO pages (code,parentcode,pos) VALUES ('news','homepage_test',3);
 INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sample Homepage</property>
@@ -871,16 +837,31 @@ INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,ex
   <charset>utf-8</charset>
   <mimeType>text/html</mimeType>
 </config>','2020-06-08 08:43:13');
-INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('content_details','free','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('news','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Content Details</property>
-<property key="it">Dettagli del Contenuto</property>
-</properties>','content-page',2,'<?xml version="1.0" encoding="UTF-8"?>
+<property key="en">News</property>
+<property key="it">News</property>
+</properties>
+
+','1-column',0,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
   <mimeType>text/html</mimeType>
-</config>','2020-06-08 08:43:13');
+  <useextradescriptions>false</useextradescriptions>
+  <descriptions>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </descriptions>
+  <keywords>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </keywords>
+  <complexParameters />
+</config>
+
+','2020-11-16 16:23:44');
+
 INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('homepage_test','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sample Homepage</property>
@@ -921,16 +902,31 @@ INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,ext
   <charset>utf-8</charset>
   <mimeType>text/html</mimeType>
 </config>','2020-06-08 08:43:13');
-INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('content_details','free','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('news','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="en">Content Details</property>
-<property key="it">Dettagli del Contenuto</property>
-</properties>','content-page',2,'<?xml version="1.0" encoding="UTF-8"?>
+<property key="en">News</property>
+<property key="it">News</property>
+</properties>
+
+','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
 <config>
   <useextratitles>false</useextratitles>
   <charset>utf-8</charset>
   <mimeType>text/html</mimeType>
-</config>','2020-06-08 08:43:13');
+  <useextradescriptions>false</useextradescriptions>
+  <descriptions>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </descriptions>
+  <keywords>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </keywords>
+  <complexParameters />
+</config>
+
+','2020-11-16 16:24:01');
+
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',0,'logo',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -946,11 +942,11 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ho
 <property key="modelId">10003</property>
 <property key="ownerGroup">free</property>
 </properties>');
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',5,'row_content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',5,'content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="ownerGroup">free</property>
-<property key="joinGroups">()</property>
-<property key="contents">[{modelId=10021,contentDescription=Why You Need a Micro Frontend Platform for Kubernetes,contentId=NWS5},{modelId=10021,contentId=NWS6}]</property>
+    <property key="modelId">10021</property>
+    <property key="maxElemForItem">5</property>
+    <property key="contentType">NWS</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -977,7 +973,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('se
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
@@ -994,22 +990,23 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 <properties>
 <property key="contentDescription">Sample - About Us</property>
 <property key="ownerGroup">free</property>
-<property key="contentId">TCL7</property>
+<property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',0,'logo',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',0,'logo',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage_test).children</property>
 </properties>');
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',2,'search_form',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',4,'content_viewer',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('content_details',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',2,'search_form',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',4,'content_viewer',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
@@ -1029,11 +1026,11 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage
 <property key="modelId">10003</property>
 <property key="ownerGroup">free</property>
 </properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',5,'row_content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',5,'content_viewer_list','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="ownerGroup">free</property>
-<property key="joinGroups">()</property>
-<property key="contents">[{modelId=10021,contentDescription=Why You Need a Micro Frontend Platform for Kubernetes,contentId=NWS5},{modelId=10021,contentId=NWS6}]</property>
+    <property key="modelId">10021</property>
+    <property key="maxElemForItem">5</property>
+    <property key="contentType">NWS</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('homepage_test',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1060,7 +1057,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_r
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'NWS_Search_Results',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
@@ -1077,22 +1074,22 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us
 <properties>
 <property key="contentDescription">Sample - About Us</property>
 <property key="ownerGroup">free</property>
-<property key="contentId">TCL7</property>
+<property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',0,'logo',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',0,'logo',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(homepage_test).children</property>
 </properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',2,'search_form',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',3,'keycloak-login',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',4,'content_viewer',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('content_details',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',2,'search_form',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',4,'content_viewer',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
@@ -1128,7 +1125,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="pageLink">news</property>
 <property key="title_en">News</property>
 <property key="contentType">NWS</property>
-<property key="modelId">10021</property>
+<property key="modelId">10022</property>
 <property key="linkDescr_en">Archive</property>
 </properties>', 0, NULL, 0, 'cms');
 

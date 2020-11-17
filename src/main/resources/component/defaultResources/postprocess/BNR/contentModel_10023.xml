@@ -5,19 +5,18 @@
   You'll want to provide at least one Default Content Model, and one Content Model for lists
 -->
 <contentModel>
-  <id>10022</id>
-  <contentType>NWS</contentType>
-  <description>News - Search Results</description>
+  <id>10023</id>
+  <contentType>BNR</contentType>
+  <description>Banner - Search Results</description>
   <shape><![CDATA[<article class="search-result-container #if ($content.direction.text == "HORIZONTAL") horizontal #end">
     <div class="search-result-box">
         <div class="search-result-title">
-		    NEWS#if ( $content.category.text != "" ) - $content.category.text#end
+		    ENTANDO
 	    </div>
 	    <h2 class="search-result-content-title">$content.title.text</h2>
         #if ( $content.abstract.text != "" )
         <div class="search-result-content-text">$content.abstract.text</div>
         #end
-        <time class="search-result-date" datetime="$content.date.shortDate">$content.date.getFormattedDate("dd MMMM yyyy")</time>
     </div>
 </article>]]></shape>
   <stylesheet>ootb/content-templates/ct-search-results.css</stylesheet>

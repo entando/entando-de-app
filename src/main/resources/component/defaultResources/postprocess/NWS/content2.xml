@@ -1,5 +1,5 @@
 <content>
-	<description>Why You Need a Micro Frontend Platform for Kubernetes</description>
+	<description>Entando and JHipster: How It Works</description>
 	<typeCode>NWS</typeCode>
 	<typeDescription>News</typeDescription>	
 	<mainGroup>free</mainGroup>
@@ -7,12 +7,12 @@
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbDateAttribute">
 			<name>date</name>
 			<type>Date</type>
-			<value>2020-09-01T00:00:00+02:00</value>
+			<value>2020-09-04T00:00:00+02:00</value>
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>title</name>
 			<type>Text</type>
-			<value>Why You Need a Micro Frontend Platform for Kubernetes</value>
+			<value>Entando and JHipster: How It Works</value>
 			<roles>
 				<role>jacms:title</role>
 			</roles>
@@ -22,7 +22,7 @@
 			<type>Hypertext</type>
 			<htmlValue>
 			<![CDATA[
-			<p> In a world where customers will abandon your brand after even one bad online experience, constantly innovating UX is essential to any business plan. However, when your organization builds large web apps with a monolithic structure, it can be difficult to respond to user needs in real time.</p>
+			<p> Entando’s sponsorship of JHipster reaffirms our commitment to open source and to incorporating the best open source technologies in the Entando platform</p>
 			]]>
 			</htmlValue>
 		</attribute>
@@ -31,7 +31,10 @@
 			<type>Hypertext</type>
 			<htmlValue>
 			<![CDATA[
-			<p> In a world where customers will abandon your brand after even one bad online experience, constantly innovating UX is essential to any business plan. However, when your organization builds large web apps with a monolithic structure, it can be difficult to respond to user needs in real time. To overcome this challenge, many IT leaders have opted for a more modular approach to development. Building applications with micro frontends in a Kubernetes environment can help you structure your organization into independent teams that have control over a particular business function within a larger app at every layer of the stack. In so doing, you allow your decision making units to be smaller, which enables your organization to innovate more quickly overall. So then why do you need a micro frontend platform for Kuberntes? What does a platform add that enhances this process?  Here are 3 compelling reasons your enterprise needs a micro frontend platform.</p>
+			<p> Entando’s sponsorship of JHipster reaffirms our commitment to open source and to incorporating the best open source technologies in the Entando platform. JHipster has been included in Entando since the 6.0 release, helping customers generate microservices and micro frontends. The ability to customize JHipster via a Blueprint has given us the flexibility to automate key elements of the Entando platform and to enhance the developer experience.</p>
+<p>With our sponsorship we’re looking forward to getting more deeply involved in the JHipster community and to contribute to JHipster 7 and beyond.</p>
+<p>Technical Notes</p>
+<p>JHipster and the blueprint pattern give Entando developers the ability to quickly create a standardized Spring Boot microservice which can be installed into an Entando cluster on Kubernetes.  </p>
 			]]>
 			</htmlValue>
 		</attribute>
@@ -39,16 +42,16 @@
 			<type>Image</type>
 			<name>image</name>
 			<resource>
-				<text>Entando at Work</text>
+				<text>HTML Code</text>
 				<path>/test-image-rest/resources/cms/images/sample-image-1_d0.jpg</path>
-				<resourceId>entandoAtWork</resourceId>
-				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=entandoAtWork</restResourcePath>
+				<resourceId>htmlCode</resourceId>
+				<restResourcePath>http://localhost:8080/test-image-rest/api/rs/en/jacms/image?id=htmlCode</restResourcePath>
 			</resource>	
 		</attribute>
 		<attribute xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:type="jaxbTextAttribute">
 			<name>category</name>
 			<type>Text</type>
-			<value>Product</value>
+			<value>ENGINEERING</value>
 		</attribute>
 	</attributes>
 	<lastEditor>admin</lastEditor>

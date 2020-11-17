@@ -24,6 +24,11 @@
                               method="POST" expected="200" printresponse="true" >
                     <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/BNR/contentModel_10003.xml" />
                 </selfRestCall>
+
+                <selfRestCall langCode="en" namespace="jacms" resourceName="contentModel"
+                              method="POST" expected="200" printresponse="true" >
+                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/BNR/contentModel_10023.xml" />
+                </selfRestCall>
                 <!-- avoid loop dependency between Content and Content Templates (Models) -->
                 <selfRestCall langCode="en" namespace="jacms" resourceName="contentType" 
                               method="PUT" expected="200" printresponse="true" >
@@ -98,13 +103,6 @@
                     </query>
                     <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content2.xml" />
                 </selfRestCall>
-                <selfRestCall langCode="en" namespace="jacms" resourceName="content"
-                              method="POST" expected="200" printresponse="true" >
-                    <query>
-                        <parameter name="insertOnLine" value="true" />
-                    </query>
-                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/NWS/content3.xml" />
-                </selfRestCall>
 
                 <!-- 2-column-content -->
                 <selfRestCall langCode="en" namespace="jacms" resourceName="contentType"
@@ -114,6 +112,10 @@
                 <selfRestCall langCode="en" namespace="jacms" resourceName="contentModel"
                               method="POST" expected="200" printresponse="true" >
                     <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/TCL/contentModel_10004.xml" />
+                </selfRestCall>
+                <selfRestCall langCode="en" namespace="jacms" resourceName="contentModel"
+                              method="POST" expected="200" printresponse="true" >
+                    <contentBody content-type="application/xml" path="classpath:component/defaultResources/postprocess/TCL/contentModel_10024.xml" />
                 </selfRestCall>
                 <!-- avoid loop dependency between Content and Content Templates (Models) -->
                 <selfRestCall langCode="en" namespace="jacms" resourceName="contentType" 
