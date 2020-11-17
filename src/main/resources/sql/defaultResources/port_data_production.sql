@@ -949,7 +949,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 
 
 
-INSERT INTO pages (code,parentcode,pos) VALUES ('news','homepage_test',3);
+INSERT INTO pages (code,parentcode,pos) VALUES ('news','my_homepage',3);
 
 INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('news','free','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
@@ -1009,7 +1009,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',2,
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage_test).children</property>
+<property key="navSpec">code(my_homepage).children</property>
 </properties>
 
 ');
@@ -1020,7 +1020,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ne
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
-<property key="navSpec">code(homepage_test).children</property>
+<property key="navSpec">code(my_homepage).children</property>
 </properties>
 
 ');
