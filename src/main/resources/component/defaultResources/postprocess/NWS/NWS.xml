@@ -2,9 +2,8 @@
 	<defaultModelId>10002</defaultModelId>
 	<listModelId>10022</listModelId>
 	<typeCode>NWS</typeCode>
-    <viewPage>news</viewPage>
+  <viewPage>news</viewPage>
 	<typeDescription>News</typeDescription>
-	<viewPage>content_details</viewPage>
 	<attributes>
 		<attribute>
 			<name>date</name>
