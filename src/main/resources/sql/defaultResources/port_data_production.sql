@@ -835,7 +835,7 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 <properties>
 <property key="contentDescription">Sample - About Us</property>
 <property key="ownerGroup">free</property>
-<property key="contentId">TCL7</property>
+<property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
 
@@ -890,7 +890,7 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us
 <properties>
 <property key="contentDescription">Sample - About Us</property>
 <property key="ownerGroup">free</property>
-<property key="contentId">TCL7</property>
+<property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
 
@@ -946,3 +946,81 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth_with_redirect',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script>  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''login-required'', promiseType: ''native'', enableLogging: true })        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script>  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               function onKeycloakInitialized(isAuthenticated) {        if (isAuthenticated) {          console.info(consolePrefix, ''Keycloak initialized, user authenticated'');        } else {          console.info(consolePrefix, ''Keycloak initialized, user not authenticated'');        }      };      window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''check-sso'', promiseType: ''native'', enableLogging: true })        .then(onKeycloakInitialized)        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
+
+
+
+INSERT INTO pages (code,parentcode,pos) VALUES ('news','homepage_test',3);
+
+INSERT INTO pages_metadata_draft (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('news','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News</property>
+<property key="it">News</property>
+</properties>
+
+','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+  <useextradescriptions>false</useextradescriptions>
+  <descriptions>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </descriptions>
+  <keywords>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </keywords>
+  <complexParameters />
+</config>
+
+','2020-11-16 16:24:01');
+
+
+INSERT INTO pages_metadata_online (code,groupcode,titles,modelcode,showinmenu,extraconfig,updatedat) VALUES ('news','free','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">News</property>
+<property key="it">News</property>
+</properties>
+
+','1-column',1,'<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+  <useextradescriptions>false</useextradescriptions>
+  <descriptions>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </descriptions>
+  <keywords>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </keywords>
+  <complexParameters />
+</config>
+
+','2020-11-16 16:23:44');
+
+
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',4,'content_viewer',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',0,'logo',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',2,'search_form',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage_test).children</property>
+</properties>
+
+');
+
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',4,'content_viewer',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',0,'logo',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',2,'search_form',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="navSpec">code(homepage_test).children</property>
+</properties>
+
+');
