@@ -24,6 +24,16 @@
     font-size: 1.5rem;
 }
 
+.search-result-content-title > a {
+    color: #000;
+    text-decoration: none;
+}
+
+.search-result-content-title a:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
 .search-result-content-abstract, .search-result-content-text {
     font-size: 0.875rem;
     padding: 1rem 0rem 1rem 0rem;
