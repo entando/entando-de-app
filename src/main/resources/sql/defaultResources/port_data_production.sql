@@ -313,7 +313,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-col
       <sketch x1="9" y1="0" x2="11" y2="0" />
       <defaultWidget code="keycloak-login" />
   </frame>
-  <frame pos="4">
+  <frame pos="4" main="true">
       <descr>Frame 1</descr>
       <sketch x1="0" y1="1" x2="11" y2="1" />
   </frame>
