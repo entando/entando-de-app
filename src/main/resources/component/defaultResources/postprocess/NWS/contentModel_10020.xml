@@ -1,0 +1,14 @@
+<!--
+  keep the 10000 set for the bundles
+  change the x to something suitable and unused
+  set the last column to NULL if your Content Model doesn't need any stylesheet at all
+  You'll want to provide at least one Default Content Model, and one Content Model for lists
+-->
+<contentModel>
+  <id>10020</id>
+  <contentType>NWS</contentType>
+  <description>News List Bullet</description>
+  <shape><![CDATA[<li>
+    <a href="$content.getContentLink()">$content.title.text</a>
+</li>]]></shape>
+</contentModel>
