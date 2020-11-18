@@ -9,6 +9,6 @@
   <contentType>NWS</contentType>
   <description>News List Bullet</description>
   <shape><![CDATA[<li>
-    <a href="$info.getConfigParameter("applicationBaseURL")$content.getLangCode()/news.page?contentId=$content.getId()">$content.title.text</a>
+    <a href="$content.getContentLink()">$content.title.text</a>
 </li>]]></shape>
 </contentModel>

@@ -13,7 +13,7 @@
         <div class="search-result-title">
 		    NEWS#if ( $content.category.text != "" ) - $content.category.text#end
 	    </div>
-	    <h2 class="search-result-content-title">$content.title.text</h2>
+	    <h2 class="search-result-content-title"><a href="$content.getContentLink()">$content.title.text</a></h2>
         #if ( $content.abstract.text != "" )
         <div class="search-result-content-text">$content.abstract.text</div>
         #end
