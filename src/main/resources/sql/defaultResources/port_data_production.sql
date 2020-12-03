@@ -88,7 +88,8 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <#assign langstrs = [] />
 <#list langsVar as curLangVar>
   <#assign langurl><@wp.url lang="${curLangVar.code}" paramRepeat=true /></#assign>
-  <#assign langstr = ["{\"code\": \"" + curLangVar.code + "\", \"descr\": \"" + curLangVar.descr + "\", \"url\": \""+ langurl +"\"}"]  />
+  <#assign langdesc><@wp.i18n key="LANG_${curLangVar.code?upper_case}" /></#assign>
+  <#assign langstr = ["{\"code\": \"" + curLangVar.code + "\", \"descr\": \"" + langdesc + "\", \"url\": \""+ langurl +"\"}"]  />
   <#assign langstrs = langstrs + langstr />
 </#list>
 <#assign lang_json_string = langstrs?join(", ") />
@@ -1107,6 +1108,12 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_LINKS', 'i
 
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'en', 'View details');
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('NWS_READ_MORE', 'it', 'Continua');
+
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_EN', 'en', 'English');
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_EN', 'it', 'Inglese');
+
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_IT', 'en', 'Italian');
+INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_IT', 'it', 'Italiano');
 
 INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig, widgetcategory) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
