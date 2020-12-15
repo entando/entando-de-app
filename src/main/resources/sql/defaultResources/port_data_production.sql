@@ -1156,30 +1156,30 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
     function dispatchKeycloakEvent(eventType) {
       console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');
       return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));
-    }
+    };
     function initKeycloak() {
       const keycloak = new Keycloak(keycloakConfig);
       keycloak.onReady = function() {
         dispatchKeycloakEvent(''onReady'');
-      }
+      };
       keycloak.onAuthSuccess = function() {
         dispatchKeycloakEvent(''onAuthSuccess'');
-      }
+      };
       keycloak.onAuthError = function() {
         dispatchKeycloakEvent(''onAuthError'');
-      }
+      };
       keycloak.onAuthRefreshSuccess = function() {
         dispatchKeycloakEvent(''onAuthRefreshSuccess'');
-      }
+      };
       keycloak.onAuthRefreshError = function() {
         dispatchKeycloakEvent(''onAuthRefreshError'');
-      }
+      };
       keycloak.onAuthLogout = function() {
         dispatchKeycloakEvent(''onAuthLogout'');
-      }
+      };
       keycloak.onTokenExpired = function() {
         dispatchKeycloakEvent(''onTokenExpired'');
-      }
+      };
       window.entando = {
         ...(window.entando || {}),
         keycloak,
@@ -1190,11 +1190,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
           console.error(e);
           console.error(consolePrefix, ''Failed to initialize Keycloak'');
         });
-    }
+    };
     function onKeycloakScriptError(e) {
       console.error(e);
       console.error(consolePrefix, ''Failed to load keycloak.js script'');
-    }
+    };
     function addKeycloakScript(keycloakConfig) {
       const script = document.createElement(''script'');
       script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';
@@ -1202,7 +1202,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
       script.addEventListener(''load'', initKeycloak);
       script.addEventListener(''error'', onKeycloakScriptError);
       document.body.appendChild(script);
-    }
+    };
     fetch(keycloakConfigEndpoint)
       .then(function (response) {
         return response.json();
@@ -1228,30 +1228,30 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
     function dispatchKeycloakEvent(eventType) {
       console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');
       return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));
-    }
+    };
     function initKeycloak() {
       const keycloak = new Keycloak(keycloakConfig);
       keycloak.onReady = function() {
         dispatchKeycloakEvent(''onReady'');
-      }
+      };
       keycloak.onAuthSuccess = function() {
         dispatchKeycloakEvent(''onAuthSuccess'');
-      }
+      };
       keycloak.onAuthError = function() {
         dispatchKeycloakEvent(''onAuthError'');
-      }
+      };
       keycloak.onAuthRefreshSuccess = function() {
         dispatchKeycloakEvent(''onAuthRefreshSuccess'');
-      }
+      };
       keycloak.onAuthRefreshError = function() {
         dispatchKeycloakEvent(''onAuthRefreshError'');
-      }
+      };
       keycloak.onAuthLogout = function() {
         dispatchKeycloakEvent(''onAuthLogout'');
-      }
+      };
       keycloak.onTokenExpired = function() {
         dispatchKeycloakEvent(''onTokenExpired'');
-      }
+      };
       function onKeycloakInitialized(isAuthenticated) {
         if (isAuthenticated) {
           console.info(consolePrefix, ''Keycloak initialized, user authenticated'');
@@ -1270,11 +1270,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
           console.error(e);
           console.error(consolePrefix, ''Failed to initialize Keycloak'');
         });
-    }
+    };
     function onKeycloakScriptError(e) {
       console.error(e);
       console.error(consolePrefix, ''Failed to load keycloak.js script'');
-    }
+    };
     function addKeycloakScript(keycloakConfig) {
       const script = document.createElement(''script'');
       script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';
@@ -1282,7 +1282,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
       script.addEventListener(''load'', initKeycloak);
       script.addEventListener(''error'', onKeycloakScriptError);
       document.body.appendChild(script);
-    }
+    };
     fetch(keycloakConfigEndpoint)
       .then(function (response) {
         return response.json();
