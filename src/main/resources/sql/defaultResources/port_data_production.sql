@@ -138,10 +138,9 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 </#if>
 
 <login-button-widget
-   app-url="<@wp.info key="systemParam" paramName="applicationBaseURL" />"
-   session-user="${sessionUser}"
+   admin-url="<@wp.info key="systemParam" paramName="appBuilderBaseURL" />"
    user-display-name="${userDisplayName}"
-   page="<@wp.url />"
+   redirect-url="<@wp.url />"
 ></login-button-widget>','<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
@@ -158,10 +157,9 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 </#if>
 
 <login-button-widget
-   app-url="<@wp.info key="systemParam" paramName="applicationBaseURL" />"
-   session-user="${sessionUser}"
+   admin-url="<@wp.info key="systemParam" paramName="appBuilderBaseURL" />"
    user-display-name="${userDisplayName}"
-   page="<@wp.url />"
+   redirect-url="<@wp.url />"
 ></login-button-widget>',1);
 
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -354,6 +352,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-col
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -454,6 +453,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x4
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -568,6 +568,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2-c
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -671,6 +672,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -767,6 +769,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('conte
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
