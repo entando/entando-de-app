@@ -138,10 +138,9 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 </#if>
 
 <login-button-widget
-   app-url="<@wp.info key="systemParam" paramName="applicationBaseURL" />"
-   session-user="${sessionUser}"
+   admin-url="<@wp.info key="systemParam" paramName="appBuilderBaseURL" />"
    user-display-name="${userDisplayName}"
-   page="<@wp.url />"
+   redirect-url="<@wp.url />"
 ></login-button-widget>','<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
@@ -158,10 +157,9 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 </#if>
 
 <login-button-widget
-   app-url="<@wp.info key="systemParam" paramName="applicationBaseURL" />"
-   session-user="${sessionUser}"
+   admin-url="<@wp.info key="systemParam" paramName="appBuilderBaseURL" />"
    user-display-name="${userDisplayName}"
-   page="<@wp.url />"
+   redirect-url="<@wp.url />"
 ></login-button-widget>',1);
 
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
@@ -354,6 +352,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-col
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -454,6 +453,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x4
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -568,6 +568,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2-c
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -671,6 +672,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -767,6 +769,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('conte
         <link rel="stylesheet" href="<@wp.resourceURL />static/css/ootb/page-templates/index.css" rel="stylesheet">
         <!-- Carbon Design System -->
         <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+        <@wp.fragment code="keycloak_auth" escapeXml=false />
 
         <@wp.outputHeadInfo type="CSS">
             <link rel="stylesheet" type="text/css" href="<@wp.cssURL /><@wp.printHeadInfo />" />
@@ -1147,5 +1150,155 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="modelId">10021</property>
 </properties>', 0, NULL, 0, 'cms');
 
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth_with_redirect',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script nonce="<@wp.cspNonce />" >  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''login-required'', promiseType: ''native'', enableLogging: true })        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]><script nonce="<@wp.cspNonce />" >  (function () {    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';    let keycloakConfig;    function dispatchKeycloakEvent(eventType) {      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));    }    function initKeycloak() {      const keycloak = new Keycloak(keycloakConfig);      keycloak.onReady = function() {        dispatchKeycloakEvent(''onReady'');      }      keycloak.onAuthSuccess = function() {        dispatchKeycloakEvent(''onAuthSuccess'');      }      keycloak.onAuthError = function() {        dispatchKeycloakEvent(''onAuthError'');      }      keycloak.onAuthRefreshSuccess = function() {        dispatchKeycloakEvent(''onAuthRefreshSuccess'');      }      keycloak.onAuthRefreshError = function() {        dispatchKeycloakEvent(''onAuthRefreshError'');      }            keycloak.onAuthLogout = function() {        dispatchKeycloakEvent(''onAuthLogout'');      }            keycloak.onTokenExpired = function() {        dispatchKeycloakEvent(''onTokenExpired'');      }               function onKeycloakInitialized(isAuthenticated) {        if (isAuthenticated) {          console.info(consolePrefix, ''Keycloak initialized, user authenticated'');        } else {          console.info(consolePrefix, ''Keycloak initialized, user not authenticated'');        }      };      window.entando = {        ...(window.entando || {}),        keycloak,      };      window.entando.keycloak        .init({ onLoad: ''check-sso'', promiseType: ''native'', enableLogging: true })        .then(onKeycloakInitialized)        .catch(function (e) {          console.error(e);          console.error(consolePrefix, ''Failed to initialize Keycloak'');        });    }    function onKeycloakScriptError(e) {      console.error(e);      console.error(consolePrefix, ''Failed to load keycloak.js script'');    }    function addKeycloakScript(keycloakConfig) {      const script = document.createElement(''script'');      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';      script.async = true;      script.addEventListener(''load'', initKeycloak);      script.addEventListener(''error'', onKeycloakScriptError);      document.body.appendChild(script);          }    fetch(keycloakConfigEndpoint)      .then(function (response) {        return response.json();      })      .then(function (config) {        keycloakConfig = config;        if (!keycloakConfig.clientId) {          keycloakConfig.clientId = keycloakConfig.resource;        }        addKeycloakScript(keycloakConfig);      })      .catch(function (e) {        console.error(e);        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');      });  })();</script>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth_with_redirect',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<script nonce="<@wp.cspNonce />" >
+  (function () {
+    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';
+    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';
+    let keycloakConfig;
+    function dispatchKeycloakEvent(eventType) {
+      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');
+      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));
+    };
+    function initKeycloak() {
+      const keycloak = new Keycloak(keycloakConfig);
+      keycloak.onReady = function() {
+        dispatchKeycloakEvent(''onReady'');
+      };
+      keycloak.onAuthSuccess = function() {
+        dispatchKeycloakEvent(''onAuthSuccess'');
+      };
+      keycloak.onAuthError = function() {
+        dispatchKeycloakEvent(''onAuthError'');
+      };
+      keycloak.onAuthRefreshSuccess = function() {
+        dispatchKeycloakEvent(''onAuthRefreshSuccess'');
+      };
+      keycloak.onAuthRefreshError = function() {
+        dispatchKeycloakEvent(''onAuthRefreshError'');
+      };
+      keycloak.onAuthLogout = function() {
+        dispatchKeycloakEvent(''onAuthLogout'');
+      };
+      keycloak.onTokenExpired = function() {
+        dispatchKeycloakEvent(''onTokenExpired'');
+      };
+      window.entando = {
+        ...(window.entando || {}),
+        keycloak,
+      };
+      window.entando.keycloak
+        .init({ onLoad: ''login-required'', promiseType: ''native'', enableLogging: true })
+        .catch(function (e) {
+          console.error(e);
+          console.error(consolePrefix, ''Failed to initialize Keycloak'');
+        });
+    };
+    function onKeycloakScriptError(e) {
+      console.error(e);
+      console.error(consolePrefix, ''Failed to load keycloak.js script'');
+    };
+    function addKeycloakScript(keycloakConfig) {
+      const script = document.createElement(''script'');
+      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';
+      script.async = true;
+      script.addEventListener(''load'', initKeycloak);
+      script.addEventListener(''error'', onKeycloakScriptError);
+      document.body.appendChild(script);
+    };
+    fetch(keycloakConfigEndpoint)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (config) {
+        keycloakConfig = config;
+        if (!keycloakConfig.clientId) {
+          keycloakConfig.clientId = keycloakConfig.resource;
+        }
+        addKeycloakScript(keycloakConfig);
+      })
+      .catch(function (e) {
+        console.error(e);
+        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');
+      });
+  })();</script>',NULL,0);
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<script nonce="<@wp.cspNonce />" >
+  (function () {
+    const consolePrefix = ''[ENTANDO-KEYCLOAK]'';
+    const keycloakConfigEndpoint = ''<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json'';
+    let keycloakConfig;
+    function dispatchKeycloakEvent(eventType) {
+      console.info(consolePrefix, ''Dispatching'', eventType, ''custom event'');
+      return window.dispatchEvent(new CustomEvent(''keycloak'', { detail: { eventType } }));
+    };
+    function initKeycloak() {
+      const keycloak = new Keycloak(keycloakConfig);
+      keycloak.onReady = function() {
+        dispatchKeycloakEvent(''onReady'');
+      };
+      keycloak.onAuthSuccess = function() {
+        dispatchKeycloakEvent(''onAuthSuccess'');
+      };
+      keycloak.onAuthError = function() {
+        dispatchKeycloakEvent(''onAuthError'');
+      };
+      keycloak.onAuthRefreshSuccess = function() {
+        dispatchKeycloakEvent(''onAuthRefreshSuccess'');
+      };
+      keycloak.onAuthRefreshError = function() {
+        dispatchKeycloakEvent(''onAuthRefreshError'');
+      };
+      keycloak.onAuthLogout = function() {
+        dispatchKeycloakEvent(''onAuthLogout'');
+      };
+      keycloak.onTokenExpired = function() {
+        dispatchKeycloakEvent(''onTokenExpired'');
+      };
+      function onKeycloakInitialized(isAuthenticated) {
+        if (isAuthenticated) {
+          console.info(consolePrefix, ''Keycloak initialized, user authenticated'');
+        } else {
+          console.info(consolePrefix, ''Keycloak initialized, user not authenticated'');
+        }
+      };
+      window.entando = {
+        ...(window.entando || {}),
+        keycloak,
+      };
+      window.entando.keycloak
+        .init({ onLoad: ''check-sso'', promiseType: ''native'', enableLogging: true })
+        .then(onKeycloakInitialized)
+        .catch(function (e) {
+          console.error(e);
+          console.error(consolePrefix, ''Failed to initialize Keycloak'');
+        });
+    };
+    function onKeycloakScriptError(e) {
+      console.error(e);
+      console.error(consolePrefix, ''Failed to load keycloak.js script'');
+    };
+    function addKeycloakScript(keycloakConfig) {
+      const script = document.createElement(''script'');
+      script.src = keycloakConfig[''auth-server-url''] + ''/js/keycloak.js'';
+      script.async = true;
+      script.addEventListener(''load'', initKeycloak);
+      script.addEventListener(''error'', onKeycloakScriptError);
+      document.body.appendChild(script);
+    };
+    fetch(keycloakConfigEndpoint)
+      .then(function (response) {
+        return response.json();
+      })
+      .then(function (config) {
+        keycloakConfig = config;
+        if (!keycloakConfig.clientId) {
+          keycloakConfig.clientId = keycloakConfig.resource;
+        }
+        addKeycloakScript(keycloakConfig);
+      })
+      .catch(function (e) {
+        console.error(e);
+        console.error(consolePrefix, ''Failed to fetch Keycloak configuration'');
+      });
+  })();</script>',NULL,0);
