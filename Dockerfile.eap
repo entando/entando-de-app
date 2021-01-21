@@ -1,5 +1,9 @@
 FROM entando/entando-eap72-clustered-base:6.3.0
 
+USER root
+RUN yum -y update-minimal --security
+
+USER $USERID_TO_USE
 ### Required OpenShift Labels
 LABEL name="Entando App" \
       maintainer="dev@entando.com" \
