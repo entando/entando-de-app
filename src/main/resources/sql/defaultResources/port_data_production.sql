@@ -162,6 +162,79 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
    redirect-url="<@wp.url />"
 ></login-button-widget>',1);
 
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando_themestyle',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<style type="text/css">
+:root {
+  --ootb-color-primary: #002F87;
+  --ootb-color-primary-dark: #01276E;
+  --ootb-color-secondary: #FFF;
+}
+</style>
+',0);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('heading','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Heading</property>
+<property key="it">Heading</property>
+</properties>','<config>
+	<parameter name="headtype">choose from h1 to h6</parameter>
+	<parameter name="caption">Your caption here</parameter>
+  <action name="configSimpleParameter" />
+</config>',NULL,NULL,NULL,1,0, 'basic');
+
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('heading','heading',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.currentWidget param="config" configParam="headtype" var="headingTag" />
+<${headingTag}><@wp.currentWidget param="config" configParam="caption" /></${headingTag}>','<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.currentWidget param="config" configParam="headtype" var="headingTag" />
+<${headingTag}><@wp.currentWidget param="config" configParam="caption" /></${headingTag}>',1);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('paragraph','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Paragraph</property>
+<property key="it">Paragraph</property>
+</properties>','<config>
+	<parameter name="content">Write the content here</parameter>
+  <action name="configSimpleParameter" />
+</config>',NULL,NULL,NULL,1,0, 'basic');
+
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('paragraph','paragraph',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<p><@wp.currentWidget param="config" configParam="content" /></p>','<#assign wp=JspTaglibs["/aps-core"]>
+<p><@wp.currentWidget param="config" configParam="caption" /></p>',1);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('form','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">Form</property>
+<property key="it">Form</property>
+</properties>','<config>
+	<parameter name="schema">Write the schema json here</parameter>
+  <action name="configSimpleParameter" />
+</config>',NULL,NULL,NULL,1,0, 'experiment');
+
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('form','form',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+<@wp.currentWidget param="config" configParam="schema" var="formschema" />
+<datadriven-form-widget form-schema="${formschema?html}"></datadriven-form-widget>','<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+<@wp.currentWidget param="config" configParam="schema" var="formschema" />
+<datadriven-form-widget form-schema="${formschema?html}"></datadriven-form-widget>',1);
+
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('apiview','<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="en">API View</property>
+<property key="it">API View</property>
+</properties>','<config>
+	<parameter name="apiChosen">Write API ID here</parameter>
+  <action name="configSimpleParameter" />
+</config>',NULL,NULL,NULL,1,0, 'experiment');
+
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('apiview','apiview',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+<@wp.currentWidget param="config" configParam="apiChosen" var="apiID" />
+<api-view-widget api-chosen="${apiID}"></api-view-widget>','<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
+<@wp.currentWidget param="config" configParam="apiChosen" var="apiID" />
+<api-view-widget api-chosen="${apiID}"></api-view-widget>',1);
+
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation Menu</property>
@@ -287,6 +360,7 @@ ${previousPage.title}</a>
 ',1);
 
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('entando_ootb_carbon_include',NULL,NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.fragment code="entando_themestyle" escapeXml=false />
 <script src="<@wp.resourceURL />ootb-widgets/static/js/2.ootb.chunk.js" nonce="<@wp.cspNonce />"></script>
 <script src="<@wp.resourceURL />ootb-widgets/static/js/main.ootb.chunk.js" nonce="<@wp.cspNonce />"></script>
 <script src="<@wp.resourceURL />ootb-widgets/static/js/runtime-main.ootb.js" nonce="<@wp.cspNonce />"></script>
