@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <entando-engine.version>6.3.18</entando-engine.version>
-        <entando-admin-console.version>6.3.3</entando-admin-console.version>
+        <entando-admin-console.version>6.3.4</entando-admin-console.version>
         <entando-portal-ui.version>6.3.4</entando-portal-ui.version>
         <entando-plugin-jacms.version>6.3.10</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>6.3.3</entando-plugin-jpmail.version>
@@ -86,10 +86,10 @@
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
-        <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
-        <keycloak.realm>entando</keycloak.realm>
-        <keycloak.client.id>entando-app</keycloak.client.id>
-        <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
+        <keycloak.auth.url>http://localhost:9080/auth</keycloak.auth.url>
+        <keycloak.realm>entando-development</keycloak.realm>
+        <keycloak.client.id>entando-core</keycloak.client.id>
+        <keycloak.client.secret>930837f0-95b2-4eeb-b303-82a56cac76e6</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
 
         <!-- CORS Configuration -->
