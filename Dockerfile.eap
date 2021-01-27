@@ -1,7 +1,7 @@
 FROM entando/entando-eap72-clustered-base:6.3.0
 
 USER root
-RUN yum -y update-minimal --security
+RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
 
 USER $USERID_TO_USE
 ### Required OpenShift Labels
