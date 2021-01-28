@@ -39,7 +39,6 @@
         <entando-plugin-jpmail.version>6.3.3</entando-plugin-jpmail.version>
         <entando-plugin-jpversioning.version>6.3.3</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.3.3</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>6.3.3</entando-plugin-jpcontentscheduler.version>
         <entando.keycloak.plugin.version>6.3.5</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
@@ -220,25 +219,6 @@
                 <version>${entando-plugin-jpseo.version}</version>
                 <type>war</type>
             </dependency>
-            <!--jpcontentscheduler-->
-            <dependency>
-                <groupId>org.entando.entando.plugins</groupId>
-                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
-                <version>${entando-plugin-jpcontentscheduler.version}</version>
-                <classifier>classes</classifier>
-                <exclusions>
-                    <exclusion>
-                        <groupId>org.entando.entando.plugins</groupId>
-                        <artifactId>entando-plugin-jpmail</artifactId>
-                    </exclusion>
-                </exclusions>
-            </dependency>
-            <dependency>
-                <groupId>org.entando.entando.plugins</groupId>
-                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
-                <version>${entando-plugin-jpcontentscheduler.version}</version>
-                <type>war</type>
-            </dependency>
             <!--keycloak-->
             <dependency>
                 <groupId>org.entando.entando</groupId>
@@ -281,11 +261,6 @@
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpseo</artifactId>
-            <classifier>classes</classifier>
-        </dependency>
-        <dependency>
-            <groupId>org.entando.entando.plugins</groupId>
-            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
             <classifier>classes</classifier>
         </dependency>
         <dependency>
@@ -338,11 +313,6 @@
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
                 <artifactId>entando-plugin-jpseo</artifactId>
-                <type>war</type>
-            </dependency>
-            <dependency>
-                <groupId>org.entando.entando.plugins</groupId>
-                <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                 <type>war</type>
             </dependency>
             <dependency>
@@ -1061,10 +1031,6 @@
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpseo</artifactId>
-                        </overlay>
-                        <overlay>
-                            <groupId>org.entando.entando.plugins</groupId>
-                            <artifactId>entando-plugin-jpcontentscheduler</artifactId>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
