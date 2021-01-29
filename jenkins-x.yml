@@ -18,7 +18,7 @@ pipelineConfig:
             name: set-version
           - sh: mvn clean verify
             name: mvn-verify
-          - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -f skaffold.yaml -p wildfly
+          - sh:  echo "This avoids unwanted kaniko command substitution" &&  skaffold build -f skaffold.yaml -p eap
             name: container-build
 #          - sh: run-inter-process-tests
 #            name: run-inter-process-tests
