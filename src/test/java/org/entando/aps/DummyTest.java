@@ -1,10 +1,10 @@
 package org.entando.aps;
 
-import org.junit.Test;
+import org.junit.jupiter.api.Test;
 
-public class DummyTest {
+class DummyTest {
     @Test
-    public void testDummy(){
+    void testDummy() {
         new Dummy().doSomethingUseless();
     }
 }

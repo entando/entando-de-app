@@ -32,14 +32,15 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.3.18</entando-engine.version>
-        <entando-admin-console.version>6.3.4</entando-admin-console.version>
-        <entando-portal-ui.version>6.3.4</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.3.10</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>6.3.3</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>6.3.3</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.3.3</entando-plugin-jpseo.version>
-        <entando.keycloak.plugin.version>6.3.5</entando.keycloak.plugin.version>
+        <entando-engine.version>6.3.20</entando-engine.version>
+        <entando-admin-console.version>6.3.5</entando-admin-console.version>
+        <entando-portal-ui.version>6.3.5</entando-portal-ui.version>
+        <entando-plugin-jacms.version>6.3.11</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>6.3.4</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>6.3.4</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.3.4</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>6.3.4</entando-plugin-jpcontentscheduler.version>
+        <entando.keycloak.plugin.version>6.3.6</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
@@ -103,7 +104,7 @@
             <dependency>
                 <groupId>org.entando</groupId>
                 <artifactId>entando-core-parent</artifactId>
-                <version>6.2.18</version>
+                <version>6.3.0</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -288,6 +289,19 @@
             <artifactId>infinispan-commons</artifactId>
             <version>9.4.8.Final</version>
         </dependency>
+        <!--test dependencies -->
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+        </dependency>
+        <dependency>
+            <groupId>org.mockito</groupId>
+            <artifactId>mockito-junit-jupiter</artifactId>
+        </dependency>
 
             <!-- war overlays -->
             <dependency>
@@ -355,11 +369,6 @@
         <dependency>
             <groupId>org.apache.derby</groupId>
             <artifactId>derbyclient</artifactId>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>junit</groupId>
-            <artifactId>junit</artifactId>
             <scope>test</scope>
         </dependency>
         <dependency>
