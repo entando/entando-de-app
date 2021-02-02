@@ -1,4 +1,4 @@
-FROM entando/entando-eap72-clustered-base:6.3.0
+FROM entando/entando-eap73-clustered-base:6.3.1
 
 USER root
 RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
