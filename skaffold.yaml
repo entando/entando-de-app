@@ -18,23 +18,13 @@ profiles:
     - image: entando/entando-de-app-eap
       docker:
         dockerfile: Dockerfile.eap
+        buildArgs:
+          VERSION: "{{ .VERSION}}"
 - name: wildfly
   build:
     artifacts:
     - image: entando/entando-de-app-wildfly
       docker:
         dockerfile: Dockerfile.wildfly
-- name: dev
-  build:
-    tagPolicy:
-      envTemplate:
-        template: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}:{{.DIGEST_HEX}}'
-    local: {}
-  deploy:
-    helm:
-      releases:
-      - name: entando-de-app
-        chartPath: charts/entando-de-app
-        setValueTemplates:
-          image.repository: '{{.DOCKER_REGISTRY}}/{{.IMAGE_NAME}}'
-          image.tag: '{{.DIGEST_HEX}}'
+        buildArgs:
+          VERSION: "{{ .VERSION}}"

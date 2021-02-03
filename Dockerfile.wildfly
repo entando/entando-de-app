@@ -1,10 +1,10 @@
 FROM entando/entando-wildfly17-base:6.3.0
-
+ARG VERSION
 ### Required OpenShift Labels
 LABEL name="Entando App" \
       maintainer="dev@entando.com" \
       vendor="Entando Inc." \
-      version="6.3.0" \
+      version="${VERSION}" \
       release="6.3.0" \
       summary="Entando Application" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
