@@ -1,5 +1,5 @@
 FROM entando/entando-eap73-clustered-base:6.3.1
-
+ARG VERSION
 USER root
 RUN yum -y update-minimal --security --sec-severity=Important --sec-severity=Critical
 
@@ -8,7 +8,7 @@ USER $USERID_TO_USE
 LABEL name="Entando App" \
       maintainer="dev@entando.com" \
       vendor="Entando Inc." \
-      version="6.3.0" \
+      version="${VERSION}" \
       release="6.3.0" \
       summary="Entando Application" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
