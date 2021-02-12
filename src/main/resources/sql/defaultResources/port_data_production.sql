@@ -1,8 +1,8 @@
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlypagewidgetconfig, widgetcategory) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('breadcrumb','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Breadcrumbs</property>
 <property key="it">Briciole di pane</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free',0, 'navigation');
+</properties>',NULL,NULL,NULL,NULL,1,'free',0, 'navigation', 'asset:ent-breadcrumb');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('breadcrumb','breadcrumb',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <@wp.currentPage param="code" var="currentViewCode" />
 
@@ -59,11 +59,11 @@ INSERT INTO localstrings (keycode,langcode,stringvalue) VALUES ('ESNB_YOU_ARE_HE
 
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('logo','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('logo','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Logo</property>
 <property key="it">Logo</property>
-</properties>',NULL,NULL,NULL,NULL,1,0, 'page');
+</properties>',NULL,NULL,NULL,NULL,1,0, 'page', 'font-awesome:fa-cube');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('logo','logo',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
@@ -73,11 +73,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <img src="${appUrl}resources/static/img/Entando_light.svg" aria-label="Entando" alt="Entando" role="logo" />',0);
 
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig, widgetcategory) VALUES ('language','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig, widgetcategory, icon) VALUES ('language','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Language</property>
 <property key="it">Linguaggio</property>
-</properties>',NULL,NULL,NULL,NULL,1,0, 'page');
+</properties>',NULL,NULL,NULL,NULL,1,0, 'page', 'font-awesome:fa-language');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('language','language',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.info key="langs" var="langsVar" />
@@ -117,11 +117,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   languages="[${lang_json_string?html}]"
 ></choose-language-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig, widgetcategory) VALUES ('keycloak-login','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig, widgetcategory, icon) VALUES ('keycloak-login','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Login</property>
 <property key="it">Login</property>
-</properties>',NULL,NULL,NULL,NULL,1,0, 'system');
+</properties>',NULL,NULL,NULL,NULL,1,0, 'system', 'font-awesome:fa-sign-in');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak-login','keycloak-login',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
@@ -162,14 +162,14 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
    redirect-url="<@wp.url />"
 ></login-button-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation Menu</property>
 <property key="it">Menu di Navigazione</property>
 </properties>','<config>
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
-</config>',NULL,NULL,NULL,1,0, 'navigation');
+</config>',NULL,NULL,NULL,1,0, 'navigation', 'font-awesome:fa-bars');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('navigation-menu','navigation-menu',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.currentPage param="code" var="currentPageCode" />
@@ -204,11 +204,11 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   nav-items="[${nav_json_string?html}]"
 ></navigation-bar-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,readonlypagewidgetconfig, widgetcategory) VALUES ('sitemap','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,maingroup,configui,readonlypagewidgetconfig, widgetcategory, icon) VALUES ('sitemap','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Sitemap</property>
 <property key="it">Mappa del Sito</property>
-</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,0, 'navigation');
+</properties>',NULL,NULL,NULL,NULL,1,'free',NULL,0, 'navigation','font-awesome:fa-sitemap');
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('sitemap','sitemap',NULL,NULL,'<#assign jacms=JspTaglibs["/jacms-aps-core"]>
 <#assign wp=JspTaglibs["/aps-core"]>
 <@jacms.contentList listName="contentList" contentType="NWS" />
@@ -1118,7 +1118,7 @@ INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_EN', 'it'
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_IT', 'en', 'Italian');
 INSERT INTO localstrings(keycode, langcode, stringvalue) VALUES ('LANG_IT', 'it', 'Italiano');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig, widgetcategory) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('NWS_Latest', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News Latest</property>
 <property key="it">Notizie Ultime</property>
@@ -1133,9 +1133,9 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="contentType">NWS</property>
 <property key="modelId">10022</property>
 <property key="linkDescr_en">Archive</property>
-</properties>', 0, NULL, 0, 'cms');
+</properties>', 0, NULL, 0, 'cms', 'asset:ent-nws-latest');
 
-INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig, widgetcategory) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode, defaultconfig, locked, maingroup, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('NWS_Archive', '<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">News Archive</property>
 <property key="it">Notizie Archivio</property>
@@ -1148,7 +1148,7 @@ INSERT INTO widgetcatalog (code, titles, parameters, plugincode, parenttypecode,
 <property key="title_en">News Archive</property>
 <property key="contentType">NWS</property>
 <property key="modelId">10021</property>
-</properties>', 0, NULL, 0, 'cms');
+</properties>', 0, NULL, 0, 'cms', 'font-awesome:fa-archive');
 
 INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_auth_with_redirect',NULL,NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 <script nonce="<@wp.cspNonce />" >
