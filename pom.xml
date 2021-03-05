@@ -98,6 +98,8 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
+        <log4j.version>2.13.3</log4j.version>
+        <infinispan.version>9.4.19.Final</infinispan.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -282,12 +284,17 @@
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-core</artifactId>
-            <version>10.0.0.Final</version>
+            <version>${infinispan.version}</version>
         </dependency>
         <dependency>
             <groupId>org.infinispan</groupId>
             <artifactId>infinispan-commons</artifactId>
-            <version>10.0.0.Final</version>
+            <version>${infinispan.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-web</artifactId>
+            <version>${log4j.version}</version>
         </dependency>
         <!--test dependencies -->
         <dependency>
