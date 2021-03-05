@@ -99,7 +99,7 @@
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
         <log4j.version>2.13.3</log4j.version>
-        <infinispan.version>9.4.19.Final</infinispan.version>
+        <infinispan.version>12.1.0.Dev01</infinispan.version>
     </properties>
     <dependencyManagement>
         <dependencies>
