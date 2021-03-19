@@ -25,14 +25,10 @@ and the the dbms to use (derby, mysql, postgresql).
 
 Here the command to build the images (in this case I'm choosing to build the images using wildfly and postgresql)
 ```
-mvn clean package -Pwildfly -Ppostgresql docker:build
-```
+mvn clean package
+docker build . -f Dockerfile.wildfly -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSION>
 
-If you want also to automatically run the images you can use the `docker:run` command. Here an example using jetty-container, mysql and also keycloak
 ```
-mvn clean package -Pjetty-container -Pmysql -Pkeycloak -DskipTests docker:run
-```
-
 
 # Deploying to Kubernetes
 Clone the repository
