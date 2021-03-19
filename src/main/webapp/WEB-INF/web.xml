@@ -22,8 +22,7 @@
     </context-param>
     <context-param>
         <param-name>Struts2Config</param-name>
-        <param-value>struts-default.xml,struts-plugin.xml,struts.xml,entando-struts-plugin.xml,japs-struts-plugin.xml
-        </param-value>
+        <param-value>struts-default.xml,struts-plugin.xml,struts.xml,entando-struts-plugin.xml,japs-struts-plugin.xml</param-value>
     </context-param>
     <context-param>
         <param-name>org.apache.tiles.definition.DefinitionsFactory.DEFINITIONS_CONFIG</param-name>
@@ -100,6 +99,11 @@
         <load-on-startup>1</load-on-startup>
     </servlet>
     <servlet>
+        <servlet-name>WebUiServlet</servlet-name>
+        <servlet-class>org.entando.entando.aps.servlet.WebUiServlet</servlet-class>
+        <load-on-startup>1</load-on-startup>
+    </servlet>
+    <servlet>
         <servlet-name>PreviewControllerServlet</servlet-name>
         <servlet-class>org.entando.entando.aps.servlet.PreviewControllerServlet</servlet-class>
         <load-on-startup>1</load-on-startup>
@@ -141,6 +145,10 @@
     <servlet-mapping>
         <servlet-name>ControllerServlet</servlet-name>
         <url-pattern>/pages/*</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>WebUiServlet</servlet-name>
+        <url-pattern>/webui/*</url-pattern>
     </servlet-mapping>
     <servlet-mapping>
         <servlet-name>PreviewControllerServlet</servlet-name>
