@@ -100,7 +100,6 @@
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
         <log4j.version>2.13.3</log4j.version>
-        <infinispan.version>9.4.19.Final</infinispan.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -297,17 +296,6 @@
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
             <scope>provided</scope>
-        </dependency>
-        <!-- infinispan -->
-        <dependency>
-            <groupId>org.infinispan</groupId>
-            <artifactId>infinispan-core</artifactId>
-            <version>${infinispan.version}</version>
-        </dependency>
-        <dependency>
-            <groupId>org.infinispan</groupId>
-            <artifactId>infinispan-commons</artifactId>
-            <version>${infinispan.version}</version>
         </dependency>
         <dependency>
             <groupId>org.apache.logging.log4j</groupId>
