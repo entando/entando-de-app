@@ -40,6 +40,7 @@
         <entando-plugin-jpversioning.version>6.3.4</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.3.8</entando-plugin-jpseo.version>
         <entando-plugin-jpcontentscheduler.version>6.3.4</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpredis.version>6.3.0</entando-plugin-jpredis.version>
         <entando.keycloak.plugin.version>6.3.6</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
@@ -222,6 +223,18 @@
                 <version>${entando-plugin-jpseo.version}</version>
                 <type>war</type>
             </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpredis</artifactId>
+                <version>${entando-plugin-jpredis.version}</version>
+                <classifier>classes</classifier>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpredis</artifactId>
+                <version>${entando-plugin-jpredis.version}</version>
+                <type>war</type>
+            </dependency>
             <!--keycloak-->
             <dependency>
                 <groupId>org.entando.entando</groupId>
@@ -264,6 +277,11 @@
         <dependency>
             <groupId>org.entando.entando.plugins</groupId>
             <artifactId>entando-plugin-jpseo</artifactId>
+            <classifier>classes</classifier>
+        </dependency>
+        <dependency>
+            <groupId>org.entando.entando.plugins</groupId>
+            <artifactId>entando-plugin-jpredis</artifactId>
             <classifier>classes</classifier>
         </dependency>
         <dependency>
@@ -334,6 +352,11 @@
             <dependency>
                 <groupId>org.entando.entando.plugins</groupId>
                 <artifactId>entando-plugin-jpseo</artifactId>
+                <type>war</type>
+            </dependency>
+            <dependency>
+                <groupId>org.entando.entando.plugins</groupId>
+                <artifactId>entando-plugin-jpredis</artifactId>
                 <type>war</type>
             </dependency>
             <dependency>
@@ -1047,6 +1070,10 @@
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
                             <artifactId>entando-plugin-jpseo</artifactId>
+                        </overlay>
+                        <overlay>
+                            <groupId>org.entando.entando.plugins</groupId>
+                            <artifactId>entando-plugin-jpredis</artifactId>
                         </overlay>
                         <overlay>
                             <groupId>org.entando.entando.plugins</groupId>
