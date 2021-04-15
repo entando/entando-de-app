@@ -106,7 +106,7 @@
             <dependency>
                 <groupId>org.entando</groupId>
                 <artifactId>entando-core-parent</artifactId>
-                <version>6.3.0</version>
+                <version>6.3.6</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
