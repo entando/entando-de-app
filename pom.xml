@@ -32,16 +32,16 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.4.13</entando-engine.version>
-        <entando-admin-console.version>6.4.1</entando-admin-console.version>
-        <entando-portal-ui.version>6.4.0</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.4.3</entando-plugin-jacms.version>
+        <entando-engine.version>6.4.17</entando-engine.version>
+        <entando-admin-console.version>6.4.6</entando-admin-console.version>
+        <entando-portal-ui.version>6.4.2</entando-portal-ui.version>
+        <entando-plugin-jacms.version>6.4.9</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>6.4.1</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>6.4.0</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.4.1</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>6.4.5</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.4.3</entando-plugin-jpseo.version>
         <entando-plugin-jpcontentscheduler.version>6.4.0</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpredis.version>6.4.1</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>6.4.0</entando.keycloak.plugin.version>
+        <entando.keycloak.plugin.version>6.4.6</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
@@ -106,7 +106,7 @@
             <dependency>
                 <groupId>org.entando</groupId>
                 <artifactId>entando-core-parent</artifactId>
-                <version>6.4.5</version>
+                <version>6.4.6</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
