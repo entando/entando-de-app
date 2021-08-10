@@ -32,16 +32,16 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.4.20</entando-engine.version>
-        <entando-admin-console.version>6.4.11</entando-admin-console.version>
-        <entando-portal-ui.version>6.4.3</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.4.14</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>6.4.3</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>6.4.7</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.4.8</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>6.4.0</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpredis.version>6.4.4</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>6.4.6</entando.keycloak.plugin.version>
+        <entando-engine.version>6.4.22</entando-engine.version>
+        <entando-admin-console.version>6.4.12</entando-admin-console.version>
+        <entando-portal-ui.version>6.4.4</entando-portal-ui.version>
+        <entando-plugin-jacms.version>6.4.16</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>6.4.4</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>6.4.8</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.4.9</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>6.4.6</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpredis.version>6.4.5</entando-plugin-jpredis.version>
+        <entando.keycloak.plugin.version>6.4.7</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
