@@ -5,8 +5,8 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
            http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.4.xsd">
 
-    <changeSet id="de_defaultResources_dataPort_production" author="entando" context="production">
-        <sqlFile path="classpath:liquibase/defaultResources/port/dataPort_production.sql" />
+    <changeSet id="00000000000001_de_defaultResources_dataPort_production" author="entando" context="production">
+        <sqlFile path="classpath:liquibase/defaultResources/port/00000000000001_dataPort_production.sql" />
     </changeSet>
 
 </databaseChangeLog>
