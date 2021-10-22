@@ -10,7 +10,7 @@
         <link rel="shortcut icon" href="<wp:resourceURL />administration/img/favicon-entando.png">
 
         <!--CSS inclusions-->
-        <link rel="stylesheet" href="<wp:resourceURL />administration/bootstrap/css/bootstrap.min.css" media="screen" />
+        <link rel="stylesheet" href="<wp:resourceURL />static/css/bootstrap.min.css" media="screen" />
         <link rel="stylesheet" href="<wp:resourceURL />administration/css/entando-admin-console-default-theme.css">
         <!--JS inclusions-->
         <script nonce="<wp:cspNonce />" src="<wp:resourceURL />administration/js/jquery-3.4.1.min.js"></script>
