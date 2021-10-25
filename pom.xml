@@ -1,11 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.4.0-SNAPSHOT</version>
+    <version>7.0.0-SNAPSHOT</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -406,7 +405,7 @@
                 <skipAppBuilderImage>false</skipAppBuilderImage>
                 <jee.server>jetty</jee.server>
                 <entando.engine.address>localhost</entando.engine.address>
-                <app.builder.depends.on></app.builder.depends.on>
+                <app.builder.depends.on/>
 
                 <skipServerImage>true</skipServerImage>
                 <jboss.home.in.image>none</jboss.home.in.image>
@@ -491,7 +490,7 @@
             <properties>
                 <db.vendor>derby</db.vendor>
                 <skipDatabaseImage>true</skipDatabaseImage>
-                <entando.engine.depends.on></entando.engine.depends.on>
+                <entando.engine.depends.on/>
                 <!--DB connection properties-->
                 <portdb.database>entandoPort</portdb.database>
                 <portdb.url>jdbc:derby:${derby.base.folder}/${portdb.database};create=true</portdb.url>
@@ -539,7 +538,7 @@
                 <servdb.driverClassName>org.postgresql.Driver</servdb.driverClassName>
 
                 <!-- No DB work required from the server image. Just set the build_id -->
-                <server.init.command>echo $(date +%s) > /entando-data-templates/build_id</server.init.command>
+                <server.init.command>echo $(date +%s) &gt; /entando-data-templates/build_id</server.init.command>
             </properties>
         </profile>
         <profile>
@@ -568,7 +567,7 @@
                 <servdb.driverClassName>com.mysql.jdbc.Driver</servdb.driverClassName>
 
                 <!-- No DB work required from the server image. Just set the build_id -->
-                <server.init.command>echo $(date +%s) > /entando-data-templates/build_id</server.init.command>
+                <server.init.command>echo $(date +%s) &gt; /entando-data-templates/build_id</server.init.command>
             </properties>
         </profile>
         <profile>
@@ -1081,8 +1080,7 @@
                         <configuration>
                             <exportAntProperties>true</exportAntProperties>
                             <target>
-                                <taskdef resource="net/sf/antcontrib/antcontrib.properties"
-                                         classpathref="maven.plugin.classpath"/>
+                                <taskdef resource="net/sf/antcontrib/antcontrib.properties" classpathref="maven.plugin.classpath"/>
                                 <if>
                                     <available file="src/main/webapp/WEB-INF/aps/jsp/internalservlet/api" type="dir"/>
                                     <then>
