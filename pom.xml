@@ -31,15 +31,15 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.4.29</entando-engine.version>
-        <entando-admin-console.version>v7.0.0-ENG-2704-PR-100</entando-admin-console.version>
-        <entando-portal-ui.version>v7.0.0-ENG-2704-PR-31</entando-portal-ui.version>
-        <entando-plugin-jacms.version>v7.0.0-ENG-2704-PR-126</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>v7.0.0-ENG-2704-PR-30</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>v7.0.0-ENG-2704-PR-30</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>v7.0.0-ENG-2704-PR-51</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>v7.0.0-ENG-2704-PR-32</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpredis.version>v7.0.0-ENG-2704-PR-15</entando-plugin-jpredis.version>
+        <entando-engine.version>[entando-engine]</entando-engine.version>
+        <entando-admin-console.version>[entando-admin-console]</entando-admin-console.version>
+        <entando-portal-ui.version>[entando-portal-ui]</entando-portal-ui.version>
+        <entando-plugin-jacms.version>[entando-plugin-jacms]</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>[entando-plugin-jpmail]</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>[entando-plugin-jpversioning]</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>[entando-plugin-jpseo]</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>[entando-plugin-jpcontentscheduler]</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpredis.version>[entando-plugin-jpredis]</entando-plugin-jpredis.version>
         <entando.keycloak.plugin.version>6.4.8</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
