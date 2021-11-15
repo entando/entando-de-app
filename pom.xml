@@ -1157,8 +1157,8 @@
                             <value>${entando.version}</value>
                         </systemProperty>
                         <systemProperty>
-                            <name>db.startup.check</name>
-                            <value>true</value>
+                            <name>db.migration.strategy</name>
+                            <value>auto</value>
                         </systemProperty>
                         <systemProperty>
                             <name>db.restore.enabled</name>
