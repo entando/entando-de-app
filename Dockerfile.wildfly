@@ -1,4 +1,4 @@
-FROM entando/entando-wildfly17-base:6.3.4
+FROM entando/entando-wildfly17-base:6.3.8
 ARG VERSION
 ### Required OpenShift Labels
 LABEL name="Entando App" \

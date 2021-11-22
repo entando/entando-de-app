@@ -1,4 +1,4 @@
-FROM entando/entando-eap73-clustered-base:6.3.4
+FROM entando/entando-eap73-clustered-base:6.3.8
 ARG VERSION
 USER root
 RUN yum -y update
