@@ -5,7 +5,7 @@ LABEL name="Entando App" \
       maintainer="dev@entando.com" \
       vendor="Entando Inc." \
       version="${VERSION}" \
-      release="6.3.0" \
+      release="7.0.0" \
       summary="Entando Application" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
 
