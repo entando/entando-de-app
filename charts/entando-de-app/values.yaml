@@ -4,7 +4,7 @@
 prepareInfrastructure: false
 app:
   repository: docker.io/entando/entando-de-app
-  tag: 6.1.127
+  tag: 6.4.26
   name: entando-de-app
   webContext: "/entando-de-app"
   replicaCount: 1
