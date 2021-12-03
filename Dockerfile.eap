@@ -14,8 +14,11 @@ COPY target/generated-resources/licenses /licenses
 COPY target/*.war /opt/eap/standalone/deployments/
 
 USER root
-RUN stat /opt/eap/standalone/deployments/
-RUN chown $USERID_TO_USE:0 -R /opt/eap/standalone/deployments/
+RUN ls /opt/eap/standalone || true
+RUN chown $USERID_TO_USE:0 -R /opt/eap/standalone/deployments/ || true
+RUN stat /opt/eap/standalone/deployments/ || true
+RUN ls -al /deployments
+
 USER $USERID_TO_USE
 
 RUN ls -al /opt/eap/standalone/deployments/
