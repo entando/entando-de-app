@@ -14,7 +14,6 @@ LABEL name="Entando App" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
 
 COPY target/generated-resources/licenses /licenses
-RUN ls -al target
 COPY target/*.war /opt/eap/standalone/deployments/
 RUN ls -al /opt/eap/standalone/deployments/
 RUN $ENTANDO_COMMON_PATH/init-derby-from-war.sh
