@@ -7,23 +7,32 @@ TODO instructions on Docker images
 If you need to develop fast against this project, you can run the application using the jetty-maven-plugin.
 You will need though to use the correct profiles to run it.
 
-Here the command to use 
+Here the command to use
+
 ```
 mvn clean package jetty:run-war -Pjetty-local -Pderby
 ```
 
-If you want to use keycloak as external authorization service, add the keycloak profile and update the proper variables (you can find them in the `properties` tag in the pom)
+If you want to use keycloak as external authorization service, add the keycloak profile and update the proper
+variables (you can find them in the `properties` tag in the pom)
 
 ```
 mvn clean package jetty:run-war -Pjetty-local -Pderby -Pkeycloak
 ```
 
+## Using swagger
+
+In order to enable swagger, it's enough to pass `-Dspring.profiles.active=swagger` parameter. Swagger UI will be
+reachable [here](http://localhost:8080/entando-de-app/api/swagger-ui.html)
+
 ## Using docker
-You can use the fabric8 plugin both to build and run the docker images for this project. 
-You can choose between different profiles both for the servlet container (jetty, tomcat, wildfly, eap) 
+
+You can use the fabric8 plugin both to build and run the docker images for this project. You can choose between
+different profiles both for the servlet container (jetty, tomcat, wildfly, eap)
 and the the dbms to use (derby, mysql, postgresql).
 
 Here the command to build the images (in this case I'm choosing to build the images using wildfly and postgresql)
+
 ```
 mvn clean package
 docker build . -f Dockerfile.wildfly -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSION>
