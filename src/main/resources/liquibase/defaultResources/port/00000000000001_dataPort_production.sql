@@ -795,6 +795,28 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('conte
 </html>
 ');
 
+INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('nx-page-template','NxPage Template','<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+</frames>
+
+',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
+
+<html lang="en">
+    <head>
+        <meta charset="utf-8" />
+        <title>
+            <@wp.currentPage param="title" />
+        </title>
+        <meta name="viewport" content="width=device-width,  user-scalable=no" />
+        <link rel="icon" href="${appUrl}favicon.png" type="image/png" />
+        
+        </head>
+        <body>
+        </body>
+</html>
+');
+
 INSERT INTO pages (code,parentcode,pos) VALUES ('my_homepage','homepage', 3);
 INSERT INTO pages (code,parentcode,pos) VALUES ('sitemap','homepage',4);
 INSERT INTO pages (code,parentcode,pos) VALUES ('search_result','homepage',5);
