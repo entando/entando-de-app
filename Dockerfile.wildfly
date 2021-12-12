@@ -1,5 +1,6 @@
 FROM entando/entando-wildfly17-base:6.3.8
 ARG VERSION
+
 ### Required OpenShift Labels
 LABEL name="Entando App" \
       maintainer="dev@entando.com" \

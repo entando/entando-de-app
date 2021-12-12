@@ -1,9 +1,6 @@
 FROM entando/entando-eap73-clustered-base:6.3.8
 ARG VERSION
-USER root
-RUN yum -y update
 
-USER $USERID_TO_USE
 ### Required OpenShift Labels
 LABEL name="Entando App" \
       maintainer="dev@entando.com" \
