@@ -32,6 +32,7 @@
         </repository>
     </repositories>
     <properties>
+        <!-- COMPONENTS -->
         <entando-engine.version>7.0.0-ENG-2633-PR-212</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-2188-PR-102</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-2188-PR-34</entando-portal-ui.version>
@@ -42,28 +43,14 @@
         <entando-plugin-jpcontentscheduler.version>6.4.6</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpredis.version>7.0.0-ENG-2188-PR-17</entando-plugin-jpredis.version>
         <entando.keycloak.plugin.version>6.4.8</entando.keycloak.plugin.version>
-        <!--
-    <test.database.driver>org.postgresql.Driver</test.database.driver>
-    <test.database.hostname>localhost</test.database.hostname>
-    <test.database.port>5432</test.database.port>
-    <test.database.username>agile</test.database.username>
-    <test.database.password>agile</test.database.password>
-    <test.database.port.url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</test.database.port.url>
-    <test.database.serv.url>jdbc:postgresql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
-    -->
-        <!--
-        <test.database.driver>com.mysql.jdbc.Driver</test.database.driver>
-        <test.database.hostname>localhost</test.database.hostname>
-        <test.database.port>3306</test.database.port>
-        <test.database.username>root</test.database.username>
-        <test.database.password>agile</test.database.password>
-        <test.database.port.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</test.database.port.url>
-        <test.database.serv.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
-        -->
-        <github.organization>entando-k8s-infrastructure</github.organization>
+
+        <!-- SONAR -->
+        <github.organization>entando-k8s</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.organization>${github.organization}</sonar.organization>
         <sonar.projectKey>${github.organization}_${project.artifactId}</sonar.projectKey>
+
+        <!-- TESTS -->
         <test.database.driver>org.apache.derby.jdbc.EmbeddedDriver</test.database.driver>
         <test.database.hostname>localhost</test.database.hostname>
         <test.database.port>1527</test.database.port>
