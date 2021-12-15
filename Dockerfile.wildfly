@@ -1,4 +1,4 @@
-FROM entando/entando-wildfly17-base:6.3.10
+FROM entando/entando-wildfly17-base:6.3.9
 ARG VERSION
 ### Required OpenShift Labels
 LABEL name="Entando App" \
@@ -12,4 +12,5 @@ LABEL name="Entando App" \
 COPY target/generated-resources/licenses /licenses
 
 COPY target/*.war /wildfly/standalone/deployments/
+
 RUN $ENTANDO_COMMON_PATH/init-derby-from-war.sh
