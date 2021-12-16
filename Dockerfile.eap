@@ -1,15 +1,12 @@
-FROM entando/entando-eap73-clustered-base:6.3.4
+FROM entando/entando-eap73-clustered-base:6.3.8
 ARG VERSION
-USER root
-RUN yum -y update
 
-USER $USERID_TO_USE
 ### Required OpenShift Labels
 LABEL name="Entando App" \
       maintainer="dev@entando.com" \
       vendor="Entando Inc." \
       version="${VERSION}" \
-      release="6.3.0" \
+      release="7.0.0" \
       summary="Entando Application" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
 

@@ -117,12 +117,12 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
   languages="[${lang_json_string?html}]"
 ></choose-language-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig, widgetcategory, icon) VALUES ('keycloak-login','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked,readonlypagewidgetconfig, widgetcategory, icon) VALUES ('keycloak_login','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Login</property>
 <property key="it">Login</property>
 </properties>',NULL,NULL,NULL,NULL,1,0, 'system', 'font-awesome:fa-sign-in');
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak-login','keycloak-login',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('keycloak_login','keycloak_login',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
 
@@ -162,7 +162,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
    redirect-url="<@wp.url baseUrlMode="requestIfRelative" />"
 ></login-button-widget>',1);
 
-INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="en">Navigation Menu</property>
 <property key="it">Menu di Navigazione</property>
@@ -170,7 +170,7 @@ INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defa
 	<parameter name="navSpec">Rules for the Page List auto-generation</parameter>
 	<action name="navigatorConfig" />
 </config>',NULL,NULL,NULL,1,0, 'navigation', 'font-awesome:fa-bars');
-INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('navigation-menu','navigation-menu',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
+INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) VALUES ('navigation_menu','navigation_menu',NULL,'<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.currentPage param="code" var="currentPageCode" />
 
@@ -303,7 +303,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-col
   <frame pos="1">
       <descr>Navigation bar</descr>
       <sketch x1="3" y1="0" x2="5" y2="0" />
-      <defaultWidget code="navigation-menu" />
+      <defaultWidget code="navigation_menu" />
   </frame>
   <frame pos="2">
       <descr>Search</descr>
@@ -313,7 +313,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-col
   <frame pos="3">
       <descr>Login</descr>
       <sketch x1="9" y1="0" x2="11" y2="0" />
-      <defaultWidget code="keycloak-login" />
+      <defaultWidget code="keycloak_login" />
   </frame>
   <frame pos="4" main="true">
       <descr>Frame 1</descr>
@@ -388,7 +388,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x4
   <frame pos="1">
       <descr>Navigation Menu</descr>
       <sketch x1="3" y1="0" x2="5" y2="0" />
-      <defaultWidget code="navigation-menu" />
+      <defaultWidget code="navigation_menu" />
   </frame>
   <frame pos="2">
       <descr>Search</descr>
@@ -398,7 +398,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x4
   <frame pos="3">
       <descr>Login</descr>
       <sketch x1="9" y1="0" x2="11" y2="0" />
-      <defaultWidget code="keycloak-login" />
+      <defaultWidget code="keycloak_login" />
   </frame>
   <frame pos="4">
       <descr>Frame 1</descr>
@@ -499,7 +499,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2-c
   <frame pos="1">
       <descr>Navigation Menu</descr>
       <sketch x1="3" y1="0" x2="5" y2="0" />
-      <defaultWidget code="navigation-menu" />
+      <defaultWidget code="navigation_menu" />
   </frame>
   <frame pos="2">
       <descr>Search</descr>
@@ -509,7 +509,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2-c
   <frame pos="3">
       <descr>Login</descr>
       <sketch x1="9" y1="0" x2="11" y2="0" />
-      <defaultWidget code="keycloak-login" />
+      <defaultWidget code="keycloak_login" />
   </frame>
   <frame pos="4">
       <descr>Frame 1</descr>
@@ -615,7 +615,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
   <frame pos="1">
       <descr>Navigation Menu</descr>
       <sketch x1="3" y1="0" x2="5" y2="0" />
-      <defaultWidget code="navigation-menu" />
+      <defaultWidget code="navigation_menu" />
   </frame>
   <frame pos="2">
       <descr>Search</descr>
@@ -625,7 +625,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('1-2x2
   <frame pos="3">
       <descr>Login</descr>
       <sketch x1="9" y1="0" x2="11" y2="0" />
-      <defaultWidget code="keycloak-login" />
+      <defaultWidget code="keycloak_login" />
   </frame>
   <frame pos="4">
       <descr>Frame 1</descr>
@@ -715,7 +715,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('conte
   <frame pos="1">
       <descr>Navigation bar</descr>
       <sketch x1="3" y1="0" x2="5" y2="0" />
-      <defaultWidget code="navigation-menu" />
+      <defaultWidget code="navigation_menu" />
   </frame>
   <frame pos="2">
       <descr>Search</descr>
@@ -725,7 +725,7 @@ INSERT INTO pagemodels (code,descr,frames,plugincode,templategui) VALUES ('conte
   <frame pos="3">
       <descr>Login</descr>
       <sketch x1="9" y1="0" x2="11" y2="0" />
-      <defaultWidget code="keycloak-login" />
+      <defaultWidget code="keycloak_login" />
   </frame>
   <frame pos="4" main="true">
       <descr>Content Frame</descr>
@@ -1146,12 +1146,12 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',0,'logo',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',2,'search_form',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentDescription">A Modern Platform for Modern UX</property>
@@ -1166,44 +1166,44 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my
     <property key="maxElemForItem">5</property>
     <property key="contentType">NWS</property>
 </properties>');
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',2,'search_form',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',4,'sitemap',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('sitemap',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',0,'logo',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',2,'search_form',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentDescription">Sample - About Us</property>
@@ -1211,31 +1211,31 @@ INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('ab
 <property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',0,'logo',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',2,'search_form',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',4,'content_viewer',NULL);
-INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig_draft (pagecode,framepos,widgetcode,config) VALUES ('news',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',0,'logo',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',2,'search_form',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentDescription">A Modern Platform for Modern UX</property>
@@ -1250,44 +1250,44 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homep
     <property key="maxElemForItem">5</property>
     <property key="contentType">NWS</property>
 </properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('my_homepage',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',0,'logo',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',2,'search_form',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',4,'sitemap',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('sitemap',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',0,'logo',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',2,'search_form',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',4,'search_result',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('search_result',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',0,'logo',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',2,'search_form',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',4,'content_viewer','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="contentDescription">Sample - About Us</property>
@@ -1295,19 +1295,19 @@ INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us
 <property key="contentId">TCL6</property>
 <property key="joinGroups">[]</property>
 </properties>');
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('about_us',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',0,'logo',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',1,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(my_homepage) + code(my_homepage).children</property>
 </properties>');
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',2,'search_form',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak-login',NULL);
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',3,'keycloak_login',NULL);
 INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',4,'content_viewer',NULL);
-INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',8,'navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
+INSERT INTO widgetconfig (pagecode,framepos,widgetcode,config) VALUES ('news',8,'navigation_menu','<?xml version="1.0" encoding="UTF-8"?>
 <properties>
 <property key="navSpec">code(sitemap)</property>
 </properties>');
