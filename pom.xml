@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.3.68</version>
+    <version>6.3.68-fix.1</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -60,7 +60,7 @@
         <test.database.port.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</test.database.port.url>
         <test.database.serv.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
         -->
-        <github.organization>entando-k8s-infrastructure</github.organization>
+        <github.organization>entando</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.organization>${github.organization}</sonar.organization>
         <sonar.projectKey>${github.organization}_${project.artifactId}</sonar.projectKey>
@@ -99,7 +99,7 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
-        <log4j.version>2.13.3</log4j.version>
+        <log4j.version>2.17.0</log4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -302,6 +302,17 @@
             <artifactId>log4j-web</artifactId>
             <version>${log4j.version}</version>
         </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+
         <!--test dependencies -->
         <dependency>
             <groupId>org.junit.jupiter</groupId>
