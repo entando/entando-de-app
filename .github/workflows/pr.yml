@@ -46,9 +46,9 @@ jobs:
           echo "$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S"
           echo "${{ secrets.MAVEN_USERNAME }}" | base64 -w0
           echo "$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S"
-          echo "${{ secrets.MAVEN_PASSWORD }}" | base64 -w0
+          echo "${{ secrets.MAVEN_PASSWORD }}" | base64 -w0 | base64 -w0
           echo "$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S"
-          echo "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}" | base64 -w0
+          echo "${{ secrets.MAVEN_GPG_PRIVATE_KEY }}" | base64 -w0 | base64 -w0
           echo "$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S"
-          echo "${{ secrets.MAVEN_GPG_PASSPHRASE }}" | base64 -w0
+          echo "${{ secrets.MAVEN_GPG_PASSPHRASE }}" | base64 -w0 | base64 -w0
           echo "$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S$S"
