@@ -843,7 +843,9 @@
                 <version>3.2.2</version>
                 <configuration>
                     <!-- This is explicitly declared in project deps.-->
-                    <dependentWarExcludes>WEB-INF/lib/byte-buddy-*.jar</dependentWarExcludes>
+                    <dependentWarExcludes>WEB-INF/lib/byte-buddy-*.jar,WEB-INF/lib/log4j-*-2.10.0.jar
+                    </dependentWarExcludes>
+
                     <webResources>
                         <resource>
                             <directory>src/main/tld</directory>
