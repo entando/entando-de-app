@@ -7,10 +7,11 @@ on:
       - synchronize
       - reopened
     branches:
-      - develop
+      - develop*
+      - release/*
 
 env:
-  ENTANDO_OPT_USE_PPL_TAG: "v1.1.1"
+  ENTANDO_OPT_USE_PPL_TAG: "v1.1.2"
   ENTANDO_OPT_FEATURES: "${{ secrets.ENTANDO_OPT_FEATURES }}"
   ENTANDO_OPT_GLOBAL_FEATURES: "${{ secrets.ENTANDO_OPT_GLOBAL_FEATURES }}"
   ENTANDO_OPT_LOG_LEVEL: "${{ secrets.ENTANDO_OPT_LOG_LEVEL }}"
@@ -47,7 +48,7 @@ jobs:
             .. status-report \
             .. @checkout-branch pr --lcd "$LOCAL_CLONE_DIR" \
             .. @setup-feature-flags "PR_PREFLIGHT_CHECKS" "BOM_CHECK" "BOM" \
-            .. @setup-features-list "SCAN_MATRIX" --prefix "MTX-MVN-" \
+            .. @setup-features-list "SCAN_MATRIX" --prefix "MTX-MVN-,MTX-SCAN-" \
           ;
       - name: "PR preflight checks"
         if: steps.START.outputs.PR_PREFLIGHT_CHECKS != 'false'
