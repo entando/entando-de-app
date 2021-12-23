@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.1.1</version>
+    <version>6.1.1-fix.1</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -69,7 +69,7 @@
         <test.database.port.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testPort</test.database.port.url>
         <test.database.serv.url>jdbc:mysql://${test.database.hostname}:${test.database.port}/${project.artifactId}testServ</test.database.serv.url>
         -->
-        <github.organization>entando-k8s-infrastructure</github.organization>
+        <github.organization>entando</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
         <sonar.organization>${github.organization}</sonar.organization>
         <sonar.projectKey>${github.organization}_${project.artifactId}</sonar.projectKey>
@@ -99,6 +99,7 @@
         <keycloak.client.id>entando-app</keycloak.client.id>
         <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
+        <log4j.version>2.17.0</log4j.version>
     </properties>
     <dependencies>
         <dependency>
@@ -221,7 +222,16 @@
             <version>${entando.version}</version>
             <type>war</type>
         </dependency>
-
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-api</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.logging.log4j</groupId>
+            <artifactId>log4j-core</artifactId>
+            <version>${log4j.version}</version>
+        </dependency>
     </dependencies>
 
     <profiles>
