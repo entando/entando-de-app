@@ -70,7 +70,7 @@
         <autoCreateNetwork>true</autoCreateNetwork>
         <entando.version>6.3.0-SNAPSHOT</entando.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
-        <jetty.version>9.4.30.v20200611</jetty.version>
+        <jetty.version>10.0.7</jetty.version>
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
@@ -1120,151 +1120,56 @@
                 <artifactId>jetty-maven-plugin</artifactId>
                 <version>${jetty.version}</version>
                 <configuration>
-                    <!--<stopPort>32144</stopPort>-->
-                    <!--<stopKey>foo</stopKey>-->
-                    <!--<stopWait>10</stopWait>-->
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webApp>
-                        <baseResource implementation="org.eclipse.jetty.util.resource.ResourceCollection">
-                            <resourcesAsCSV>src/main/webapp,${project.build.directory}/${project.build.finalName}
-                            </resourcesAsCSV>
-                        </baseResource>
+                        <resourceBases>
+                            <resourceBase>src/main/webapp</resourceBase>
+                            <resourceBase>${project.build.directory}/${project.build.finalName}</resourceBase>
+                        </resourceBases>
                         <defaultsDescriptor>${basedir}/src/main/jetty/webdefault.xml</defaultsDescriptor>
                         <contextPath>/${project.artifactId}</contextPath>
                         <jettyEnvXml>${project.basedir}/src/main/jetty/jetty-env.xml</jettyEnvXml>
-                        <!--                        <allowDuplicateFragmentNames>true</allowDuplicateFragmentNames>-->
                     </webApp>
                     <systemProperties>
-                        <systemProperty>
-                            <name>org.eclipse.jetty.LEVEL</name>
-                            <value>FATAL</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>entando.version</name>
-                            <value>${entando.version}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>db.migration.strategy</name>
-                            <value>auto</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>db.restore.enabled</name>
-                            <value>true</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>db.environment</name>
-                            <value>production</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>logFilePrefix</name>
-                            <value>${project.build.directory}/logs/</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>logFileRotatePattern</name>
-                            <value>
-                                ${project.build.directory}/logs/${project.artifactId}_logs/${project.name}-%i.log.gz
-                            </value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>resourceDiskRootFolder</name>
-                            <value>${project.basedir}/src/main/webapp/resources/</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>protectedResourceDiskRootFolder</name>
-                            <value>${project.basedir}/src/main/webapp/protected/</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>indexDiskRootFolder</name>
-                            <value>${project.build.directory}/indices</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>portDataSourceClassName</name>
-                            <value>${portdb.driverClassName}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>servDataSourceClassName</name>
-                            <value>${servdb.driverClassName}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>portdb.url</name>
-                            <value>${portdb.url}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>portdb.jndi</name>
-                            <value>${portdb.jndi}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>portdb.username</name>
-                            <value>${portdb.username}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>portdb.password</name>
-                            <value>${portdb.password}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>servdb.jndi</name>
-                            <value>${servdb.jndi}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>servdb.url</name>
-                            <value>${servdb.url}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>servdb.username</name>
-                            <value>${servdb.username}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>servdb.password</name>
-                            <value>${servdb.password}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>keycloak.enabled</name>
-                            <value>${keycloak.enabled}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>keycloak.realm</name>
-                            <value>${keycloak.realm}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>keycloak.auth.url</name>
-                            <value>${keycloak.auth.url}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>keycloak.client.id</name>
-                            <value>${keycloak.client.id}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>keycloak.client.secret</name>
-                            <value>${keycloak.client.secret}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>keycloak.public.client.id</name>
-                            <value>${keycloak.public.client.id}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>cors.enabled</name>
-                            <value>${cors.enabled}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>cors.access.control.allow.origin</name>
-                            <value>${cors.access.control.allow.origin}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>cors.access.control.allow.methods</name>
-                            <value>${cors.access.control.allow.methods}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>cors.access.control.allow.headers</name>
-                            <value>${cors.access.control.allow.headers}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>cors.access.control.allow.credentials</name>
-                            <value>${cors.access.control.allow.credentials}</value>
-                        </systemProperty>
-                        <systemProperty>
-                            <name>cors.access.control.maxAge</name>
-                            <value>${cors.access.control.maxAge}</value>
-                        </systemProperty>
+                        <org.eclipse.jetty.LEVEL>FATAL</org.eclipse.jetty.LEVEL>
+                        <entando.version>${entando.version}</entando.version>
+                        <db.migration.strategy>auto</db.migration.strategy>
+                        <db.restore.enabled>true</db.restore.enabled>
+                        <db.environment>production</db.environment>
+                        <logFilePrefix>${project.build.directory}/logs/</logFilePrefix>
+                        <logFileRotatePattern>
+                            ${project.build.directory}/logs/${project.artifactId}_logs/${project.name}-%i.log.gz
+                        </logFileRotatePattern>
+                        <resourceDiskRootFolder>${project.basedir}/src/main/webapp/resources/</resourceDiskRootFolder>
+                        <protectedResourceDiskRootFolder>${project.basedir}/src/main/webapp/protected/
+                        </protectedResourceDiskRootFolder>
+                        <indexDiskRootFolder>${project.build.directory}/indices</indexDiskRootFolder>
+                        <portDataSourceClassName>${portdb.driverClassName}</portDataSourceClassName>
+                        <servDataSourceClassName>${servdb.driverClassName}</servDataSourceClassName>
+                        <portdb.url>${portdb.url}</portdb.url>
+                        <portdb.jndi>${portdb.jndi}</portdb.jndi>
+                        <portdb.username>${portdb.username}</portdb.username>
+                        <portdb.password>${portdb.password}</portdb.password>>
+                        <servdb.jndi>${servdb.jndi}</servdb.jndi>
+                        <servdb.url>${servdb.url}</servdb.url>
+                        <servdb.username>${servdb.username}</servdb.username>
+                        <servdb.password>${servdb.password}</servdb.password>
+                        <keycloak.enabled>${keycloak.enabled}</keycloak.enabled>
+                        <keycloak.realm>${keycloak.realm}</keycloak.realm>
+                        <keycloak.auth.url>${keycloak.auth.url}</keycloak.auth.url>
+                        <keycloak.client.id>${keycloak.client.id}</keycloak.client.id>
+                        <keycloak.client.secret>${keycloak.client.secret}</keycloak.client.secret>
+                        <keycloak.public.client.id>${keycloak.public.client.id}</keycloak.public.client.id>
+                        <cors.enabled>${cors.enabled}</cors.enabled>
+                        <cors.access.control.allow.origin>${cors.access.control.allow.origin}
+                        </cors.access.control.allow.origin>
+                        <cors.access.control.allow.methods>${cors.access.control.allow.methods}
+                        </cors.access.control.allow.methods>
+                        <cors.access.control.allow.headers>${cors.access.control.allow.headers}
+                        </cors.access.control.allow.headers>
+                        <cors.access.control.allow.credentials>${cors.access.control.allow.credentials}
+                        </cors.access.control.allow.credentials>
+                        <cors.access.control.maxAge>${cors.access.control.maxAge}</cors.access.control.maxAge>
                     </systemProperties>
                 </configuration>
                 <dependencies>
