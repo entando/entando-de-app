@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.3.68-fix.1</version>
+    <version>6.3.68-fix.2</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -99,7 +99,7 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
-        <log4j.version>2.17.0</log4j.version>
+        <log4j.version>2.17.1</log4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
