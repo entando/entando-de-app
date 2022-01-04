@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.1.1-fix.1</version>
+    <version>6.1.1-fix.2</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -99,7 +99,7 @@
         <keycloak.client.id>entando-app</keycloak.client.id>
         <keycloak.client.secret>b4b34472-9926-4753-9db8-a50f152df3da</keycloak.client.secret>
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
-        <log4j.version>2.17.0</log4j.version>
+        <log4j.version>2.17.1</log4j.version>
     </properties>
     <dependencies>
         <dependency>
