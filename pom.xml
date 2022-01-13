@@ -33,17 +33,29 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3006-PR-213</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3006-PR-103</entando-admin-console.version>
-        <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3006-PR-133</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>7.0.0-ENG-3006-PR-57</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3006-PR-35</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpredis.version>7.0.0-ENG-3006-PR-18</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>7.0.0-ENG-3006-PR-56</entando.keycloak.plugin.version>
-
+        <entando-core-parent.version>7.0.8</entando-core-parent.version>
+        <entando-engine.version>7.0.0-ENG-3078-PR-219</entando-engine.version>
+        <entando-admin-console.version>7.0.0-ENG-3078-PR-105</entando-admin-console.version>
+        <entando-portal-ui.version>7.0.0-ENG-3078-PR-38</entando-portal-ui.version>
+        <entando-plugin-jacms.version>7.0.0-ENG-3078-PR-137</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>7.0.0-ENG-3078-PR-35</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>7.0.0-ENG-3078-PR-35</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>7.0.0-ENG-3078-PR-59</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3078-PR-37</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpredis.version>7.0.0-ENG-3078-PR-20</entando-plugin-jpredis.version>
+        <entando.keycloak.plugin.version>7.0.0-ENG-3078-PR-58</entando.keycloak.plugin.version>
+        
+        <!-- OTHERS -->
+        <logback.version>1.2.7</logback.version>
+        <log4j.version>2.17.1</log4j.version>
+        <drewnoakes-metadata-extractor.version>2.16.0</drewnoakes-metadata-extractor.version>
+        <jackson.version>2.12.6</jackson.version>
+        <gson.version>2.8.9</gson.version>
+        <protobuf-java.version>3.16.1</protobuf-java.version>
+        <jdom2.version>2.0.6.1</jdom2.version>
+        <jsoup.version>1.14.2</jsoup.version>
+        <spring-core.version>5.3.14</spring-core.version>
+                
         <!-- SONAR -->
         <github.organization>entando</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -69,8 +81,9 @@
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
         <entando.version>6.3.0-SNAPSHOT</entando.version>
-        <postgres.driver.version>9.4.1212</postgres.driver.version>
+        <postgres.driver.version>42.2.14</postgres.driver.version>
         <jetty.version>10.0.7</jetty.version>
+        <mysql-connector-java.version>8.0.27</mysql-connector-java.version>
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
@@ -86,14 +99,13 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
-        <log4j.version>2.16.0</log4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
             <dependency>
                 <groupId>org.entando</groupId>
                 <artifactId>entando-core-parent</artifactId>
-                <version>6.4.6</version>
+                <version>${entando-core-parent.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -288,6 +300,51 @@
             <groupId>org.apache.logging.log4j</groupId>
             <artifactId>log4j-web</artifactId>
             <version>${log4j.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>ch.qos.logback</groupId>
+            <artifactId>logback-core</artifactId>
+            <version>${logback.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.drewnoakes</groupId>
+            <artifactId>metadata-extractor</artifactId>
+            <version>${drewnoakes-metadata-extractor.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-core</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.fasterxml.jackson.core</groupId>
+            <artifactId>jackson-databind</artifactId>
+            <version>${jackson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.code.gson</groupId>
+            <artifactId>gson</artifactId>
+            <version>${gson.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>com.google.protobuf</groupId>
+            <artifactId>protobuf-java</artifactId>
+            <version>${protobuf-java.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jdom</groupId>
+            <artifactId>jdom2</artifactId>
+            <version>${jdom2.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.jsoup</groupId>
+            <artifactId>jsoup</artifactId>
+            <version>${jsoup.version}</version>
+        </dependency>
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>${spring-core.version}</version>
         </dependency>
         <!--test dependencies -->
         <dependency>
@@ -1181,7 +1238,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.20</version>
+                        <version>${mysql-connector-java.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.apache.derby</groupId>
