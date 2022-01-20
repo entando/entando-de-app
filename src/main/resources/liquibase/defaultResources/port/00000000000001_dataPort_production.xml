@@ -1,0 +1,834 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+           http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="00000000000001_de_defaultResources_dataPort_production" author="entando" context="production">
+
+        <preConditions onFail="MARK_RAN">
+            <!-- Use uppercase table name to avoid MySQL issue -->
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM DATABASECHANGELOG WHERE id = '00000000000001_de_defaultResources_dataPort_restore'</sqlCheck>
+            <!-- This changeSet contains the same logic (in XML) of the old 00000000000001_dataPort_production.sql file, that was included by changeSetPort.xml
+                 Execution of this changeSet must be skipped if tables had already been filled using that file -->
+            <sqlCheck expectedResult="0">SELECT COUNT(*) FROM DATABASECHANGELOG WHERE id = '00000000000001_de_defaultResources_dataPort_production' AND filename = 'liquibase/defaultResources/changeSetPort.xml'</sqlCheck>
+        </preConditions>
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="breadcrumb" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_1.xml" />
+            <column name="locked" valueNumeric="1" />
+            <column name="maingroup" value="free" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="navigation" />
+            <column name="icon" value="asset:ent-breadcrumb" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="breadcrumb" />
+            <column name="widgettypecode" value="breadcrumb" />
+            <column name="gui" valueClobFile="clob/production/guifragment_1.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+
+
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_SIGNOUT" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Logout" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_SIGNOUT" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Esci" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_PROFILE_CONFIGURATION" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Profile Configuration" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_PROFILE_CONFIGURATION" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Configurazione Profilo" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_SIGNIN" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Log in" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_SIGNIN" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Entra" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_PASSWORD" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Password" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_PASSWORD" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Password" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_USERNAME" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Username" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_USERNAME" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Username" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_USER_STATUS_CREDENTIALS_INVALID" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Invalid credentials" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_USER_STATUS_CREDENTIALS_INVALID" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Invalid credentials" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_USER_STATUS_EXPIRED" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="User expired" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESLF_USER_STATUS_EXPIRED" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="User expired" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESNB_YOU_ARE_HERE" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="You're here" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="ESNB_YOU_ARE_HERE" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Sei qui" />
+        </insert>
+
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="logo" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_2.xml" />
+            <column name="locked" valueNumeric="1" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="page" />
+            <column name="icon" value="font-awesome:fa-cube" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="logo" />
+            <column name="widgettypecode" value="logo" />
+            <column name="gui" valueClobFile="clob/production/guifragment_2.ftl" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_3.ftl" />
+            <column name="locked" valueNumeric="0" />
+        </insert>
+
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="language" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_3.xml" />
+            <column name="locked" valueNumeric="1" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="page" />
+            <column name="icon" value="font-awesome:fa-language" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="language" />
+            <column name="widgettypecode" value="language" />
+            <column name="gui" valueClobFile="clob/production/guifragment_4.ftl" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_5.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="keycloak_login" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_4.xml" />
+            <column name="locked" valueNumeric="1" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="system" />
+            <column name="icon" value="font-awesome:fa-sign-in" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="keycloak_login" />
+            <column name="widgettypecode" value="keycloak_login" />
+            <column name="gui" valueClobFile="clob/production/guifragment_6.ftl" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_7.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="navigation_menu" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_5.xml" />
+            <column name="parameters" valueClobFile="clob/production/widgetcatalog_6.xml" />
+            <column name="locked" valueNumeric="1" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="navigation" />
+            <column name="icon" value="font-awesome:fa-bars" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="navigation_menu" />
+            <column name="widgettypecode" value="navigation_menu" />
+            <column name="gui" valueClobFile="clob/production/guifragment_8.ftl" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_9.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="sitemap" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_7.xml" />
+            <column name="locked" valueNumeric="1" />
+            <column name="maingroup" value="free" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="navigation" />
+            <column name="icon" value="font-awesome:fa-sitemap" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="sitemap" />
+            <column name="widgettypecode" value="sitemap" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_10.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+        <insert tableName="guifragment">
+            <column name="code" value="sitemap_menu_include" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_11.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+        <insert tableName="guifragment">
+            <column name="code" value="entando_ootb_carbon_include" />
+            <column name="defaultgui" valueClobFile="clob/production/guifragment_12.ftl" />
+            <column name="locked" valueNumeric="1" />
+        </insert>
+
+
+        <insert tableName="pagemodels">
+            <column name="code" value="1-column" />
+            <column name="descr" value="1 Column" />
+            <column name="frames" valueClobFile="clob/production/pagemodels_1.xml" />
+            <column name="templategui" valueClobFile="clob/production/pagemodels_2.ftl" />
+        </insert>
+        <insert tableName="pagemodels">
+            <column name="code" value="1-2x4-1-column" />
+            <column name="descr" value="1-2x4-1 Columns" />
+            <column name="frames" valueClobFile="clob/production/pagemodels_3.xml" />
+            <column name="templategui" valueClobFile="clob/production/pagemodels_4.ftl" />
+        </insert>
+        <insert tableName="pagemodels">
+            <column name="code" value="1-2-column" />
+            <column name="descr" value="1-2 Columns" />
+            <column name="frames" valueClobFile="clob/production/pagemodels_5.xml" />
+            <column name="templategui" valueClobFile="clob/production/pagemodels_6.ftl" />
+        </insert>
+        <insert tableName="pagemodels">
+            <column name="code" value="1-2x2-1-column" />
+            <column name="descr" value="1-2x2-1 Columns" />
+            <column name="frames" valueClobFile="clob/production/pagemodels_7.xml" />
+            <column name="templategui" valueClobFile="clob/production/pagemodels_8.ftl" />
+        </insert>
+        <insert tableName="pagemodels">
+            <column name="code" value="content-page" />
+            <column name="descr" value="Content Page" />
+            <column name="frames" valueClobFile="clob/production/pagemodels_9.xml" />
+            <column name="templategui" valueClobFile="clob/production/pagemodels_10.ftl" />
+        </insert>
+
+
+        <insert tableName="pages">
+            <column name="code" value="my_homepage" />
+            <column name="parentcode" value="homepage" />
+            <column name="pos" valueNumeric="3" />
+        </insert>
+        <insert tableName="pages">
+            <column name="code" value="sitemap" />
+            <column name="parentcode" value="homepage" />
+            <column name="pos" valueNumeric="4" />
+        </insert>
+        <insert tableName="pages">
+            <column name="code" value="search_result" />
+            <column name="parentcode" value="homepage" />
+            <column name="pos" valueNumeric="5" />
+        </insert>
+        <insert tableName="pages">
+            <column name="code" value="about_us" />
+            <column name="parentcode" value="my_homepage" />
+            <column name="pos" valueNumeric="1" />
+        </insert>
+        <insert tableName="pages">
+            <column name="code" value="news" />
+            <column name="parentcode" value="my_homepage" />
+            <column name="pos" valueNumeric="2" />
+        </insert>
+
+
+        <insert tableName="pages_metadata_online">
+            <column name="code" value="my_homepage" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_online_1.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="1" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_online_2.xml" />
+            <column name="updatedat" valueDate="2020-07-31T10:22:15" />
+        </insert>
+        <insert tableName="pages_metadata_online">
+            <column name="code" value="sitemap" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_online_3.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="1" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_online_4.xml" />
+            <column name="updatedat" valueDate="2020-06-08T08:43:13" />
+        </insert>
+        <insert tableName="pages_metadata_online">
+            <column name="code" value="search_result" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_online_5.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="0" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_online_6.xml" />
+            <column name="updatedat" valueDate="2020-06-08T08:43:13" />
+        </insert>
+        <insert tableName="pages_metadata_online">
+            <column name="code" value="about_us" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_online_7.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="1" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_online_8.xml" />
+            <column name="updatedat" valueDate="2020-06-08T08:43:13" />
+        </insert>
+        <insert tableName="pages_metadata_online">
+            <column name="code" value="news" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_online_9.xml" />
+            <column name="modelcode" value="content-page" />
+            <column name="showinmenu" valueNumeric="0" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_online_10.xml" />
+            <column name="updatedat" valueDate="2020-11-16T16:23:44" />
+        </insert>
+
+
+        <insert tableName="pages_metadata_draft">
+            <column name="code" value="my_homepage" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_draft_1.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="1" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_draft_2.xml" />
+            <column name="updatedat" valueDate="2020-07-31T10:22:15" />
+        </insert>
+        <insert tableName="pages_metadata_draft">
+            <column name="code" value="sitemap" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_draft_3.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="1" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_draft_4.xml" />
+            <column name="updatedat" valueDate="2020-06-08T08:43:13" />
+        </insert>
+        <insert tableName="pages_metadata_draft">
+            <column name="code" value="search_result" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_draft_5.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="0" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_draft_6.xml" />
+            <column name="updatedat" valueDate="2020-06-08T08:43:13" />
+        </insert>
+        <insert tableName="pages_metadata_draft">
+            <column name="code" value="about_us" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_draft_7.xml" />
+            <column name="modelcode" value="1-column" />
+            <column name="showinmenu" valueNumeric="1" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_draft_8.xml" />
+            <column name="updatedat" valueDate="2020-06-08T08:43:13" />
+        </insert>
+        <insert tableName="pages_metadata_draft">
+            <column name="code" value="news" />
+            <column name="groupcode" value="free" />
+            <column name="titles" valueClobFile="clob/production/pages_metadata_draft_9.xml" />
+            <column name="modelcode" value="content-page" />
+            <column name="showinmenu" valueNumeric="0" />
+            <column name="extraconfig" valueClobFile="clob/production/pages_metadata_draft_10.xml" />
+            <column name="updatedat" valueDate="2020-11-16T16:24:01" />
+        </insert>
+
+
+        <insert tableName="localstrings">
+            <column name="keycode" value="CNG_ATTACHMENTS" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Attachments" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="CNG_ATTACHMENTS" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Allegati" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="CNG_LINKS" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Links" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="CNG_LINKS" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Link" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="CNG_READ_MORE" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="View details" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="CNG_READ_MORE" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Continua" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="NWS_ATTACHMENTS" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Attachments" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="NWS_ATTACHMENTS" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Allegati" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="NWS_LINKS" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Links" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="NWS_LINKS" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Link" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="NWS_READ_MORE" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="View details" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="NWS_READ_MORE" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Continua" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="LANG_EN" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="English" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="LANG_EN" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Inglese" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="LANG_IT" />
+            <column name="langcode" value="en" />
+            <column name="stringvalue" value="Italian" />
+        </insert>
+        <insert tableName="localstrings">
+            <column name="keycode" value="LANG_IT" />
+            <column name="langcode" value="it" />
+            <column name="stringvalue" value="Italiano" />
+        </insert>
+
+
+        <insert tableName="widgetcatalog">
+            <column name="code" value="NWS_Latest" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_8.xml" />
+            <column name="parenttypecode" value="content_viewer_list" />
+            <column name="defaultconfig" valueClobFile="clob/production/widgetcatalog_9.xml" />
+            <column name="locked" valueNumeric="0" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="cms" />
+            <column name="icon" value="asset:ent-nws-latest" />
+        </insert>
+        <insert tableName="widgetcatalog">
+            <column name="code" value="NWS_Archive" />
+            <column name="titles" valueClobFile="clob/production/widgetcatalog_10.xml" />
+            <column name="parenttypecode" value="content_viewer_list" />
+            <column name="defaultconfig" valueClobFile="clob/production/widgetcatalog_11.xml" />
+            <column name="locked" valueNumeric="0" />
+            <column name="readonlypagewidgetconfig" valueNumeric="0" />
+            <column name="widgetcategory" value="cms" />
+            <column name="icon" value="font-awesome:fa-archive" />
+        </insert>
+
+
+        <insert tableName="guifragment">
+            <column name="code" value="keycloak_auth_with_redirect" />
+            <column name="gui" valueClobFile="clob/production/guifragment_13.ftl" />
+            <column name="locked" valueNumeric="0" />
+        </insert>
+        <insert tableName="guifragment">
+            <column name="code" value="keycloak_auth" />
+            <column name="gui" valueClobFile="clob/production/guifragment_14.ftl" />
+            <column name="locked" valueNumeric="0" />
+        </insert>
+
+
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_1.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="content_viewer" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_2.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="5" />
+            <column name="widgetcode" value="content_viewer_list" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_3.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_4.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_5.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="sitemap" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_6.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_7.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="search_result" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_8.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_9.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="content_viewer" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_10.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_11.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_12.xml" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="content_viewer" />
+        </insert>
+        <insert tableName="widgetconfig_draft">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_draft_13.xml" />
+        </insert>
+
+
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_1.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="content_viewer" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_2.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="5" />
+            <column name="widgetcode" value="content_viewer_list" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_3.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="my_homepage" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_4.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_5.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="sitemap" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="sitemap" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_6.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_7.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="search_result" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="search_result" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_8.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_9.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="content_viewer" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_10.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="about_us" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_11.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="0" />
+            <column name="widgetcode" value="logo" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="1" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_12.xml" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="2" />
+            <column name="widgetcode" value="search_form" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="3" />
+            <column name="widgetcode" value="keycloak_login" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="4" />
+            <column name="widgetcode" value="content_viewer" />
+        </insert>
+        <insert tableName="widgetconfig">
+            <column name="pagecode" value="news" />
+            <column name="framepos" valueNumeric="8" />
+            <column name="widgetcode" value="navigation_menu" />
+            <column name="config" valueClobFile="clob/production/widgetconfig_13.xml" />
+        </insert>
+
+    </changeSet>
+</databaseChangeLog>
