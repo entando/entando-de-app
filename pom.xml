@@ -1122,10 +1122,6 @@
                 <configuration>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webApp>
-                        <resourceBases>
-                            <resourceBase>src/main/webapp</resourceBase>
-                            <resourceBase>${project.build.directory}/${project.build.finalName}</resourceBase>
-                        </resourceBases>
                         <defaultsDescriptor>${basedir}/src/main/jetty/webdefault.xml</defaultsDescriptor>
                         <contextPath>/${project.artifactId}</contextPath>
                         <jettyEnvXml>${project.basedir}/src/main/jetty/jetty-env.xml</jettyEnvXml>
