@@ -62,7 +62,7 @@
         <test.database.serv.url>
             jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true
         </test.database.serv.url>
-        <docker.host.address>172.17.0.1</docker.host.address>
+        <docker.host.address>127.0.0.1</docker.host.address>
         <env.db.environment>production</env.db.environment>
         <entando.engine.web.context>${project.build.finalName}</entando.engine.web.context>
         <skipDocker>true</skipDocker>
@@ -440,6 +440,7 @@
             <id>wildfly</id>
             <properties>
                 <!--Image configuration -->
+                <cors.enabled>true</cors.enabled>
                 <skipDocker>false</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
                 <jee.server>wildfly</jee.server>
@@ -449,9 +450,11 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando-wildfly12-base</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3134-PR-1</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
+                <entando.engine.port>8080</entando.engine.port>
+
             </properties>
         </profile>
         <profile>
@@ -495,7 +498,7 @@
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
 
                 <!-- DB work required from the server image. Create the template Derby databases -->
-                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh --war-file=${jboss.home.in.image}/standalone/deployments/${project.build.finalName}.war</server.init.command>
+                <server.init.command>$ENTANDO_COMMON_PATH/init-derby-from-war.sh</server.init.command>
             </properties>
         </profile>
         <profile>
@@ -701,7 +704,7 @@
                             <name>entando/${project.artifactId}-${jee.server}:${project.version}</name>
                             <alias>${project.artifactId}-engine</alias>
                             <build>
-                                <from>entando/${server.base.image}:6.3.4</from>
+                                <from>${server.base.image}</from>
                                 <skip>${skipServerImage}</skip>
                                 <assembly>
                                     <descriptorRef>artifact</descriptorRef>
@@ -731,6 +734,7 @@
                                     <KEYCLOAK_CLIENT_ID>${keycloak.client.id}</KEYCLOAK_CLIENT_ID>
                                     <KEYCLOAK_CLIENT_SECRET>${keycloak.client.secret}</KEYCLOAK_CLIENT_SECRET>
                                     <KEYCLOAK_PUBLIC_CLIENT_ID>${keycloak.public.client.id}</KEYCLOAK_PUBLIC_CLIENT_ID>
+                                    <JGROUPS_CLUSTER_PASSWORD>password</JGROUPS_CLUSTER_PASSWORD>
                                     <CORS_ENABLED>${cors.enabled}</CORS_ENABLED>
                                     <CORS_ACCESS_CONTROL_ALLOW_ORIGIN>${cors.access.control.allow.origin}
                                     </CORS_ACCESS_CONTROL_ALLOW_ORIGIN>
@@ -972,29 +976,6 @@
                             <excludes>WEB-INF/lib/*.*</excludes>
                         </configuration>
                     </execution>
-                    <!--					<execution>
-                            <id>unpack-dependencies-bootstrap</id>
-                            <phase>prepare-package</phase>
-                        <goals>
-                                    <goal>unpack</goal>
-                        </goals>
-                        <configuration>
-                                    <verbose>true</verbose>
-                                    <overWriteReleases>false</overWriteReleases>
-                                    <overWriteSnapshots>false</overWriteSnapshots>
-                                    <overWriteIfNewer>false</overWriteIfNewer>
-                                    <artifactItems>
-                                            <artifactItem>
-                                                    <groupId>org.entando.entando.bundles.misc</groupId>
-                                                    <artifactId>entando-misc-bootstrap</artifactId>
-                                                    <type>war</type>
-                                                    <outputDirectory>${project.build.directory}/entando-misc-bootstrap</outputDirectory>
-                                                    <overWrite>false</overWrite>
-                                            </artifactItem>
-                                    </artifactItems>
-                                    <includes>resources/static/entando-misc-bootstrap/bootstrap/bootstrap/**</includes>
-                        </configuration>
-                    </execution>-->
                 </executions>
             </plugin>
             <plugin>
