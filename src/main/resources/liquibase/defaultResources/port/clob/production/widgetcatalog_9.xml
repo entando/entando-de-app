@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<properties>
+<property key="maxElements">4</property>
+<property key="filters">(order=DESC;attributeFilter=true;key=date)</property>
+<property key="title_it">Notizie</property>
+<property key="linkDescr_it">Archivio</property>
+<property key="pageLink">news</property>
+<property key="title_en">News</property>
+<property key="contentType">NWS</property>
+<property key="modelId">10022</property>
+<property key="linkDescr_en">Archive</property>
+</properties>

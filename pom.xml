@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3006-PR-213</entando-engine.version>
+        <entando-engine.version>7.0.0-ENG-3151-PR-220</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3113-PR-106</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3113-PR-138</entando-plugin-jacms.version>
@@ -70,6 +70,7 @@
         <autoCreateNetwork>true</autoCreateNetwork>
         <entando.version>6.3.0-SNAPSHOT</entando.version>
         <postgres.driver.version>9.4.1212</postgres.driver.version>
+        <oracle.driver.version>21.4.0.0.1</oracle.driver.version>
         <jetty.version>10.0.7</jetty.version>
 
         <!-- Keycloak Configuration -->
@@ -86,7 +87,7 @@
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
         <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
-        <log4j.version>2.16.0</log4j.version>
+        <log4j.version>2.17.0</log4j.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -1178,6 +1179,11 @@
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
                         <version>8.0.20</version>
+                    </dependency>
+                    <dependency>
+                        <groupId>com.oracle.database.jdbc</groupId>
+                        <artifactId>ojdbc8</artifactId>
+                        <version>${oracle.driver.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.apache.derby</groupId>
