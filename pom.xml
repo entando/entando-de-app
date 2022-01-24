@@ -10,8 +10,8 @@
     <url>http://www.entando.com/</url>
     <licenses>
         <license>
-            <name>GNU LESSER GENERAL PUBLIC LICENSE, Version 2.1, February 1999</name>
-            <url>https://www.gnu.org/licenses/lgpl-2.1.txt</url>
+            <name>GNU LESSER GENERAL PUBLIC LICENSE, Version 3, 29 June 2007</name>
+            <url>https://www.gnu.org/licenses/lgpl-3.0.txt</url>
             <distribution>repo</distribution>
         </license>
     </licenses>
@@ -34,9 +34,9 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-engine.version>7.0.0-ENG-3151-PR-220</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3006-PR-103</entando-admin-console.version>
+        <entando-admin-console.version>7.0.0-ENG-3113-PR-106</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3006-PR-133</entando-plugin-jacms.version>
+        <entando-plugin-jacms.version>7.0.0-ENG-3113-PR-138</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpmail.version>
         <entando-plugin-jpversioning.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>7.0.0-ENG-3006-PR-57</entando-plugin-jpseo.version>
@@ -1123,10 +1123,6 @@
                 <configuration>
                     <scanIntervalSeconds>5</scanIntervalSeconds>
                     <webApp>
-                        <resourceBases>
-                            <resourceBase>src/main/webapp</resourceBase>
-                            <resourceBase>${project.build.directory}/${project.build.finalName}</resourceBase>
-                        </resourceBases>
                         <defaultsDescriptor>${basedir}/src/main/jetty/webdefault.xml</defaultsDescriptor>
                         <contextPath>/${project.artifactId}</contextPath>
                         <jettyEnvXml>${project.basedir}/src/main/jetty/jetty-env.xml</jettyEnvXml>
