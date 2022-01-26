@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+  <useextratitles>false</useextratitles>
+  <charset>utf-8</charset>
+  <mimeType>text/html</mimeType>
+  <useextradescriptions>false</useextradescriptions>
+  <descriptions>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </descriptions>
+  <keywords>
+    <property key="en" useDefaultLang="false">News</property>
+    <property key="it" useDefaultLang="false">News</property>
+  </keywords>
+  <complexParameters />
+</config>
+
