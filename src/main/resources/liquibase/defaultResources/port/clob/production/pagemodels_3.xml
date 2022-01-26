@@ -1,0 +1,60 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<frames>
+  <frame pos="0">
+      <descr>Logo</descr>
+      <sketch x1="0" y1="0" x2="2" y2="0" />
+      <defaultWidget code="logo" />
+  </frame>
+  <frame pos="1">
+      <descr>Navigation Menu</descr>
+      <sketch x1="3" y1="0" x2="5" y2="0" />
+      <defaultWidget code="navigation_menu" />
+  </frame>
+  <frame pos="2">
+      <descr>Search</descr>
+      <sketch x1="6" y1="0" x2="8" y2="0" />
+      <defaultWidget code="search_form" />
+  </frame>
+  <frame pos="3">
+      <descr>Login</descr>
+      <sketch x1="9" y1="0" x2="11" y2="0" />
+      <defaultWidget code="keycloak_login" />
+  </frame>
+  <frame pos="4">
+      <descr>Frame 1</descr>
+      <sketch x1="0" y1="1" x2="5" y2="1" />
+  </frame>
+  <frame pos="5">
+      <descr>Frame 2</descr>
+      <sketch x1="6" y1="1" x2="11" y2="1" />
+  </frame>
+  <frame pos="6">
+      <descr>Frame 3</descr>
+      <sketch x1="0" y1="2" x2="5" y2="2" />
+  </frame>
+  <frame pos="7">
+      <descr>Frame 4</descr>
+      <sketch x1="6" y1="2" x2="11" y2="2" />
+  </frame>
+  <frame pos="8">
+      <descr>Frame 5</descr>
+      <sketch x1="0" y1="3" x2="5" y2="3" />
+  </frame>
+  <frame pos="9">
+      <descr>Frame 6</descr>
+      <sketch x1="6" y1="3" x2="11" y2="3" />
+  </frame>
+  <frame pos="10">
+      <descr>Frame 7</descr>
+      <sketch x1="0" y1="4" x2="5" y2="4" />
+  </frame>
+  <frame pos="11">
+      <descr>Frame 8</descr>
+      <sketch x1="6" y1="4" x2="11" y2="4" />
+  </frame>
+  <frame pos="12">
+      <descr>Footer</descr>
+      <sketch x1="0" y1="5" x2="11" y2="5" />
+  </frame>
+</frames>
+
