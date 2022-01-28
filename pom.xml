@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3151-PR-220</entando-engine.version>
+        <entando-engine.version>7.0.0-ENG-3172-PR-225</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3157-PR-107</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3157-PR-139</entando-plugin-jacms.version>
@@ -423,6 +423,7 @@
             <id>eap</id>
             <properties>
                 <!--Image configuration -->
+                <cors.enabled>true</cors.enabled>
                 <skipDocker>false</skipDocker>
                 <skipAppBuilderImage>false</skipAppBuilderImage>
 
@@ -432,9 +433,10 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando-eap71-clustered-base</server.base.image>
+                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3171-PR-2</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
+                <entando.engine.port>8080</entando.engine.port>
             </properties>
         </profile>
         <profile>
@@ -451,30 +453,10 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3134-PR-1</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3171-PR-2</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
                 <entando.engine.port>8080</entando.engine.port>
-
-            </properties>
-        </profile>
-        <profile>
-            <id>jetty-container</id>
-            <properties>
-                <!--Image configuration -->
-                <skipDocker>false</skipDocker>
-                <jee.server>jetty</jee.server>
-
-                <skipAppBuilderImage>false</skipAppBuilderImage>
-
-                <entando.engine.address>${docker.host.address}</entando.engine.address>
-                <app.builder.depends.on>${project.artifactId}-engine</app.builder.depends.on>
-
-                <skipServerImage>false</skipServerImage>
-                <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando-jetty948-base</server.base.image>
-
-                <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
         </profile>
         <profile>
@@ -514,7 +496,7 @@
                 <db.server.port>5432</db.server.port>
 
                 <portdb.database>portdb</portdb.database>
-                <portdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${portdb.database}
+                <portdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}
                 </portdb.url>
                 <portdb.username>portdbuser</portdb.username>
                 <portdb.password>portdb123</portdb.password>
@@ -522,7 +504,7 @@
                 <portdb.driverClassName>org.postgresql.Driver</portdb.driverClassName>
 
                 <servdb.database>servdb</servdb.database>
-                <servdb.url>jdbc:postgresql://${docker.host.address}:${db.server.local.port}/${servdb.database}
+                <servdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}
                 </servdb.url>
                 <servdb.username>servdbuser</servdb.username>
                 <servdb.password>servdb123</servdb.password>
@@ -545,14 +527,14 @@
                 <db.server.port>3306</db.server.port>
 
                 <portdb.database>portdb</portdb.database>
-                <portdb.url>jdbc:mysql://${docker.host.address}:${db.server.local.port}/${portdb.database}</portdb.url>
+                <portdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}?enabledTLSProtocols=TLSv1.2</portdb.url>
                 <portdb.username>portdbuser</portdb.username>
                 <portdb.password>portdb123</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>com.mysql.jdbc.Driver</portdb.driverClassName>
 
                 <servdb.database>servdb</servdb.database>
-                <servdb.url>jdbc:mysql://${docker.host.address}:${db.server.local.port}/${servdb.database}</servdb.url>
+                <servdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}?enabledTLSProtocols=TLSv1.2</servdb.url>
                 <servdb.username>servdbuser</servdb.username>
                 <servdb.password>servdb123</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
