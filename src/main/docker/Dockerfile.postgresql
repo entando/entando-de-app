@@ -1,0 +1,5 @@
+FROM postgres:14.1
+
+ENV POSTGRES_DB=entando
+ENV POSTGRES_USER=username
+ENV POSTGRES_PASSWORD=password

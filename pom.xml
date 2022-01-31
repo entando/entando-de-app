@@ -63,6 +63,9 @@
             jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true
         </test.database.serv.url>
         <docker.host.address>127.0.0.1</docker.host.address>
+        <entando.engine.port>8080</entando.engine.port>
+        <appbuilder.port>3000</appbuilder.port>
+        <skipAppBuilderImage>true</skipAppBuilderImage>
         <env.db.environment>production</env.db.environment>
         <entando.engine.web.context>${project.build.finalName}</entando.engine.web.context>
         <skipDocker>true</skipDocker>
@@ -82,10 +85,11 @@
         <keycloak.public.client.id>entando-web</keycloak.public.client.id>
 
         <!-- CORS Configuration -->
-        <cors.access.control.allow.origin>*</cors.access.control.allow.origin>
+        <cors.enabled>true</cors.enabled>
+        <cors.access.control.allow.origin>http://localhost:${appbuilder.port}</cors.access.control.allow.origin>
         <cors.access.control.allow.headers>Content-Type, Authorization</cors.access.control.allow.headers>
         <cors.access.control.allow.methods>GET, POST, PUT, DELETE, OPTIONS, PATCH</cors.access.control.allow.methods>
-        <cors.access.control.allow.credentials>false</cors.access.control.allow.credentials>
+        <cors.access.control.allow.credentials>true</cors.access.control.allow.credentials>
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
         <log4j.version>2.17.0</log4j.version>
     </properties>
@@ -391,7 +395,6 @@
             <properties>
                 <!--Image configuration -->
                 <skipDocker>false</skipDocker>
-                <skipAppBuilderImage>false</skipAppBuilderImage>
                 <jee.server>jetty</jee.server>
                 <entando.engine.address>localhost</entando.engine.address>
                 <app.builder.depends.on></app.builder.depends.on>
@@ -402,8 +405,6 @@
 
                 <derby.base.folder>${project.build.directory}/derby/${env.db.environment}</derby.base.folder>
                 <!--Hard coded ports for local development -->
-                <appbuilder.port>5000</appbuilder.port>
-                <entando.engine.port>8080</entando.engine.port>
                 <db.server.local.port>${db.server.port}</db.server.local.port>
 
                 <cors.access.control.allow.origin>http://localhost:3000</cors.access.control.allow.origin>
@@ -411,21 +412,10 @@
             </properties>
         </profile>
         <profile>
-            <id>local-ports</id>
-            <properties>
-                <!--Hard coded ports for local development -->
-                <appbuilder.port>5000</appbuilder.port>
-                <db.server.local.port>${db.server.port}</db.server.local.port>
-                <entando.engine.port>8080</entando.engine.port>
-            </properties>
-        </profile>
-        <profile>
             <id>eap</id>
             <properties>
                 <!--Image configuration -->
-                <cors.enabled>true</cors.enabled>
                 <skipDocker>false</skipDocker>
-                <skipAppBuilderImage>false</skipAppBuilderImage>
 
                 <jee.server>eap</jee.server>
                 <entando.engine.address>${docker.host.address}</entando.engine.address>
@@ -436,16 +426,13 @@
                 <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3171-PR-2</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
-                <entando.engine.port>8080</entando.engine.port>
             </properties>
         </profile>
         <profile>
             <id>wildfly</id>
             <properties>
                 <!--Image configuration -->
-                <cors.enabled>true</cors.enabled>
                 <skipDocker>false</skipDocker>
-                <skipAppBuilderImage>false</skipAppBuilderImage>
                 <jee.server>wildfly</jee.server>
 
                 <entando.engine.address>${docker.host.address}</entando.engine.address>
@@ -456,7 +443,6 @@
                 <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3171-PR-2</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
-                <entando.engine.port>8080</entando.engine.port>
             </properties>
         </profile>
         <profile>
@@ -490,24 +476,19 @@
                 <db.vendor>postgresql</db.vendor>
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
-                <db.base.image>entando-postgresql95-base</db.base.image>
-                <db.init.command>$STI_SCRIPTS_PATH/init-postgresql-from-war.sh --war-file=/tmp/${project.build.finalName}.war</db.init.command>
-                <db.volume.mount.path>/var/lib/pgsql/data</db.volume.mount.path>
                 <db.server.port>5432</db.server.port>
 
-                <portdb.database>portdb</portdb.database>
-                <portdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}
-                </portdb.url>
-                <portdb.username>portdbuser</portdb.username>
-                <portdb.password>portdb123</portdb.password>
+                <portdb.database>entando</portdb.database>
+                <portdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}</portdb.url>
+                <portdb.username>username</portdb.username>
+                <portdb.password>password</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>org.postgresql.Driver</portdb.driverClassName>
 
-                <servdb.database>servdb</servdb.database>
-                <servdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}
-                </servdb.url>
-                <servdb.username>servdbuser</servdb.username>
-                <servdb.password>servdb123</servdb.password>
+                <servdb.database>entando</servdb.database>
+                <servdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}</servdb.url>
+                <servdb.username>username</servdb.username>
+                <servdb.password>password</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
                 <servdb.driverClassName>org.postgresql.Driver</servdb.driverClassName>
 
@@ -521,27 +502,47 @@
                 <db.vendor>mysql</db.vendor>
                 <skipDatabaseImage>false</skipDatabaseImage>
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
-                <db.base.image>entando-mysql57-base</db.base.image>
-                <db.init.command>$STI_SCRIPTS_PATH/init-mysql-from-war.sh --war-file=/tmp/${project.build.finalName}.war</db.init.command>
-                <db.volume.mount.path>/var/lib/mysql/data</db.volume.mount.path>
+                <db.volume.mount.path>/var/lib/mysql</db.volume.mount.path>
                 <db.server.port>3306</db.server.port>
 
-                <portdb.database>portdb</portdb.database>
+                <portdb.database>entando</portdb.database>
                 <portdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}?enabledTLSProtocols=TLSv1.2</portdb.url>
-                <portdb.username>portdbuser</portdb.username>
-                <portdb.password>portdb123</portdb.password>
+                <portdb.username>username</portdb.username>
+                <portdb.password>password</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>com.mysql.jdbc.Driver</portdb.driverClassName>
 
-                <servdb.database>servdb</servdb.database>
+                <servdb.database>entando</servdb.database>
                 <servdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}?enabledTLSProtocols=TLSv1.2</servdb.url>
-                <servdb.username>servdbuser</servdb.username>
-                <servdb.password>servdb123</servdb.password>
+                <servdb.username>username</servdb.username>
+                <servdb.password>password</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
                 <servdb.driverClassName>com.mysql.jdbc.Driver</servdb.driverClassName>
 
                 <!-- No DB work required from the server image. Just set the build_id -->
                 <server.init.command>echo $(date +%s) > /entando-data-templates/build_id</server.init.command>
+            </properties>
+        </profile>
+        <profile>
+            <id>oracle</id>
+            <properties>
+                <db.vendor>oracle</db.vendor>
+                <skipDatabaseImage>true</skipDatabaseImage>
+                <db.server.port>1521</db.server.port>
+
+                <portdb.database>XE</portdb.database>
+                <portdb.url>jdbc:oracle:thin:@${db.server.host}:${db.server.port}:${portdb.database}</portdb.url>
+                <portdb.username>username</portdb.username>
+                <portdb.password>password</portdb.password>
+                <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
+                <portdb.driverClassName>oracle.jdbc.OracleDriver</portdb.driverClassName>
+
+                <servdb.database>XE</servdb.database>
+                <servdb.url>jdbc:oracle:thin:@${db.server.host}:${db.server.port}:${servdb.database}</servdb.url>
+                <servdb.username>username</servdb.username>
+                <servdb.password>password</servdb.password>
+                <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
+                <servdb.driverClassName>oracle.jdbc.OracleDriver</servdb.driverClassName>
             </properties>
         </profile>
         <profile>
@@ -595,7 +596,7 @@
             <plugin>
                 <groupId>io.fabric8</groupId>
                 <artifactId>docker-maven-plugin</artifactId>
-                <version>0.26.1</version>
+                <version>0.38.1</version>
                 <executions>
                     <execution>
                         <id>build-docker-image</id>
@@ -629,27 +630,8 @@
                             <name>entando/${project.artifactId}-${db.vendor}:${project.version}</name>
                             <alias>${project.artifactId}-dbms</alias>
                             <build>
+                                <dockerFile>Dockerfile.${db.vendor}</dockerFile>
                                 <skip>${skipDatabaseImage}</skip>
-                                <from>entando/${db.base.image}:6.1.0</from>
-                                <assembly>
-                                    <descriptorRef>artifact</descriptorRef>
-                                    <targetDir>/tmp</targetDir>
-                                </assembly>
-                                <env>
-                                    <PORTDB_USERNAME>${portdb.username}</PORTDB_USERNAME>
-                                    <PORTDB_PASSWORD>${portdb.password}</PORTDB_PASSWORD>
-                                    <PORTDB_DATABASE>${portdb.database}</PORTDB_DATABASE>
-                                    <PORTDB_JNDI>${portdb.jndi}</PORTDB_JNDI>
-                                    <SERVDB_USERNAME>${servdb.username}</SERVDB_USERNAME>
-                                    <SERVDB_PASSWORD>${servdb.password}</SERVDB_PASSWORD>
-                                    <SERVDB_DATABASE>${servdb.database}</SERVDB_DATABASE>
-                                    <SERVDB_JNDI>${servdb.jndi}</SERVDB_JNDI>
-                                    <DB_ENVIRONMENT>${env.db.environment}</DB_ENVIRONMENT>
-                                    <ALGO_DEFAULT_KEY>changeit</ALGO_DEFAULT_KEY>
-                                </env>
-                                <runCmds>
-                                    <run>${db.init.command}</run>
-                                </runCmds>
                             </build>
                             <run>
                                 <skip>${skipDatabaseImage}</skip>
@@ -662,11 +644,6 @@
                                 <ports>
                                     <port>+docker.host.address:db.server.local.port:${db.server.port}</port>
                                 </ports>
-                                <volumes>
-                                    <bind>
-                                        <volume>${project.artifactId}-entando-db-data:${db.volume.mount.path}</volume>
-                                    </bind>
-                                </volumes>
                                 <wait>
                                     <tcp>
                                         <ports>
