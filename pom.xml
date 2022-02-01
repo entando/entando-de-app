@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3172-PR-225</entando-engine.version>
+        <entando-engine.version>7.0.0-ENG-3190-PR-226</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3157-PR-107</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3157-PR-139</entando-plugin-jacms.version>
@@ -427,7 +427,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3171-PR-2</server.base.image>
+                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3190-PR-3</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -444,7 +444,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3171-PR-2</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3190-PR-3</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>

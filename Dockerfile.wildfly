@@ -1,4 +1,4 @@
-FROM entando/entando-wildfly17-base:6.3.9
+FROM entando/entando-wildfly17-base:7.0.0-ENG-3190-PR-3
 ARG VERSION
 
 ### Required OpenShift Labels
