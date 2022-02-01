@@ -1,7 +1,6 @@
 # entando-de-app
 [![Build Status](https://jenkins.entandocloud.com/buildStatus/icon?job=de-entando-de-app-master)](https://jenkins.entandocloud.com/job/de-entando-de-app-master/)
 Application to act as the starting point for an Entando application integrated with a Digital Exchange instance
-TODO instructions on Docker images
 
 ## Develop using the jetty-maven-plugin
 If you need to develop fast against this project, you can run the application using the jetty-maven-plugin.
@@ -21,6 +20,15 @@ mvn clean package jetty:run-war -Pjetty-local -Pderby -Pkeycloak
 ```
 
 You can also add the option `-Dlicense.skipDownloadLicenses` to speed up the startup process.
+
+To use an external DBMS you can activate the dedicated profile and pass the connection parameters
+using the properties. The following example shows how to connect to a PostgreSQL database:
+
+```
+mvn clean package jetty:run-war -Pjetty-local -Ppostgresql -DskipDatabaseImage=true -Dlicense.skipDownloadLicenses \
+  -Dportdb.url=jdbc:postgresql://localhost:5432/portdb -Dportdb.username=dbuser -Dportdb.password=password \
+  -Dservdb.url=jdbc:postgresql://localhost:5432/servdb -Dservdb.username=dbuser -Dservdb.password=password
+```
 
 ## Using swagger
 
@@ -44,7 +52,6 @@ You can also build your image using the Dockerfiles in the root of this reposito
 ```
 mvn clean package
 docker build . -f Dockerfile.wildfly -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSION>
-
 ```
 
 # Deploying to Kubernetes
