@@ -76,7 +76,7 @@
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
         <entando.version>6.3.0-SNAPSHOT</entando.version>
-        <postgres.driver.version>9.4.1212</postgres.driver.version>
+        <postgres.driver.version>42.2.18</postgres.driver.version>
         <oracle.driver.version>21.4.0.0.1</oracle.driver.version>
         <jetty.version>10.0.7</jetty.version>
 
