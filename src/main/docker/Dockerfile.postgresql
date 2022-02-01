@@ -1,5 +1,5 @@
 FROM postgres:14.1
 
-ENV POSTGRES_DB=entando
-ENV POSTGRES_USER=username
-ENV POSTGRES_PASSWORD=password
+ENV POSTGRES_DB=${docker.db.database}
+ENV POSTGRES_USER=${docker.db.username}
+ENV POSTGRES_PASSWORD=${docker.db.password}

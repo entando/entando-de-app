@@ -62,10 +62,14 @@
         <test.database.serv.url>
             jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true
         </test.database.serv.url>
+        
         <docker.host.address>127.0.0.1</docker.host.address>
         <entando.engine.port>8080</entando.engine.port>
         <appbuilder.port>3000</appbuilder.port>
         <skipAppBuilderImage>true</skipAppBuilderImage>
+        <docker.db.database>entando</docker.db.database>
+        <docker.db.username>entando</docker.db.username>
+        <docker.db.password>password</docker.db.password>
         <env.db.environment>production</env.db.environment>
         <entando.engine.web.context>${project.build.finalName}</entando.engine.web.context>
         <skipDocker>true</skipDocker>
@@ -478,17 +482,17 @@
                 <entando.engine.depends.on>${project.artifactId}-dbms</entando.engine.depends.on>
                 <db.server.port>5432</db.server.port>
 
-                <portdb.database>entando</portdb.database>
+                <portdb.database>${docker.db.database}</portdb.database>
                 <portdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}</portdb.url>
-                <portdb.username>username</portdb.username>
-                <portdb.password>password</portdb.password>
+                <portdb.username>${docker.db.username}</portdb.username>
+                <portdb.password>${docker.db.password}</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>org.postgresql.Driver</portdb.driverClassName>
 
-                <servdb.database>entando</servdb.database>
+                <servdb.database>${docker.db.database}</servdb.database>
                 <servdb.url>jdbc:postgresql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}</servdb.url>
-                <servdb.username>username</servdb.username>
-                <servdb.password>password</servdb.password>
+                <servdb.username>${docker.db.username}</servdb.username>
+                <servdb.password>${docker.db.password}</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
                 <servdb.driverClassName>org.postgresql.Driver</servdb.driverClassName>
 
@@ -505,17 +509,17 @@
                 <db.volume.mount.path>/var/lib/mysql</db.volume.mount.path>
                 <db.server.port>3306</db.server.port>
 
-                <portdb.database>entando</portdb.database>
+                <portdb.database>${docker.db.database}</portdb.database>
                 <portdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${portdb.database}?enabledTLSProtocols=TLSv1.2</portdb.url>
-                <portdb.username>username</portdb.username>
-                <portdb.password>password</portdb.password>
+                <portdb.username>${docker.db.username}</portdb.username>
+                <portdb.password>${docker.db.password}</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>com.mysql.jdbc.Driver</portdb.driverClassName>
 
-                <servdb.database>entando</servdb.database>
+                <servdb.database>${docker.db.database}</servdb.database>
                 <servdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}?enabledTLSProtocols=TLSv1.2</servdb.url>
-                <servdb.username>username</servdb.username>
-                <servdb.password>password</servdb.password>
+                <servdb.username>${docker.db.username}</servdb.username>
+                <servdb.password>${docker.db.password}</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
                 <servdb.driverClassName>com.mysql.jdbc.Driver</servdb.driverClassName>
 
@@ -532,15 +536,15 @@
 
                 <portdb.database>XE</portdb.database>
                 <portdb.url>jdbc:oracle:thin:@${db.server.host}:${db.server.port}:${portdb.database}</portdb.url>
-                <portdb.username>username</portdb.username>
-                <portdb.password>password</portdb.password>
+                <portdb.username>${docker.db.username}</portdb.username>
+                <portdb.password>${docker.db.password}</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
                 <portdb.driverClassName>oracle.jdbc.OracleDriver</portdb.driverClassName>
 
                 <servdb.database>XE</servdb.database>
                 <servdb.url>jdbc:oracle:thin:@${db.server.host}:${db.server.port}:${servdb.database}</servdb.url>
-                <servdb.username>username</servdb.username>
-                <servdb.password>password</servdb.password>
+                <servdb.username>${docker.db.username}</servdb.username>
+                <servdb.password>${docker.db.password}</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
                 <servdb.driverClassName>oracle.jdbc.OracleDriver</servdb.driverClassName>
             </properties>

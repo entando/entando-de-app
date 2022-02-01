@@ -1,6 +1,6 @@
 FROM mysql:8.0.28
 
-ENV MYSQL_DATABASE=entando
-ENV MYSQL_USER=username
-ENV MYSQL_PASSWORD=password
+ENV MYSQL_DATABASE=${docker.db.database}
+ENV MYSQL_USER=${docker.db.username}
+ENV MYSQL_PASSWORD=${docker.db.password}
 ENV MYSQL_ALLOW_EMPTY_PASSWORD=true
