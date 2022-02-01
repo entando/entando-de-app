@@ -514,14 +514,14 @@
                 <portdb.username>${docker.db.username}</portdb.username>
                 <portdb.password>${docker.db.password}</portdb.password>
                 <portdb.jndi>java:/jdbc/portDataSource</portdb.jndi>
-                <portdb.driverClassName>com.mysql.jdbc.Driver</portdb.driverClassName>
+                <portdb.driverClassName>com.mysql.cj.jdbc.Driver</portdb.driverClassName>
 
                 <servdb.database>${docker.db.database}</servdb.database>
                 <servdb.url>jdbc:mysql://${project.artifactId}-dbms:${db.server.port}/${servdb.database}?enabledTLSProtocols=TLSv1.2</servdb.url>
                 <servdb.username>${docker.db.username}</servdb.username>
                 <servdb.password>${docker.db.password}</servdb.password>
                 <servdb.jndi>java:/jdbc/servDataSource</servdb.jndi>
-                <servdb.driverClassName>com.mysql.jdbc.Driver</servdb.driverClassName>
+                <servdb.driverClassName>com.mysql.cj.jdbc.Driver</servdb.driverClassName>
 
                 <!-- No DB work required from the server image. Just set the build_id -->
                 <server.init.command>echo $(date +%s) > /entando-data-templates/build_id</server.init.command>
@@ -1122,7 +1122,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.20</version>
+                        <version>8.0.23</version>
                     </dependency>
                     <dependency>
                         <groupId>com.oracle.database.jdbc</groupId>
