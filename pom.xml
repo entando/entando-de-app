@@ -33,9 +33,9 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-2021-PR-207-EP-webui</entando-engine.version>
+        <entando-engine.version>7.0.0-ENG-2021-PR-228-EP-webui</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3113-PR-106</entando-admin-console.version>
-        <entando-portal-ui.version>7.0.0-ENG-2021-PR-35-EP-webui</entando-portal-ui.version>
+        <entando-portal-ui.version>7.0.0-ENG-2021-PR-41-EP-webui</entando-portal-ui.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3113-PR-138</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpmail.version>
         <entando-plugin-jpversioning.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpversioning.version>
