@@ -33,13 +33,13 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3213-PR-230</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3110-PR-111</entando-admin-console.version>
+        <entando-engine.version>7.0.0-ENG-3174-PR-234</entando-engine.version>
+        <entando-admin-console.version>7.0.0-ENG-3174-PR-112</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3110-PR-145</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>7.0.0-ENG-3219-PR-41</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>7.0.0-ENG-3153-PR-62</entando-plugin-jpseo.version>
+        <entando-plugin-jacms.version>7.0.0-ENG-3174-PR-147</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>7.0.0-ENG-3174-PR-40</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>7.0.0-ENG-3174-PR-39</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>7.0.0-ENG-3174-PR-66</entando-plugin-jpseo.version>
         <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3006-PR-35</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpredis.version>7.0.0-ENG-3006-PR-18</entando-plugin-jpredis.version>
         <entando.keycloak.plugin.version>7.0.0-ENG-3006-PR-56</entando.keycloak.plugin.version>
@@ -427,7 +427,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3218-PR-4</server.base.image>
+                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3190-PR-3</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -444,7 +444,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3218-PR-4</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3190-PR-3</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
