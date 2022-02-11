@@ -33,7 +33,7 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3174-PR-234</entando-engine.version>
+        <entando-engine.version>7.0.0-ENG-3220-PR-235</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3174-PR-112</entando-admin-console.version>
         <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3174-PR-147</entando-plugin-jacms.version>
