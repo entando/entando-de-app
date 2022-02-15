@@ -33,17 +33,18 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-3220-PR-235</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3253-PR-114</entando-admin-console.version>
-        <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3174-PR-147</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>7.0.0-ENG-3174-PR-40</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>7.0.0-ENG-3174-PR-39</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>7.0.0-ENG-3174-PR-66</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3202-PR-39</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpredis.version>7.0.0-ENG-3006-PR-18</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>7.0.0-ENG-3006-PR-56</entando.keycloak.plugin.version>
-
+        <entando-core-parent.version>7.0.14</entando-core-parent.version>
+        <entando-engine.version>7.0.0-ENG-3214-PR-237</entando-engine.version>
+        <entando-admin-console.version>7.0.0-ENG-3214-PR-115</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.0.0-ENG-3214-PR-66</entando-keycloak-plugin.version>
+        <entando-plugin-jacms.version>7.0.0-ENG-3214-PR-149</entando-plugin-jacms.version>
+        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpmail.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.0.0-ENG-3214-PR-25</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.0.0-ENG-3214-PR-68</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.0.0-ENG-3214-PR-41</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.0.0-ENG-3214-PR-45</entando-portal-ui.version>
+        
         <!-- SONAR -->
         <github.organization>entando</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -75,10 +76,14 @@
         <skipDocker>true</skipDocker>
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
+        
         <entando.version>6.3.0-SNAPSHOT</entando.version>
-        <postgres.driver.version>42.2.18</postgres.driver.version>
+        <postgres.driver.version>42.2.25</postgres.driver.version>
         <oracle.driver.version>21.4.0.0.1</oracle.driver.version>
+        <mysql-connector-java.version>8.0.28</mysql-connector-java.version>
+        <derby.version>10.9.1.0</derby.version>
         <jetty.version>10.0.7</jetty.version>
+        <commons-dbcp2.version>2.5.0</commons-dbcp2.version>
 
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
@@ -102,7 +107,7 @@
             <dependency>
                 <groupId>org.entando</groupId>
                 <artifactId>entando-core-parent</artifactId>
-                <version>6.4.6</version>
+                <version>${entando-core-parent.version}</version>
                 <scope>import</scope>
                 <type>pom</type>
             </dependency>
@@ -234,7 +239,7 @@
             <dependency>
                 <groupId>org.entando.entando</groupId>
                 <artifactId>entando-keycloak-auth</artifactId>
-                <version>${entando.keycloak.plugin.version}</version>
+                <version>${entando-keycloak-plugin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
@@ -1122,7 +1127,7 @@
                     <dependency>
                         <groupId>mysql</groupId>
                         <artifactId>mysql-connector-java</artifactId>
-                        <version>8.0.23</version>
+                        <version>${mysql-connector-java.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>com.oracle.database.jdbc</groupId>
@@ -1132,17 +1137,17 @@
                     <dependency>
                         <groupId>org.apache.derby</groupId>
                         <artifactId>derby</artifactId>
-                        <version>10.9.1.0</version>
+                        <version>${derby.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.apache.derby</groupId>
                         <artifactId>derbyclient</artifactId>
-                        <version>10.9.1.0</version>
+                        <version>${derby.version}</version>
                     </dependency>
                     <dependency>
                         <groupId>org.apache.commons</groupId>
                         <artifactId>commons-dbcp2</artifactId>
-                        <version>2.5.0</version>
+                        <version>${commons-dbcp2.version}</version>
                     </dependency>
                 </dependencies>
             </plugin>
