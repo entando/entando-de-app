@@ -33,9 +33,9 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-engine.version>7.0.0-ENG-2021-PR-228-EP-webui</entando-engine.version>
+        <entando-engine.version>7.0.0-ENG-2021-PR-238</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3157-PR-107</entando-admin-console.version>
-        <entando-portal-ui.version>7.0.0-ENG-2021-PR-41-EP-webui</entando-portal-ui.version>
+        <entando-portal-ui.version>7.0.0-ENG-2021-PR-46</entando-portal-ui.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3110-PR-141</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.0.0-ENG-3157-PR-36</entando-plugin-jpmail.version>
         <entando-plugin-jpversioning.version>7.0.0-ENG-3006-PR-33</entando-plugin-jpversioning.version>
@@ -62,7 +62,7 @@
         <test.database.serv.url>
             jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true
         </test.database.serv.url>
-        
+
         <docker.host.address>127.0.0.1</docker.host.address>
         <entando.engine.port>8080</entando.engine.port>
         <appbuilder.port>3000</appbuilder.port>
