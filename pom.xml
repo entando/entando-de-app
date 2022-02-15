@@ -34,17 +34,17 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.0.14</entando-core-parent.version>
-        <entando-engine.version>7.0.0-ENG-3220-PR-235</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3253-PR-114</entando-admin-console.version>
-        <entando-portal-ui.version>7.0.0-ENG-3006-PR-36</entando-portal-ui.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3174-PR-147</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>7.0.0-ENG-3174-PR-40</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>7.0.0-ENG-3174-PR-39</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>7.0.0-ENG-3174-PR-66</entando-plugin-jpseo.version>
-        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3202-PR-39</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpredis.version>7.0.0-ENG-3006-PR-18</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>7.0.0-ENG-3006-PR-56</entando.keycloak.plugin.version>
-
+        <entando-engine.version>7.0.0-ENG-3214-PR-237</entando-engine.version>
+        <entando-admin-console.version>7.0.0-ENG-3214-PR-115</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.0.0-ENG-3214-PR-66</entando.keycloak.plugin.version>
+        <entando-plugin-jacms.version>7.0.0-ENG-3214-PR-149</entando-plugin-jacms.version>
+        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpmail.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.0.0-ENG-3214-PR-25</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.0.0-ENG-3214-PR-68</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.0.0-ENG-3214-PR-41</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.0.0-ENG-3214-PR-45</entando-portal-ui.version>
+        
         <!-- SONAR -->
         <github.organization>entando</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -239,7 +239,7 @@
             <dependency>
                 <groupId>org.entando.entando</groupId>
                 <artifactId>entando-keycloak-auth</artifactId>
-                <version>${entando.keycloak.plugin.version}</version>
+                <version>${entando-keycloak-plugin.version}</version>
             </dependency>
         </dependencies>
     </dependencyManagement>
