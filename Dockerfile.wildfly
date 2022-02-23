@@ -15,3 +15,5 @@ COPY target/generated-resources/licenses /licenses
 COPY target/*.war /wildfly/standalone/deployments/
 
 RUN $ENTANDO_COMMON_PATH/init-derby-from-war.sh
+
+RUN rm -rf /tmp/*.*
