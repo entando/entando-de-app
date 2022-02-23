@@ -55,6 +55,7 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
       - name: "Publish package to GA"
         run: |
+          (cd ~/.m2;find . -type d -iname '*-PR-*' -exec rm -rf \;)
           ~/ppl-run mvn GA-PUBLICATION \
             --id "GA-PUBLICATION" \
             --lcd "$LOCAL_CLONE_DIR"
