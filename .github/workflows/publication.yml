@@ -79,7 +79,7 @@ jobs:
       #~ PUBLISH THE ARTIFACT
       - name: "Publish package"
         run: |
-          (cd ~/.m2;find . -type d -iname '*-PR-*' -exec rm -rf \;)
+          (cd ~/.m2;find . -type d -iname '*-PR-*' -exec rm -rf {} +)
           ~/ppl-run generic PUBLISH \
             --id "PUBLICATION" \
             --lcd "$LOCAL_CLONE_DIR"
