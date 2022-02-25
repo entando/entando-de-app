@@ -34,17 +34,19 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.0.14</entando-core-parent.version>
-        <entando-engine.version>7.0.0-ENG-3319-PR-239</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3286-PR-116</entando-admin-console.version>
+        <entando-engine.version>7.0.0-ENG-3071-PR-238</entando-engine.version>
+        <entando-admin-console.version>7.0.0-ENG-3214-PR-115</entando-admin-console.version>
+        <entando-portal-ui.version>7.0.0-ENG-3071-PR-46</entando-portal-ui.version>
         <entando-keycloak-plugin.version>7.0.0-ENG-3214-PR-66</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.0.0-ENG-3110-PR-151</entando-plugin-jacms.version>
         <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3110-PR-44</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpmail.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.0.0-ENG-3214-PR-25</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.0.0-ENG-3214-PR-68</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.0.0-ENG-3214-PR-41</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.0.0-ENG-3214-PR-45</entando-portal-ui.version>
-        
+        <entando-plugin-jpseo.version>7.0.0-ENG-3214-PR-68</entando-plugin-jpseo.version>
+        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpredis.version>7.0.0-ENG-3214-PR-25</entando-plugin-jpredis.version>
+        <entando-keycloak-plugin.version>7.0.0-ENG-3214-PR-66</entando-keycloak-plugin.version>
+
         <!-- SONAR -->
         <github.organization>entando</github.organization>
         <sonar.host.url>https://sonarcloud.io</sonar.host.url>
@@ -63,7 +65,7 @@
         <test.database.serv.url>
             jdbc:derby:${project.build.directory}/test/db/${project.artifactId}testServ;create=true
         </test.database.serv.url>
-        
+
         <docker.host.address>127.0.0.1</docker.host.address>
         <entando.engine.port>8080</entando.engine.port>
         <appbuilder.port>3000</appbuilder.port>
@@ -76,7 +78,7 @@
         <skipDocker>true</skipDocker>
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
-        
+
         <entando.version>6.3.0-SNAPSHOT</entando.version>
         <postgres.driver.version>42.2.25</postgres.driver.version>
         <oracle.driver.version>21.4.0.0.1</oracle.driver.version>
