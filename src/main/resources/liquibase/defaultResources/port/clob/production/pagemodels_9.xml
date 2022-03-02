@@ -8,7 +8,7 @@
   <frame pos="1">
       <descr>Navigation bar</descr>
       <sketch x1="3" y1="0" x2="5" y2="0" />
-      <defaultWidget code="navigation_menu" />
+      <defaultWidget code="navigation-menu" />
   </frame>
   <frame pos="2">
       <descr>Search</descr>
@@ -18,7 +18,7 @@
   <frame pos="3">
       <descr>Login</descr>
       <sketch x1="9" y1="0" x2="11" y2="0" />
-      <defaultWidget code="keycloak_login" />
+      <defaultWidget code="keycloak-login" />
   </frame>
   <frame pos="4" main="true">
       <descr>Content Frame</descr>
