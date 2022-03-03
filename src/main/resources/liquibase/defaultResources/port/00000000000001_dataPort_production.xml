@@ -155,7 +155,7 @@
 
 
         <insert tableName="widgetcatalog">
-            <column name="code" value="keycloak_login" />
+            <column name="code" value="keycloak-login" />
             <column name="titles" valueClobFile="clob/production/widgetcatalog_4.xml" />
             <column name="locked" valueNumeric="1" />
             <column name="readonlypagewidgetconfig" valueNumeric="0" />
@@ -165,8 +165,8 @@
 
 
         <insert tableName="guifragment">
-            <column name="code" value="keycloak_login" />
-            <column name="widgettypecode" value="keycloak_login" />
+            <column name="code" value="keycloak-login" />
+            <column name="widgettypecode" value="keycloak-login" />
             <column name="gui" valueClobFile="clob/production/guifragment_6.ftl" />
             <column name="defaultgui" valueClobFile="clob/production/guifragment_7.ftl" />
             <column name="locked" valueNumeric="1" />
@@ -174,7 +174,7 @@
 
 
         <insert tableName="widgetcatalog">
-            <column name="code" value="navigation_menu" />
+            <column name="code" value="navigation-menu" />
             <column name="titles" valueClobFile="clob/production/widgetcatalog_5.xml" />
             <column name="parameters" valueClobFile="clob/production/widgetcatalog_6.xml" />
             <column name="locked" valueNumeric="1" />
@@ -185,8 +185,8 @@
 
 
         <insert tableName="guifragment">
-            <column name="code" value="navigation_menu" />
-            <column name="widgettypecode" value="navigation_menu" />
+            <column name="code" value="navigation-menu" />
+            <column name="widgettypecode" value="navigation-menu" />
             <column name="gui" valueClobFile="clob/production/guifragment_8.ftl" />
             <column name="defaultgui" valueClobFile="clob/production/guifragment_9.ftl" />
             <column name="locked" valueNumeric="1" />
@@ -499,7 +499,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="my_homepage" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_1.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -510,7 +510,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="my_homepage" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="my_homepage" />
@@ -527,7 +527,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="my_homepage" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_4.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -538,7 +538,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="sitemap" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_5.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -549,7 +549,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="sitemap" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="sitemap" />
@@ -559,7 +559,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="sitemap" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_6.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -570,7 +570,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="search_result" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_7.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -581,7 +581,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="search_result" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="search_result" />
@@ -591,7 +591,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="search_result" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_8.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -602,7 +602,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="about_us" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_9.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -613,7 +613,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="about_us" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="about_us" />
@@ -624,7 +624,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="about_us" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_11.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -635,7 +635,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="news" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_12.xml" />
         </insert>
         <insert tableName="widgetconfig_draft">
@@ -646,7 +646,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="news" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="news" />
@@ -656,7 +656,7 @@
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="news" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_draft_13.xml" />
         </insert>
 
@@ -669,7 +669,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="my_homepage" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_1.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -680,7 +680,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="my_homepage" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig">
             <column name="pagecode" value="my_homepage" />
@@ -697,7 +697,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="my_homepage" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_4.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -708,7 +708,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="sitemap" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_5.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -719,7 +719,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="sitemap" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig">
             <column name="pagecode" value="sitemap" />
@@ -729,7 +729,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="sitemap" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_6.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -740,7 +740,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="search_result" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_7.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -751,7 +751,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="search_result" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig">
             <column name="pagecode" value="search_result" />
@@ -761,7 +761,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="search_result" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_8.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -772,7 +772,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="about_us" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_9.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -783,7 +783,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="about_us" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig">
             <column name="pagecode" value="about_us" />
@@ -794,7 +794,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="about_us" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_11.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -805,7 +805,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="news" />
             <column name="framepos" valueNumeric="1" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_12.xml" />
         </insert>
         <insert tableName="widgetconfig">
@@ -816,7 +816,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="news" />
             <column name="framepos" valueNumeric="3" />
-            <column name="widgetcode" value="keycloak_login" />
+            <column name="widgetcode" value="keycloak-login" />
         </insert>
         <insert tableName="widgetconfig">
             <column name="pagecode" value="news" />
@@ -826,7 +826,7 @@
         <insert tableName="widgetconfig">
             <column name="pagecode" value="news" />
             <column name="framepos" valueNumeric="8" />
-            <column name="widgetcode" value="navigation_menu" />
+            <column name="widgetcode" value="navigation-menu" />
             <column name="config" valueClobFile="clob/production/widgetconfig_13.xml" />
         </insert>
 
