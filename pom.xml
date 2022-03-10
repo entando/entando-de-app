@@ -37,7 +37,7 @@
         <entando-engine.version>7.0.0-ENG-3351-PR-240</entando-engine.version>
         <entando-admin-console.version>7.0.0-ENG-3286-PR-116</entando-admin-console.version>
         <entando-keycloak-plugin.version>7.0.0-ENG-3214-PR-66</entando-keycloak-plugin.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3110-PR-151</entando-plugin-jacms.version>
+        <entando-plugin-jacms.version>7.0.0-ENG-3402-PR-154</entando-plugin-jacms.version>
         <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3110-PR-44</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpmail.version>7.0.0-ENG-3214-PR-43</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.0.0-ENG-3214-PR-25</entando-plugin-jpredis.version>
