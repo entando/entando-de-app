@@ -54,6 +54,12 @@ mvn clean package
 docker build . -f Dockerfile.wildfly -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSION>
 ```
 
+## Upgrading database from Entando 6.3.2 to 7.0.0
+
+Use the scripts inside the `upgrade` folder to upgrade your Entando database from version 6.3.2 to version 7.0.0. There are different scripts for PostgreSQL, MySQL and Derby.
+
+Starting from version 7.0.0 Entando uses Liquibase, a tool that handle database changes, so you will not need to run any manual queries to upgrade your database from versions higher than 7.0.0.
+
 # Deploying to Kubernetes
 Clone the repository
 Change the project name to your preferred project name. From your favourite IDE
