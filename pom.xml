@@ -1006,7 +1006,10 @@
                             <artifactId>entando-plugin-jpversioning</artifactId>
                         </overlay>
                     </overlays>
-
+                    <packagingExcludes>
+                        WEB-INF/lib/slf4j-log4j12-*.jar,
+                        WEB-INF/lib/slf4j-jdk14-*.jar
+                    </packagingExcludes>
                     <archive>
                         <manifestEntries>
                             <Logging-Profile>entando</Logging-Profile>
