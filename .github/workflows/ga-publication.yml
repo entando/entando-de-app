@@ -6,7 +6,9 @@ on:
       - created
 
 env:
-  ENTANDO_OPT_USE_PPL_TAG: "v1.1.1"
+  ENTANDO_OPT_USE_PPL_TAG: "v1.3.0"
+  ENTANDO_OPT_ENVIRONMENTS: "${{ secrets.ENTANDO_OPT_ENVIRONMENTS }}"
+  ENTANDO_OPT_ENVIRONMENT_NAMES: "${{ secrets.ENTANDO_OPT_ENVIRONMENT_NAMES }}"
   ENTANDO_OPT_FEATURES: "${{ secrets.ENTANDO_OPT_FEATURES }}"
   ENTANDO_OPT_GLOBAL_FEATURES: "${{ secrets.ENTANDO_OPT_GLOBAL_FEATURES }}"
   ENTANDO_OPT_LOG_LEVEL: "${{ secrets.ENTANDO_OPT_LOG_LEVEL }}"
@@ -55,7 +57,6 @@ jobs:
           gpg-passphrase: MAVEN_GPG_PASSPHRASE
       - name: "Publish package to GA"
         run: |
-          (cd ~/.m2;find . -type d -iname '*-PR-*' -exec rm -rf {} +)
           ~/ppl-run mvn GA-PUBLICATION \
             --id "GA-PUBLICATION" \
             --lcd "$LOCAL_CLONE_DIR"
