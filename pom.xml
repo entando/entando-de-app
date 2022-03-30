@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>7.0.0-SNAPSHOT</version>
+    <version>7.0.1</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -33,17 +33,17 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-core-parent.version>7.0.0-ENG-3143-PR-89</entando-core-parent.version>
-        <entando-engine.version>7.0.0-ENG-3143-PR-241</entando-engine.version>
-        <entando-admin-console.version>7.0.0-ENG-3143-PR-118</entando-admin-console.version>
-        <entando-keycloak-plugin.version>7.0.0-ENG-3143-PR-67</entando-keycloak-plugin.version>
-        <entando-plugin-jacms.version>7.0.0-ENG-3415-PR-155</entando-plugin-jacms.version>
-        <entando-plugin-jpcontentscheduler.version>7.0.0-ENG-3143-PR-45</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpmail.version>7.0.0-ENG-3143-PR-44</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.0.0-ENG-3143-PR-26</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.0.0-ENG-3143-PR-72</entando-plugin-jpseo.version>
-        <entando-plugin-jpversioning.version>7.0.0-ENG-3143-PR-42</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.0.0-ENG-3143-PR-47</entando-portal-ui.version>
+        <entando-core-parent.version>7.0.0</entando-core-parent.version>
+        <entando-engine.version>7.0.1-ENG-3455-PR-248</entando-engine.version>
+        <entando-admin-console.version>7.0.0</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.0.0</entando-keycloak-plugin.version>
+        <entando-plugin-jacms.version>7.0.0</entando-plugin-jacms.version>
+        <entando-plugin-jpcontentscheduler.version>7.0.0</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpmail.version>7.0.0</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.0.0</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.0.0</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.0.0</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.0.0</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>
@@ -432,7 +432,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3429-PR-7</server.base.image>
+                <server.base.image>entando/entando-eap73-clustered-base:7.0.1-ENG-3429-PR-7</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -449,7 +449,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3429-PR-7</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.0.1-ENG-3429-PR-7</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -715,6 +715,7 @@
                                     </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
                                     <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
                                     </CORS_ACCESS_CONTROL_MAX_AGE>
+                                    <LOG_LEVEL>INFO</LOG_LEVEL>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -761,7 +762,6 @@
                                     </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
                                     <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
                                     </CORS_ACCESS_CONTROL_MAX_AGE>
-                                    <LOG_LEVEL>INFO</LOG_LEVEL>
                                 </env>
                                 <dependsOn>
                                     <container>${entando.engine.depends.on}</container>
