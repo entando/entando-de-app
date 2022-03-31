@@ -34,14 +34,14 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.0.0</entando-core-parent.version>
-        <entando-engine.version>7.0.1-ENG-3455-PR-248</entando-engine.version>
+        <entando-engine.version>7.0.1-ENG-3461-PR-243</entando-engine.version>
         <entando-admin-console.version>7.0.1-ENG-3410-PR-121</entando-admin-console.version>
         <entando-keycloak-plugin.version>7.0.0</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.0.1-ENG-3410-PR-160</entando-plugin-jacms.version>
         <entando-plugin-jpcontentscheduler.version>7.0.0</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpmail.version>7.0.0</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.0.0</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.0.0</entando-plugin-jpseo.version>
+        <entando-plugin-jpseo.version>7.0.1-ENG-3461-PR-74</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.0.0</entando-plugin-jpversioning.version>
         <entando-portal-ui.version>7.0.0</entando-portal-ui.version>
         
@@ -432,7 +432,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando/entando-eap73-clustered-base:7.0.0</server.base.image>
+                <server.base.image>entando/entando-eap73-clustered-base:7.0.1-ENG-3429-PR-7</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -449,7 +449,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando/entando-wildfly17-base:7.0.0</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.0.1-ENG-3429-PR-7</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -715,6 +715,7 @@
                                     </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
                                     <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
                                     </CORS_ACCESS_CONTROL_MAX_AGE>
+                                    <LOG_LEVEL>INFO</LOG_LEVEL>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -1005,6 +1006,15 @@
                             <artifactId>entando-plugin-jpversioning</artifactId>
                         </overlay>
                     </overlays>
+                    <packagingExcludes>
+                        WEB-INF/lib/slf4j-log4j12-*.jar,
+                        WEB-INF/lib/slf4j-jdk14-*.jar
+                    </packagingExcludes>
+                    <archive>
+                        <manifestEntries>
+                            <Logging-Profile>entando</Logging-Profile>
+                        </manifestEntries>
+                    </archive>
                 </configuration>
             </plugin>
             <plugin>
