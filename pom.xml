@@ -37,7 +37,7 @@
         <entando-engine.version>7.0.1-ENG-3404-PR-251</entando-engine.version>
         <entando-admin-console.version>7.0.1-ENG-3410-PR-121</entando-admin-console.version>
         <entando-keycloak-plugin.version>7.0.0</entando-keycloak-plugin.version>
-        <entando-plugin-jacms.version>7.0.1-ENG-3410-PR-160</entando-plugin-jacms.version>
+        <entando-plugin-jacms.version>7.0.1-ENG-3395-PR-162</entando-plugin-jacms.version>
         <entando-plugin-jpcontentscheduler.version>7.0.0</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpmail.version>7.0.0</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.0.0</entando-plugin-jpredis.version>
@@ -715,7 +715,6 @@
                                     </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
                                     <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
                                     </CORS_ACCESS_CONTROL_MAX_AGE>
-                                    <LOG_LEVEL>INFO</LOG_LEVEL>
                                 </env>
                                 <runCmds>
                                     <run>${server.init.command}</run>
@@ -762,6 +761,7 @@
                                     </CORS_ACCESS_CONTROL_ALLOW_CREDENTIALS>
                                     <CORS_ACCESS_CONTROL_MAX_AGE>${cors.access.control.maxAge}
                                     </CORS_ACCESS_CONTROL_MAX_AGE>
+                                    <LOG_LEVEL>INFO</LOG_LEVEL>
                                 </env>
                                 <dependsOn>
                                     <container>${entando.engine.depends.on}</container>
