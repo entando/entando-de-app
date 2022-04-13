@@ -34,7 +34,7 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.0.1-ENG-3504-PR-100</entando-core-parent.version>
-        <entando-engine.version>7.0.1-ENG-3452-PR-254</entando-engine.version>
+        <entando-engine.version>7.0.1-ENG-3476-PR-257</entando-engine.version>
         <entando-admin-console.version>7.0.1-ENG-3504-PR-122</entando-admin-console.version>
         <entando-keycloak-plugin.version>7.0.1-ENG-3504-PR-75</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.0.1-ENG-3504-PR-166</entando-plugin-jacms.version>
