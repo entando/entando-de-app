@@ -8,10 +8,6 @@ DROP TABLE dataobjectrelations CASCADE;
 DROP TABLE dataobjects CASCADE;
 DROP TABLE dataobjectsearch CASCADE;
 
-ALTER TABLE authuserprofileattrroles ALTER COLUMN attrname DROP NOT NULL;
-ALTER TABLE authuserprofileattrroles ALTER COLUMN rolename DROP NOT NULL;
-ALTER TABLE authuserprofilesearch ALTER COLUMN attrname DROP NOT NULL;
-
 ALTER TABLE actionlogrecords ALTER COLUMN actionname TYPE varchar(40);
 ALTER TABLE api_oauth_tokens ALTER COLUMN localuser TYPE varchar(255);
 

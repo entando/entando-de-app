@@ -3,9 +3,6 @@
 -- core
 
 ALTER TABLE guifragment ALTER COLUMN locked DROP NOT NULL;
-ALTER TABLE widgetcatalog ALTER COLUMN locked DROP NOT NULL;
-ALTER TABLE pages ALTER COLUMN pos DROP NOT NULL;
-ALTER TABLE localstrings ALTER COLUMN stringvalue DROP NOT NULL;
 
 ALTER TABLE widgetconfig ALTER COLUMN framepos TYPE smallint;
 ALTER TABLE widgetconfig_draft ALTER COLUMN framepos TYPE smallint;
@@ -40,15 +37,6 @@ INSERT INTO databasechangelog (id, author, filename, dateexecuted, orderexecuted
   ('00000000000001_de_defaultResources_dataPort_production','entando','liquibase/defaultResources/port/00000000000001_dataPort_production.xml','2022-03-03 12:12:35.532485',6,'EXECUTED','8:7de85f47914acfe5b22c8c7db3228f09','insert tableName=widgetcatalog; insert tableName=guifragment; insert tableName=localstrings; insert tableName=localstrings; insert tableName=localstrings; insert tableName=localstrings; insert tableName=localstrings; insert tableName=localstrings;...','',NULL,'4.4.3','production',NULL,'6305955238');         
 
 -- jacms
-
-ALTER TABLE contentattributeroles ALTER COLUMN attrname DROP NOT NULL;
-ALTER TABLE contentattributeroles ALTER COLUMN rolename DROP NOT NULL;
-ALTER TABLE contentsearch ALTER COLUMN attrname DROP NOT NULL;
-ALTER TABLE workcontentattributeroles ALTER COLUMN attrname DROP NOT NULL;
-ALTER TABLE workcontentattributeroles ALTER COLUMN rolename DROP NOT NULL;
-ALTER TABLE workcontentsearch ALTER COLUMN attrname DROP NOT NULL;
-ALTER TABLE resourcerelations ALTER COLUMN refcategory DROP NOT NULL;
-
 ALTER TABLE workcontentattributeroles ALTER COLUMN rolename TYPE varchar(30);
 
 INSERT INTO databasechangelog (id, author, filename, dateexecuted, orderexecuted, exectype, md5sum, description, comments, tag, liquibase, contexts, labels, deployment_id) VALUES
