@@ -33,17 +33,17 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-core-parent.version>7.0.0</entando-core-parent.version>
-        <entando-engine.version>7.0.1-ENG-3422-PR-256</entando-engine.version>
-        <entando-admin-console.version>7.0.1-ENG-3410-PR-121</entando-admin-console.version>
-        <entando-keycloak-plugin.version>7.0.0</entando-keycloak-plugin.version>
+        <entando-core-parent.version>7.0.1-ENG-3504-PR-100</entando-core-parent.version>
+        <entando-engine.version>7.0.1-ENG-3422-PR-261</entando-engine.version>
+        <entando-admin-console.version>7.0.1-ENG-3422-PR-125</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.0.1-ENG-3504-PR-75</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.0.1-ENG-3422-PR-167</entando-plugin-jacms.version>
-        <entando-plugin-jpcontentscheduler.version>7.0.0</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpmail.version>7.0.0</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.0.0</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.0.1-ENG-3288-PR-81</entando-plugin-jpseo.version>
-        <entando-plugin-jpversioning.version>7.0.0</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.0.0</entando-portal-ui.version>
+        <entando-plugin-jpcontentscheduler.version>7.0.1-ENG-3504-PR-48</entando-plugin-jpcontentscheduler.version>
+        <entando-plugin-jpmail.version>7.0.1-ENG-3504-PR-50</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.0.1-ENG-3504-PR-29</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.0.1-ENG-3423-PR-84</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.0.1-ENG-3504-PR-45</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.0.1-ENG-3504-PR-51</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>

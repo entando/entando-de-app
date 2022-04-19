@@ -3,9 +3,6 @@
 -- core
 
 ALTER TABLE guifragment MODIFY locked smallint;
-ALTER TABLE widgetcatalog MODIFY locked smallint;
-ALTER TABLE pages MODIFY pos int;
-ALTER TABLE localstrings MODIFY stringvalue longtext;
 
 ALTER TABLE widgetconfig MODIFY framepos smallint;
 ALTER TABLE widgetconfig_draft MODIFY framepos smallint;
@@ -58,13 +55,7 @@ INSERT INTO DATABASECHANGELOG (id, author, filename, dateexecuted, orderexecuted
 
 -- jacms
 
-ALTER TABLE contentattributeroles MODIFY attrname varchar(30);
-ALTER TABLE contentattributeroles MODIFY rolename varchar(50);
-ALTER TABLE contentsearch MODIFY attrname varchar(30);
-ALTER TABLE workcontentattributeroles MODIFY attrname varchar(30);
-ALTER TABLE workcontentattributeroles MODIFY rolename varchar(30);
-ALTER TABLE workcontentsearch MODIFY attrname varchar(30);
-ALTER TABLE resourcerelations MODIFY refcategory varchar(30);
+ALTER TABLE workcontentattributeroles MODIFY rolename varchar(30) NOT NULL;
 
 ALTER TABLE contentmodels MODIFY model longtext;
 ALTER TABLE contents MODIFY onlinexml longtext;

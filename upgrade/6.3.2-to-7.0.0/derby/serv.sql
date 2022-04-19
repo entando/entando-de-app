@@ -10,10 +10,6 @@ DROP TABLE dataobjectrelations;
 DROP TABLE dataobjectsearch;
 DROP TABLE dataobjects;
 
-ALTER TABLE authuserprofileattrroles ALTER COLUMN attrname DROP NOT NULL;
-ALTER TABLE authuserprofileattrroles ALTER COLUMN rolename DROP NOT NULL;
-ALTER TABLE authuserprofilesearch ALTER COLUMN attrname DROP NOT NULL;
-
 ALTER TABLE actionlogrecords ADD COLUMN new_actionname varchar(40); 
 UPDATE actionlogrecords SET new_actionname = actionname;
 ALTER TABLE actionlogrecords DROP COLUMN actionname;
