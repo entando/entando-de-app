@@ -49,3 +49,6 @@ ignore:
   SNYK-JAVA-ORGSPRINGFRAMEWORK-2434828:
     - '*':
         reason: '.'
+  SNYK-JAVA-ORGOWASPESAPI-2803305:
+    - '*':
+        reason: '.'
