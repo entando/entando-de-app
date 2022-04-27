@@ -140,7 +140,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <login-button-widget
    admin-url="<@wp.info key="systemParam" paramName="appBuilderBaseURL" />"
    user-display-name="${userDisplayName}"
-   redirect-url="<@wp.url />"
+   redirect-url="<@wp.url baseUrlMode="requestIfRelative" />"
 ></login-button-widget>','<#assign wp=JspTaglibs["/aps-core"]>
 
 <@wp.fragment code="entando_ootb_carbon_include" escapeXml=false />
@@ -159,7 +159,7 @@ INSERT INTO guifragment (code,widgettypecode,plugincode,gui,defaultgui,locked) V
 <login-button-widget
    admin-url="<@wp.info key="systemParam" paramName="appBuilderBaseURL" />"
    user-display-name="${userDisplayName}"
-   redirect-url="<@wp.url />"
+   redirect-url="<@wp.url baseUrlMode="requestIfRelative" />"
 ></login-button-widget>',1);
 
 INSERT INTO widgetcatalog (code,titles,parameters,plugincode,parenttypecode,defaultconfig,locked, readonlypagewidgetconfig, widgetcategory, icon) VALUES ('navigation-menu','<?xml version="1.0" encoding="UTF-8"?>
