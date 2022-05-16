@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>7.0.2</version>
+    <version>7.0.3</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -34,14 +34,14 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.0.2</entando-core-parent.version>
-        <entando-engine.version>7.0.2-ENG-3584-PR-268</entando-engine.version>
+        <entando-engine.version>7.0.3-ENG-3694-PR-273</entando-engine.version>
         <entando-admin-console.version>7.0.2</entando-admin-console.version>
         <entando-keycloak-plugin.version>7.0.2-ENG-3584-PR-80</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.0.2-ENG-3584-PR-177</entando-plugin-jacms.version>
         <entando-plugin-jpcontentscheduler.version>7.0.2</entando-plugin-jpcontentscheduler.version>
         <entando-plugin-jpmail.version>7.0.2-ENG-3584-PR-55</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.0.2</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.0.2-ENG-3584-PR-89</entando-plugin-jpseo.version>
+        <entando-plugin-jpseo.version>7.0.3-ENG-3694-PR-94</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.0.2-ENG-3584-PR-50</entando-plugin-jpversioning.version>
         <entando-portal-ui.version>7.0.2</entando-portal-ui.version>
         
