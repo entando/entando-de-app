@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.5.0</version>
+    <version>6.5.1</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -81,7 +81,7 @@
         <skipSmokeTests>true</skipSmokeTests>
         <autoCreateNetwork>true</autoCreateNetwork>
         <entando.version>6.3.0-SNAPSHOT</entando.version>
-        <postgres.driver.version>9.4.1212</postgres.driver.version>
+        <postgres.driver.version>42.2.25</postgres.driver.version>
         <jetty.version>9.4.30.v20200611</jetty.version>
 
         <!-- Keycloak Configuration -->
