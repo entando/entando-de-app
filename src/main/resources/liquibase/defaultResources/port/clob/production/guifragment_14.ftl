@@ -1,8 +1,9 @@
 <#assign wp=JspTaglibs["/aps-core"]>
+<@wp.info key="systemParam" paramName="applicationBaseURL" var="appUrl" />
 <script nonce="<@wp.cspNonce />" >
   (function () {
     const consolePrefix = '[ENTANDO-KEYCLOAK]';
-    const keycloakConfigEndpoint = '<@wp.info key="systemParam" paramName="applicationBaseURL" />keycloak.json';
+    const keycloakConfigEndpoint = '${appUrl}keycloak.json';
     let keycloakConfig;
     function dispatchKeycloakEvent(eventType) {
       console.info(consolePrefix, 'Dispatching', eventType, 'custom event');
@@ -43,7 +44,7 @@
         keycloak,
       };
       window.entando.keycloak
-        .init({ onLoad: 'check-sso', promiseType: 'native', enableLogging: true })
+        .init({ onLoad: 'check-sso', silentCheckSsoRedirectUri: '${appUrl}resources/static/silent-check-sso.html', promiseType: 'native', enableLogging: true })
         .then(onKeycloakInitialized)
         .catch(function (e) {
           console.error(e);
