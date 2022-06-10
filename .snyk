@@ -13,12 +13,6 @@ ignore:
   SNYK-JAVA-IONETTY-1042268:
     - '*':
         reason: 'Temporary suppression. We always connect to an internal and safe Redis server.'
-  SNYK-JAVA-ORGJBOSSRESTEASY-1009963:
-    - '*':
-        reason: '.'
-  SNYK-JAVA-ORGKEYCLOAK-1085642:
-    - '*':
-        reason: '.'
   SNYK-JAVA-COMFASTERXMLJACKSONCORE-2326698:
     - '*':
         reason: '.'
@@ -28,18 +22,9 @@ ignore:
   SNYK-JAVA-COMFASTERXMLJACKSONCORE-2421244:
     - '*':
         reason: '.'
-  SNYK-JAVA-ORGKEYCLOAK-2434281:
-    - '*':
-        reason: '.'
-  SNYK-JAVA-ORGKEYCLOAK-2805802:
-    - '*':
-        reason: '.'
   SNYK-JAVA-ORGOWASPESAPI-2805301:
     - '*':
         reason: '.'
   SNYK-JAVA-ORGOWASPESAPI-2803305:
-    - '*':
-        reason: '.'
-  SNYK-JAVA-IONETTY-2812456:
     - '*':
         reason: '.'
