@@ -33,16 +33,16 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-core-parent.version>7.1.0-ENG-3828-PR-120</entando-core-parent.version>
-        <entando-engine.version>7.1.0-ENG-3828-PR-283</entando-engine.version>
-        <entando-admin-console.version>7.1.0-ENG-3828-PR-142</entando-admin-console.version>
-        <entando-keycloak-plugin.version>7.1.0-ENG-3828-PR-91</entando-keycloak-plugin.version>
-        <entando-plugin-jacms.version>7.1.0-ENG-3828-PR-190</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>7.1.0-ENG-3828-PR-63</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.1.0-ENG-3828-PR-42</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.1.0-ENG-3828-PR-99</entando-plugin-jpseo.version>
-        <entando-plugin-jpversioning.version>7.1.0-ENG-3828-PR-58</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.1.0-ENG-3828-PR-63</entando-portal-ui.version>
+        <entando-core-parent.version>7.1.0-ENG-3840-PR-128</entando-core-parent.version>
+        <entando-engine.version>7.1.0-ENG-3840-PR-287</entando-engine.version>
+        <entando-admin-console.version>7.1.0-ENG-3840-PR-146</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.1.0-ENG-3840-PR-95</entando-keycloak-plugin.version>
+        <entando-plugin-jacms.version>7.1.0-ENG-3840-PR-195</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>7.1.0-ENG-3840-PR-67</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.1.0-ENG-3840-PR-46</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.1.0-ENG-3840-PR-105</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.1.0-ENG-3840-PR-61</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.1.0-ENG-3840-PR-67</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>
