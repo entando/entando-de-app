@@ -33,17 +33,16 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-core-parent.version>7.0.3-ENG-3699-PR-112</entando-core-parent.version>
-        <entando-engine.version>7.0.3-ENG-3699-PR-271</entando-engine.version>
-        <entando-admin-console.version>7.0.3-ENG-3699-PR-131</entando-admin-console.version>
-        <entando-keycloak-plugin.version>7.0.3-ENG-3699-PR-84</entando-keycloak-plugin.version>
-        <entando-plugin-jacms.version>7.0.3-ENG-3699-PR-180</entando-plugin-jacms.version>
-        <entando-plugin-jpcontentscheduler.version>7.0.3-ENG-3699-PR-53</entando-plugin-jpcontentscheduler.version>
-        <entando-plugin-jpmail.version>7.0.3-ENG-3699-PR-57</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.0.3-ENG-3699-PR-36</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.0.3-ENG-3699-PR-91</entando-plugin-jpseo.version>
-        <entando-plugin-jpversioning.version>7.0.3-ENG-3699-PR-52</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.0.3-ENG-3699-PR-57</entando-portal-ui.version>
+        <entando-core-parent.version>7.0.3-ENG-3839-PR-127</entando-core-parent.version>
+        <entando-engine.version>7.0.3-ENG-3839-PR-286</entando-engine.version>
+        <entando-admin-console.version>7.0.3-ENG-3839-PR-145</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.0.3-ENG-3839-PR-96</entando-keycloak-plugin.version>
+        <entando-plugin-jacms.version>7.0.3-ENG-3839-PR-194</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>7.0.3-ENG-3839-PR-66</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.0.3-ENG-3839-PR-45</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.0.3-ENG-3839-PR-104</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.0.3-ENG-3839-PR-62</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.0.3-ENG-3839-PR-66</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>
