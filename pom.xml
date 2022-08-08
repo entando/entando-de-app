@@ -431,7 +431,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/opt/eap</jboss.home.in.image>
-                <server.base.image>entando/entando-eap73-clustered-base:7.0.0-ENG-3190-PR-3</server.base.image>
+                <server.base.image>entando/entando-eap73-clustered-base:7.1.0-ENG-4063-PR-9</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
@@ -448,7 +448,7 @@
 
                 <skipServerImage>false</skipServerImage>
                 <jboss.home.in.image>/wildfly</jboss.home.in.image>
-                <server.base.image>entando/entando-wildfly17-base:7.0.0-ENG-3190-PR-3</server.base.image>
+                <server.base.image>entando/entando-wildfly17-base:7.1.0-ENG-4063-PR-9</server.base.image>
 
                 <derby.base.folder>/entando-data/databases</derby.base.folder>
             </properties>
