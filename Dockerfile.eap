@@ -1,4 +1,4 @@
-FROM entando/entando-eap73-clustered-base:7.0.0-ENG-3218-PR-4
+FROM entando/entando-eap73-clustered-base:7.1.0-ENG-4063-PR-9
 ARG VERSION
 
 ### Required OpenShift Labels
