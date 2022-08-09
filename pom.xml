@@ -100,6 +100,7 @@
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
         <log4j.version>2.17.1</log4j.version>
         <struts2.version>2.5.30</struts2.version>
+        <freemarker.version>2.3.28</freemarker.version>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -370,6 +371,11 @@
             <artifactId>struts2-json-plugin</artifactId>
             <version>${struts2.version}</version>
             <type>jar</type>
+        </dependency>
+        <dependency>
+            <groupId>org.freemarker</groupId>
+            <artifactId>freemarker</artifactId>
+            <version>${freemarker.version}</version>
         </dependency>
 
         <!--test dependencies -->
