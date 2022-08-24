@@ -34,7 +34,7 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.1.0</entando-core-parent.version>
-        <entando-engine.version>7.1.1-ENG-4128-PR-305</entando-engine.version>
+        <entando-engine.version>7.1.1-ENG-4142-PR-307</entando-engine.version>
         <entando-admin-console.version>7.1.0</entando-admin-console.version>
         <entando-keycloak-plugin.version>7.1.0</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.1.0</entando-plugin-jacms.version>
@@ -42,7 +42,7 @@
         <entando-plugin-jpredis.version>7.1.0</entando-plugin-jpredis.version>
         <entando-plugin-jpseo.version>7.1.0</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.1.0</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.1.0</entando-portal-ui.version>
+        <entando-portal-ui.version>7.1.1-ENG-4142-PR-78</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>
