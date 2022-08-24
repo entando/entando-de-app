@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>7.1.0-SNAPSHOT</version>
+    <version>7.2.0-SNAPSHOT</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -33,16 +33,16 @@
     </repositories>
     <properties>
         <!-- COMPONENTS -->
-        <entando-core-parent.version>7.1.0-ENG-3917-PR-131</entando-core-parent.version>
-        <entando-engine.version>7.1.0-ENG-3775-PR-295</entando-engine.version>
-        <entando-admin-console.version>7.1.0-ENG-3775-PR-159</entando-admin-console.version>
-        <entando-keycloak-plugin.version>7.1.0-ENG-3999-PR-102</entando-keycloak-plugin.version>
-        <entando-plugin-jacms.version>7.1.0-ENG-4062-PR-204</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>7.1.0-ENG-3917-PR-68</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.1.0-ENG-3917-PR-47</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.1.0-ENG-3917-PR-106</entando-plugin-jpseo.version>
-        <entando-plugin-jpversioning.version>7.1.0-ENG-3917-PR-63</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.1.0-ENG-3917-PR-68</entando-portal-ui.version>
+        <entando-core-parent.version>7.2.0-ENG-4134-PR-137</entando-core-parent.version>
+        <entando-engine.version>7.2.0-ENG-4134-PR-306</entando-engine.version>
+        <entando-admin-console.version>7.2.0-ENG-4134-PR-165</entando-admin-console.version>
+        <entando-keycloak-plugin.version>7.2.0-ENG-4134-PR-105</entando-keycloak-plugin.version>
+        <entando-plugin-jacms.version>7.2.0-ENG-4134-PR-207</entando-plugin-jacms.version>
+        <entando-plugin-jpmail.version>7.2.0-ENG-4134-PR-73</entando-plugin-jpmail.version>
+        <entando-plugin-jpredis.version>7.2.0-ENG-4134-PR-52</entando-plugin-jpredis.version>
+        <entando-plugin-jpseo.version>7.2.0-ENG-4134-PR-111</entando-plugin-jpseo.version>
+        <entando-plugin-jpversioning.version>7.2.0-ENG-4134-PR-68</entando-plugin-jpversioning.version>
+        <entando-portal-ui.version>7.2.0-ENG-4134-PR-77</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>
