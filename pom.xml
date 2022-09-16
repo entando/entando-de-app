@@ -41,7 +41,7 @@
         <entando-plugin-jacms.version>7.1.1-ENG-3399-PR-210</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.1.0</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.1.0</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.1.0-ECS-479-PR-115</entando-plugin-jpseo.version>
+        <entando-plugin-jpseo.version>7.1.1-ECS-479-PR-116</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.1.0</entando-plugin-jpversioning.version>
         
         <!-- SONAR -->
