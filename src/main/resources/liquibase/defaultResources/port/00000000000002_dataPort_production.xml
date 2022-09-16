@@ -6,6 +6,16 @@
            http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
 
     <changeSet id="00000000000002_de_defaultResources_dataPort_production" author="entando" context="production">
+
+        <preConditions onFail="MARK_RAN">
+            <!-- Detects not consecutive positions of pages that are children of 'homepage' -->
+            <!-- If positions are consecutive numbers their sum is equal to n*(n+1)/2 -->
+            <sqlCheck expectedResult="1">
+                SELECT CASE WHEN SUM(POS) - COUNT(*) * (COUNT(*) + 1) / 2 = 0 THEN 0 ELSE 1 END
+                FROM pages WHERE parentcode = 'homepage' AND pos > 0
+            </sqlCheck>
+        </preConditions>
+
         <comment>
             This changeset set the correct values for the pos column of the pages that are children of 'homepage'.
             The positions must be consecutive numbers, otherwise issues may arise (see ENG-3498).
@@ -13,6 +23,7 @@
             Derby doesn't support ORDER BY inside OVER so a simple UPDATE that decrements the positions after the
             first page is used. This works correctly for clean instances.
         </comment>
+
         <sql dbms="postgresql">
             WITH pages_to_update AS (
                 SELECT ROW_NUMBER() OVER (ORDER BY pos) AS correct_pos, code
