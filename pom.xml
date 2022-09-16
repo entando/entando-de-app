@@ -36,13 +36,13 @@
         <entando-core-parent.version>7.1.0</entando-core-parent.version>
         <entando-engine.version>7.1.1-ENG-4074-PR-311</entando-engine.version>
         <entando-admin-console.version>7.1.1-ENG-3400-PR-172</entando-admin-console.version>
+        <entando-portal-ui.version>7.1.1-ENG-4181-PR-83</entando-portal-ui.version>
         <entando-keycloak-plugin.version>7.1.0</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.1.1-ENG-3399-PR-210</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.1.0</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.1.0</entando-plugin-jpredis.version>
-        <entando-plugin-jpseo.version>7.1.0</entando-plugin-jpseo.version>
+        <entando-plugin-jpseo.version>7.1.0-ECS-479-PR-115</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.1.0</entando-plugin-jpversioning.version>
-        <entando-portal-ui.version>7.1.1-ENG-4142-PR-78</entando-portal-ui.version>
         
         <!-- SONAR -->
         <github.organization>entando</github.organization>
