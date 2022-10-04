@@ -1,0 +1,61 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+           http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="20221004100000_errorpage_config" author="entando" context="production">
+
+        <preConditions onFail="MARK_RAN">
+            <!-- Detects not consecutive positions of pages that are children of 'homepage' -->
+            <!-- If positions are consecutive numbers their sum is equal to n*(n+1)/2 -->
+            <sqlCheck expectedResult="1">
+                SELECT CASE WHEN SUM(POS) - COUNT(*) * (COUNT(*) + 1) / 2 = 0 THEN 0 ELSE 1 END
+                FROM pages WHERE parentcode = 'homepage' AND pos > 0
+            </sqlCheck>
+        </preConditions>
+
+        <comment>
+            This changeset set the correct values for the pos column of the pages that are children of 'homepage'.
+            The positions must be consecutive numbers, otherwise issues may arise (see ENG-3498).
+            For production databases the SQL queries set all the values using ROW_NUMBER() OVER (ORDER BY pos).
+            Derby doesn't support ORDER BY inside OVER so a simple UPDATE that decrements the positions after the
+            first page is used. This works correctly for clean instances.
+        </comment>
+
+        <sql dbms="postgresql">
+            WITH pages_to_update AS (
+                SELECT ROW_NUMBER() OVER (ORDER BY pos) AS correct_pos, code
+                FROM pages
+                WHERE parentcode = 'homepage' AND pos > 0
+            )
+            UPDATE pages SET pos = correct_pos
+            FROM pages_to_update
+            WHERE pages.code = pages_to_update.code;
+        </sql>
+        <sql dbms="mysql">
+            UPDATE pages
+            JOIN (
+                SELECT code, ROW_NUMBER() OVER (ORDER BY pos) AS correct_pos
+                FROM pages
+                WHERE parentcode = 'homepage' AND pos > 0
+            ) AS pages_to_update
+            ON pages.code = pages_to_update.code
+            SET pages.pos = pages_to_update.correct_pos;
+        </sql>
+        <sql dbms="oracle">
+            MERGE INTO pages
+            USING (
+                SELECT code, ROW_NUMBER() OVER (ORDER BY pos) AS correct_pos
+                FROM pages
+                WHERE parentcode = 'homepage' AND pos > 0
+            ) pages_to_update
+            ON (pages_to_update.code = pages.code)
+            WHEN MATCHED THEN
+            UPDATE SET pages.pos = pages_to_update.correct_pos;
+        </sql>
+        <sql dbms="derby">UPDATE pages SET pos = pos - 1 WHERE parentcode = 'homepage' AND pos > 2</sql>
+    </changeSet>
+
+</databaseChangeLog>
