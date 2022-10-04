@@ -5,7 +5,7 @@
         xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
            http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
 
-    <changeSet id="00000000000002_de_defaultResources_dataPort_production" author="entando" context="production">
+    <changeSet id="20221004100000_errorpage_config" author="entando" context="production">
 
         <insert tableName="widgetconfig_draft">
             <column name="pagecode" value="errorpage" />
