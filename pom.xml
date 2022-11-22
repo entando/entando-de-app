@@ -34,10 +34,10 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.1.0</entando-core-parent.version>
-        <entando-engine.version>7.1.2-ECS-503-PR-320</entando-engine.version>
+        <entando-engine.version>7.1.2-ECS-541-PR-323</entando-engine.version>
         <entando-admin-console.version>7.1.2-ENG-4331-PR-182</entando-admin-console.version>
         <entando-portal-ui.version>7.1.1</entando-portal-ui.version>
-        <entando-keycloak-plugin.version>7.1.2-ENG-4331-PR-113</entando-keycloak-plugin.version>
+        <entando-keycloak-plugin.version>7.1.2-ECS-503-PR-111</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.1.2-ECS-503-PR-217</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.1.0</entando-plugin-jpmail.version>
         <entando-plugin-jpredis.version>7.1.0</entando-plugin-jpredis.version>
