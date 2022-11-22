@@ -1,4 +1,4 @@
-FROM entando/entando-wildfly17-base:7.1.0
+FROM entando/entando-wildfly17-base:7.1.3-ENG-4343-PR-11
 ARG VERSION
 
 ### Required OpenShift Labels
@@ -10,7 +10,7 @@ LABEL name="Entando App" \
       summary="Entando Application" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
 
-COPY target/generated-resources/licenses /licenses
+#COPY target/generated-resources/licenses /licenses
 
 COPY target/*.war /wildfly/standalone/deployments/
 
