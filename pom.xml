@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>7.1.2</version>
+    <version>7.1.3</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -34,7 +34,7 @@
     <properties>
         <!-- COMPONENTS -->
         <entando-core-parent.version>7.1.1</entando-core-parent.version>
-        <entando-engine.version>7.1.2</entando-engine.version>
+        <entando-engine.version>7.1.3-ENG-4383-PR-325</entando-engine.version>
         <entando-admin-console.version>7.1.2</entando-admin-console.version>
         <entando-portal-ui.version>7.1.2</entando-portal-ui.version>
         <entando-keycloak-plugin.version>7.1.1</entando-keycloak-plugin.version>
