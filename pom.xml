@@ -40,7 +40,7 @@
         <entando-keycloak-plugin.version>7.1.1</entando-keycloak-plugin.version>
         <entando-plugin-jacms.version>7.1.2</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>7.1.1</entando-plugin-jpmail.version>
-        <entando-plugin-jpredis.version>7.1.1</entando-plugin-jpredis.version>
+        <entando-plugin-jpredis.version>7.1.2-ECS-523-PR-57</entando-plugin-jpredis.version>
         <entando-plugin-jpseo.version>7.1.2</entando-plugin-jpseo.version>
         <entando-plugin-jpversioning.version>7.1.1</entando-plugin-jpversioning.version>
         
