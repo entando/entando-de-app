@@ -10,7 +10,7 @@ LABEL name="Entando App" \
       summary="Entando Application" \
       description="This Entando app engine application provides APIs and composition for Entando applications"
 
-#COPY target/generated-resources/licenses /licenses
+COPY target/generated-resources/licenses /licenses
 
 COPY target/*.war /wildfly/standalone/deployments/
 
