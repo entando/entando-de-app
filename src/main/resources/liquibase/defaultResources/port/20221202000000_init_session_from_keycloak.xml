@@ -1,0 +1,15 @@
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:ext="http://www.liquibase.org/xml/ns/dbchangelog-ext"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog-ext http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-ext.xsd
+           http://www.liquibase.org/xml/ns/dbchangelog http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-4.4.xsd">
+
+    <changeSet id="20221202000000_init_session_from_keycloak" author="entando" context="production">
+        <update tableName="guifragment">
+            <column name="gui" valueClobFile="clob/production/guifragment_14_update.ftl"></column>
+            <where>code = 'keycloak_auth'</where>
+        </update>
+    </changeSet>
+
+</databaseChangeLog>
