@@ -33,14 +33,14 @@
     </repositories>
     <properties>
         <entando-engine.version>6.5.3</entando-engine.version>
-        <entando-admin-console.version>6.5.1</entando-admin-console.version>
-        <entando-portal-ui.version>6.5.2</entando-portal-ui.version>
+        <entando-admin-console.version>6.5.2</entando-admin-console.version>
+        <entando-portal-ui.version>6.5.3</entando-portal-ui.version>
         <entando-plugin-jacms.version>6.5.1</entando-plugin-jacms.version>
-        <entando-plugin-jpmail.version>6.5.0</entando-plugin-jpmail.version>
-        <entando-plugin-jpversioning.version>6.5.0</entando-plugin-jpversioning.version>
-        <entando-plugin-jpseo.version>6.5.1</entando-plugin-jpseo.version>
+        <entando-plugin-jpmail.version>6.5.1</entando-plugin-jpmail.version>
+        <entando-plugin-jpversioning.version>6.5.1</entando-plugin-jpversioning.version>
+        <entando-plugin-jpseo.version>6.5.2</entando-plugin-jpseo.version>
         <entando-plugin-jpredis.version>6.5.1</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>6.5.0</entando.keycloak.plugin.version>
+        <entando.keycloak.plugin.version>6.5.1</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
