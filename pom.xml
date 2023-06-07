@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.5.3</version>
+    <version>6.5.4</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -35,7 +35,7 @@
         <entando-engine.version>6.5.3</entando-engine.version>
         <entando-admin-console.version>6.5.2</entando-admin-console.version>
         <entando-portal-ui.version>6.5.3</entando-portal-ui.version>
-        <entando-plugin-jacms.version>6.5.1</entando-plugin-jacms.version>
+        <entando-plugin-jacms.version>6.5.2-ENG-4946-PR-232</entando-plugin-jacms.version>
         <entando-plugin-jpmail.version>6.5.1</entando-plugin-jpmail.version>
         <entando-plugin-jpversioning.version>6.5.1</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.5.2</entando-plugin-jpseo.version>
