@@ -9,6 +9,7 @@ env:
   ENTANDO_OPT_USE_PPL_TAG: "v1.3.0"
   ENTANDO_OPT_ENVIRONMENTS: "${{ secrets.ENTANDO_OPT_ENVIRONMENTS }}"
   ENTANDO_OPT_ENVIRONMENT_NAMES: "${{ secrets.ENTANDO_OPT_ENVIRONMENT_NAMES }}"
+  ENTANDO_OPT_CUSTOM_ENV: "${{ vars.ENTANDO_OPT_CUSTOM_ENV }}"
   PPL_CONTEXT: ${{ toJson(github) }}
   GIT_USER_NAME: "${{ secrets.GIT_USER_NAME }}"
   GIT_USER_EMAIL: "${{ secrets.GIT_USER_EMAIL }}"
@@ -56,7 +57,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -64,7 +65,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}
@@ -131,7 +132,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -139,7 +140,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}
@@ -177,7 +178,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -185,7 +186,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}

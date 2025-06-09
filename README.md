@@ -30,6 +30,11 @@ docker build . -f Dockerfile.wildfly -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSI
 
 ```
 
+## Build the tomcat based image
+```bash
+docker build --no-cache -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSION> -f Dockerfile.tomcat --build-arg context_path=entando-de-app .
+```
+
 # Deploying to Kubernetes
 Clone the repository
 Change the project name to your preferred project name. From your favourite IDE
