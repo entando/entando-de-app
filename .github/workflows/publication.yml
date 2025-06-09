@@ -6,13 +6,14 @@ on:
       - 'v*'
 
 env:
-  ENTANDO_OPT_USE_PPL_TAG: "v1.3.0"
+  ENTANDO_OPT_USE_PPL_TAG: "v1.3.1"
   ENTANDO_OPT_ENVIRONMENTS: "${{ secrets.ENTANDO_OPT_ENVIRONMENTS }}"
   ENTANDO_OPT_ENVIRONMENT_NAMES: "${{ secrets.ENTANDO_OPT_ENVIRONMENT_NAMES }}"
   PPL_CONTEXT: ${{ toJson(github) }}
   GIT_USER_NAME: "${{ secrets.GIT_USER_NAME }}"
   GIT_USER_EMAIL: "${{ secrets.GIT_USER_EMAIL }}"
   LOCAL_CLONE_DIR: "local-checkout"
+  ENTANDO_OPT_DOCKER_BUILDS: "Dockerfile.tomcat,Dockerfile.eap,Dockerfile.wildfly,"
 
 
 jobs:
@@ -28,6 +29,7 @@ jobs:
       ENTANDO_OPT_MAVEN_REPO_DEVL: ${{ secrets.ENTANDO_OPT_MAVEN_REPO_DEVL }}
       ENTANDO_OPT_MAVEN_REPO_PROD: ${{ secrets.ENTANDO_OPT_MAVEN_REPO_PROD }}
       ENTANDO_BOT_TOKEN: ${{ secrets.ENTANDO_BOT_TOKEN }}
+      ENTANDO_OPT_DOCKER_BUILDS: "Dockerfile.tomcat,Dockerfile.eap,Dockerfile.wildfly,"
     runs-on: ubuntu-latest
     steps:
       - name: "PR PIPELINE START"
@@ -56,7 +58,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -64,7 +66,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}
@@ -100,6 +102,7 @@ jobs:
           export ENTANDO_OPT_DOCKER_ALT_LOGIN_URL="${{ secrets.ENTANDO_OPT_DOCKER_ALT_LOGIN }}"
           export ENTANDO_OPT_DOCKER_ALT_USERNAME="${{ secrets.ENTANDO_OPT_DOCKER_ALT_USERNAME }}"
           export ENTANDO_OPT_DOCKER_ALT_PASSWORD="${{ secrets.ENTANDO_OPT_DOCKER_ALT_PASSWORD }}"
+          export ENTANDO_OPT_DOCKER_BUILDS="Dockerfile.tomcat,Dockerfile.eap,Dockerfile.wildfly,"
           
           ~/ppl-run docker publish --id "PUBLISH-DOCKER" --lcd "$LOCAL_CLONE_DIR"
 
@@ -131,7 +134,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -139,7 +142,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}
@@ -148,7 +151,7 @@ jobs:
         env:
           ENTANDO_OPT_SNYK_ORG: "${{ secrets.ENTANDO_OPT_SNYK_ORG }}"
           SNYK_TOKEN: "${{ secrets.SNYK_TOKEN }}"
-          ENTANDO_OPT_DOCKER_BUILDS: "${{ secrets.ENTANDO_OPT_DOCKER_BUILDS }}"
+          ENTANDO_OPT_DOCKER_BUILDS: "Dockerfile.tomcat,Dockerfile.eap,Dockerfile.wildfly,"
           ENTANDO_OPT_DOCKER_ORG: "${{ secrets.ENTANDO_OPT_DOCKER_ORG }}"
         run: |
           ~/ppl-run docker scan --id "SCAN-DOCKER" --lcd "$LOCAL_CLONE_DIR"
@@ -177,7 +180,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -185,7 +188,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}

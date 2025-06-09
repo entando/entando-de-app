@@ -22,6 +22,7 @@ env:
   ENTANDO_OPT_CUSTOM_ENV: "${{ secrets.ENTANDO_OPT_CUSTOM_ENV }}"
   ENTANDO_OPT_OKD_LOGIN: "${{ secrets.ENTANDO_OPT_OKD_LOGIN }}"
   ENTANDO_OPT_IMAGE_REGISTRY_OVERRIDE: "${{ secrets.ENTANDO_OPT_IMAGE_REGISTRY_OVERRIDE }}"
+  ENTANDO_OPT_DOCKER_BUILDS: "Dockerfile.tomcat,Dockerfile.eap,Dockerfile.wildfly,"
   ENTANDO_OPT_DOCKER_ORG: "${{ secrets.ENTANDO_OPT_DOCKER_ORG }}"
   ENTANDO_OPT_TEST_NAMESPACE: "${{ secrets.ENTANDO_OPT_TEST_NAMESPACE }}"
   ENTANDO_OPT_HELM_CLI_URL: "${{ secrets.ENTANDO_OPT_HELM_CLI_URL }}"
@@ -95,7 +96,7 @@ jobs:
           java-version: 11
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2
@@ -103,13 +104,13 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR }}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}
       #~ SONAR CACHE
       - name: Cache SonarCloud packages
-        uses: actions/cache@v1
+        uses: actions/cache@v4
         with:
           path: ~/.sonar/cache
           key: ${{ runner.os }}-sonar
@@ -151,7 +152,7 @@ jobs:
       #~ MAVEN CACHE
       - name: "Cache Maven packages"
         id: maven-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: ~/.m2
           key: ${{ runner.os }}-m2-matrix-${{ matrix.scan-type }}
@@ -162,7 +163,7 @@ jobs:
       #~ BUILD CACHE
       - name: "Cache Build Dir"
         id: build-cache
-        uses: actions/cache@v2
+        uses: actions/cache@v4
         with:
           path: "${{ env.LOCAL_CLONE_DIR}}/target/"
           key: ${{ runner.os }}-build-${{ env.BUILD_CACHE_KEY }}
