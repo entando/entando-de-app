@@ -5,7 +5,7 @@
     <groupId>org.entando.entando</groupId>
     <artifactId>entando-de-app</artifactId>
     <packaging>war</packaging>
-    <version>6.5.4</version>
+    <version>6.6.0</version>
     <name>entando-de-app</name>
     <url>http://www.entando.com/</url>
     <licenses>
@@ -32,7 +32,7 @@
         </repository>
     </repositories>
     <properties>
-        <entando-engine.version>6.5.3</entando-engine.version>
+        <entando-engine.version>6.6.0</entando-engine.version>
         <entando-admin-console.version>6.5.2</entando-admin-console.version>
         <entando-portal-ui.version>6.5.3</entando-portal-ui.version>
         <entando-plugin-jacms.version>6.5.2</entando-plugin-jacms.version>
@@ -40,7 +40,7 @@
         <entando-plugin-jpversioning.version>6.5.1</entando-plugin-jpversioning.version>
         <entando-plugin-jpseo.version>6.5.2</entando-plugin-jpseo.version>
         <entando-plugin-jpredis.version>6.5.1</entando-plugin-jpredis.version>
-        <entando.keycloak.plugin.version>6.5.1</entando.keycloak.plugin.version>
+        <entando.keycloak.plugin.version>6.6.0</entando.keycloak.plugin.version>
         <!--
     <test.database.driver>org.postgresql.Driver</test.database.driver>
     <test.database.hostname>localhost</test.database.hostname>
@@ -1015,8 +1015,8 @@
                 <artifactId>maven-compiler-plugin</artifactId>
                 <version>2.4</version>
                 <configuration>
-                    <target>1.8</target>
-                    <source>1.8</source>
+                    <source>11</source>
+                    <target>11</target>
                 </configuration>
             </plugin>
             <plugin>
