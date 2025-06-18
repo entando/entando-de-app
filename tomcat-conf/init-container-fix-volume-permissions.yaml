@@ -1,0 +1,12 @@
+initContainers:
+- command:
+    - chown
+    - -R
+    - "185:0"
+    - /entando-data
+  image: alpine:3
+  imagePullPolicy: IfNotPresent
+  name: set-correct-entando-data-ownership
+  volumeMounts:
+    - mountPath: /entando-data
+      name: tomcat-server-volume

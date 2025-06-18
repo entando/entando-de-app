@@ -30,6 +30,11 @@ docker build . -f Dockerfile.wildfly -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSI
 
 ```
 
+## Build the tomcat based image
+```bash
+docker build . -f Dockerfile.tomcat -t <YOUR-USER>/<YOUR-REPO-NAME>:<YOUR-VERSION>
+```
+
 # Deploying to Kubernetes
 Clone the repository
 Change the project name to your preferred project name. From your favourite IDE

@@ -1,0 +1,25 @@
+FROM entando/entando-base-tomcat:9.0.64
+
+##### DEFAULT VALUES###################################################################
+# ENV CATALINA_BASE=/usr/local/tomcat
+# ENV CATALINA_HOME=/usr/local/tomcat
+# ENV CATALINA_TMPDIR=/usr/local/tomcat/temp
+# ENV JRE_HOME=/usr
+# ENV CLASSPATH=/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar
+########################################################################################
+
+USER 0
+
+COPY --chown=185:0 target/*.war /usr/local/tomcat/webapps/
+COPY --chown=185:0 tomcat-conf/server.xml /usr/local/tomcat/conf/server.xml
+COPY --chown=185:0 tomcat-conf/setenv.sh /usr/local/tomcat/bin/setenv.sh
+COPY --chown=185:0 tomcat-conf/translate-jboss-variables.sh /usr/local/tomcat/bin/translate-jboss-variables.sh
+COPY --chown=185:0 tomcat-conf/entando-data.sh /opt/entando-scripts/bin/entando-data.sh
+COPY --chown=185:0 tomcat-conf/context.xml /usr/local/tomcat/conf/context.xml
+COPY --chown=185:0 tomcat-conf/libs/ /usr/local/tomcat/lib/
+
+RUN chmod +x /usr/local/tomcat/bin/setenv.sh \
+    && chmod +x /usr/local/tomcat/bin/translate-jboss-variables.sh \
+    && chmod +x /opt/entando-scripts/bin/entando-data.sh
+
+USER 185
