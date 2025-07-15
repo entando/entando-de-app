@@ -1,25 +1,20 @@
-FROM entando/entando-base-tomcat:9.0.64
+FROM entando/entando-tomcat-base:6.6.0
 
-##### DEFAULT VALUES###################################################################
-# ENV CATALINA_BASE=/usr/local/tomcat
-# ENV CATALINA_HOME=/usr/local/tomcat
-# ENV CATALINA_TMPDIR=/usr/local/tomcat/temp
-# ENV JRE_HOME=/usr
-# ENV CLASSPATH=/usr/local/tomcat/bin/bootstrap.jar:/usr/local/tomcat/bin/tomcat-juli.jar
-########################################################################################
 
-USER 0
+### Required OpenShift Labels
+LABEL name="Entando App" \
+      maintainer="dev@entando.com" \
+      vendor="Entando Inc." \
+      version="6.6" \
+      release="6.6.0" \
+      summary="Entando Application" \
+      description="This Entando app engine application provides APIs and composition for Entando applications"
+
+COPY target/generated-resources/licenses /licenses
+COPY target/generated-resources/licenses.xml /
 
 COPY --chown=185:0 target/*.war /usr/local/tomcat/webapps/
-COPY --chown=185:0 tomcat-conf/server.xml /usr/local/tomcat/conf/server.xml
-COPY --chown=185:0 tomcat-conf/setenv.sh /usr/local/tomcat/bin/setenv.sh
-COPY --chown=185:0 tomcat-conf/translate-jboss-variables.sh /usr/local/tomcat/bin/translate-jboss-variables.sh
-COPY --chown=185:0 tomcat-conf/entando-data.sh /opt/entando-scripts/bin/entando-data.sh
-COPY --chown=185:0 tomcat-conf/context.xml /usr/local/tomcat/conf/context.xml
-COPY --chown=185:0 tomcat-conf/libs/ /usr/local/tomcat/lib/
 
-RUN chmod +x /usr/local/tomcat/bin/setenv.sh \
-    && chmod +x /usr/local/tomcat/bin/translate-jboss-variables.sh \
-    && chmod +x /opt/entando-scripts/bin/entando-data.sh
+RUN $ENTANDO_COMMON_PATH/init-derby-from-war.sh
 
-USER 185
+RUN rm -rf /tmp/*.jpg
