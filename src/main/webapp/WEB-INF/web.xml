@@ -16,7 +16,7 @@
             classpath*:spring/plugins/**/aps/**/**.xml
             classpath*:spring/plugins/**/apsadmin/**/**.xml
             classpath*:spring/aps/managers/keycloak.xml
-            classpath*:spring/aps/managers/cors.xml
+            classpath*:spring/aps/cors.xml
         </param-value>
     </context-param>
     <context-param>
@@ -178,6 +178,8 @@
         <session-timeout>30</session-timeout>
         <cookie-config>
             <http-only>true</http-only>
+            <!-- Cookie SameSite policy for JETTY -->
+            <!--<comment>__SAME_SITE_STRICT__</comment>-->
         </cookie-config>
     </session-config>
     <welcome-file-list>
