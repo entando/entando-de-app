@@ -14,6 +14,7 @@ env:
   GIT_USER_NAME: "${{ secrets.GIT_USER_NAME }}"
   GIT_USER_EMAIL: "${{ secrets.GIT_USER_EMAIL }}"
   LOCAL_CLONE_DIR: "local-checkout"
+  ENTANDO_OPT_DOCKER_BUILDS: "Dockerfile.tomcat"
 
 
 jobs:
@@ -85,15 +86,15 @@ jobs:
         env:
           NEXUS_USERNAME: ${{ secrets.NEXUS_USERNAME }}
           NEXUS_PASSWORD: ${{ secrets.NEXUS_PASSWORD }}
-      #~ UPDATE THE BOM (if required)
-      - name: "BOM Update"
-        if: steps.CHECKOUT.outputs.BOM_UPDATE_FLAG == 'true' && steps.START.outputs.BOM == 'true'
-        run: |
-          ~/ppl-run bom update-bom \
-            --id "UPDATE-BOM" \
-            --lcd "$LOCAL_CLONE_DIR" \
-            --token "$ENTANDO_BOT_TOKEN" \
-          ;
+#      #~ UPDATE THE BOM (if required)
+#      - name: "BOM Update"
+#        if: steps.CHECKOUT.outputs.BOM_UPDATE_FLAG == 'true' && steps.START.outputs.BOM == 'true'
+#        run: |
+#          ~/ppl-run bom update-bom \
+#            --id "UPDATE-BOM" \
+#            --lcd "$LOCAL_CLONE_DIR" \
+#            --token "$ENTANDO_BOT_TOKEN" \
+#          ;
       #~ PUBLISH TO DOCKER
       - name: "Publish docker"
         run: |
@@ -101,6 +102,7 @@ jobs:
           export ENTANDO_OPT_DOCKER_ALT_LOGIN_URL="${{ secrets.ENTANDO_OPT_DOCKER_ALT_LOGIN }}"
           export ENTANDO_OPT_DOCKER_ALT_USERNAME="${{ secrets.ENTANDO_OPT_DOCKER_ALT_USERNAME }}"
           export ENTANDO_OPT_DOCKER_ALT_PASSWORD="${{ secrets.ENTANDO_OPT_DOCKER_ALT_PASSWORD }}"
+          export ENTANDO_OPT_DOCKER_BUILDS="${{ env.ENTANDO_OPT_DOCKER_BUILDS }}"
           
           ~/ppl-run docker publish --id "PUBLISH-DOCKER" --lcd "$LOCAL_CLONE_DIR"
 
@@ -149,7 +151,7 @@ jobs:
         env:
           ENTANDO_OPT_SNYK_ORG: "${{ secrets.ENTANDO_OPT_SNYK_ORG }}"
           SNYK_TOKEN: "${{ secrets.SNYK_TOKEN }}"
-          ENTANDO_OPT_DOCKER_BUILDS: "${{ secrets.ENTANDO_OPT_DOCKER_BUILDS }}"
+          ENTANDO_OPT_DOCKER_BUILDS: "${{ env.ENTANDO_OPT_DOCKER_BUILDS }}"
           ENTANDO_OPT_DOCKER_ORG: "${{ secrets.ENTANDO_OPT_DOCKER_ORG }}"
         run: |
           ~/ppl-run docker scan --id "SCAN-DOCKER" --lcd "$LOCAL_CLONE_DIR"
