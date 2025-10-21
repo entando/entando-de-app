@@ -1,4 +1,4 @@
-FROM entando/entando-tomcat-base:6.6.0
+FROM entando/entando-tomcat-base:6.6.0-fix.1
 
 
 ### Required OpenShift Labels
@@ -14,6 +14,8 @@ COPY target/generated-resources/licenses /licenses
 COPY target/generated-resources/licenses.xml /
 
 COPY --chown=185:0 target/*.war /usr/local/tomcat/webapps/
+# Copy CookieProcessor JAR if it exists
+COPY --chown=185:0 target/*-jsessionid-cookie-processor.jar /usr/local/tomcat/lib/
 
 RUN $ENTANDO_COMMON_PATH/init-derby-from-war.sh
 

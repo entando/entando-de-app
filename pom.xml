@@ -83,7 +83,7 @@
         <entando.version>6.3.0-SNAPSHOT</entando.version>
         <postgres.driver.version>42.2.25</postgres.driver.version>
         <jetty.version>9.4.30.v20200611</jetty.version>
-
+        <tomcat.version>9.0.106</tomcat.version>
         <!-- Keycloak Configuration -->
         <keycloak.enabled>false</keycloak.enabled>
         <keycloak.auth.url>http://localhost:8081/auth</keycloak.auth.url>
@@ -100,6 +100,10 @@
         <cors.access.control.maxAge>3600</cors.access.control.maxAge>
         <log4j.version>2.17.1</log4j.version>
         <struts2.version>2.5.30</struts2.version>
+
+        <!-- Cookie SameSite policies -->
+        <jsessionid.samesite.policy>Strict</jsessionid.samesite.policy>
+        <default.samesite.policy/>
     </properties>
     <dependencyManagement>
         <dependencies>
@@ -295,6 +299,12 @@
         <dependency>
             <groupId>javax.servlet</groupId>
             <artifactId>javax.servlet-api</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.apache.tomcat</groupId>
+            <artifactId>tomcat-catalina</artifactId>
+            <version>${tomcat.version}</version>
             <scope>provided</scope>
         </dependency>
         <dependency>
@@ -1399,6 +1409,27 @@
                         <goals>
                             <goal>download-licenses</goal>
                         </goals>
+                    </execution>
+                </executions>
+            </plugin>
+            <!-- Create separate JAR for CookieProcessor -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-jar-plugin</artifactId>
+                <version>3.2.0</version>
+                <executions>
+                    <execution>
+                        <id>cookie-processor-jar</id>
+                        <phase>package</phase>
+                        <goals>
+                            <goal>jar</goal>
+                        </goals>
+                        <configuration>
+                            <classifier>jsessionid-cookie-processor</classifier>
+                            <includes>
+                                <include>org/entando/entando/aps/servlet/security/JSessionIdSameSiteCookieProcessor.class</include>
+                            </includes>
+                        </configuration>
                     </execution>
                 </executions>
             </plugin>
